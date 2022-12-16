@@ -21,127 +21,106 @@ from ethereum_test_tools import (
 from ethereum_test_tools.vm.opcode import Opcodes as Op
 
 
-def get_yul_for_unsigned_comparison(opcode: str):
+def get_code_for_unsigned_comparison(opcode_name: str, val_1: str, val_2: str):
     """
-    Return Yul source code for use in both LT and GT opcode tests.
+    Return Yul source and byte code for use in both LT and GT opcode tests.
     """
-    if opcode not in ["lt", "gt"]:
-        raise Exception("Unexpected opcode provided for yul source.")
+    if opcode_name == "lt":
+        opcode = "10"
+    elif opcode_name == "gt":
+        opcode = "11"
+    elif opcode_name == "eq":
+        opcode = "14"
+    else:
+        raise Exception("Unexpected opcode provided for unsigned comparison.")
+
     yul_source = Template(
         """
         {
             function f(a, b) -> c
             {
-                c := 0xff
+                c := 0
                 if $opcode_under_test(a, b) { c := 1 }
             }
-            sstore(0, f(0, 1))
-            sstore(1, f(1, 2))
-            sstore(2, f(0, 0))
-            sstore(3, f(1, 1))
-            sstore(4, f(1, 0))
-            sstore(5, f(2, 1))
-            return(0, 32)
+            sstore(0, f($val_1, $val_2))
         }
         """
     )
-    return Yul(yul_source.substitute(opcode_under_test=opcode))
+    if val_1 != val_2:
+        bytecode = Template(
+            """0x6017565b60008282 $opcode_under_test
+                 15601157600190505b92915050565b602160 $val_2
+                 60 $val_1 6003565b600055"""
+        )
+    else:
+        bytecode = Template(
+            """0x6017565b60008282 $opcode_under_test
+                 15601157600190505b92915050565b602060 $val_2
+                 80 6003565b600055"""
+        )
+
+    return (
+        Yul(
+            yul_source.substitute(
+                opcode_under_test=opcode_name,
+                val_1=int(val_1, 0),
+                val_2=int(val_2, 0),
+            )
+        ),
+        bytecode.substitute(
+            opcode_under_test=opcode, val_1=val_1[2:], val_2=val_2[2:]
+        ),
+    )
 
 
 # TODO: change decorator to @test_from("istanbul")
 @test_from_until("berlin", "shanghai")
-def test_lt(fork):
+def test_lt_gt(fork):
     """
-    Test LT opcode.
+    Test basic functionality for the LT and GT opcodes for non-error cases.
     """
     env = Environment()
 
-    pre = {
-        "0x1000000000000000000000000000000000000000": Account(
-            balance=0x0BA1A9CE0BA1A9CE,
-            code=get_yul_for_unsigned_comparison("lt"),
-        ),
-        TestAddress: Account(balance=0x0BA1A9CE0BA1A9CE),
-    }
+    pre = {TestAddress: Account(balance=1000000000000000000000)}
+    post = {}
+
+    addr_1 = to_address(0x100)
+    balance = 1000000000000000000000
 
     tx = Transaction(
         ty=0x0,
         chain_id=0x0,
-        nonce=0,
-        to="0x1000000000000000000000000000000000000000",
-        gas_limit=500000,
+        to=addr_1,
+        gas_limit=100000,
         gas_price=10,
         protected=False,
     )
 
-    post = {
-        "0x1000000000000000000000000000000000000000": Account(
-            code="""0x601b565b600060ff905082821015601557600
-                      190505b92915050565b602560016000600356
-                      5b6000556032600260016003565b600155603
-                      e6000806003565b600255604a600180600356
-                      5b6003556057600060016003565b600455606
-                      4600160026003565b60055560206000f3""",
-            storage={
-                0x00: 0x01,
-                0x01: 0x01,
-                0x02: 0xFF,
-                0x03: 0xFF,
-                0x04: 0xFF,
-                0x05: 0xFF,
-            },
-        ),
-    }
+    test_cases = [
+        ["lt", "0x00", "0x01", True],
+        ["lt", "0x01", "0x02", True],
+        ["lt", "0x00", "0x00", False],
+        ["lt", "0x01", "0x01", False],
+        ["lt", "0x01", "0x00", False],
+        ["lt", "0x02", "0x01", False],
+        ["gt", "0x00", "0x01", False],
+        ["gt", "0x01", "0x02", False],
+        ["gt", "0x00", "0x00", False],
+        ["gt", "0x01", "0x01", False],
+        ["gt", "0x01", "0x00", True],
+        ["gt", "0x02", "0x01", True],
+    ]
 
-    yield StateTest(env=env, pre=pre, post=post, txs=[tx])
+    for opcode, val_1, val_2, result in test_cases:
+        name = f"test_{val_1}_{opcode}_{val_2}"
+        (yul, bytecode) = get_code_for_unsigned_comparison(
+            opcode, val_1, val_2
+        )
 
+        pre[addr_1] = Account(code=yul, storage={0: 0xFF}, balance=balance)
+        post[addr_1] = Account(code=bytecode, storage={0: int(result)})
 
-# TODO: change decorator to @test_from("istanbul")
-@test_from_until("berlin", "shanghai")
-def test_gt(fork):
-    """
-    Test GT opcode.
-    """
-    env = Environment()
-
-    pre = {
-        "0x1000000000000000000000000000000000000000": Account(
-            balance=0x0BA1A9CE0BA1A9CE,
-            code=get_yul_for_unsigned_comparison("gt"),
-        ),
-        TestAddress: Account(balance=0x0BA1A9CE0BA1A9CE),
-    }
-
-    tx = Transaction(
-        ty=0x0,
-        chain_id=0x0,
-        nonce=0,
-        to="0x1000000000000000000000000000000000000000",
-        gas_limit=500000,
-        gas_price=10,
-        protected=False,
-    )
-
-    post = {
-        "0x1000000000000000000000000000000000000000": Account(
-            code="""0x601b565b600060ff905082821115601557600
-                      190505b92915050565b602560016000600356
-                      5b6000556032600260016003565b600155603
-                      e6000806003565b600255604a600180600356
-                      5b6003556057600060016003565b600455606
-                      4600160026003565b60055560206000f3""",
-            storage={
-                0x00: 0xFF,
-                0x01: 0xFF,
-                0x02: 0xFF,
-                0x03: 0xFF,
-                0x04: 0x01,
-                0x05: 0x01,
-            },
-        ),
-    }
-
-    yield StateTest(env=env, pre=pre, post=post, txs=[tx])
+        yield StateTest(env=env, pre=pre, post=post, txs=[tx], name=name)
 
 
 def get_yul_for_signed_comparison(opcode: str):
@@ -173,7 +152,7 @@ def get_yul_for_signed_comparison(opcode: str):
 
             return(0, 32)
         }
-        """  # noqa
+        """  # noqa: E501
     )
     return Yul(yul_source.substitute(opcode_under_test=opcode))
 
