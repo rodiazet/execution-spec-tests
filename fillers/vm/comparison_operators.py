@@ -1,6 +1,8 @@
 """
 VM Comparison Operator Tests (via Yul): LT, GT, SLT, SGT.
 
+TODO: transaction reverted if not enough gas for: GT, SLT, SGT
+TODO: transaction reverted if not enough values on the stack: GT, SLT, SGT
 TODO: EQ, ISZERO
 """
 
@@ -14,7 +16,9 @@ from ethereum_test_tools import (
     Transaction,
     Yul,
     test_from_until,
+    to_address,
 )
+from ethereum_test_tools.vm.opcode import Opcodes as Op
 
 
 def get_yul_for_unsigned_comparison(opcode: str):
@@ -282,3 +286,85 @@ def test_sgt(fork):
     }
 
     yield StateTest(env=env, pre=pre, post=post, txs=[tx])
+
+
+@test_from_until("berlin", "shanghai")
+def test_lt_tx_reverts_upon_error(fork):
+    """
+    Test that the LT opcode reverts if:
+    - The stack does not contain 2 entries.
+    - Insufficient gas is provided.
+    """
+    env = Environment()
+
+    pre = {TestAddress: Account(balance=1000000000000000000000)}
+    post = {}
+
+    addr_1 = to_address(0x100)
+    balance = 1000000000000000000000
+    storage = {0: 1}
+
+    tx = Transaction(
+        ty=0x0,
+        chain_id=0x0,
+        to=addr_1,
+        gas_limit=100000,
+        gas_price=10,
+        protected=False,
+    )
+
+    # TODO: Testing via storage does not seem strict enough - if LT does not
+    # cause the tx to revert, but later fails this will cause the test to pass,
+    # but for the wrong reason (false negative). In particular, this is the
+    # case for the insufficient gas test. Is there a better way?
+
+    """
+    Test Case 1: Call LT on an empty stack.
+
+    Tx should revert; storage should remain unchanged.
+    """
+    name = "lt_reverts_tx_with_no_stack_entries"
+
+    code = Op.LT + Op.PUSH1(2) + Op.PUSH1(0) + Op.SSTORE
+
+    pre[addr_1] = Account(code=code, storage=storage, balance=balance)
+    post[addr_1] = Account(code=code, storage=storage)
+
+    yield StateTest(env=env, pre=pre, post=post, txs=[tx], name=name)
+
+    """
+    Test Case 2: Call LT with a stack with only 1 entry.
+
+    Tx should revert; storage should remain unchanged.
+    """
+    name = "lt_reverts_tx_with_one_stack_entry"
+
+    code = Op.PUSH1(1) + Op.LT + Op.PUSH1(2) + Op.PUSH1(0) + Op.SSTORE
+
+    pre[addr_1] = Account(code=code, storage=storage, balance=balance)
+    post[addr_1] = Account(code=code, storage=storage)
+
+    yield StateTest(env=env, pre=pre, post=post, txs=[tx], name=name)
+
+    """
+    Test Case 3: Call LT with insufficient gas.
+
+    Tx should revert; storage should remain unchanged.
+    """
+    name = "lt_reverts_tx_with_insufficient_gas"
+
+    code = Op.PUSH1(0) + Op.PUSH1(1) + Op.LT
+    code += Op.PUSH1(2) + Op.PUSH1(0) + Op.SSTORE
+
+    pre[addr_1] = Account(code=code, storage=storage, balance=balance)
+    post[addr_1] = Account(code=code, storage=storage)
+
+    tx = Transaction(
+        ty=0x0,
+        chain_id=0x0,
+        to=addr_1,
+        gas_limit=21006,
+        gas_price=10,
+        protected=False,
+    )
+    yield StateTest(env=env, pre=pre, post=post, txs=[tx], name=name)
