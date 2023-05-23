@@ -21,6 +21,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://execution-spec-tests.readthedocs.io/fillers/eips/eip3651/</loc>
+         <lastmod>2023-05-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://execution-spec-tests.readthedocs.io/fillers/eips/eip3855/</loc>
+         <lastmod>2023-05-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://execution-spec-tests.readthedocs.io/fillers/eips/eip3860/</loc>
+         <lastmod>2023-05-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://execution-spec-tests.readthedocs.io/getting_started/package_overview/</loc>
          <lastmod>2023-05-23</lastmod>
          <changefreq>daily</changefreq>
