@@ -6,6 +6,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://execution-spec-tests.readthedocs.io/dev/dev/</loc>
+         <lastmod>2023-05-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://execution-spec-tests.readthedocs.io/dev/docs/</loc>
+         <lastmod>2023-05-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://execution-spec-tests.readthedocs.io/fillers/withdrawals/</loc>
          <lastmod>2023-05-23</lastmod>
          <changefreq>daily</changefreq>
