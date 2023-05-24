@@ -121,10 +121,6 @@
       
     </div>
     
-      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
-        
-      </div>
-    
     
       
 
@@ -853,9 +849,9 @@
   
 
 
-<h1 id="execution-specification-test-cases">🧪 Execution Specification Test Cases<a class="headerlink" href="#execution-specification-test-cases" title="Permanent link">#</a></h1>
+<h1 id="execution-specification-test-cases">🧪 Execution Specification Test Cases<a class="headerlink" href="#execution-specification-test-cases" title="Permanent link">&para;</a></h1>
 <p><strong>Note:</strong> <em>This is still a WIP but the tests can still be used by any client team. The priority levels (🔴, 🟠, 🟡, 🟢) represent very high, high, medium, low  priorities respectively.</em></p>
-<h2 id="datahash-opcode">📖 Datahash Opcode<a class="headerlink" href="#datahash-opcode" title="Permanent link">#</a></h2>
+<h2 id="datahash-opcode">📖 Datahash Opcode<a class="headerlink" href="#datahash-opcode" title="Permanent link">&para;</a></h2>
 <p>Test Module - <code>eip4844/datahash_opcode.py</code></p>
 <p>Verifies that the <code>DATAHASH</code> opcode, works as intended for a variety of contexts, retrieves the blob versioned hash correctly for a given index, returns the correct zeroed <code>bytes32</code> value for out-of-range indices, and consumes the correct amount of gas.</p>
 <p><strong>1) 🔴 test_datahash_opcode_contexts():</strong></p>
@@ -874,18 +870,18 @@
 <p>Asserts the gas consumption of the <code>DATAHASH</code> opcode is correct by ensuring it matches <code>HASH_OPCODE_GAS = 3</code>. It includes both valid and invalid random index sizes from the range <code>[0, 2**256-1]</code>, for tx types 2 and 3.</p>
 <p><strong>5) 🟡 test_datahash_multiple_txs_in_block():</strong></p>
 <p>Tests that the <code>DATAHASH</code> opcode returns the appropriate values when there is more than one blob tx type within a block (for tx types 2 and 3). Scenarios involve tx type 3 followed by tx type 2 running the same code within a block. In this case <code>DATAHASH</code> returns 0, but for the opposite scenario <code>DATAHASH</code> returns the correct <code>blob_versioned_hash</code>.</p>
-<h2 id="excess-data-gas">💽⛽💸 Excess Data Gas<a class="headerlink" href="#excess-data-gas" title="Permanent link">#</a></h2>
+<h2 id="excess-data-gas">💽⛽💸 Excess Data Gas<a class="headerlink" href="#excess-data-gas" title="Permanent link">&para;</a></h2>
 <p>Test Module - <code>eip4844/excess_data_gas.py</code></p>
 <p>Predominantly verifies that <code>excess_data_gas</code> &amp; <code>data_gasprice</code> are calculated correctly ensuring both valid and invalid transactions are processed accordingly. Extra verification is added specifically for invalid blob transactions when the <code>max_fee_per_data_gas</code>, number of blobs or transaction type are errorneous. </p>
 <p><strong>1) 🔴 test_excess_data_gas_calculation():</strong></p>
 <p>Tests that the <code>excess_data_gas</code> is calculated correctly within a single block for various contexts, where the <code>parent.excess_data_gas</code> and the proposed block <code>excess_data_gas</code> have a variety of values. The excess data gas is calculated using the following formula:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">calc_excess_data_gas</span><span class="p">(</span><span class="n">parent</span><span class="p">:</span> <span class="n">Header</span><span class="p">,</span> <span class="n">new_blobs</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">consumed_data_gas</span> <span class="o">=</span> <span class="n">new_blobs</span> <span class="o">*</span> <span class="n">DATA_GAS_PER_BLOB</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="k">if</span> <span class="n">parent</span><span class="o">.</span><span class="n">excess_data_gas</span> <span class="o">+</span> <span class="n">consumed_data_gas</span> <span class="o">&lt;</span> <span class="n">TARGET_DATA_GAS_PER_BLOCK</span><span class="p">:</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="k">return</span> <span class="mi">0</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="k">else</span><span class="p">:</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="k">return</span> <span class="n">parent</span><span class="o">.</span><span class="n">excess_data_gas</span> <span class="o">+</span> <span class="n">consumed_data_gas</span> <span class="o">-</span> <span class="n">TARGET_DATA_GAS_PER_BLOCK</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">calc_excess_data_gas</span><span class="p">(</span><span class="n">parent</span><span class="p">:</span> <span class="n">Header</span><span class="p">,</span> <span class="n">new_blobs</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">consumed_data_gas</span> <span class="o">=</span> <span class="n">new_blobs</span> <span class="o">*</span> <span class="n">DATA_GAS_PER_BLOB</span>
+    <span class="k">if</span> <span class="n">parent</span><span class="o">.</span><span class="n">excess_data_gas</span> <span class="o">+</span> <span class="n">consumed_data_gas</span> <span class="o">&lt;</span> <span class="n">TARGET_DATA_GAS_PER_BLOCK</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">parent</span><span class="o">.</span><span class="n">excess_data_gas</span> <span class="o">+</span> <span class="n">consumed_data_gas</span> <span class="o">-</span> <span class="n">TARGET_DATA_GAS_PER_BLOCK</span>
+</code></pre></div>
 <p>For blocks to be valid in these contexts they must meet the following conditions of the EIP:
   - Each block can only have a maximum of <code>MAX_BLOBS_PER_BLOCK</code>.
   - A type 5 blob transaction must have at least one blob - <code>len(versioned_hashes) &gt; 0</code>.
@@ -987,7 +983,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "search.suggest", "search.highlight", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "search.suggest", "search.highlight", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>

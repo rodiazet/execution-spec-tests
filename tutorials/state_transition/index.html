@@ -121,10 +121,6 @@
       
     </div>
     
-      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
-        
-      </div>
-    
     
       
 
@@ -975,9 +971,9 @@
   
 
 
-<h1 id="state-transition-tests">State Transition Tests<a class="headerlink" href="#state-transition-tests" title="Permanent link">#</a></h1>
+<h1 id="state-transition-tests">State Transition Tests<a class="headerlink" href="#state-transition-tests" title="Permanent link">&para;</a></h1>
 <p>This tutorial teaches you to create a state transition execution specification test. These tests verify that a blockchain, starting from a defined pre-state, will reach a specified post-state after executing a set of specific transactions.</p>
-<h2 id="pre-requisites">Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">#</a></h2>
+<h2 id="pre-requisites">Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">&para;</a></h2>
 <p>Before proceeding with this tutorial, it is assumed that you have prior knowledge and experience with the following:</p>
 <ul>
 <li>Set up and run an execution specification test as outlined in the <a href="../../getting_started/quick_start/">quick start guide</a>.</li>
@@ -985,38 +981,38 @@
 <li>Know the basics of <a href="https://docs.soliditylang.org/en/latest/yul.html">Yul</a>, which is an EVM assembly language.</li>
 <li>Familiarity with <a href="https://docs.python.org/3/tutorial/">Python</a>.</li>
 </ul>
-<h2 id="example-tests">Example Tests<a class="headerlink" href="#example-tests" title="Permanent link">#</a></h2>
+<h2 id="example-tests">Example Tests<a class="headerlink" href="#example-tests" title="Permanent link">&para;</a></h2>
 <p>The most effective method of learning how to write tests is to study a couple of straightforward examples. In this tutorial we will go over the <a href="https://github.com/ethereum/execution-spec-tests/blob/main/fillers/example/yul_example.py#L17">Yul</a> and <a href="https://github.com/ethereum/execution-spec-tests/blob/main/fillers/example/bad_opcode_example.py">Bad Opcode</a> state tests.</p>
-<h3 id="yul-test">Yul Test<a class="headerlink" href="#yul-test" title="Permanent link">#</a></h3>
+<h3 id="yul-test">Yul Test<a class="headerlink" href="#yul-test" title="Permanent link">&para;</a></h3>
 <p>You can find the source code for the Yul test <a href="https://github.com/ethereum/execution-spec-tests/tree/main/fillers/example/example.py">here</a>.
 It is the spec test equivalent of this <a href="https://github.com/ethereum/tests/blob/develop/src/GeneralStateTestsFiller/stExample/yulExampleFiller.yml">static test</a>. </p>
 <p>Lets examine each section.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="sd">Test Yul Source Code Examples</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sd">&quot;&quot;&quot;</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Test Yul Source Code Examples</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</code></pre></div>
 <p>In Python, multi-line strings are denoted using <code>"""</code>. As a convention, a file's purpose is often described in the opening string of the file.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">ethereum_test_tools</span> <span class="kn">import</span> <span class="p">(</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">Account</span><span class="p">,</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">Environment</span><span class="p">,</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">StateTest</span><span class="p">,</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">TestAddress</span><span class="p">,</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">Transaction</span><span class="p">,</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="n">Yul</span><span class="p">,</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">test_from</span><span class="p">,</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">)</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ethereum_test_tools</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Account</span><span class="p">,</span>
+    <span class="n">Environment</span><span class="p">,</span>
+    <span class="n">StateTest</span><span class="p">,</span>
+    <span class="n">TestAddress</span><span class="p">,</span>
+    <span class="n">Transaction</span><span class="p">,</span>
+    <span class="n">Yul</span><span class="p">,</span>
+    <span class="n">test_from</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
 <p>Next the following constants, types and helper functions are imported from <code>ethereum_test_tools</code> and <code>ethereum_test_forks</code>. We will go over these as we come across them.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nd">@test_from</span><span class="p">(</span><span class="n">Berlin</span><span class="p">)</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nd">@test_from</span><span class="p">(</span><span class="n">Berlin</span><span class="p">)</span>
+</code></pre></div>
 <p>In Python this kind of definition is called a <a href="https://docs.python.org/3/search.html?q=decorator"><em>decorator</em></a>.
 It modifies the action of the function after it.
 In this case, it specifies to the test running code that the following function is only a valid test for the <a href="https://ethereum.org/en/history/#berlin">Berlin fork</a> and the forks after it.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span> <span class="nf">test_yul</span><span class="p">(</span><span class="n">fork</span><span class="p">):</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="sd">    Test YUL compiled bytecode.</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_yul</span><span class="p">(</span><span class="n">fork</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Test YUL compiled bytecode.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div>
 <p>This is the format of a <a href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions">Python function</a>.
 It starts with <code>def &lt;function name&gt;(&lt;parameters&gt;):</code>, and then has indented code for the function.
 The function definition ends when there is a line that is no longer indented. As with files, by convention functions start with a string that explains what the function does.</p>
@@ -1024,115 +1020,115 @@ The function definition ends when there is a line that is no longer indented. As
 <p class="admonition-title">Note</p>
 <p>Recall from <a href="../../getting_started/01_quick_start/#generating-the-execution-spec-tests-for-use-with-clients">quick start</a> that to solely run the test case <code>test_yul</code> we ommit <code>test_</code> from the test filler: <code>tf --test-case yul --output fixtures</code>.</p>
 </div>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>    <span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">()</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>    <span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">()</span>
+</code></pre></div>
 <p>This line specifies that <code>env</code> is an <a href="https://github.com/ethereum/execution-spec-tests/blob/main/src/ethereum_test_tools/common/types.py#L445"><code>Environment</code></a> object, and that we just use the default parameters.
 If necessary we can modify the environment to have different block gas limits, block numbers, etc.
 In most tests the defaults are good enough.</p>
 <p>For more information, <a href="https://ethereum-tests.readthedocs.io/en/latest/test_filler/state_filler.html#env">see the static test documentation</a>.</p>
-<h4 id="pre-state">Pre State<a class="headerlink" href="#pre-state" title="Permanent link">#</a></h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>    <span class="n">pre</span> <span class="o">=</span> <span class="p">{</span>
-</span></code></pre></div>
+<h4 id="pre-state">Pre State<a class="headerlink" href="#pre-state" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>    <span class="n">pre</span> <span class="o">=</span> <span class="p">{</span>
+</code></pre></div>
 <p>Here we define the pre-state section, the one that tells us what is on the "blockchain" before the test.
 It is a <a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">dictionary</a>, which is the Python term for an associative array.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>        <span class="s2">&quot;0x1000000000000000000000000000000000000000&quot;</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>        <span class="s2">&quot;0x1000000000000000000000000000000000000000&quot;</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span>
+</code></pre></div>
 <p>The keys of the dictionary are addresses (as strings), and the values are <a href="https://github.com/ethereum/execution-spec-tests/blob/main/src/ethereum_test_tools/common/types.py#L264"><code>Account</code></a> objects.
 You can read more about address fields <a href="https://ethereum-tests.readthedocs.io/en/latest/test_filler/state_filler.html#address-fields">in the static test documentation</a>. </p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>            <span class="n">balance</span><span class="o">=</span><span class="mh">0x0BA1A9CE0BA1A9CE</span><span class="p">,</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>            <span class="n">balance</span><span class="o">=</span><span class="mh">0x0BA1A9CE0BA1A9CE</span><span class="p">,</span>
+</code></pre></div>
 <p>This field is the balance: the amount of Wei that the account has. It usually doesn't matter what its value is in the case of state test contracts.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>            <span class="n">code</span><span class="o">=</span><span class="n">Yul</span><span class="p">(</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>            <span class="n">code</span><span class="o">=</span><span class="n">Yul</span><span class="p">(</span>
+</code></pre></div>
 <p>Here we define the <a href="https://docs.soliditylang.org/en/v0.8.17/yul.html">Yul</a> code for the contract. It is defined as a multi-line string and starts and ends with curly braces (<code>{ &lt;yul&gt; }</code>).</p>
 <p>When running the test filler <code>tf</code> the solidity compiler <code>solc</code> will automatically translate the Yul to EVM opcode at runtime. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Currently Yul and direct EVM opcode are supported in execution spec tests. LLL and Solidity may be supported in the future.</p>
 </div>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">                </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="sd">                {</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="sd">                    function f(a, b) -&gt; c {</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="sd">                        c := add(a, b)</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="sd">                    }</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="sd">                    sstore(0, f(1, 2))</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="sd">                    return(0, 32)</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="sd">                }</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="sd">                &quot;&quot;&quot;</span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>            <span class="p">),</span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>        <span class="p">),</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="w">                </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                {</span>
+<span class="sd">                    function f(a, b) -&gt; c {</span>
+<span class="sd">                        c := add(a, b)</span>
+<span class="sd">                    }</span>
+<span class="sd">                    sstore(0, f(1, 2))</span>
+<span class="sd">                    return(0, 32)</span>
+<span class="sd">                }</span>
+<span class="sd">                &quot;&quot;&quot;</span>
+            <span class="p">),</span>
+        <span class="p">),</span>
+</code></pre></div>
 <p>Within this example test Yul code we have a function definition, and inside it we are using the Yul <code>add</code> instruction. When compiled with <code>solc</code> it translates the instruction directly to the<code>ADD</code> opcode. For further Yul instructions <a href="https://docs.soliditylang.org/en/latest/yul.html#evm-dialect">see here</a>. Notice that function is utilised with the Yul <code>sstore</code> instruction, which stores the result of <code>add(1, 2)</code> to the storage address <code>0x00</code>.</p>
 <p>Generally for execution spec tests the <code>sstore</code> instruction acts as a high-level assertion method to check pre to post-state changes. The test filler achieves this by verifying that the correct value is held within post-state storage, hence we can validate that the Yul code has run successfully.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>        <span class="n">TestAddress</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span><span class="n">balance</span><span class="o">=</span><span class="mh">0x0BA1A9CE0BA1A9CE</span><span class="p">),</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="p">}</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>        <span class="n">TestAddress</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span><span class="n">balance</span><span class="o">=</span><span class="mh">0x0BA1A9CE0BA1A9CE</span><span class="p">),</span>
+    <span class="p">}</span>
+</code></pre></div>
 <p><a href="https://github.com/ethereum/execution-spec-tests/blob/main/src/ethereum_test_tools/common/constants.py#L8"><code>TestAddress</code></a> is an address for which the test filler has the private key.
 This means that the test runner can issue a transaction as that contract.
 Of course, this address also needs a balance to be able to issue transactions.</p>
-<h4 id="transactions">Transactions<a class="headerlink" href="#transactions" title="Permanent link">#</a></h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>    <span class="n">tx</span> <span class="o">=</span> <span class="n">Transaction</span><span class="p">(</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>        <span class="n">ty</span><span class="o">=</span><span class="mh">0x0</span><span class="p">,</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>        <span class="n">chain_id</span><span class="o">=</span><span class="mh">0x0</span><span class="p">,</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>        <span class="n">nonce</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>        <span class="n">to</span><span class="o">=</span><span class="s2">&quot;0x1000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        <span class="n">gas_limit</span><span class="o">=</span><span class="mi">500000</span><span class="p">,</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>        <span class="n">gas_price</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>        <span class="n">protected</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    <span class="p">)</span>
-</span></code></pre></div>
+<h4 id="transactions">Transactions<a class="headerlink" href="#transactions" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>    <span class="n">tx</span> <span class="o">=</span> <span class="n">Transaction</span><span class="p">(</span>
+        <span class="n">ty</span><span class="o">=</span><span class="mh">0x0</span><span class="p">,</span>
+        <span class="n">chain_id</span><span class="o">=</span><span class="mh">0x0</span><span class="p">,</span>
+        <span class="n">nonce</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">to</span><span class="o">=</span><span class="s2">&quot;0x1000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+        <span class="n">gas_limit</span><span class="o">=</span><span class="mi">500000</span><span class="p">,</span>
+        <span class="n">gas_price</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">protected</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
 <p>With the pre-state specified, we can add a description for the <a href="https://github.com/ethereum/execution-spec-tests/blob/main/src/ethereum_test_tools/common/types.py#L516"><code>Transaction</code></a>.
 For more information, <a href="https://ethereum-tests.readthedocs.io/en/latest/test_filler/state_filler.html#transaction">see the static test documentation</a></p>
-<h4 id="post-state">Post State<a class="headerlink" href="#post-state" title="Permanent link">#</a></h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>    <span class="n">post</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>        <span class="s2">&quot;0x1000000000000000000000000000000000000000&quot;</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>            <span class="n">storage</span><span class="o">=</span><span class="p">{</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>                <span class="mh">0x00</span><span class="p">:</span> <span class="mh">0x03</span><span class="p">,</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>            <span class="p">},</span>
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>        <span class="p">),</span>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    <span class="p">}</span>
-</span></code></pre></div>
+<h4 id="post-state">Post State<a class="headerlink" href="#post-state" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>    <span class="n">post</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;0x1000000000000000000000000000000000000000&quot;</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span>
+            <span class="n">storage</span><span class="o">=</span><span class="p">{</span>
+                <span class="mh">0x00</span><span class="p">:</span> <span class="mh">0x03</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">),</span>
+    <span class="p">}</span>
+</code></pre></div>
 <p>This is the post-state which is equivalent to <a href="https://ethereum-tests.readthedocs.io/en/latest/test_filler/state_filler.html#expect"><code>expect</code></a> in static tests, but without the indexes. It is similar to the pre-state, except that we do not need to specify everything, only those accounts and fields we wish to test.</p>
 <p>In this case, we look at the storage of the contract we called and add to it what we expect to see. In this example storage cell <code>0x00</code> should be <code>0x03</code> as in the pre-state we essentially stored the result of the Yul instruction <code>add(1, 2)</code>.</p>
-<h4 id="state-test">State Test<a class="headerlink" href="#state-test" title="Permanent link">#</a></h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>    <span class="k">yield</span> <span class="n">StateTest</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span> <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">,</span> <span class="n">txs</span><span class="o">=</span><span class="p">[</span><span class="n">tx</span><span class="p">])</span>
-</span></code></pre></div>
+<h4 id="state-test">State Test<a class="headerlink" href="#state-test" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>    <span class="k">yield</span> <span class="n">StateTest</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span> <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">,</span> <span class="n">txs</span><span class="o">=</span><span class="p">[</span><span class="n">tx</span><span class="p">])</span>
+</code></pre></div>
 <p>This line produces the actual state test using the <code>ethereum_test_tools</code>  spec package, when running the test filler. It is <code>yield</code>, rather than <code>return</code>, because a single function can return multiple test cases as you'll see in the next example.</p>
-<h3 id="bad-opcode-test">Bad Opcode Test<a class="headerlink" href="#bad-opcode-test" title="Permanent link">#</a></h3>
+<h3 id="bad-opcode-test">Bad Opcode Test<a class="headerlink" href="#bad-opcode-test" title="Permanent link">&para;</a></h3>
 <p>The source code for this test is <a href="https://github.com/ethereum/execution-spec-tests/tree/main/fillers/vm/opcode_tests.py">here</a>.
 We will only go over the parts that are new.</p>
 <p>We use <a href="https://docs.python.org/3/library/string.html#template-strings">Python string templates</a>, so we need to import that library.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">Template</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">Template</span>
+</code></pre></div>
 <p>In this test we need a couple of addresses, so we create them here.
 Python lets us specify <code>&lt;string&gt;*&lt;number&gt;</code> when we need a string repeated multiple times, which makes for more readable code than <code>0x00...000C0DE</code>.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>    <span class="n">code_addr</span> <span class="o">=</span> <span class="s2">&quot;0x&quot;</span> <span class="o">+</span> <span class="s2">&quot;0&quot;</span><span class="o">*</span><span class="p">(</span><span class="mi">40</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;C0DE&quot;</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="n">goat_addr</span> <span class="o">=</span> <span class="s2">&quot;0x&quot;</span> <span class="o">+</span> <span class="s2">&quot;0&quot;</span><span class="o">*</span><span class="p">(</span><span class="mi">40</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;60A7&quot;</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>    <span class="n">code_addr</span> <span class="o">=</span> <span class="s2">&quot;0x&quot;</span> <span class="o">+</span> <span class="s2">&quot;0&quot;</span><span class="o">*</span><span class="p">(</span><span class="mi">40</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;C0DE&quot;</span>
+    <span class="n">goat_addr</span> <span class="o">=</span> <span class="s2">&quot;0x&quot;</span> <span class="o">+</span> <span class="s2">&quot;0&quot;</span><span class="o">*</span><span class="p">(</span><span class="mi">40</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;60A7&quot;</span>
+</code></pre></div>
 <p>We create <code>env</code> and <code>tx</code> first because they are constant.
 This function will <code>yield</code> multiple tests, but always with the same <code>env</code> and <code>tx</code> values.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>    <span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">()</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="n">tx</span> <span class="o">=</span> <span class="n">Transaction</span><span class="p">(</span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>           <span class="o">.</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>           <span class="o">.</span>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>           <span class="o">.</span>
-</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>        <span class="p">)</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>    <span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">()</span>
+
+    <span class="n">tx</span> <span class="o">=</span> <span class="n">Transaction</span><span class="p">(</span>
+           <span class="o">.</span>
+           <span class="o">.</span>
+           <span class="o">.</span>
+        <span class="p">)</span>
+</code></pre></div>
 <p>Here we create two post states.
 We will use whichever one is appropriate to the test we create.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>    <span class="n">post_valid</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>       <span class="n">code_addr</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>         <span class="n">storage</span><span class="o">=</span><span class="p">{</span><span class="mh">0x00</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>       <span class="p">),</span>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    <span class="p">}</span>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>    <span class="n">post_invalid</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>       <span class="n">code_addr</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span>
-</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>         <span class="n">storage</span><span class="o">=</span><span class="p">{</span><span class="mh">0x00</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
-</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>       <span class="p">),</span>
-</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>    <span class="p">}</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>    <span class="n">post_valid</span> <span class="o">=</span> <span class="p">{</span>
+       <span class="n">code_addr</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span>
+         <span class="n">storage</span><span class="o">=</span><span class="p">{</span><span class="mh">0x00</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+       <span class="p">),</span>
+    <span class="p">}</span>
+
+    <span class="n">post_invalid</span> <span class="o">=</span> <span class="p">{</span>
+       <span class="n">code_addr</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span>
+         <span class="n">storage</span><span class="o">=</span><span class="p">{</span><span class="mh">0x00</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+       <span class="p">),</span>
+    <span class="p">}</span>
+</code></pre></div>
 <p>Here we define a function (<code>opc_valid</code>) inside another function.
 Python supports this, and it has two advantages:</p>
 <ul>
@@ -1140,104 +1136,104 @@ Python supports this, and it has two advantages:</p>
 <li>Functions defined inside other functions can use the parameters and local variables of those functions.
   In this case, we need to use <code>fork</code>.</li>
 </ul>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>    <span class="c1"># Check if an Opcode is valid</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="k">def</span> <span class="nf">opc_valid</span><span class="p">(</span><span class="n">opc</span><span class="p">):</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="sd">        Return whether opc will be evaluated as valid by the test or not.</span>
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="sd">        Note that some opcodes are evaluated as invalid because the way they act</span>
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="sd">        &quot;&quot;&quot;</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>    <span class="c1"># Check if an Opcode is valid</span>
+    <span class="k">def</span> <span class="nf">opc_valid</span><span class="p">(</span><span class="n">opc</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return whether opc will be evaluated as valid by the test or not.</span>
+<span class="sd">        Note that some opcodes are evaluated as invalid because the way they act</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+</code></pre></div>
 <p>This is the syntax for Python comments, <code># &lt;rest of the line&gt;</code>. </p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>        <span class="c1"># PUSH0 is only valid Shanghai and later</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>        <span class="c1"># PUSH0 is only valid Shanghai and later</span>
+</code></pre></div>
 <p>Opcode 0x5F (<code>PUSH0</code>) is only valid starting with the Shangai fork.
 We don't know what will be the fork names after Shanghai, so it is easiest to specify that prior to Shanghai it is invalid.
 We don't need to worry about forks prior to London because the decorator for this test says it is only valid from London.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>        <span class="k">if</span> <span class="n">fork</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;london&quot;</span><span class="p">,</span> <span class="s2">&quot;merge&quot;</span><span class="p">}</span> <span class="ow">and</span> <span class="n">opc</span><span class="o">==</span><span class="mh">0x5F</span><span class="p">:</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>        <span class="k">if</span> <span class="n">fork</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;london&quot;</span><span class="p">,</span> <span class="s2">&quot;merge&quot;</span><span class="p">}</span> <span class="ow">and</span> <span class="n">opc</span><span class="o">==</span><span class="mh">0x5F</span><span class="p">:</span>
+</code></pre></div>
 <p>Python has a <a href="https://docs.python.org/3/tutorial/datastructures.html#sets">set data structure</a>.
 We use this structure when the order of the values are irrelevant, and we just want to be able to check if something is a member or not.</p>
 <p>Note that <a href="https://docs.python.org/3/tutorial/controlflow.html#if-statements"><code>if</code> statements</a> are also followed by a colon (<code>:</code>) and the code inside them indented.
 That is the general Python syntax.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>            <span class="k">return</span> <span class="kc">False</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>            <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
 <p>Boolean values in Python are either <code>True</code> or <code>False</code>.</p>
 <p>This test works by running an opcode and then does a <a href="https://www.evm.codes/#55?fork=merge"><code>SSTORE</code></a>.
 Opcodes that terminate execution, such as <a href="https://www.evm.codes/#00?fork=merge"><code>STOP</code></a> and <a href="https://www.evm.codes/#f3?fork=merge"><code>RETURN</code></a> also cause the <code>SSTORE</code> not to happen, so they must be treated as invalid.
 The same is true for <a href="https://www.evm.codes/#56?fork=merge"><code>JUMP</code></a>.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>        <span class="c1"># Valid opcodes, but they are terminal, and so cause</span>
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>        <span class="c1"># the SSTORE not to happen</span>
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>        <span class="k">if</span> <span class="n">opc</span> <span class="ow">in</span> <span class="p">{</span><span class="mh">0x00</span><span class="p">,</span> <span class="mh">0xF3</span><span class="p">,</span> <span class="mh">0xFD</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">}:</span>
-</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>            <span class="k">return</span> <span class="kc">False</span>
-</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>
-</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
-</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>        <span class="c1"># Jumps. If you jump to a random location, you skip the SSTORE</span>
-</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>        <span class="k">if</span> <span class="n">opc</span> <span class="ow">in</span> <span class="p">{</span><span class="mh">0x56</span><span class="p">}:</span>
-</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>            <span class="k">return</span> <span class="kc">False</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>        <span class="c1"># Valid opcodes, but they are terminal, and so cause</span>
+        <span class="c1"># the SSTORE not to happen</span>
+        <span class="k">if</span> <span class="n">opc</span> <span class="ow">in</span> <span class="p">{</span><span class="mh">0x00</span><span class="p">,</span> <span class="mh">0xF3</span><span class="p">,</span> <span class="mh">0xFD</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">}:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+
+        <span class="c1"># Jumps. If you jump to a random location, you skip the SSTORE</span>
+        <span class="k">if</span> <span class="n">opc</span> <span class="ow">in</span> <span class="p">{</span><span class="mh">0x56</span><span class="p">}:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
 <p>Next we return <code>True</code> for supported opcodes.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>        <span class="c1"># Opcodes that aren&#39;t part of a range</span>
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>        <span class="c1"># 0x20 - SHA3</span>
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>        <span class="c1"># 0xFA - STATICCALL</span>
-</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>        <span class="k">if</span> <span class="n">opc</span> <span class="ow">in</span> <span class="p">{</span><span class="mh">0x20</span><span class="p">,</span> <span class="mh">0xFA</span><span class="p">}:</span>
-</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>            <span class="k">return</span> <span class="kc">True</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>        <span class="c1"># Opcodes that aren&#39;t part of a range</span>
+        <span class="c1"># 0x20 - SHA3</span>
+        <span class="c1"># 0xFA - STATICCALL</span>
+        <span class="k">if</span> <span class="n">opc</span> <span class="ow">in</span> <span class="p">{</span><span class="mh">0x20</span><span class="p">,</span> <span class="mh">0xFA</span><span class="p">}:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div>
 <p>In Python, as in math, you can use <code>a &lt; b &lt; c</code> for <code>a &lt; b and b &lt; c</code>.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>        <span class="c1"># Arithmetic opcodes</span>
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>        <span class="k">if</span> <span class="mh">0x01</span> <span class="o">&lt;=</span> <span class="n">opc</span> <span class="o">&lt;=</span> <span class="mh">0x0b</span><span class="p">:</span>
-</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>            <span class="k">return</span> <span class="kc">True</span>
-</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>
-</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>        <span class="o">.</span>
-</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>        <span class="o">.</span>
-</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>        <span class="o">.</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>        <span class="c1"># Arithmetic opcodes</span>
+        <span class="k">if</span> <span class="mh">0x01</span> <span class="o">&lt;=</span> <span class="n">opc</span> <span class="o">&lt;=</span> <span class="mh">0x0b</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+        <span class="o">.</span>
+        <span class="o">.</span>
+        <span class="o">.</span>
+</code></pre></div>
 <p>The last part the function returns <code>False</code>.
 If we got here, then this is not a valid opcode.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>        <span class="k">return</span> <span class="kc">False</span>
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>        <span class="c1"># End of opc_valid</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>        <span class="k">return</span> <span class="kc">False</span>
+        <span class="c1"># End of opc_valid</span>
+</code></pre></div>
 <p>As this is the end of the function, the next code line is unindented (compared to the function definition code).</p>
 <p>This is a <a href="https://docs.python.org/3/tutorial/controlflow.html#for-statements"><code>for</code> loop</a>.
 For loops iterate over a sequnce, and the <a href="https://docs.python.org/3/tutorial/controlflow.html#the-range-function"><code>range</code></a> function, in this case, gives us the range 0..255.
 As with functions and <code>if</code> statements, the <code>for</code> loop has a colon and includes the indented code.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>    <span class="c1"># For every possible opcode</span>
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>    <span class="k">for</span> <span class="n">opc</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">):</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>    <span class="c1"># For every possible opcode</span>
+    <span class="k">for</span> <span class="n">opc</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">):</span>
+</code></pre></div>
 <p>We have two post states. 
 One, <code>post_valid</code>, has the value of <code>1</code> in storage location <code>0</code>.
 The other, <code>post_invalid</code> has the value of <code>0</code> in storage location <code>0</code>.
 But <code>SELFDESTRUCT</code> destroys the contract so there is no longer an account at that address. 
 Neither is valid, so we just skip that test case.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>        <span class="c1"># We can&#39;t check SELFDESTRUCT using this technique</span>
-</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>        <span class="k">if</span> <span class="n">opc</span> <span class="ow">in</span> <span class="p">{</span><span class="mh">0xFF</span><span class="p">}:</span>
-</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>           <span class="k">continue</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>        <span class="c1"># We can&#39;t check SELFDESTRUCT using this technique</span>
+        <span class="k">if</span> <span class="n">opc</span> <span class="ow">in</span> <span class="p">{</span><span class="mh">0xFF</span><span class="p">}:</span>
+           <span class="k">continue</span>
+</code></pre></div>
 <p>We need the opcode in hexadecimal. 
 The function <a href="https://docs.python.org/3/library/functions.html#hex"><code>hex</code></a> gives us the hexadecimal number in hex.
 However, it also gives us a <code>0x</code> prefix, which we don't want, so we use a <a href="https://www.w3schools.com/python/gloss_python_string_slice.asp">slice</a> to remove the first two characters.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>        <span class="n">opc_hex</span> <span class="o">=</span> <span class="nb">hex</span><span class="p">(</span><span class="n">opc</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>        <span class="n">opc_hex</span> <span class="o">=</span> <span class="nb">hex</span><span class="p">(</span><span class="n">opc</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span>
+</code></pre></div>
 <p>We need <code>opc_hex</code> to be two characters.
 If the length is only one, prepend a zero.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">opc_hex</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>          <span class="n">opc_hex</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="o">+</span> <span class="n">opc_hex</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">opc_hex</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+          <span class="n">opc_hex</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="o">+</span> <span class="n">opc_hex</span>
+</code></pre></div>
 <p>This is a <a href="https://docs.python.org/3/library/string.html#template-strings"><code>Template</code> string</a>.
 This means we'll be able to substitute template variables (<code>${&lt;var name&gt;}</code>) with values to produce the actual code.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>        <span class="n">yul_code</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="s2">        {</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>        <span class="n">yul_code</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        {</span>
+</code></pre></div>
 <p>We start with a call <code>0x00...0060A7</code> (a.k.a. <code>goat_addr</code>) so we'll have some return data.
 Otherwise, <a href="https://www.evm.codes/#3e?fork=merge"><code>RETURNDATACOPY</code></a> will fail and appear like it is not an opcode.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>           <span class="n">pop</span><span class="p">(</span><span class="n">call</span><span class="p">(</span><span class="n">gas</span><span class="p">(),</span> <span class="mh">0x60A7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
-</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>           <span class="o">//</span> <span class="n">fails</span> <span class="n">on</span> <span class="n">opcodes</span> <span class="k">with</span> <span class="o">&gt;</span><span class="mi">20</span> <span class="n">inputs</span>
-</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>           <span class="o">//</span> <span class="p">(</span><span class="n">currently</span> <span class="n">dup16</span><span class="p">,</span> <span class="n">at</span> <span class="mi">17</span> <span class="n">inputs</span><span class="p">,</span> <span class="ow">is</span> <span class="n">the</span>
-</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>           <span class="o">//</span> <span class="n">one</span> <span class="n">that</span> <span class="n">goes</span> <span class="n">deepest</span><span class="p">)</span>
-</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>           <span class="o">//</span>
-</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>           <span class="o">//</span> <span class="n">Follow</span> <span class="k">with</span> <span class="mi">32</span> <span class="n">NOPs</span> <span class="p">(</span><span class="mh">0x5B</span><span class="p">)</span> <span class="n">to</span> <span class="n">handle</span> <span class="n">PUSH</span><span class="p">,</span> <span class="n">which</span> <span class="n">has</span> <span class="n">an</span> <span class="n">immediate</span>
-</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>           <span class="o">//</span> <span class="n">operand</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>           <span class="n">pop</span><span class="p">(</span><span class="n">call</span><span class="p">(</span><span class="n">gas</span><span class="p">(),</span> <span class="mh">0x60A7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+           <span class="o">//</span> <span class="n">fails</span> <span class="n">on</span> <span class="n">opcodes</span> <span class="k">with</span> <span class="o">&gt;</span><span class="mi">20</span> <span class="n">inputs</span>
+           <span class="o">//</span> <span class="p">(</span><span class="n">currently</span> <span class="n">dup16</span><span class="p">,</span> <span class="n">at</span> <span class="mi">17</span> <span class="n">inputs</span><span class="p">,</span> <span class="ow">is</span> <span class="n">the</span>
+           <span class="o">//</span> <span class="n">one</span> <span class="n">that</span> <span class="n">goes</span> <span class="n">deepest</span><span class="p">)</span>
+           <span class="o">//</span>
+           <span class="o">//</span> <span class="n">Follow</span> <span class="k">with</span> <span class="mi">32</span> <span class="n">NOPs</span> <span class="p">(</span><span class="mh">0x5B</span><span class="p">)</span> <span class="n">to</span> <span class="n">handle</span> <span class="n">PUSH</span><span class="p">,</span> <span class="n">which</span> <span class="n">has</span> <span class="n">an</span> <span class="n">immediate</span>
+           <span class="o">//</span> <span class="n">operand</span>
+</code></pre></div>
 <p>Opcodes can have two types of operands:</p>
 <ul>
 <li>Immediate operands, which are part of the bytecode.
@@ -1247,57 +1243,57 @@ Otherwise, <a href="https://www.evm.codes/#3e?fork=merge"><code>RETURNDATACOPY</
 <p>This <a href="https://docs.soliditylang.org/en/v0.8.17/yul.html#verbatim"><code>verbatim</code></a> code provides both operand types.
 The code, <code>${opcode}${nop32}</code> is the opcode we are testing, followed by 32 copies of 0x5B.
 When <code>0x5B</code> is not used as an operand, it is <a href="https://www.evm.codes/#5b?fork=merge"><code>JUMPDEST</code></a> and does nothing.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>           <span class="n">verbatim_20i_0o</span><span class="p">(</span><span class="nb">hex</span><span class="s2">&quot;$</span><span class="si">{opcode}</span><span class="s2">$</span><span class="si">{nop32}</span><span class="s2">&quot;</span><span class="p">,</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>           <span class="n">verbatim_20i_0o</span><span class="p">(</span><span class="nb">hex</span><span class="s2">&quot;$</span><span class="si">{opcode}</span><span class="s2">$</span><span class="si">{nop32}</span><span class="s2">&quot;</span><span class="p">,</span>
+</code></pre></div>
 <p>The opcode string is followed by the input parameters (in this case, twenty of them).
 These can be Yul expressions, but for the sake of simplicity here we just use constant values.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>              <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span>
-</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>              <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span>
-</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>              <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span>
-</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>              <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">)</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>              <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span>
+              <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span>
+              <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span>
+              <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">)</span>
+</code></pre></div>
 <p>If the opcode terminates the smart contract execution (as invalid opcodes do), we don't get here.
 If we do get here, write to storage cell <code>0x00</code> to record that fact.</p>
 <p>Note the syntax <code>let &lt;var&gt; := &lt;value&gt;</code>. This is how you specify variables in Yul.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>           <span class="o">//</span> <span class="n">We</span> <span class="n">only</span> <span class="n">get</span> <span class="n">here</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">opcode</span> <span class="ow">is</span> <span class="n">legit</span> <span class="p">(</span><span class="ow">and</span> <span class="n">it</span> <span class="n">doesn</span><span class="s1">&#39;t terminate</span>
-</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>           <span class="o">//</span> <span class="n">execution</span> <span class="n">like</span> <span class="n">STOP</span> <span class="ow">and</span> <span class="n">RETURN</span><span class="p">)</span>
-</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>           <span class="n">let</span> <span class="n">zero</span> <span class="o">:=</span> <span class="mi">0</span>
-</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>           <span class="n">let</span> <span class="n">one</span> <span class="o">:=</span> <span class="mi">1</span>
-</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>           <span class="n">sstore</span><span class="p">(</span><span class="n">zero</span><span class="p">,</span> <span class="n">one</span><span class="p">)</span>
-</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>        <span class="p">}</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>           <span class="o">//</span> <span class="n">We</span> <span class="n">only</span> <span class="n">get</span> <span class="n">here</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">opcode</span> <span class="ow">is</span> <span class="n">legit</span> <span class="p">(</span><span class="ow">and</span> <span class="n">it</span> <span class="n">doesn</span><span class="s1">&#39;t terminate</span>
+           <span class="o">//</span> <span class="n">execution</span> <span class="n">like</span> <span class="n">STOP</span> <span class="ow">and</span> <span class="n">RETURN</span><span class="p">)</span>
+           <span class="n">let</span> <span class="n">zero</span> <span class="o">:=</span> <span class="mi">0</span>
+           <span class="n">let</span> <span class="n">one</span> <span class="o">:=</span> <span class="mi">1</span>
+           <span class="n">sstore</span><span class="p">(</span><span class="n">zero</span><span class="p">,</span> <span class="n">one</span><span class="p">)</span>
+        <span class="p">}</span>
+</code></pre></div>
 <p>Replace <code>${opcode}</code> with the one byte hex code, and <code>${nop32}</code> with 32 copies of <code>5b</code> (for NOP).</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>        <span class="s2">&quot;&quot;&quot;).substitute(opcode=opc_hex, nop32=&quot;5B&quot;*32)</span>
-</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="s2">        pre = {</span>
-</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="s2">           TestAddress: Account(balance=0x0BA1A9CE0BA1A9CE),</span>
-</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="s2">           codeAddr: Account(</span>
-</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="s2">        balance=0,</span>
-</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="s2">        nonce=1,</span>
-</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="s2">        code=Yul(yul_code)</span>
-</span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="s2">           ),</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>        <span class="s2">&quot;&quot;&quot;).substitute(opcode=opc_hex, nop32=&quot;5B&quot;*32)</span>
+<span class="s2">        pre = {</span>
+<span class="s2">           TestAddress: Account(balance=0x0BA1A9CE0BA1A9CE),</span>
+<span class="s2">           codeAddr: Account(</span>
+<span class="s2">        balance=0,</span>
+<span class="s2">        nonce=1,</span>
+<span class="s2">        code=Yul(yul_code)</span>
+<span class="s2">           ),</span>
+</code></pre></div>
 <p>This is the account for <code>0x00..0060A7</code>. 
 It just returns data (all zeros).</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>           <span class="n">goat_addr</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span>
-</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>                <span class="n">balance</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>                <span class="n">nonce</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>                <span class="n">code</span><span class="o">=</span><span class="n">Yul</span><span class="p">(</span><span class="s2">&quot;{ return(0, 0x100) }&quot;</span><span class="p">),</span>
-</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>           <span class="p">)</span>
-</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>        <span class="p">}</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>           <span class="n">goat_addr</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span>
+                <span class="n">balance</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                <span class="n">nonce</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                <span class="n">code</span><span class="o">=</span><span class="n">Yul</span><span class="p">(</span><span class="s2">&quot;{ return(0, 0x100) }&quot;</span><span class="p">),</span>
+           <span class="p">)</span>
+        <span class="p">}</span>
+</code></pre></div>
 <p>Every time the <code>for</code> loop gets here, it <a href="https://docs.python.org/3/reference/expressions.html#yieldexpr"><code>yields</code></a> a separate test. 
 Over the entire for loop, it yields 255 different tests.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>    <span class="k">yield</span> <span class="n">StateTest</span><span class="p">(</span>
-</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>        <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">,</span> 
-</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>        <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span> 
-</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>        <span class="n">txs</span><span class="o">=</span><span class="p">[</span><span class="n">tx</span><span class="p">],</span>
-</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>        <span class="n">post</span><span class="o">=</span><span class="p">(</span><span class="n">post_valid</span> <span class="k">if</span> <span class="n">opc_valid</span><span class="p">(</span><span class="n">opc</span><span class="p">)</span> <span class="k">else</span> <span class="n">post_invalid</span><span class="p">),</span>
-</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>    <span class="p">)</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>    <span class="k">yield</span> <span class="n">StateTest</span><span class="p">(</span>
+        <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">,</span> 
+        <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span> 
+        <span class="n">txs</span><span class="o">=</span><span class="p">[</span><span class="n">tx</span><span class="p">],</span>
+        <span class="n">post</span><span class="o">=</span><span class="p">(</span><span class="n">post_valid</span> <span class="k">if</span> <span class="n">opc_valid</span><span class="p">(</span><span class="n">opc</span><span class="p">)</span> <span class="k">else</span> <span class="n">post_invalid</span><span class="p">),</span>
+    <span class="p">)</span>
+</code></pre></div>
 <p>The Python format for the <a href="https://en.wikipedia.org/wiki/Ternary_conditional_operator">ternary operation</a> is a bit different from C-like languages.
 In C like languages the syntax is <code>&lt;condition&gt; ? &lt;yes value&gt; : &lt;no value&gt;</code>.
 In Python it is <code>&lt;yes value&gt; if &lt;condition&gt; else &lt;no value&gt;</code>. </p>
-<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">#</a></h2>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
 <p>At this point you should be able to state transition tests within a single block.</p>
 
 
@@ -1342,7 +1338,7 @@ In Python it is <code>&lt;yes value&gt; if &lt;condition&gt; else &lt;no value&g
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "search.suggest", "search.highlight", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "search.suggest", "search.highlight", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>

@@ -121,10 +121,6 @@
       
     </div>
     
-      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
-        
-      </div>
-    
     
       
 
@@ -1007,12 +1003,12 @@
   
 
 
-<h1 id="writing-tests">Writing Tests<a class="headerlink" href="#writing-tests" title="Permanent link">#</a></h1>
-<h2 id="purpose-of-test-specs-in-this-repository">Purpose of test specs in this repository<a class="headerlink" href="#purpose-of-test-specs-in-this-repository" title="Permanent link">#</a></h2>
+<h1 id="writing-tests">Writing Tests<a class="headerlink" href="#writing-tests" title="Permanent link">&para;</a></h1>
+<h2 id="purpose-of-test-specs-in-this-repository">Purpose of test specs in this repository<a class="headerlink" href="#purpose-of-test-specs-in-this-repository" title="Permanent link">&para;</a></h2>
 <p>The goal of the test specs included in this repository is to generate test vectors that can be consumed by any Execution client, and to verify that all of the clients agree on the same output after executing each test.</p>
 <p>Consensus is the most important aspect of any blockchain network, therefore, anything that modifies the state of the blockchain must be tested by at least one test in this repository.</p>
 <p>The tests focus on the EVM execution, therefore before being able to properly write a test, it is important to understand what the Ethereum Virtual Machine is and how it works.</p>
-<h2 id="types-of-tests">Types of tests<a class="headerlink" href="#types-of-tests" title="Permanent link">#</a></h2>
+<h2 id="types-of-tests">Types of tests<a class="headerlink" href="#types-of-tests" title="Permanent link">&para;</a></h2>
 <p>At the moment there are only two types of tests that can be produced by each test spec:</p>
 <ul>
 <li>State Tests</li>
@@ -1032,7 +1028,7 @@
 <li>Verify fork transitions</li>
 <li>Verify blocks with invalid transactions/properties are rejected</li>
 </ul>
-<h2 id="adding-a-new-test">Adding a New Test<a class="headerlink" href="#adding-a-new-test" title="Permanent link">#</a></h2>
+<h2 id="adding-a-new-test">Adding a New Test<a class="headerlink" href="#adding-a-new-test" title="Permanent link">&para;</a></h2>
 <p>All currently implemented tests can be found in the <code>fillers</code>
 directory, which is composed of many subdirectories, and each one represents a
 different test category.</p>
@@ -1052,7 +1048,7 @@ vectors.</p>
 </ul>
 </li>
 </ul>
-<h2 id="test-spec-generator-functions">Test Spec Generator Functions<a class="headerlink" href="#test-spec-generator-functions" title="Permanent link">#</a></h2>
+<h2 id="test-spec-generator-functions">Test Spec Generator Functions<a class="headerlink" href="#test-spec-generator-functions" title="Permanent link">&para;</a></h2>
 <p>Every test spec is a python generator function which can perform a single or
 multiple <code>yield</code> operations during its runtime to each time yield a single
 <code>StateTest</code>/<code>BlockchainTest</code> object.</p>
@@ -1066,7 +1062,7 @@ following decorators:
 <code>ethereum_test_filling_tool</code> to process when the generator is being executed to
 fill the tests.</p>
 <p>The test vector function must take only one <code>str</code> parameter: the fork name.</p>
-<h2 id="statetest-object"><code>StateTest</code> Object<a class="headerlink" href="#statetest-object" title="Permanent link">#</a></h2>
+<h2 id="statetest-object"><code>StateTest</code> Object<a class="headerlink" href="#statetest-object" title="Permanent link">&para;</a></h2>
 <p>The <code>StateTest</code> object represents a single test vector, and contains the
 following attributes:</p>
 <ul>
@@ -1078,7 +1074,7 @@ following attributes:</p>
     created or modified after all transactions are executed.</li>
 <li>txs: All transactions to be executed during the test vector runtime.</li>
 </ul>
-<h2 id="blockchaintest-object"><code>BlockchainTest</code> Object<a class="headerlink" href="#blockchaintest-object" title="Permanent link">#</a></h2>
+<h2 id="blockchaintest-object"><code>BlockchainTest</code> Object<a class="headerlink" href="#blockchaintest-object" title="Permanent link">&para;</a></h2>
 <p>The <code>BlockchainTest</code> object represents a single test vector that evaluates the
 Ethereum VM by attempting to append multiple blocks to the chain:</p>
 <ul>
@@ -1088,7 +1084,7 @@ Ethereum VM by attempting to append multiple blocks to the chain:</p>
     created or modified after all blocks are executed.</li>
 <li>blocks: All blocks to be appended to the blockchain during the test.</li>
 </ul>
-<h2 id="prepost-state-of-the-test">Pre/Post State of the Test<a class="headerlink" href="#prepost-state-of-the-test" title="Permanent link">#</a></h2>
+<h2 id="prepost-state-of-the-test">Pre/Post State of the Test<a class="headerlink" href="#prepost-state-of-the-test" title="Permanent link">&para;</a></h2>
 <p>The <code>pre</code> and <code>post</code> states are elemental to setup and then verify the outcome
 of the state test.</p>
 <p>Both <code>pre</code> and <code>post</code> are mappings of account addresses to <code>account</code> structures (see <a href="#the-account-object">more info</a>).</p>
@@ -1103,7 +1099,7 @@ in verifiable changes to the balance, nonce, and/or storage in each of them.</p>
 of each transaction, and any differences are considered a failure</p>
 <p>When designing a test, all the changes must be ideally saved into the contract's
 storage to be able to verify them in the post-state.</p>
-<h2 id="test-transactions">Test Transactions<a class="headerlink" href="#test-transactions" title="Permanent link">#</a></h2>
+<h2 id="test-transactions">Test Transactions<a class="headerlink" href="#test-transactions" title="Permanent link">&para;</a></h2>
 <p>Transactions can be crafted by sending them with specific <code>data</code> or to a
 specific account, which contains the code to be executed</p>
 <p>Transactions can also create more accounts, by setting the <code>to</code> field to an 
@@ -1111,7 +1107,7 @@ empty string.</p>
 <p>Transactions can be designed to fail, and a verification must be made that the
 transaction fails with the specific error that matches what is expected by the
 test.</p>
-<h2 id="writing-code-for-the-accounts-in-the-test">Writing code for the accounts in the test<a class="headerlink" href="#writing-code-for-the-accounts-in-the-test" title="Permanent link">#</a></h2>
+<h2 id="writing-code-for-the-accounts-in-the-test">Writing code for the accounts in the test<a class="headerlink" href="#writing-code-for-the-accounts-in-the-test" title="Permanent link">&para;</a></h2>
 <p>Account bytecode can be embedded in the test accounts by adding it to the <code>code</code>
 field of the <code>account</code> object, or the <code>data</code> field of the <code>tx</code> object if the
 bytecode is meant to be treated as init code or call data.</p>
@@ -1124,7 +1120,7 @@ bytecode is meant to be treated as init code or call data.</p>
 <li><code>Yul</code> object containing <a href="https://docs.soliditylang.org/en/latest/yul.html">Yul source code</a></li>
 </ul>
 <p><code>Code</code> objects can be concatenated together by using the <code>+</code> operator.</p>
-<h2 id="verifying-the-accounts-post-state">Verifying the Accounts' Post State<a class="headerlink" href="#verifying-the-accounts-post-state" title="Permanent link">#</a></h2>
+<h2 id="verifying-the-accounts-post-state">Verifying the Accounts' Post State<a class="headerlink" href="#verifying-the-accounts-post-state" title="Permanent link">&para;</a></h2>
 <p>The state of the accounts after all blocks/transactions have been executed is
 the way of verifying that the execution client actually behaves like the test
 expects.</p>
@@ -1142,7 +1138,7 @@ transition tool.</p>
   E.g. when the transaction creating a contract is expected to fail and the
   test wants to verify that the address where the contract was supposed to be
   created is indeed empty.</p>
-<h2 id="the-account-object">The <code>Account</code> object<a class="headerlink" href="#the-account-object" title="Permanent link">#</a></h2>
+<h2 id="the-account-object">The <code>Account</code> object<a class="headerlink" href="#the-account-object" title="Permanent link">&para;</a></h2>
 <p>The <code>Account</code> object is used to specify the properties of an account to be
 verified in the post state.</p>
 <p>The python representation can be found in <a href="https://github.com/ethereum/execution-spec-tests/blob/main/src/ethereum_test_tools/common/types.py">src/ethereum_test_tools/common/types.py</a>.</p>
@@ -1169,7 +1165,7 @@ verified in the post state.</p>
 </ul>
 <p>All account's properties are optional, and they can be skipped or set to <code>None</code>,
 which means that no check will be performed on that specific account property.</p>
-<h2 id="verifying-correctness-of-the-new-test">Verifying correctness of the new test<a class="headerlink" href="#verifying-correctness-of-the-new-test" title="Permanent link">#</a></h2>
+<h2 id="verifying-correctness-of-the-new-test">Verifying correctness of the new test<a class="headerlink" href="#verifying-correctness-of-the-new-test" title="Permanent link">&para;</a></h2>
 <p>A well written test performs a single verification output at a time.</p>
 <p>A verification output can be a single storage slot, the balance of an account,
 or a newly created contract.</p>
@@ -1186,7 +1182,7 @@ intended verification was never made.</p>
 check that test is effective. E.g. when a transaction is supposed to fail, it
 is necessary to check that the failure error is actually the one expected by
 the test.</p>
-<h2 id="failing-or-invalid-transactions">Failing or invalid transactions<a class="headerlink" href="#failing-or-invalid-transactions" title="Permanent link">#</a></h2>
+<h2 id="failing-or-invalid-transactions">Failing or invalid transactions<a class="headerlink" href="#failing-or-invalid-transactions" title="Permanent link">&para;</a></h2>
 <p>Transactions included in a StateTest are expected to be intrinsically valid,
 i.e. the account sending the transaction must have enough funds to cover the
 gas costs, the max fee of the transaction must be equal or higher than the
@@ -1238,7 +1234,7 @@ transactions in it, including other valid transactions.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "search.suggest", "search.highlight", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "search.suggest", "search.highlight", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>

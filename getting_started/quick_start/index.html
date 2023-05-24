@@ -121,10 +121,6 @@
       
     </div>
     
-      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
-        
-      </div>
-    
     
       
 
@@ -881,8 +877,8 @@
   
 
 
-<h1 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">#</a></h1>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<h1 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h1>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>The following are required to either generate or develop tests:</p>
 <ol>
 <li>Python &gt;= <code>3.10.0</code> &lt; <code>3.11</code>.</li>
@@ -901,53 +897,53 @@
 <p><a href="https://github.com/ethereum/solidity"><code>solc</code></a> &gt;= <code>v0.8.17</code>; <code>solc</code> must be in accessible in the <code>PATH</code>.</p>
 </li>
 </ol>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h2>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>To generate tests from the test "fillers", it's necessary to install the Python packages provided by <code>execution-spec-tests</code> (it's recommended to use a virtual environment for the installation):</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">git clone https://github.com/ethereum/execution-spec-tests</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">cd execution-spec-tests</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">python3.10 -m venv ./venv/</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="go">source ./venv/bin/activate</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="go">pip install -e .</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">git clone https://github.com/ethereum/execution-spec-tests</span>
+<span class="go">cd execution-spec-tests</span>
+<span class="go">python3.10 -m venv ./venv/</span>
+<span class="go">source ./venv/bin/activate</span>
+<span class="go">pip install -e .</span>
+</code></pre></div>
 <p>After the installation, run this sanity check to ensure tests are generated.
 If everything is OK, you will see the beginning of the JSON format filled test.</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">tf --test-case yul</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="go">head fixtures/example/yul_example/yul.json</span>
-</span></code></pre></div>
-<h2 id="generating-the-execution-spec-tests-for-use-with-clients">Generating the Execution Spec Tests For Use With Clients<a class="headerlink" href="#generating-the-execution-spec-tests-for-use-with-clients" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="go">tf --test-case yul</span>
+<span class="go">head fixtures/example/yul_example/yul.json</span>
+</code></pre></div>
+<h2 id="generating-the-execution-spec-tests-for-use-with-clients">Generating the Execution Spec Tests For Use With Clients<a class="headerlink" href="#generating-the-execution-spec-tests-for-use-with-clients" title="Permanent link">&para;</a></h2>
 <p>To generate all the tests defined in the <code>./fillers</code> sub-directory, run the <code>tf</code> command:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="go">tf --filler-path=&quot;fillers&quot; --output=&quot;fixtures&quot; </span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">tf --filler-path=&quot;fillers&quot; --output=&quot;fixtures&quot; </span>
+</code></pre></div>
 <p>This is equivalent to running <code>tf</code> with no arguments. The paths<code>fillers/</code> and <code>fixtures/</code> are both defaults for the respective command.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The test <code>post</code> conditions are tested against the output of the <code>geth</code> <code>evm</code> utility during test generation.</p>
 </div>
 <p>To generate all the tests in the <code>./fillers/vm</code> sub-directory (category), for example, run:
-<div class="language-console highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="go">tf --test-categories vm</span>
-</span></code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="go">tf --test-categories vm</span>
+</code></pre></div></p>
 <p>This extends to sub-directories. As an example, to generate all specific tests within the <code>./fillers/vm/vm_arith/vm_add</code> sub-directory, run:
-<div class="language-console highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="go">tf --output=&quot;fixtures&quot; --test-categories vm.vm_arith.vm_add</span>
-</span></code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="go">tf --output=&quot;fixtures&quot; --test-categories vm.vm_arith.vm_add</span>
+</code></pre></div></p>
 <p>To generate all the tests in the <code>./fillers/*/dup.py</code> modules, for example, run:
-<div class="language-console highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="go">tf --test-module dup</span>
-</span></code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="go">tf --test-module dup</span>
+</code></pre></div></p>
 <p>To generate specific tests, such as <code>./fillers/*/*.py::test_dup</code>, for example, run (remove the <code>test_</code> prefix from the test case's function name):
-<div class="language-console highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="go">tf --test-case dup</span>
-</span></code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="go">tf --test-case dup</span>
+</code></pre></div></p>
 <p>To overwrite the existing set of fixtures, make sure you run the test filler with the <code>--force-refill</code> flag:
-<div class="language-console highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="go">tf --force-refill</span>
-</span></code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="go">tf --force-refill</span>
+</code></pre></div></p>
 <p>For upcoming forks that are not already upgraded within the Ethereum network, use the <code>--latest-fork</code> flag. For example, currently (03/05/23) the next fork being developed is <code>Cancun</code>:
-<div class="language-console highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="go">tf --latest-fork Cancun</span>
-</span></code></pre></div></p>
-<h2 id="testing-the-execution-spec-tests-framework">Testing the Execution Spec Tests Framework<a class="headerlink" href="#testing-the-execution-spec-tests-framework" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="go">tf --latest-fork Cancun</span>
+</code></pre></div></p>
+<h2 id="testing-the-execution-spec-tests-framework">Testing the Execution Spec Tests Framework<a class="headerlink" href="#testing-the-execution-spec-tests-framework" title="Permanent link">&para;</a></h2>
 <p>The Python packages provided by the execution spec tests framework have their own test suite that can be ran via <code>tox</code>:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="go">python -m venv ./venv/</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="go">source ./venv/bin/activate</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="go">pip install tox</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="go">tox -e py3</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">python -m venv ./venv/</span>
+<span class="go">source ./venv/bin/activate</span>
+<span class="go">pip install tox</span>
+<span class="go">tox -e py3</span>
+</code></pre></div>
 
 
 
@@ -991,7 +987,7 @@ If everything is OK, you will see the beginning of the JSON format filled test.<
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "search.suggest", "search.highlight", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "search.suggest", "search.highlight", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
