@@ -6,6 +6,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/</loc>
+         <lastmod>2023-05-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/EIPS/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
