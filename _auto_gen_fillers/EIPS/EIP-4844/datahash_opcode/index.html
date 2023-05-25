@@ -775,8 +775,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_blob_versioned_hash" class="md-nav__link">
-    test_datahash_blob_versioned_hash()
+  <a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_opcode_contexts" class="md-nav__link">
+    test_datahash_opcode_contexts()
   </a>
   
 </li>
@@ -784,6 +784,13 @@
         <li class="md-nav__item">
   <a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_gas_cost" class="md-nav__link">
     test_datahash_gas_cost()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_blob_versioned_hash" class="md-nav__link">
+    test_datahash_blob_versioned_hash()
   </a>
   
 </li>
@@ -798,13 +805,6 @@
         <li class="md-nav__item">
   <a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_multiple_txs_in_block" class="md-nav__link">
     test_datahash_multiple_txs_in_block()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_opcode_contexts" class="md-nav__link">
-    test_datahash_opcode_contexts()
   </a>
   
 </li>
@@ -1426,8 +1426,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_blob_versioned_hash" class="md-nav__link">
-    test_datahash_blob_versioned_hash()
+  <a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_opcode_contexts" class="md-nav__link">
+    test_datahash_opcode_contexts()
   </a>
   
 </li>
@@ -1435,6 +1435,13 @@
         <li class="md-nav__item">
   <a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_gas_cost" class="md-nav__link">
     test_datahash_gas_cost()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_blob_versioned_hash" class="md-nav__link">
+    test_datahash_blob_versioned_hash()
   </a>
   
 </li>
@@ -1449,13 +1456,6 @@
         <li class="md-nav__item">
   <a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_multiple_txs_in_block" class="md-nav__link">
     test_datahash_multiple_txs_in_block()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_opcode_contexts" class="md-nav__link">
-    test_datahash_opcode_contexts()
   </a>
   
 </li>
@@ -1504,783 +1504,6 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
 
 
-
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h2 id="fillers.eips.eip4844.datahash_opcode.test_datahash_blob_versioned_hash" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">test_datahash_blob_versioned_hash</span><span class="p">(</span><span class="n">_</span><span class="p">)</span></code>
-
-<a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_blob_versioned_hash" class="headerlink" title="Permanent link">&para;</a></h2>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Tests that the <code>DATAHASH</code> opcode returns the correct versioned hash for
-various valid index scenarios.</p>
-
-      <details class="quote">
-        <summary>Source code in <code>fillers/eips/eip4844/datahash_opcode.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">524</span>
-<span class="normal">525</span>
-<span class="normal">526</span>
-<span class="normal">527</span>
-<span class="normal">528</span>
-<span class="normal">529</span>
-<span class="normal">530</span>
-<span class="normal">531</span>
-<span class="normal">532</span>
-<span class="normal">533</span>
-<span class="normal">534</span>
-<span class="normal">535</span>
-<span class="normal">536</span>
-<span class="normal">537</span>
-<span class="normal">538</span>
-<span class="normal">539</span>
-<span class="normal">540</span>
-<span class="normal">541</span>
-<span class="normal">542</span>
-<span class="normal">543</span>
-<span class="normal">544</span>
-<span class="normal">545</span>
-<span class="normal">546</span>
-<span class="normal">547</span>
-<span class="normal">548</span>
-<span class="normal">549</span>
-<span class="normal">550</span>
-<span class="normal">551</span>
-<span class="normal">552</span>
-<span class="normal">553</span>
-<span class="normal">554</span>
-<span class="normal">555</span>
-<span class="normal">556</span>
-<span class="normal">557</span>
-<span class="normal">558</span>
-<span class="normal">559</span>
-<span class="normal">560</span>
-<span class="normal">561</span>
-<span class="normal">562</span>
-<span class="normal">563</span>
-<span class="normal">564</span>
-<span class="normal">565</span>
-<span class="normal">566</span>
-<span class="normal">567</span>
-<span class="normal">568</span>
-<span class="normal">569</span>
-<span class="normal">570</span>
-<span class="normal">571</span>
-<span class="normal">572</span>
-<span class="normal">573</span>
-<span class="normal">574</span>
-<span class="normal">575</span>
-<span class="normal">576</span>
-<span class="normal">577</span>
-<span class="normal">578</span>
-<span class="normal">579</span>
-<span class="normal">580</span>
-<span class="normal">581</span>
-<span class="normal">582</span>
-<span class="normal">583</span>
-<span class="normal">584</span>
-<span class="normal">585</span>
-<span class="normal">586</span>
-<span class="normal">587</span>
-<span class="normal">588</span>
-<span class="normal">589</span>
-<span class="normal">590</span>
-<span class="normal">591</span>
-<span class="normal">592</span>
-<span class="normal">593</span>
-<span class="normal">594</span>
-<span class="normal">595</span>
-<span class="normal">596</span>
-<span class="normal">597</span>
-<span class="normal">598</span>
-<span class="normal">599</span>
-<span class="normal">600</span>
-<span class="normal">601</span>
-<span class="normal">602</span>
-<span class="normal">603</span>
-<span class="normal">604</span>
-<span class="normal">605</span>
-<span class="normal">606</span>
-<span class="normal">607</span>
-<span class="normal">608</span>
-<span class="normal">609</span>
-<span class="normal">610</span>
-<span class="normal">611</span>
-<span class="normal">612</span>
-<span class="normal">613</span>
-<span class="normal">614</span>
-<span class="normal">615</span>
-<span class="normal">616</span>
-<span class="normal">617</span>
-<span class="normal">618</span>
-<span class="normal">619</span>
-<span class="normal">620</span>
-<span class="normal">621</span>
-<span class="normal">622</span>
-<span class="normal">623</span>
-<span class="normal">624</span>
-<span class="normal">625</span>
-<span class="normal">626</span>
-<span class="normal">627</span>
-<span class="normal">628</span>
-<span class="normal">629</span>
-<span class="normal">630</span>
-<span class="normal">631</span>
-<span class="normal">632</span>
-<span class="normal">633</span>
-<span class="normal">634</span>
-<span class="normal">635</span>
-<span class="normal">636</span>
-<span class="normal">637</span>
-<span class="normal">638</span>
-<span class="normal">639</span>
-<span class="normal">640</span>
-<span class="normal">641</span>
-<span class="normal">642</span>
-<span class="normal">643</span>
-<span class="normal">644</span>
-<span class="normal">645</span>
-<span class="normal">646</span>
-<span class="normal">647</span>
-<span class="normal">648</span>
-<span class="normal">649</span>
-<span class="normal">650</span>
-<span class="normal">651</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@test_from</span><span class="p">(</span><span class="n">fork</span><span class="o">=</span><span class="n">Cancun</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">test_datahash_blob_versioned_hash</span><span class="p">(</span><span class="n">_</span><span class="p">:</span> <span class="n">Fork</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Tests that the `DATAHASH` opcode returns the correct versioned hash for</span>
-<span class="sd">    various valid index scenarios.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">TOTAL_BLOCKS</span> <span class="o">=</span> <span class="mi">10</span>
-
-    <span class="n">pre</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="n">TestAddress</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span><span class="n">balance</span><span class="o">=</span><span class="mi">10000000000000000000000</span><span class="p">),</span>
-    <span class="p">}</span>
-    <span class="n">post</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">blocks</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="c1"># Create an arbitrary repeated list of blob hashes</span>
-    <span class="c1"># with length MAX_BLOB_PER_BLOCK * TOTAL_BLOCKS</span>
-    <span class="n">b_hashes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
-        <span class="n">itertools</span><span class="o">.</span><span class="n">islice</span><span class="p">(</span>
-            <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">(</span><span class="n">BLOB_HASHES</span><span class="p">),</span>
-            <span class="n">MAX_BLOB_PER_BLOCK</span> <span class="o">*</span> <span class="n">TOTAL_BLOCKS</span><span class="p">,</span>
-        <span class="p">)</span>
-    <span class="p">)</span>
-
-    <span class="c1"># `DATAHASH` sstore template helper</span>
-    <span class="k">def</span> <span class="nf">datahash_sstore</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">Op</span><span class="o">.</span><span class="n">SSTORE</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">Op</span><span class="o">.</span><span class="n">DATAHASH</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
-
-    <span class="c1"># `DATAHASH` on valid indexes</span>
-    <span class="n">datahash_single_valid_calls</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-        <span class="n">datahash_sstore</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)</span>
-    <span class="p">)</span>
-    <span class="n">pre_single_valid_calls</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">pre</span><span class="p">)</span>
-
-    <span class="c1"># `DATAHASH` on valid index repeated:</span>
-    <span class="c1"># DATAHASH(i), DATAHASH(i), ...</span>
-    <span class="n">datahash_repeated_valid_calls</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-        <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">datahash_sstore</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)</span>
-    <span class="p">)</span>
-    <span class="n">pre_datahash_repeated_valid_calls</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">pre</span><span class="p">)</span>
-
-    <span class="c1"># `DATAHASH` on valid/invalid/valid:</span>
-    <span class="c1"># DATAHASH(i), DATAHASH(MAX_BLOB_PER_BLOCK), DATAHASH(i)</span>
-    <span class="n">datahash_valid_invalid_calls</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-        <span class="n">datahash_sstore</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-        <span class="o">+</span> <span class="n">datahash_sstore</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)</span>
-        <span class="o">+</span> <span class="n">datahash_sstore</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)</span>
-    <span class="p">)</span>
-    <span class="n">pre_datahash_valid_invalid_calls</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">pre</span><span class="p">)</span>
-
-    <span class="c1"># `DATAHASH` on different valid indexes repeated:</span>
-    <span class="c1"># DATAHASH(i), DATAHASH(i+1), DATAHASH(i)</span>
-    <span class="n">datahash_varied_valid_calls</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-        <span class="n">datahash_sstore</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">datahash_sstore</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">datahash_sstore</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="p">)</span>
-    <span class="n">pre_datahash_varied_valid_calls</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">pre</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">TOTAL_BLOCKS</span><span class="p">):</span>
-        <span class="n">address</span> <span class="o">=</span> <span class="n">to_address</span><span class="p">(</span><span class="mh">0x100</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="mh">0x100</span><span class="p">)</span>
-        <span class="n">pre_single_valid_calls</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span>
-            <span class="n">code</span><span class="o">=</span><span class="n">datahash_single_valid_calls</span>
-        <span class="p">)</span>
-        <span class="n">pre_datahash_repeated_valid_calls</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span>
-            <span class="n">code</span><span class="o">=</span><span class="n">datahash_repeated_valid_calls</span>
-        <span class="p">)</span>
-        <span class="n">pre_datahash_valid_invalid_calls</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span>
-            <span class="n">code</span><span class="o">=</span><span class="n">datahash_valid_invalid_calls</span>
-        <span class="p">)</span>
-        <span class="n">pre_datahash_varied_valid_calls</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span>
-            <span class="n">code</span><span class="o">=</span><span class="n">datahash_varied_valid_calls</span>
-        <span class="p">)</span>
-        <span class="n">blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-            <span class="n">Block</span><span class="p">(</span>
-                <span class="n">txs</span><span class="o">=</span><span class="p">[</span>  <span class="c1"># Create tx with max blobs per block</span>
-                    <span class="n">Transaction</span><span class="p">(</span>
-                        <span class="n">ty</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-                        <span class="n">nonce</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>
-                        <span class="n">data</span><span class="o">=</span><span class="n">to_hash_bytes</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
-                        <span class="n">to</span><span class="o">=</span><span class="n">address</span><span class="p">,</span>
-                        <span class="n">gas_limit</span><span class="o">=</span><span class="mi">3000000</span><span class="p">,</span>
-                        <span class="n">max_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-                        <span class="n">max_priority_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-                        <span class="n">max_fee_per_data_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-                        <span class="n">access_list</span><span class="o">=</span><span class="p">[],</span>
-                        <span class="n">blob_versioned_hashes</span><span class="o">=</span><span class="n">b_hashes</span><span class="p">[</span>
-                            <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)</span> <span class="p">:</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-                            <span class="o">*</span> <span class="n">MAX_BLOB_PER_BLOCK</span>
-                        <span class="p">],</span>
-                    <span class="p">)</span>
-                <span class="p">]</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">post</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span>
-            <span class="n">storage</span><span class="o">=</span><span class="p">{</span>
-                <span class="n">index</span><span class="p">:</span> <span class="n">b_hashes</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">MAX_BLOB_PER_BLOCK</span> <span class="o">+</span> <span class="n">index</span><span class="p">]</span>
-                <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)</span>
-            <span class="p">}</span>
-        <span class="p">)</span>
-
-    <span class="k">yield</span> <span class="n">BlockchainTest</span><span class="p">(</span>
-        <span class="n">pre</span><span class="o">=</span><span class="n">pre_single_valid_calls</span><span class="p">,</span>
-        <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">,</span>
-        <span class="n">blocks</span><span class="o">=</span><span class="n">blocks</span><span class="p">,</span>
-        <span class="n">tag</span><span class="o">=</span><span class="s2">&quot;valid_calls&quot;</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="k">yield</span> <span class="n">BlockchainTest</span><span class="p">(</span>
-        <span class="n">pre</span><span class="o">=</span><span class="n">pre_datahash_repeated_valid_calls</span><span class="p">,</span>
-        <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">,</span>
-        <span class="n">blocks</span><span class="o">=</span><span class="n">blocks</span><span class="p">,</span>
-        <span class="n">tag</span><span class="o">=</span><span class="s2">&quot;repeated_calls&quot;</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="k">yield</span> <span class="n">BlockchainTest</span><span class="p">(</span>
-        <span class="n">pre</span><span class="o">=</span><span class="n">pre_datahash_valid_invalid_calls</span><span class="p">,</span>
-        <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">,</span>
-        <span class="n">blocks</span><span class="o">=</span><span class="n">blocks</span><span class="p">,</span>
-        <span class="n">tag</span><span class="o">=</span><span class="s2">&quot;valid_invalid_calls&quot;</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="k">yield</span> <span class="n">BlockchainTest</span><span class="p">(</span>
-        <span class="n">pre</span><span class="o">=</span><span class="n">pre_datahash_varied_valid_calls</span><span class="p">,</span>
-        <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">,</span>
-        <span class="n">blocks</span><span class="o">=</span><span class="n">blocks</span><span class="p">,</span>
-        <span class="n">tag</span><span class="o">=</span><span class="s2">&quot;varied_valid_calls&quot;</span><span class="p">,</span>
-    <span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h2 id="fillers.eips.eip4844.datahash_opcode.test_datahash_gas_cost" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">test_datahash_gas_cost</span><span class="p">(</span><span class="n">_</span><span class="p">)</span></code>
-
-<a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_gas_cost" class="headerlink" title="Permanent link">&para;</a></h2>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Test DATAHASH opcode gas cost using a variety of indexes.</p>
-
-      <details class="quote">
-        <summary>Source code in <code>fillers/eips/eip4844/datahash_opcode.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">433</span>
-<span class="normal">434</span>
-<span class="normal">435</span>
-<span class="normal">436</span>
-<span class="normal">437</span>
-<span class="normal">438</span>
-<span class="normal">439</span>
-<span class="normal">440</span>
-<span class="normal">441</span>
-<span class="normal">442</span>
-<span class="normal">443</span>
-<span class="normal">444</span>
-<span class="normal">445</span>
-<span class="normal">446</span>
-<span class="normal">447</span>
-<span class="normal">448</span>
-<span class="normal">449</span>
-<span class="normal">450</span>
-<span class="normal">451</span>
-<span class="normal">452</span>
-<span class="normal">453</span>
-<span class="normal">454</span>
-<span class="normal">455</span>
-<span class="normal">456</span>
-<span class="normal">457</span>
-<span class="normal">458</span>
-<span class="normal">459</span>
-<span class="normal">460</span>
-<span class="normal">461</span>
-<span class="normal">462</span>
-<span class="normal">463</span>
-<span class="normal">464</span>
-<span class="normal">465</span>
-<span class="normal">466</span>
-<span class="normal">467</span>
-<span class="normal">468</span>
-<span class="normal">469</span>
-<span class="normal">470</span>
-<span class="normal">471</span>
-<span class="normal">472</span>
-<span class="normal">473</span>
-<span class="normal">474</span>
-<span class="normal">475</span>
-<span class="normal">476</span>
-<span class="normal">477</span>
-<span class="normal">478</span>
-<span class="normal">479</span>
-<span class="normal">480</span>
-<span class="normal">481</span>
-<span class="normal">482</span>
-<span class="normal">483</span>
-<span class="normal">484</span>
-<span class="normal">485</span>
-<span class="normal">486</span>
-<span class="normal">487</span>
-<span class="normal">488</span>
-<span class="normal">489</span>
-<span class="normal">490</span>
-<span class="normal">491</span>
-<span class="normal">492</span>
-<span class="normal">493</span>
-<span class="normal">494</span>
-<span class="normal">495</span>
-<span class="normal">496</span>
-<span class="normal">497</span>
-<span class="normal">498</span>
-<span class="normal">499</span>
-<span class="normal">500</span>
-<span class="normal">501</span>
-<span class="normal">502</span>
-<span class="normal">503</span>
-<span class="normal">504</span>
-<span class="normal">505</span>
-<span class="normal">506</span>
-<span class="normal">507</span>
-<span class="normal">508</span>
-<span class="normal">509</span>
-<span class="normal">510</span>
-<span class="normal">511</span>
-<span class="normal">512</span>
-<span class="normal">513</span>
-<span class="normal">514</span>
-<span class="normal">515</span>
-<span class="normal">516</span>
-<span class="normal">517</span>
-<span class="normal">518</span>
-<span class="normal">519</span>
-<span class="normal">520</span>
-<span class="normal">521</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@test_from</span><span class="p">(</span><span class="n">fork</span><span class="o">=</span><span class="n">Cancun</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">test_datahash_gas_cost</span><span class="p">(</span><span class="n">_</span><span class="p">:</span> <span class="n">Fork</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Test DATAHASH opcode gas cost using a variety of indexes.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">pre</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="n">TestAddress</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span><span class="n">balance</span><span class="o">=</span><span class="mi">1000000000000000000000</span><span class="p">),</span>
-    <span class="p">}</span>
-    <span class="n">tx</span> <span class="o">=</span> <span class="n">Transaction</span><span class="p">(</span>  <span class="c1"># Transaction template</span>
-        <span class="n">data</span><span class="o">=</span><span class="n">to_hash_bytes</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
-        <span class="n">gas_limit</span><span class="o">=</span><span class="mi">3000000</span><span class="p">,</span>
-        <span class="n">max_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-        <span class="n">max_fee_per_data_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">post</span> <span class="o">=</span> <span class="p">{}</span>
-
-    <span class="c1"># Declare datahash indexes: zero, max &amp; random values</span>
-    <span class="n">datahash_index_measures</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="mh">0x00</span><span class="p">,</span>
-        <span class="mh">0x01</span><span class="p">,</span>
-        <span class="mh">0x02</span><span class="p">,</span>
-        <span class="mh">0x03</span><span class="p">,</span>
-        <span class="mh">0x04</span><span class="p">,</span>
-        <span class="mi">2</span><span class="o">**</span><span class="mi">256</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="mh">0x30A9B2A6C3F3F0675B768D49B5F5DC5B5D988F88D55766247BA9E40B125F16BB</span><span class="p">,</span>
-        <span class="mh">0x4FA4D4CDE4AA01E57FB2C880D1D9C778C33BDF85E48EF4C4D4B4DE51ABCCF4ED</span><span class="p">,</span>
-        <span class="mh">0x7871C9B8A0C72D38F5E5B5D08E5CB5CE5E23FB1BC5D75F9C29F7B94DF0BCEEB7</span><span class="p">,</span>
-        <span class="mh">0xA12C8B6A8B11410C7D98D790E1098F1ED6D93CB7A64711481AAAB1848E13212F</span><span class="p">,</span>
-    <span class="p">]</span>
-
-    <span class="n">gas_measures_code</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">CodeGasMeasure</span><span class="p">(</span>
-            <span class="n">code</span><span class="o">=</span><span class="n">Op</span><span class="o">.</span><span class="n">DATAHASH</span><span class="p">(</span><span class="n">index</span><span class="p">),</span>
-            <span class="n">overhead_cost</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-            <span class="n">extra_stack_items</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="p">)</span>
-        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">datahash_index_measures</span>
-    <span class="p">]</span>
-
-    <span class="n">txs_type_0</span><span class="p">,</span> <span class="n">txs_type_1</span><span class="p">,</span> <span class="n">txs_type_2</span><span class="p">,</span> <span class="n">txs_type_3</span> <span class="o">=</span> <span class="p">([]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">code</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gas_measures_code</span><span class="p">):</span>
-        <span class="n">address</span> <span class="o">=</span> <span class="n">to_address</span><span class="p">(</span><span class="mh">0x100</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="mh">0x100</span><span class="p">)</span>
-        <span class="n">pre</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code</span><span class="p">)</span>
-        <span class="n">txs_type_0</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-            <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span><span class="n">ty</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="n">address</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">gas_price</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">txs_type_1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-            <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span><span class="n">ty</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="n">address</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">gas_price</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">txs_type_2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-            <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span>
-                <span class="n">ty</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-                <span class="n">to</span><span class="o">=</span><span class="n">address</span><span class="p">,</span>
-                <span class="n">nonce</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>
-                <span class="n">max_priority_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-                <span class="n">blob_versioned_hashes</span><span class="o">=</span><span class="p">[</span><span class="n">BLOB_HASHES</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">]],</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">txs_type_3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-            <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span>
-                <span class="n">ty</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-                <span class="n">to</span><span class="o">=</span><span class="n">address</span><span class="p">,</span>
-                <span class="n">nonce</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>
-                <span class="n">max_priority_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-                <span class="n">blob_versioned_hashes</span><span class="o">=</span><span class="p">[</span><span class="n">BLOB_HASHES</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">]],</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">post</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span><span class="n">storage</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="n">DATAHASH_GAS_COST</span><span class="p">})</span>
-
-    <span class="c1"># DATAHASH gas cost on tx type 0, 1 &amp; 2</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txs</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="n">txs_type_0</span><span class="p">,</span> <span class="n">txs_type_1</span><span class="p">,</span> <span class="n">txs_type_2</span><span class="p">]):</span>
-        <span class="k">yield</span> <span class="n">StateTest</span><span class="p">(</span>
-            <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span> <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">,</span> <span class="n">txs</span><span class="o">=</span><span class="n">txs</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;tx_type_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="p">)</span>
-
-    <span class="c1"># DATAHASH gas cost on tx type 3</span>
-    <span class="n">total_blocks</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="nb">len</span><span class="p">(</span><span class="n">txs_type_3</span><span class="p">)</span> <span class="o">+</span> <span class="n">MAX_BLOB_PER_BLOCK</span> <span class="o">-</span> <span class="mi">1</span>
-    <span class="p">)</span> <span class="o">//</span> <span class="n">MAX_BLOB_PER_BLOCK</span>
-    <span class="n">blocks</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">Block</span><span class="p">(</span>
-            <span class="n">txs</span><span class="o">=</span><span class="n">txs_type_3</span><span class="p">[</span>
-                <span class="n">i</span> <span class="o">*</span> <span class="n">MAX_BLOB_PER_BLOCK</span> <span class="p">:</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">MAX_BLOB_PER_BLOCK</span>
-            <span class="p">]</span>
-        <span class="p">)</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">total_blocks</span><span class="p">)</span>
-    <span class="p">]</span>
-
-    <span class="k">yield</span> <span class="n">BlockchainTest</span><span class="p">(</span><span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span> <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">,</span> <span class="n">blocks</span><span class="o">=</span><span class="n">blocks</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="s2">&quot;tx_type_3&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h2 id="fillers.eips.eip4844.datahash_opcode.test_datahash_invalid_blob_index" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">test_datahash_invalid_blob_index</span><span class="p">(</span><span class="n">_</span><span class="p">)</span></code>
-
-<a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_invalid_blob_index" class="headerlink" title="Permanent link">&para;</a></h2>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Tests that the <code>DATAHASH</code> opcode returns a zeroed bytes32 value
-for invalid indexes.</p>
-
-      <details class="quote">
-        <summary>Source code in <code>fillers/eips/eip4844/datahash_opcode.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">654</span>
-<span class="normal">655</span>
-<span class="normal">656</span>
-<span class="normal">657</span>
-<span class="normal">658</span>
-<span class="normal">659</span>
-<span class="normal">660</span>
-<span class="normal">661</span>
-<span class="normal">662</span>
-<span class="normal">663</span>
-<span class="normal">664</span>
-<span class="normal">665</span>
-<span class="normal">666</span>
-<span class="normal">667</span>
-<span class="normal">668</span>
-<span class="normal">669</span>
-<span class="normal">670</span>
-<span class="normal">671</span>
-<span class="normal">672</span>
-<span class="normal">673</span>
-<span class="normal">674</span>
-<span class="normal">675</span>
-<span class="normal">676</span>
-<span class="normal">677</span>
-<span class="normal">678</span>
-<span class="normal">679</span>
-<span class="normal">680</span>
-<span class="normal">681</span>
-<span class="normal">682</span>
-<span class="normal">683</span>
-<span class="normal">684</span>
-<span class="normal">685</span>
-<span class="normal">686</span>
-<span class="normal">687</span>
-<span class="normal">688</span>
-<span class="normal">689</span>
-<span class="normal">690</span>
-<span class="normal">691</span>
-<span class="normal">692</span>
-<span class="normal">693</span>
-<span class="normal">694</span>
-<span class="normal">695</span>
-<span class="normal">696</span>
-<span class="normal">697</span>
-<span class="normal">698</span>
-<span class="normal">699</span>
-<span class="normal">700</span>
-<span class="normal">701</span>
-<span class="normal">702</span>
-<span class="normal">703</span>
-<span class="normal">704</span>
-<span class="normal">705</span>
-<span class="normal">706</span>
-<span class="normal">707</span>
-<span class="normal">708</span>
-<span class="normal">709</span>
-<span class="normal">710</span>
-<span class="normal">711</span>
-<span class="normal">712</span>
-<span class="normal">713</span>
-<span class="normal">714</span>
-<span class="normal">715</span>
-<span class="normal">716</span>
-<span class="normal">717</span>
-<span class="normal">718</span>
-<span class="normal">719</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@test_from</span><span class="p">(</span><span class="n">fork</span><span class="o">=</span><span class="n">Cancun</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">test_datahash_invalid_blob_index</span><span class="p">(</span><span class="n">_</span><span class="p">:</span> <span class="n">Fork</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Tests that the `DATAHASH` opcode returns a zeroed bytes32 value</span>
-<span class="sd">    for invalid indexes.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">INVALID_DEPTH_FACTOR</span> <span class="o">=</span> <span class="mi">5</span>
-    <span class="n">TOTAL_BLOCKS</span> <span class="o">=</span> <span class="mi">5</span>
-
-    <span class="n">pre</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="n">TestAddress</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span><span class="n">balance</span><span class="o">=</span><span class="mi">10000000000000000000000</span><span class="p">),</span>
-    <span class="p">}</span>
-    <span class="n">blocks</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">post</span> <span class="o">=</span> <span class="p">{}</span>
-
-    <span class="c1"># `DATAHASH` on invalid indexes: -ve invalid -&gt; valid -&gt; +ve invalid:</span>
-    <span class="n">datahash_invalid_calls</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-        <span class="n">Op</span><span class="o">.</span><span class="n">SSTORE</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Op</span><span class="o">.</span><span class="n">DATAHASH</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span>
-            <span class="o">-</span><span class="n">INVALID_DEPTH_FACTOR</span><span class="p">,</span> <span class="n">MAX_BLOB_PER_BLOCK</span> <span class="o">+</span> <span class="n">INVALID_DEPTH_FACTOR</span>
-        <span class="p">)</span>
-    <span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">TOTAL_BLOCKS</span><span class="p">):</span>
-        <span class="n">address</span> <span class="o">=</span> <span class="n">to_address</span><span class="p">(</span><span class="mh">0x100</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="mh">0x100</span><span class="p">)</span>
-        <span class="n">pre</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">datahash_invalid_calls</span><span class="p">)</span>
-        <span class="n">blob_per_block</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="n">blob_hashes</span> <span class="o">=</span> <span class="p">[</span><span class="n">BLOB_HASHES</span><span class="p">[</span><span class="n">blob</span><span class="p">]</span> <span class="k">for</span> <span class="n">blob</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">blob_per_block</span><span class="p">)]</span>
-        <span class="n">blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-            <span class="n">Block</span><span class="p">(</span>
-                <span class="n">txs</span><span class="o">=</span><span class="p">[</span>
-                    <span class="n">Transaction</span><span class="p">(</span>
-                        <span class="n">ty</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-                        <span class="n">nonce</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>
-                        <span class="n">data</span><span class="o">=</span><span class="n">to_hash_bytes</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
-                        <span class="n">to</span><span class="o">=</span><span class="n">address</span><span class="p">,</span>
-                        <span class="n">gas_limit</span><span class="o">=</span><span class="mi">3000000</span><span class="p">,</span>
-                        <span class="n">max_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-                        <span class="n">max_priority_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-                        <span class="n">max_fee_per_data_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-                        <span class="n">access_list</span><span class="o">=</span><span class="p">[],</span>
-                        <span class="n">blob_versioned_hashes</span><span class="o">=</span><span class="n">blob_hashes</span><span class="p">,</span>
-                    <span class="p">)</span>
-                <span class="p">]</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">post</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span>
-            <span class="n">storage</span><span class="o">=</span><span class="p">{</span>
-                <span class="n">index</span><span class="p">:</span> <span class="p">(</span>
-                    <span class="mi">0</span>
-                    <span class="k">if</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="n">blob_per_block</span>
-                    <span class="k">else</span> <span class="n">blob_hashes</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
-                <span class="p">)</span>
-                <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span>
-                    <span class="o">-</span><span class="n">INVALID_DEPTH_FACTOR</span><span class="p">,</span>
-                    <span class="n">blob_per_block</span>
-                    <span class="o">+</span> <span class="p">(</span><span class="n">INVALID_DEPTH_FACTOR</span> <span class="o">-</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)),</span>
-                <span class="p">)</span>
-            <span class="p">}</span>
-        <span class="p">)</span>
-
-    <span class="k">yield</span> <span class="n">BlockchainTest</span><span class="p">(</span>
-        <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>
-        <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">,</span>
-        <span class="n">blocks</span><span class="o">=</span><span class="n">blocks</span><span class="p">,</span>
-    <span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h2 id="fillers.eips.eip4844.datahash_opcode.test_datahash_multiple_txs_in_block" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">test_datahash_multiple_txs_in_block</span><span class="p">(</span><span class="n">_</span><span class="p">)</span></code>
-
-<a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_multiple_txs_in_block" class="headerlink" title="Permanent link">&para;</a></h2>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Tests that the <code>DATAHASH</code> opcode returns the appropriate values
-when there is more than one blob tx type within a block.</p>
-
-      <details class="quote">
-        <summary>Source code in <code>fillers/eips/eip4844/datahash_opcode.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">722</span>
-<span class="normal">723</span>
-<span class="normal">724</span>
-<span class="normal">725</span>
-<span class="normal">726</span>
-<span class="normal">727</span>
-<span class="normal">728</span>
-<span class="normal">729</span>
-<span class="normal">730</span>
-<span class="normal">731</span>
-<span class="normal">732</span>
-<span class="normal">733</span>
-<span class="normal">734</span>
-<span class="normal">735</span>
-<span class="normal">736</span>
-<span class="normal">737</span>
-<span class="normal">738</span>
-<span class="normal">739</span>
-<span class="normal">740</span>
-<span class="normal">741</span>
-<span class="normal">742</span>
-<span class="normal">743</span>
-<span class="normal">744</span>
-<span class="normal">745</span>
-<span class="normal">746</span>
-<span class="normal">747</span>
-<span class="normal">748</span>
-<span class="normal">749</span>
-<span class="normal">750</span>
-<span class="normal">751</span>
-<span class="normal">752</span>
-<span class="normal">753</span>
-<span class="normal">754</span>
-<span class="normal">755</span>
-<span class="normal">756</span>
-<span class="normal">757</span>
-<span class="normal">758</span>
-<span class="normal">759</span>
-<span class="normal">760</span>
-<span class="normal">761</span>
-<span class="normal">762</span>
-<span class="normal">763</span>
-<span class="normal">764</span>
-<span class="normal">765</span>
-<span class="normal">766</span>
-<span class="normal">767</span>
-<span class="normal">768</span>
-<span class="normal">769</span>
-<span class="normal">770</span>
-<span class="normal">771</span>
-<span class="normal">772</span>
-<span class="normal">773</span>
-<span class="normal">774</span>
-<span class="normal">775</span>
-<span class="normal">776</span>
-<span class="normal">777</span>
-<span class="normal">778</span>
-<span class="normal">779</span>
-<span class="normal">780</span>
-<span class="normal">781</span>
-<span class="normal">782</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@test_from</span><span class="p">(</span><span class="n">fork</span><span class="o">=</span><span class="n">Cancun</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">test_datahash_multiple_txs_in_block</span><span class="p">(</span><span class="n">_</span><span class="p">:</span> <span class="n">Fork</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Tests that the `DATAHASH` opcode returns the appropriate values</span>
-<span class="sd">    when there is more than one blob tx type within a block.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">datahash_valid_call</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-        <span class="p">[</span><span class="n">Op</span><span class="o">.</span><span class="n">SSTORE</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Op</span><span class="o">.</span><span class="n">DATAHASH</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)]</span>
-    <span class="p">)</span>
-
-    <span class="n">pre</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="n">to_address</span><span class="p">(</span><span class="n">address</span><span class="p">):</span> <span class="n">Account</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">datahash_valid_call</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">address</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mh">0x100</span><span class="p">,</span> <span class="mh">0x500</span><span class="p">,</span> <span class="mh">0x100</span><span class="p">)</span>
-    <span class="p">}</span>
-    <span class="n">pre</span><span class="p">[</span><span class="n">TestAddress</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span><span class="n">balance</span><span class="o">=</span><span class="mi">10000000000000000000000</span><span class="p">)</span>
-
-    <span class="n">tx</span> <span class="o">=</span> <span class="n">Transaction</span><span class="p">(</span>
-        <span class="n">data</span><span class="o">=</span><span class="n">to_hash_bytes</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
-        <span class="n">gas_limit</span><span class="o">=</span><span class="mi">3000000</span><span class="p">,</span>
-        <span class="n">max_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-        <span class="n">max_priority_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-        <span class="n">max_fee_per_data_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-        <span class="n">access_list</span><span class="o">=</span><span class="p">[],</span>
-        <span class="n">blob_versioned_hashes</span><span class="o">=</span><span class="n">BLOB_HASHES</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">],</span>
-    <span class="p">)</span>
-
-    <span class="n">blocks</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">Block</span><span class="p">(</span>
-            <span class="n">txs</span><span class="o">=</span><span class="p">[</span>
-                <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span><span class="n">ty</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="n">to_address</span><span class="p">(</span><span class="mh">0x100</span><span class="p">)),</span>
-                <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span><span class="n">ty</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="n">to_address</span><span class="p">(</span><span class="mh">0x100</span><span class="p">)),</span>
-            <span class="p">]</span>
-        <span class="p">),</span>
-        <span class="n">Block</span><span class="p">(</span>
-            <span class="n">txs</span><span class="o">=</span><span class="p">[</span>
-                <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span><span class="n">ty</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="n">to_address</span><span class="p">(</span><span class="mh">0x200</span><span class="p">)),</span>
-                <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span><span class="n">ty</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="n">to_address</span><span class="p">(</span><span class="mh">0x200</span><span class="p">)),</span>
-            <span class="p">]</span>
-        <span class="p">),</span>
-        <span class="n">Block</span><span class="p">(</span>
-            <span class="n">txs</span><span class="o">=</span><span class="p">[</span>
-                <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span><span class="n">ty</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="n">to_address</span><span class="p">(</span><span class="mh">0x300</span><span class="p">)),</span>
-                <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span><span class="n">ty</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="n">to_address</span><span class="p">(</span><span class="mh">0x400</span><span class="p">)),</span>
-            <span class="p">]</span>
-        <span class="p">),</span>
-    <span class="p">]</span>
-
-    <span class="n">post</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="n">to_address</span><span class="p">(</span><span class="n">address</span><span class="p">):</span> <span class="n">Account</span><span class="p">(</span>
-            <span class="n">storage</span><span class="o">=</span><span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">BLOB_HASHES</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)}</span>
-        <span class="p">)</span>
-        <span class="k">if</span> <span class="n">address</span> <span class="ow">in</span> <span class="p">(</span><span class="mh">0x200</span><span class="p">,</span> <span class="mh">0x400</span><span class="p">)</span>
-        <span class="k">else</span> <span class="n">Account</span><span class="p">(</span><span class="n">storage</span><span class="o">=</span><span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)})</span>
-        <span class="k">for</span> <span class="n">address</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mh">0x100</span><span class="p">,</span> <span class="mh">0x500</span><span class="p">,</span> <span class="mh">0x100</span><span class="p">)</span>
-    <span class="p">}</span>
-
-    <span class="k">yield</span> <span class="n">BlockchainTest</span><span class="p">(</span>
-        <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>
-        <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">,</span>
-        <span class="n">blocks</span><span class="o">=</span><span class="n">blocks</span><span class="p">,</span>
-    <span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
 
 <div class="doc doc-object doc-function">
 
@@ -3054,6 +2277,802 @@ when there is more than one blob tx type within a block.</p>
   </div>
 
 </div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="fillers.eips.eip4844.datahash_opcode.test_datahash_gas_cost" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">test_datahash_gas_cost</span><span class="p">(</span><span class="n">_</span><span class="p">)</span></code>
+
+<a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_gas_cost" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Test DATAHASH opcode gas cost using a variety of indexes.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>fillers/eips/eip4844/datahash_opcode.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span>
+<span class="normal">441</span>
+<span class="normal">442</span>
+<span class="normal">443</span>
+<span class="normal">444</span>
+<span class="normal">445</span>
+<span class="normal">446</span>
+<span class="normal">447</span>
+<span class="normal">448</span>
+<span class="normal">449</span>
+<span class="normal">450</span>
+<span class="normal">451</span>
+<span class="normal">452</span>
+<span class="normal">453</span>
+<span class="normal">454</span>
+<span class="normal">455</span>
+<span class="normal">456</span>
+<span class="normal">457</span>
+<span class="normal">458</span>
+<span class="normal">459</span>
+<span class="normal">460</span>
+<span class="normal">461</span>
+<span class="normal">462</span>
+<span class="normal">463</span>
+<span class="normal">464</span>
+<span class="normal">465</span>
+<span class="normal">466</span>
+<span class="normal">467</span>
+<span class="normal">468</span>
+<span class="normal">469</span>
+<span class="normal">470</span>
+<span class="normal">471</span>
+<span class="normal">472</span>
+<span class="normal">473</span>
+<span class="normal">474</span>
+<span class="normal">475</span>
+<span class="normal">476</span>
+<span class="normal">477</span>
+<span class="normal">478</span>
+<span class="normal">479</span>
+<span class="normal">480</span>
+<span class="normal">481</span>
+<span class="normal">482</span>
+<span class="normal">483</span>
+<span class="normal">484</span>
+<span class="normal">485</span>
+<span class="normal">486</span>
+<span class="normal">487</span>
+<span class="normal">488</span>
+<span class="normal">489</span>
+<span class="normal">490</span>
+<span class="normal">491</span>
+<span class="normal">492</span>
+<span class="normal">493</span>
+<span class="normal">494</span>
+<span class="normal">495</span>
+<span class="normal">496</span>
+<span class="normal">497</span>
+<span class="normal">498</span>
+<span class="normal">499</span>
+<span class="normal">500</span>
+<span class="normal">501</span>
+<span class="normal">502</span>
+<span class="normal">503</span>
+<span class="normal">504</span>
+<span class="normal">505</span>
+<span class="normal">506</span>
+<span class="normal">507</span>
+<span class="normal">508</span>
+<span class="normal">509</span>
+<span class="normal">510</span>
+<span class="normal">511</span>
+<span class="normal">512</span>
+<span class="normal">513</span>
+<span class="normal">514</span>
+<span class="normal">515</span>
+<span class="normal">516</span>
+<span class="normal">517</span>
+<span class="normal">518</span>
+<span class="normal">519</span>
+<span class="normal">520</span>
+<span class="normal">521</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@test_from</span><span class="p">(</span><span class="n">fork</span><span class="o">=</span><span class="n">Cancun</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_datahash_gas_cost</span><span class="p">(</span><span class="n">_</span><span class="p">:</span> <span class="n">Fork</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Test DATAHASH opcode gas cost using a variety of indexes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pre</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">TestAddress</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span><span class="n">balance</span><span class="o">=</span><span class="mi">1000000000000000000000</span><span class="p">),</span>
+    <span class="p">}</span>
+    <span class="n">tx</span> <span class="o">=</span> <span class="n">Transaction</span><span class="p">(</span>  <span class="c1"># Transaction template</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">to_hash_bytes</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+        <span class="n">gas_limit</span><span class="o">=</span><span class="mi">3000000</span><span class="p">,</span>
+        <span class="n">max_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">max_fee_per_data_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">post</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># Declare datahash indexes: zero, max &amp; random values</span>
+    <span class="n">datahash_index_measures</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="mh">0x00</span><span class="p">,</span>
+        <span class="mh">0x01</span><span class="p">,</span>
+        <span class="mh">0x02</span><span class="p">,</span>
+        <span class="mh">0x03</span><span class="p">,</span>
+        <span class="mh">0x04</span><span class="p">,</span>
+        <span class="mi">2</span><span class="o">**</span><span class="mi">256</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="mh">0x30A9B2A6C3F3F0675B768D49B5F5DC5B5D988F88D55766247BA9E40B125F16BB</span><span class="p">,</span>
+        <span class="mh">0x4FA4D4CDE4AA01E57FB2C880D1D9C778C33BDF85E48EF4C4D4B4DE51ABCCF4ED</span><span class="p">,</span>
+        <span class="mh">0x7871C9B8A0C72D38F5E5B5D08E5CB5CE5E23FB1BC5D75F9C29F7B94DF0BCEEB7</span><span class="p">,</span>
+        <span class="mh">0xA12C8B6A8B11410C7D98D790E1098F1ED6D93CB7A64711481AAAB1848E13212F</span><span class="p">,</span>
+    <span class="p">]</span>
+
+    <span class="n">gas_measures_code</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">CodeGasMeasure</span><span class="p">(</span>
+            <span class="n">code</span><span class="o">=</span><span class="n">Op</span><span class="o">.</span><span class="n">DATAHASH</span><span class="p">(</span><span class="n">index</span><span class="p">),</span>
+            <span class="n">overhead_cost</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">extra_stack_items</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">datahash_index_measures</span>
+    <span class="p">]</span>
+
+    <span class="n">txs_type_0</span><span class="p">,</span> <span class="n">txs_type_1</span><span class="p">,</span> <span class="n">txs_type_2</span><span class="p">,</span> <span class="n">txs_type_3</span> <span class="o">=</span> <span class="p">([]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">code</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gas_measures_code</span><span class="p">):</span>
+        <span class="n">address</span> <span class="o">=</span> <span class="n">to_address</span><span class="p">(</span><span class="mh">0x100</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="mh">0x100</span><span class="p">)</span>
+        <span class="n">pre</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code</span><span class="p">)</span>
+        <span class="n">txs_type_0</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span><span class="n">ty</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="n">address</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">gas_price</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">txs_type_1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span><span class="n">ty</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="n">address</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">gas_price</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">txs_type_2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span>
+                <span class="n">ty</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                <span class="n">to</span><span class="o">=</span><span class="n">address</span><span class="p">,</span>
+                <span class="n">nonce</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>
+                <span class="n">max_priority_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                <span class="n">blob_versioned_hashes</span><span class="o">=</span><span class="p">[</span><span class="n">BLOB_HASHES</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">]],</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">txs_type_3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span>
+                <span class="n">ty</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                <span class="n">to</span><span class="o">=</span><span class="n">address</span><span class="p">,</span>
+                <span class="n">nonce</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>
+                <span class="n">max_priority_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                <span class="n">blob_versioned_hashes</span><span class="o">=</span><span class="p">[</span><span class="n">BLOB_HASHES</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">]],</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">post</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span><span class="n">storage</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="n">DATAHASH_GAS_COST</span><span class="p">})</span>
+
+    <span class="c1"># DATAHASH gas cost on tx type 0, 1 &amp; 2</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txs</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="n">txs_type_0</span><span class="p">,</span> <span class="n">txs_type_1</span><span class="p">,</span> <span class="n">txs_type_2</span><span class="p">]):</span>
+        <span class="k">yield</span> <span class="n">StateTest</span><span class="p">(</span>
+            <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span> <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">,</span> <span class="n">txs</span><span class="o">=</span><span class="n">txs</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;tx_type_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># DATAHASH gas cost on tx type 3</span>
+    <span class="n">total_blocks</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">txs_type_3</span><span class="p">)</span> <span class="o">+</span> <span class="n">MAX_BLOB_PER_BLOCK</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="p">)</span> <span class="o">//</span> <span class="n">MAX_BLOB_PER_BLOCK</span>
+    <span class="n">blocks</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Block</span><span class="p">(</span>
+            <span class="n">txs</span><span class="o">=</span><span class="n">txs_type_3</span><span class="p">[</span>
+                <span class="n">i</span> <span class="o">*</span> <span class="n">MAX_BLOB_PER_BLOCK</span> <span class="p">:</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">MAX_BLOB_PER_BLOCK</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">total_blocks</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="k">yield</span> <span class="n">BlockchainTest</span><span class="p">(</span><span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span> <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">,</span> <span class="n">blocks</span><span class="o">=</span><span class="n">blocks</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="s2">&quot;tx_type_3&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="fillers.eips.eip4844.datahash_opcode.test_datahash_blob_versioned_hash" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">test_datahash_blob_versioned_hash</span><span class="p">(</span><span class="n">_</span><span class="p">)</span></code>
+
+<a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_blob_versioned_hash" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Tests that the <code>DATAHASH</code> opcode returns the correct versioned hash for
+various valid index scenarios.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>fillers/eips/eip4844/datahash_opcode.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">524</span>
+<span class="normal">525</span>
+<span class="normal">526</span>
+<span class="normal">527</span>
+<span class="normal">528</span>
+<span class="normal">529</span>
+<span class="normal">530</span>
+<span class="normal">531</span>
+<span class="normal">532</span>
+<span class="normal">533</span>
+<span class="normal">534</span>
+<span class="normal">535</span>
+<span class="normal">536</span>
+<span class="normal">537</span>
+<span class="normal">538</span>
+<span class="normal">539</span>
+<span class="normal">540</span>
+<span class="normal">541</span>
+<span class="normal">542</span>
+<span class="normal">543</span>
+<span class="normal">544</span>
+<span class="normal">545</span>
+<span class="normal">546</span>
+<span class="normal">547</span>
+<span class="normal">548</span>
+<span class="normal">549</span>
+<span class="normal">550</span>
+<span class="normal">551</span>
+<span class="normal">552</span>
+<span class="normal">553</span>
+<span class="normal">554</span>
+<span class="normal">555</span>
+<span class="normal">556</span>
+<span class="normal">557</span>
+<span class="normal">558</span>
+<span class="normal">559</span>
+<span class="normal">560</span>
+<span class="normal">561</span>
+<span class="normal">562</span>
+<span class="normal">563</span>
+<span class="normal">564</span>
+<span class="normal">565</span>
+<span class="normal">566</span>
+<span class="normal">567</span>
+<span class="normal">568</span>
+<span class="normal">569</span>
+<span class="normal">570</span>
+<span class="normal">571</span>
+<span class="normal">572</span>
+<span class="normal">573</span>
+<span class="normal">574</span>
+<span class="normal">575</span>
+<span class="normal">576</span>
+<span class="normal">577</span>
+<span class="normal">578</span>
+<span class="normal">579</span>
+<span class="normal">580</span>
+<span class="normal">581</span>
+<span class="normal">582</span>
+<span class="normal">583</span>
+<span class="normal">584</span>
+<span class="normal">585</span>
+<span class="normal">586</span>
+<span class="normal">587</span>
+<span class="normal">588</span>
+<span class="normal">589</span>
+<span class="normal">590</span>
+<span class="normal">591</span>
+<span class="normal">592</span>
+<span class="normal">593</span>
+<span class="normal">594</span>
+<span class="normal">595</span>
+<span class="normal">596</span>
+<span class="normal">597</span>
+<span class="normal">598</span>
+<span class="normal">599</span>
+<span class="normal">600</span>
+<span class="normal">601</span>
+<span class="normal">602</span>
+<span class="normal">603</span>
+<span class="normal">604</span>
+<span class="normal">605</span>
+<span class="normal">606</span>
+<span class="normal">607</span>
+<span class="normal">608</span>
+<span class="normal">609</span>
+<span class="normal">610</span>
+<span class="normal">611</span>
+<span class="normal">612</span>
+<span class="normal">613</span>
+<span class="normal">614</span>
+<span class="normal">615</span>
+<span class="normal">616</span>
+<span class="normal">617</span>
+<span class="normal">618</span>
+<span class="normal">619</span>
+<span class="normal">620</span>
+<span class="normal">621</span>
+<span class="normal">622</span>
+<span class="normal">623</span>
+<span class="normal">624</span>
+<span class="normal">625</span>
+<span class="normal">626</span>
+<span class="normal">627</span>
+<span class="normal">628</span>
+<span class="normal">629</span>
+<span class="normal">630</span>
+<span class="normal">631</span>
+<span class="normal">632</span>
+<span class="normal">633</span>
+<span class="normal">634</span>
+<span class="normal">635</span>
+<span class="normal">636</span>
+<span class="normal">637</span>
+<span class="normal">638</span>
+<span class="normal">639</span>
+<span class="normal">640</span>
+<span class="normal">641</span>
+<span class="normal">642</span>
+<span class="normal">643</span>
+<span class="normal">644</span>
+<span class="normal">645</span>
+<span class="normal">646</span>
+<span class="normal">647</span>
+<span class="normal">648</span>
+<span class="normal">649</span>
+<span class="normal">650</span>
+<span class="normal">651</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@test_from</span><span class="p">(</span><span class="n">fork</span><span class="o">=</span><span class="n">Cancun</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_datahash_blob_versioned_hash</span><span class="p">(</span><span class="n">_</span><span class="p">:</span> <span class="n">Fork</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Tests that the `DATAHASH` opcode returns the correct versioned hash for</span>
+<span class="sd">    various valid index scenarios.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">TOTAL_BLOCKS</span> <span class="o">=</span> <span class="mi">10</span>
+
+    <span class="n">pre</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">TestAddress</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span><span class="n">balance</span><span class="o">=</span><span class="mi">10000000000000000000000</span><span class="p">),</span>
+    <span class="p">}</span>
+    <span class="n">post</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">blocks</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Create an arbitrary repeated list of blob hashes</span>
+    <span class="c1"># with length MAX_BLOB_PER_BLOCK * TOTAL_BLOCKS</span>
+    <span class="n">b_hashes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+        <span class="n">itertools</span><span class="o">.</span><span class="n">islice</span><span class="p">(</span>
+            <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">(</span><span class="n">BLOB_HASHES</span><span class="p">),</span>
+            <span class="n">MAX_BLOB_PER_BLOCK</span> <span class="o">*</span> <span class="n">TOTAL_BLOCKS</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># `DATAHASH` sstore template helper</span>
+    <span class="k">def</span> <span class="nf">datahash_sstore</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Op</span><span class="o">.</span><span class="n">SSTORE</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">Op</span><span class="o">.</span><span class="n">DATAHASH</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
+
+    <span class="c1"># `DATAHASH` on valid indexes</span>
+    <span class="n">datahash_single_valid_calls</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">datahash_sstore</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">pre_single_valid_calls</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">pre</span><span class="p">)</span>
+
+    <span class="c1"># `DATAHASH` on valid index repeated:</span>
+    <span class="c1"># DATAHASH(i), DATAHASH(i), ...</span>
+    <span class="n">datahash_repeated_valid_calls</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">datahash_sstore</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">pre_datahash_repeated_valid_calls</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">pre</span><span class="p">)</span>
+
+    <span class="c1"># `DATAHASH` on valid/invalid/valid:</span>
+    <span class="c1"># DATAHASH(i), DATAHASH(MAX_BLOB_PER_BLOCK), DATAHASH(i)</span>
+    <span class="n">datahash_valid_invalid_calls</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">datahash_sstore</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="o">+</span> <span class="n">datahash_sstore</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)</span>
+        <span class="o">+</span> <span class="n">datahash_sstore</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">pre_datahash_valid_invalid_calls</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">pre</span><span class="p">)</span>
+
+    <span class="c1"># `DATAHASH` on different valid indexes repeated:</span>
+    <span class="c1"># DATAHASH(i), DATAHASH(i+1), DATAHASH(i)</span>
+    <span class="n">datahash_varied_valid_calls</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">datahash_sstore</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">datahash_sstore</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">datahash_sstore</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">pre_datahash_varied_valid_calls</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">pre</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">TOTAL_BLOCKS</span><span class="p">):</span>
+        <span class="n">address</span> <span class="o">=</span> <span class="n">to_address</span><span class="p">(</span><span class="mh">0x100</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="mh">0x100</span><span class="p">)</span>
+        <span class="n">pre_single_valid_calls</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span>
+            <span class="n">code</span><span class="o">=</span><span class="n">datahash_single_valid_calls</span>
+        <span class="p">)</span>
+        <span class="n">pre_datahash_repeated_valid_calls</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span>
+            <span class="n">code</span><span class="o">=</span><span class="n">datahash_repeated_valid_calls</span>
+        <span class="p">)</span>
+        <span class="n">pre_datahash_valid_invalid_calls</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span>
+            <span class="n">code</span><span class="o">=</span><span class="n">datahash_valid_invalid_calls</span>
+        <span class="p">)</span>
+        <span class="n">pre_datahash_varied_valid_calls</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span>
+            <span class="n">code</span><span class="o">=</span><span class="n">datahash_varied_valid_calls</span>
+        <span class="p">)</span>
+        <span class="n">blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">Block</span><span class="p">(</span>
+                <span class="n">txs</span><span class="o">=</span><span class="p">[</span>  <span class="c1"># Create tx with max blobs per block</span>
+                    <span class="n">Transaction</span><span class="p">(</span>
+                        <span class="n">ty</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                        <span class="n">nonce</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>
+                        <span class="n">data</span><span class="o">=</span><span class="n">to_hash_bytes</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+                        <span class="n">to</span><span class="o">=</span><span class="n">address</span><span class="p">,</span>
+                        <span class="n">gas_limit</span><span class="o">=</span><span class="mi">3000000</span><span class="p">,</span>
+                        <span class="n">max_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                        <span class="n">max_priority_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                        <span class="n">max_fee_per_data_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                        <span class="n">access_list</span><span class="o">=</span><span class="p">[],</span>
+                        <span class="n">blob_versioned_hashes</span><span class="o">=</span><span class="n">b_hashes</span><span class="p">[</span>
+                            <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)</span> <span class="p">:</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                            <span class="o">*</span> <span class="n">MAX_BLOB_PER_BLOCK</span>
+                        <span class="p">],</span>
+                    <span class="p">)</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">post</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span>
+            <span class="n">storage</span><span class="o">=</span><span class="p">{</span>
+                <span class="n">index</span><span class="p">:</span> <span class="n">b_hashes</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">MAX_BLOB_PER_BLOCK</span> <span class="o">+</span> <span class="n">index</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+
+    <span class="k">yield</span> <span class="n">BlockchainTest</span><span class="p">(</span>
+        <span class="n">pre</span><span class="o">=</span><span class="n">pre_single_valid_calls</span><span class="p">,</span>
+        <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">,</span>
+        <span class="n">blocks</span><span class="o">=</span><span class="n">blocks</span><span class="p">,</span>
+        <span class="n">tag</span><span class="o">=</span><span class="s2">&quot;valid_calls&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">yield</span> <span class="n">BlockchainTest</span><span class="p">(</span>
+        <span class="n">pre</span><span class="o">=</span><span class="n">pre_datahash_repeated_valid_calls</span><span class="p">,</span>
+        <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">,</span>
+        <span class="n">blocks</span><span class="o">=</span><span class="n">blocks</span><span class="p">,</span>
+        <span class="n">tag</span><span class="o">=</span><span class="s2">&quot;repeated_calls&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">yield</span> <span class="n">BlockchainTest</span><span class="p">(</span>
+        <span class="n">pre</span><span class="o">=</span><span class="n">pre_datahash_valid_invalid_calls</span><span class="p">,</span>
+        <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">,</span>
+        <span class="n">blocks</span><span class="o">=</span><span class="n">blocks</span><span class="p">,</span>
+        <span class="n">tag</span><span class="o">=</span><span class="s2">&quot;valid_invalid_calls&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">yield</span> <span class="n">BlockchainTest</span><span class="p">(</span>
+        <span class="n">pre</span><span class="o">=</span><span class="n">pre_datahash_varied_valid_calls</span><span class="p">,</span>
+        <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">,</span>
+        <span class="n">blocks</span><span class="o">=</span><span class="n">blocks</span><span class="p">,</span>
+        <span class="n">tag</span><span class="o">=</span><span class="s2">&quot;varied_valid_calls&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="fillers.eips.eip4844.datahash_opcode.test_datahash_invalid_blob_index" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">test_datahash_invalid_blob_index</span><span class="p">(</span><span class="n">_</span><span class="p">)</span></code>
+
+<a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_invalid_blob_index" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Tests that the <code>DATAHASH</code> opcode returns a zeroed bytes32 value
+for invalid indexes.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>fillers/eips/eip4844/datahash_opcode.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">654</span>
+<span class="normal">655</span>
+<span class="normal">656</span>
+<span class="normal">657</span>
+<span class="normal">658</span>
+<span class="normal">659</span>
+<span class="normal">660</span>
+<span class="normal">661</span>
+<span class="normal">662</span>
+<span class="normal">663</span>
+<span class="normal">664</span>
+<span class="normal">665</span>
+<span class="normal">666</span>
+<span class="normal">667</span>
+<span class="normal">668</span>
+<span class="normal">669</span>
+<span class="normal">670</span>
+<span class="normal">671</span>
+<span class="normal">672</span>
+<span class="normal">673</span>
+<span class="normal">674</span>
+<span class="normal">675</span>
+<span class="normal">676</span>
+<span class="normal">677</span>
+<span class="normal">678</span>
+<span class="normal">679</span>
+<span class="normal">680</span>
+<span class="normal">681</span>
+<span class="normal">682</span>
+<span class="normal">683</span>
+<span class="normal">684</span>
+<span class="normal">685</span>
+<span class="normal">686</span>
+<span class="normal">687</span>
+<span class="normal">688</span>
+<span class="normal">689</span>
+<span class="normal">690</span>
+<span class="normal">691</span>
+<span class="normal">692</span>
+<span class="normal">693</span>
+<span class="normal">694</span>
+<span class="normal">695</span>
+<span class="normal">696</span>
+<span class="normal">697</span>
+<span class="normal">698</span>
+<span class="normal">699</span>
+<span class="normal">700</span>
+<span class="normal">701</span>
+<span class="normal">702</span>
+<span class="normal">703</span>
+<span class="normal">704</span>
+<span class="normal">705</span>
+<span class="normal">706</span>
+<span class="normal">707</span>
+<span class="normal">708</span>
+<span class="normal">709</span>
+<span class="normal">710</span>
+<span class="normal">711</span>
+<span class="normal">712</span>
+<span class="normal">713</span>
+<span class="normal">714</span>
+<span class="normal">715</span>
+<span class="normal">716</span>
+<span class="normal">717</span>
+<span class="normal">718</span>
+<span class="normal">719</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@test_from</span><span class="p">(</span><span class="n">fork</span><span class="o">=</span><span class="n">Cancun</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_datahash_invalid_blob_index</span><span class="p">(</span><span class="n">_</span><span class="p">:</span> <span class="n">Fork</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Tests that the `DATAHASH` opcode returns a zeroed bytes32 value</span>
+<span class="sd">    for invalid indexes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">INVALID_DEPTH_FACTOR</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">TOTAL_BLOCKS</span> <span class="o">=</span> <span class="mi">5</span>
+
+    <span class="n">pre</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">TestAddress</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span><span class="n">balance</span><span class="o">=</span><span class="mi">10000000000000000000000</span><span class="p">),</span>
+    <span class="p">}</span>
+    <span class="n">blocks</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">post</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># `DATAHASH` on invalid indexes: -ve invalid -&gt; valid -&gt; +ve invalid:</span>
+    <span class="n">datahash_invalid_calls</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">Op</span><span class="o">.</span><span class="n">SSTORE</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Op</span><span class="o">.</span><span class="n">DATAHASH</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span>
+            <span class="o">-</span><span class="n">INVALID_DEPTH_FACTOR</span><span class="p">,</span> <span class="n">MAX_BLOB_PER_BLOCK</span> <span class="o">+</span> <span class="n">INVALID_DEPTH_FACTOR</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">TOTAL_BLOCKS</span><span class="p">):</span>
+        <span class="n">address</span> <span class="o">=</span> <span class="n">to_address</span><span class="p">(</span><span class="mh">0x100</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="mh">0x100</span><span class="p">)</span>
+        <span class="n">pre</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">datahash_invalid_calls</span><span class="p">)</span>
+        <span class="n">blob_per_block</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">blob_hashes</span> <span class="o">=</span> <span class="p">[</span><span class="n">BLOB_HASHES</span><span class="p">[</span><span class="n">blob</span><span class="p">]</span> <span class="k">for</span> <span class="n">blob</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">blob_per_block</span><span class="p">)]</span>
+        <span class="n">blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">Block</span><span class="p">(</span>
+                <span class="n">txs</span><span class="o">=</span><span class="p">[</span>
+                    <span class="n">Transaction</span><span class="p">(</span>
+                        <span class="n">ty</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                        <span class="n">nonce</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>
+                        <span class="n">data</span><span class="o">=</span><span class="n">to_hash_bytes</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+                        <span class="n">to</span><span class="o">=</span><span class="n">address</span><span class="p">,</span>
+                        <span class="n">gas_limit</span><span class="o">=</span><span class="mi">3000000</span><span class="p">,</span>
+                        <span class="n">max_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                        <span class="n">max_priority_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                        <span class="n">max_fee_per_data_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                        <span class="n">access_list</span><span class="o">=</span><span class="p">[],</span>
+                        <span class="n">blob_versioned_hashes</span><span class="o">=</span><span class="n">blob_hashes</span><span class="p">,</span>
+                    <span class="p">)</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">post</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span>
+            <span class="n">storage</span><span class="o">=</span><span class="p">{</span>
+                <span class="n">index</span><span class="p">:</span> <span class="p">(</span>
+                    <span class="mi">0</span>
+                    <span class="k">if</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="n">blob_per_block</span>
+                    <span class="k">else</span> <span class="n">blob_hashes</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+                <span class="p">)</span>
+                <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span>
+                    <span class="o">-</span><span class="n">INVALID_DEPTH_FACTOR</span><span class="p">,</span>
+                    <span class="n">blob_per_block</span>
+                    <span class="o">+</span> <span class="p">(</span><span class="n">INVALID_DEPTH_FACTOR</span> <span class="o">-</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)),</span>
+                <span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+
+    <span class="k">yield</span> <span class="n">BlockchainTest</span><span class="p">(</span>
+        <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>
+        <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">,</span>
+        <span class="n">blocks</span><span class="o">=</span><span class="n">blocks</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="fillers.eips.eip4844.datahash_opcode.test_datahash_multiple_txs_in_block" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">test_datahash_multiple_txs_in_block</span><span class="p">(</span><span class="n">_</span><span class="p">)</span></code>
+
+<a href="#fillers.eips.eip4844.datahash_opcode.test_datahash_multiple_txs_in_block" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Tests that the <code>DATAHASH</code> opcode returns the appropriate values
+when there is more than one blob tx type within a block.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>fillers/eips/eip4844/datahash_opcode.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">722</span>
+<span class="normal">723</span>
+<span class="normal">724</span>
+<span class="normal">725</span>
+<span class="normal">726</span>
+<span class="normal">727</span>
+<span class="normal">728</span>
+<span class="normal">729</span>
+<span class="normal">730</span>
+<span class="normal">731</span>
+<span class="normal">732</span>
+<span class="normal">733</span>
+<span class="normal">734</span>
+<span class="normal">735</span>
+<span class="normal">736</span>
+<span class="normal">737</span>
+<span class="normal">738</span>
+<span class="normal">739</span>
+<span class="normal">740</span>
+<span class="normal">741</span>
+<span class="normal">742</span>
+<span class="normal">743</span>
+<span class="normal">744</span>
+<span class="normal">745</span>
+<span class="normal">746</span>
+<span class="normal">747</span>
+<span class="normal">748</span>
+<span class="normal">749</span>
+<span class="normal">750</span>
+<span class="normal">751</span>
+<span class="normal">752</span>
+<span class="normal">753</span>
+<span class="normal">754</span>
+<span class="normal">755</span>
+<span class="normal">756</span>
+<span class="normal">757</span>
+<span class="normal">758</span>
+<span class="normal">759</span>
+<span class="normal">760</span>
+<span class="normal">761</span>
+<span class="normal">762</span>
+<span class="normal">763</span>
+<span class="normal">764</span>
+<span class="normal">765</span>
+<span class="normal">766</span>
+<span class="normal">767</span>
+<span class="normal">768</span>
+<span class="normal">769</span>
+<span class="normal">770</span>
+<span class="normal">771</span>
+<span class="normal">772</span>
+<span class="normal">773</span>
+<span class="normal">774</span>
+<span class="normal">775</span>
+<span class="normal">776</span>
+<span class="normal">777</span>
+<span class="normal">778</span>
+<span class="normal">779</span>
+<span class="normal">780</span>
+<span class="normal">781</span>
+<span class="normal">782</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@test_from</span><span class="p">(</span><span class="n">fork</span><span class="o">=</span><span class="n">Cancun</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_datahash_multiple_txs_in_block</span><span class="p">(</span><span class="n">_</span><span class="p">:</span> <span class="n">Fork</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Tests that the `DATAHASH` opcode returns the appropriate values</span>
+<span class="sd">    when there is more than one blob tx type within a block.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">datahash_valid_call</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">Op</span><span class="o">.</span><span class="n">SSTORE</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">Op</span><span class="o">.</span><span class="n">DATAHASH</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)]</span>
+    <span class="p">)</span>
+
+    <span class="n">pre</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">to_address</span><span class="p">(</span><span class="n">address</span><span class="p">):</span> <span class="n">Account</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">datahash_valid_call</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">address</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mh">0x100</span><span class="p">,</span> <span class="mh">0x500</span><span class="p">,</span> <span class="mh">0x100</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="n">pre</span><span class="p">[</span><span class="n">TestAddress</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span><span class="n">balance</span><span class="o">=</span><span class="mi">10000000000000000000000</span><span class="p">)</span>
+
+    <span class="n">tx</span> <span class="o">=</span> <span class="n">Transaction</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">to_hash_bytes</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+        <span class="n">gas_limit</span><span class="o">=</span><span class="mi">3000000</span><span class="p">,</span>
+        <span class="n">max_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">max_priority_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">max_fee_per_data_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">access_list</span><span class="o">=</span><span class="p">[],</span>
+        <span class="n">blob_versioned_hashes</span><span class="o">=</span><span class="n">BLOB_HASHES</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">blocks</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Block</span><span class="p">(</span>
+            <span class="n">txs</span><span class="o">=</span><span class="p">[</span>
+                <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span><span class="n">ty</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="n">to_address</span><span class="p">(</span><span class="mh">0x100</span><span class="p">)),</span>
+                <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span><span class="n">ty</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="n">to_address</span><span class="p">(</span><span class="mh">0x100</span><span class="p">)),</span>
+            <span class="p">]</span>
+        <span class="p">),</span>
+        <span class="n">Block</span><span class="p">(</span>
+            <span class="n">txs</span><span class="o">=</span><span class="p">[</span>
+                <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span><span class="n">ty</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="n">to_address</span><span class="p">(</span><span class="mh">0x200</span><span class="p">)),</span>
+                <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span><span class="n">ty</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="n">to_address</span><span class="p">(</span><span class="mh">0x200</span><span class="p">)),</span>
+            <span class="p">]</span>
+        <span class="p">),</span>
+        <span class="n">Block</span><span class="p">(</span>
+            <span class="n">txs</span><span class="o">=</span><span class="p">[</span>
+                <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span><span class="n">ty</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="n">to_address</span><span class="p">(</span><span class="mh">0x300</span><span class="p">)),</span>
+                <span class="n">tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span><span class="n">ty</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="n">to_address</span><span class="p">(</span><span class="mh">0x400</span><span class="p">)),</span>
+            <span class="p">]</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+
+    <span class="n">post</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">to_address</span><span class="p">(</span><span class="n">address</span><span class="p">):</span> <span class="n">Account</span><span class="p">(</span>
+            <span class="n">storage</span><span class="o">=</span><span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">BLOB_HASHES</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)}</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">address</span> <span class="ow">in</span> <span class="p">(</span><span class="mh">0x200</span><span class="p">,</span> <span class="mh">0x400</span><span class="p">)</span>
+        <span class="k">else</span> <span class="n">Account</span><span class="p">(</span><span class="n">storage</span><span class="o">=</span><span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)})</span>
+        <span class="k">for</span> <span class="n">address</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mh">0x100</span><span class="p">,</span> <span class="mh">0x500</span><span class="p">,</span> <span class="mh">0x100</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">yield</span> <span class="n">BlockchainTest</span><span class="p">(</span>
+        <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>
+        <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">,</span>
+        <span class="n">blocks</span><span class="o">=</span><span class="n">blocks</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
 
 
 
