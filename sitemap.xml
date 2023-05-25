@@ -1,177 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/_auto_gen_fillers/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/EIPS/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/_auto_gen_fillers/EIPS/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/EIPS/eip3651/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/_auto_gen_fillers/EIPS/eip3651/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/EIPS/eip3855/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/_auto_gen_fillers/EIPS/eip3855/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/EIPS/eip3860/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/_auto_gen_fillers/EIPS/eip3860/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/EIPS/EIP-4844/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/_auto_gen_fillers/EIPS/EIP-4844/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/EIPS/EIP-4844/datahash_opcode/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/_auto_gen_fillers/EIPS/EIP-4844/datahash_opcode/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/EIPS/EIP-4844/excess_data_gas/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/_auto_gen_fillers/EIPS/EIP-4844/excess_data_gas/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/EIPS/EIP-4844/test_cases/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/_auto_gen_fillers/EIPS/EIP-4844/test_cases/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/VM/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/_auto_gen_fillers/VM/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/VM/chain_id/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/_auto_gen_fillers/VM/chain_id/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/VM/dup/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/_auto_gen_fillers/VM/dup/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/example/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/_auto_gen_fillers/example/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/example/acl_example/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/_auto_gen_fillers/example/acl_example/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/example/yul_example/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/_auto_gen_fillers/example/yul_example/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/security/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/_auto_gen_fillers/security/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/security/selfdestruct_balance_bug/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/_auto_gen_fillers/security/selfdestruct_balance_bug/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/withdrawals/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/_auto_gen_fillers/withdrawals/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/_auto_gen_fillers/withdrawals/withdrawals/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/_auto_gen_fillers/withdrawals/withdrawals/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/dev/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/dev/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/dev/docs/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/dev/docs/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/getting_started/quick_start/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/getting_started/quick_start/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/getting_started/reference_specification/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/getting_started/reference_specification/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/getting_started/repository_overview/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/getting_started/repository_overview/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/getting_started/writing_tests/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/getting_started/writing_tests/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/library/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/library/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/library/ethereum_test_forks/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/library/ethereum_test_forks/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/library/ethereum_test_tools/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/library/ethereum_test_tools/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/library/evm_block_builder/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/library/evm_block_builder/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/library/evm_transition_tool/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/library/evm_transition_tool/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/library/pytest_plugins/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/library/pytest_plugins/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/test_case_descriptions/eip4844/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/test_case_descriptions/eip4844/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/tutorials/blockchain/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/tutorials/blockchain/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://execution-spec-tests.readthedocs.io/tutorials/state_transition/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/tutorials/state_transition/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
