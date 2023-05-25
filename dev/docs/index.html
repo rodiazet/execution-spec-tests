@@ -1372,6 +1372,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plugins" class="md-nav__link">
+    Plugins
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1454,6 +1474,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plugins" class="md-nav__link">
+    Plugins
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1473,7 +1513,7 @@
 
 
 <h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
-<p><code>execution-spec-tests</code> documentation is generated via <a href="https://www.mkdocs.org/"><code>mkdocs</code></a> and hosted remotely on <a href="https://execution-spec-tests.readthedocs.io/en/latest/">readthedocs.io</a>.</p>
+<p>The <code>execution-spec-tests</code> documentation is generated via <a href="https://www.mkdocs.org/"><code>mkdocs</code></a> and hosted remotely on <a href="https://execution-spec-tests.readthedocs.io/en/latest/">readthedocs.io</a>.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="go">pip install -e .[docs]</span>
 </code></pre></div>
@@ -1484,7 +1524,8 @@
 <h3 id="local-deployment-and-test">Local Deployment and Test<a class="headerlink" href="#local-deployment-and-test" title="Permanent link">&para;</a></h3>
 <p>This runs continually and re-generates the documentation upon changes in the <code>./docs/</code> sub-director and deploys the site locally (<a href="http://127.0.0.1:8000/">127.0.0.1:8000</a>, by default):
 <div class="highlight"><pre><span></span><code><span class="go">mkdocs serve</span>
-</code></pre></div></p>
+</code></pre></div>
+Note: The <code>gen-files</code> plugin currently breaks the <code>serve</code> command by continually re-generating the documentation. Disable this config in mkdocs.yml to avoid this behaviour.</p>
 <h3 id="test-remote-deployment">Test Remote Deployment<a class="headerlink" href="#test-remote-deployment" title="Permanent link">&para;</a></h3>
 <p>This can be used to generate and deploy a local version of the documentation remotely on Github pages in order to share a preview with other developers. Note, as the documentation is generated locally, even changes that have not been pushed will be deployed:
 <div class="highlight"><pre><span></span><code><span class="go">mkdocs gh-deploy</span>
@@ -1492,6 +1533,18 @@
 It will be deployed to the Github pages of the repo's username (branch is ignored), e.g., <a href="https://danceratopz.github.io/execution-spec-tests">https://danceratopz.github.io/execution-spec-tests</a>.</p>
 <h3 id="production-deployment">Production Deployment<a class="headerlink" href="#production-deployment" title="Permanent link">&para;</a></h3>
 <p>Read the docs should pick up a push to the <code>main</code> branch and deploy an up-to-date version of the documentation. Active maintainers who wish to manage the documentation on <a href="https://readthedocs.org/projects/execution-spec-tests/">readthedocs.org</a> require a readthedocs account and be given permission (please ask one of the active maintainers).</p>
+<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
+<h3 id="plugins">Plugins<a class="headerlink" href="#plugins" title="Permanent link">&para;</a></h3>
+<p>The documentation flow uses <code>mkdocs</code> and the following additional plugins:</p>
+<ul>
+<li><a href="https://www.mkdocs.org/">mkdocs</a>: The main doc generation tool.</li>
+<li><a href="https://squidfunk.github.io/mkdocs-material">mkdocs-material</a>: Provides many additional features and styling for mkdocs.</li>
+<li><a href="https://mkdocstrings.github.io/">mkdocstrings</a> and <a href="https://mkdocstrings.github.io/python/">mkdocstrings-python</a>: To generate documentation from Python docstrings.</li>
+<li><a href="https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin">mkdocs-awesome-pages-plugin</a>: To allow a flexible combination of manually ordering and automatically ordering items in the navigation bars via <code>.pages</code> files in sub-directories.</li>
+<li><a href="https://oprypin.github.io/mkdocs-gen-files">mkdocs-gen-files</a>: To generate markdown files automatically for each test filler Python module. This could be used to <a href="https://oprypin.github.io/mkdocs-gen-files/extras.html">programmatically generate the nav section</a>. </li>
+<li><a href="https://timvink.github.io/mkdocs-git-authors-plugin/">mkdocs-git-authors-plugin</a>: To display doc contributors in the page footer.</li>
+<li><a href="https://github.com/blueswen/mkdocs-glightbox">mkdocs-glightbox</a> - for improved image and inline content display.</li>
+</ul>
 
 
 
