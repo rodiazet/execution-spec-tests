@@ -13,10 +13,10 @@
         <link rel="canonical" href="https://danceratopz.github.io/execution-spec-tests/getting_started/repository_overview/">
       
       
-        <link rel="prev" href="../reference_specification/">
+        <link rel="prev" href="../setup_vs_code/">
       
       
-        <link rel="next" href="../writing_tests/">
+        <link rel="next" href="../executing_tests_command_line/">
       
       <link rel="icon" href="../../img/ETH-logo-icon.svg">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
@@ -276,7 +276,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../quick_start/" class="md-tabs__link md-tabs__link--active">
+      <a href="../ultra_quick_start/" class="md-tabs__link md-tabs__link--active">
         Getting started
       </a>
     </li>
@@ -292,7 +292,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../tutorials/blockchain/" class="md-tabs__link">
+      <a href="../../tutorials/debug_vs_code/" class="md-tabs__link">
         Tutorials
       </a>
     </li>
@@ -432,6 +432,14 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -452,8 +460,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../quick_start/" class="md-nav__link">
-        Quick Start
+      <a href="../ultra_quick_start/" class="md-nav__link">
+        Ultra Quick Start
       </a>
     </li>
   
@@ -466,8 +474,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference_specification/" class="md-nav__link">
-        Referencing Specification Documents
+      <a href="../setup/" class="md-nav__link">
+        Detailed Setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup_vs_code/" class="md-nav__link">
+        VS Code Setup
       </a>
     </li>
   
@@ -514,22 +536,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#src" class="md-nav__link">
-    src
+  <a href="#fillers" class="md-nav__link">
+    fillers/
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fillers" class="md-nav__link">
-    fillers
+  <a href="#src" class="md-nav__link">
+    src/
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#docs" class="md-nav__link">
-    docs
+    docs/
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    .vscode/
   </a>
   
 </li>
@@ -549,8 +578,50 @@
   
   
     <li class="md-nav__item">
+      <a href="../executing_tests_command_line/" class="md-nav__link">
+        Executing Tests at a Prompt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../executing_tests_vs_code/" class="md-nav__link">
+        Executing Tests in VS Code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../writing_tests/" class="md-nav__link">
         Writing Tests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../verifying_changes/" class="md-nav__link">
+        Verifying Changes
       </a>
     </li>
   
@@ -584,6 +655,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -597,6 +672,34 @@
           Tutorials
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/debug_vs_code/" class="md-nav__link">
+        How to Debug Test Execution in VS Vode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/state_transition/" class="md-nav__link">
+        State Transition Tests
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -618,8 +721,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/state_transition/" class="md-nav__link">
-        State Transition Tests
+      <a href="../../tutorials/reference_specification/" class="md-nav__link">
+        Referencing Specification Documents
       </a>
     </li>
   
@@ -1394,22 +1497,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#src" class="md-nav__link">
-    src
+  <a href="#fillers" class="md-nav__link">
+    fillers/
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fillers" class="md-nav__link">
-    fillers
+  <a href="#src" class="md-nav__link">
+    src/
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#docs" class="md-nav__link">
-    docs
+    docs/
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    .vscode/
   </a>
   
 </li>
@@ -1433,12 +1543,38 @@
 
 
 <h1 id="repository-overview">Repository Overview<a class="headerlink" href="#repository-overview" title="Permanent link">&para;</a></h1>
-<h4 id="src"><code>src</code><a class="headerlink" href="#src" title="Permanent link">&para;</a></h4>
-<p>Contains various packages that help to define test cases and to interface with the <code>evm t8n</code> and <code>evm b11r</code> commands. Additionally, it contains some packages that customize test case (filler) execution by modifying pytest which acts as the test framework.</p>
-<h4 id="fillers"><code>fillers</code><a class="headerlink" href="#fillers" title="Permanent link">&para;</a></h4>
-<p>Contains the Ethereum consensus tests available in this repository.</p>
-<h4 id="docs"><code>docs</code><a class="headerlink" href="#docs" title="Permanent link">&para;</a></h4>
+<p>The most relevant folders and file in the repo are:
+<div class="highlight"><pre><span></span><code>📁 execution-test-specs/
+├─╴📁 fillers/                   # test cases
+│   ├── 📁 eips/
+│   ├── 📁 vm/
+│   └── 📁 ...
+├─╴📁 out/                       # default fixture output dir
+│   ├── 📁 eips/
+│   ├── 📁 vm/
+│   └── 📁 ...
+├─╴📁 src/                       # library &amp; framework packages
+│   ├── 📁 ethereum_test_fork/
+│   ├── 📁 ethereum_test_tools/
+│   └── 📁 ...
+├─╴📁 docs/                      # markdown documentation
+│   ├── 📁 getting_started
+│   ├── 📁 dev
+│   └── 📁 ...
+├─╴📁 .vscode/                   # visual studio code config
+│   ├── 📄 settings.recommended.json # copy to settings.json
+│   ├── 📄 launch.recommended.json
+│   └── 📄 extensions.json
+└── 📄 whitelist.txt             # spellcheck dictionary
+</code></pre></div></p>
+<h4 id="fillers"><code>fillers/</code><a class="headerlink" href="#fillers" title="Permanent link">&para;</a></h4>
+<p>Contains the implementation of the Ethereum consensus tests available in this repository.</p>
+<h4 id="src"><code>src/</code><a class="headerlink" href="#src" title="Permanent link">&para;</a></h4>
+<p>Contains various packages that help to define test cases and to interface with the <code>evm t8n</code> and <code>evm b11r</code> commands. Additionally, it contains some packages that enable test case (filler) execution by customizing pytest which acts as the test framework.</p>
+<h4 id="docs"><code>docs/</code><a class="headerlink" href="#docs" title="Permanent link">&para;</a></h4>
 <p>Contains documentation configuration and source files.</p>
+<h4 id="vscode"><code>.vscode/</code><a class="headerlink" href="#vscode" title="Permanent link">&para;</a></h4>
+<p>See <a href="../setup_vs_code/">VS Code Setup</a>.</p>
 
 
 

@@ -10,20 +10,20 @@
       
       
       
-        <link rel="canonical" href="https://danceratopz.github.io/execution-spec-tests/getting_started/quick_start/">
+        <link rel="canonical" href="https://danceratopz.github.io/execution-spec-tests/tutorials/debug_vs_code/">
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../../getting_started/verifying_changes/">
       
       
-        <link rel="next" href="../reference_specification/">
+        <link rel="next" href="../state_transition/">
       
       <link rel="icon" href="../../img/ETH-logo-icon.svg">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>Quick Start - Ethereum Execution Spec Tests</title>
+        <title>How to Debug Test Execution in VS Vode - Ethereum Execution Spec Tests</title>
       
     
     
@@ -57,11 +57,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Quick Start - Ethereum Execution Spec Tests" >
+        <meta  property="og:title"  content="How to Debug Test Execution in VS Vode - Ethereum Execution Spec Tests" >
       
         <meta  property="og:description"  content="A collection of test cases implemented in Python for Ethereum execution clients" >
       
-        <meta  property="og:image"  content="https://danceratopz.github.io/execution-spec-tests/assets/images/social/getting_started/quick_start.png" >
+        <meta  property="og:image"  content="https://danceratopz.github.io/execution-spec-tests/assets/images/social/tutorials/debug_vs_code.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -69,15 +69,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://danceratopz.github.io/execution-spec-tests/getting_started/quick_start/" >
+        <meta  property="og:url"  content="https://danceratopz.github.io/execution-spec-tests/tutorials/debug_vs_code/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Quick Start - Ethereum Execution Spec Tests" >
+        <meta  name="twitter:title"  content="How to Debug Test Execution in VS Vode - Ethereum Execution Spec Tests" >
       
         <meta  name="twitter:description"  content="A collection of test cases implemented in Python for Ethereum execution clients" >
       
-        <meta  name="twitter:image"  content="https://danceratopz.github.io/execution-spec-tests/assets/images/social/getting_started/quick_start.png" >
+        <meta  name="twitter:image"  content="https://danceratopz.github.io/execution-spec-tests/assets/images/social/tutorials/debug_vs_code.png" >
       
     
     
@@ -114,7 +114,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quick-start" class="md-skip">
+        <a href="#how-to-debug-test-execution-in-vs-vode" class="md-skip">
           Skip to content
         </a>
       
@@ -146,7 +146,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quick Start
+              How to Debug Test Execution in VS Vode
             
           </span>
         </div>
@@ -268,15 +268,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../../getting_started/ultra_quick_start/" class="md-tabs__link">
         Getting started
       </a>
     </li>
@@ -286,13 +284,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../tutorials/blockchain/" class="md-tabs__link">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         Tutorials
       </a>
     </li>
@@ -411,18 +411,24 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
       
       
+        
+          
+        
+          
+        
+          
+        
+          
         
           
         
@@ -439,7 +445,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Getting started
@@ -450,86 +456,10 @@
               
   
   
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Quick Start
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Quick Start
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generating-the-execution-spec-tests-for-use-with-clients" class="md-nav__link">
-    Generating the Execution Spec Tests For Use With Clients
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-the-execution-spec-tests-framework" class="md-nav__link">
-    Testing the Execution Spec Tests Framework
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
   
     <li class="md-nav__item">
-      <a href="../reference_specification/" class="md-nav__link">
-        Referencing Specification Documents
+      <a href="../../getting_started/ultra_quick_start/" class="md-nav__link">
+        Ultra Quick Start
       </a>
     </li>
   
@@ -542,7 +472,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../repository_overview/" class="md-nav__link">
+      <a href="../../getting_started/setup/" class="md-nav__link">
+        Detailed Setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/setup_vs_code/" class="md-nav__link">
+        VS Code Setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/repository_overview/" class="md-nav__link">
         Repository Overview
       </a>
     </li>
@@ -556,8 +514,50 @@
   
   
     <li class="md-nav__item">
-      <a href="../writing_tests/" class="md-nav__link">
+      <a href="../../getting_started/executing_tests_command_line/" class="md-nav__link">
+        Executing Tests at a Prompt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/executing_tests_vs_code/" class="md-nav__link">
+        Executing Tests in VS Code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/writing_tests/" class="md-nav__link">
         Writing Tests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/verifying_changes/" class="md-nav__link">
+        Verifying Changes
       </a>
     </li>
   
@@ -576,16 +576,22 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
+        
+          
+        
+          
         
           
         
@@ -598,7 +604,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Tutorials
@@ -609,9 +615,47 @@
               
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        How to Debug Test Execution in VS Vode
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
   
     <li class="md-nav__item">
-      <a href="../../tutorials/blockchain/" class="md-nav__link">
+      <a href="../state_transition/" class="md-nav__link">
+        State Transition Tests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blockchain/" class="md-nav__link">
         Blockchain Tests
       </a>
     </li>
@@ -625,8 +669,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/state_transition/" class="md-nav__link">
-        State Transition Tests
+      <a href="../reference_specification/" class="md-nav__link">
+        Referencing Specification Documents
       </a>
     </li>
   
@@ -1394,42 +1438,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generating-the-execution-spec-tests-for-use-with-clients" class="md-nav__link">
-    Generating the Execution Spec Tests For Use With Clients
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-the-execution-spec-tests-framework" class="md-nav__link">
-    Testing the Execution Spec Tests Framework
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1446,73 +1454,7 @@
   
 
 
-<h1 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h1>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>The following are required to either generate or develop tests:</p>
-<ol>
-<li>Python &gt;= <code>3.10.0</code> &lt; <code>3.11</code>.</li>
-<li>For dists. with the <code>apt</code> package manager ensure you have python <code>-dev</code> &amp; <code>-venv</code> packages installed.</li>
-<li>
-<p><a href="https://github.com/ethereum/go-ethereum"><code>go-ethereum</code></a> <code>geth</code>'s <code>evm</code> utility must be accessible in the <code>PATH</code>, typically at the latest version. To get it:</p>
-<ol>
-<li>Install <a href="https://go.dev/doc/install">the Go programming language</a> on your computer.</li>
-<li>Clone <a href="https://github.com/ethereum/go-ethereum">the Geth repository</a>.</li>
-<li>Run <code>make all</code>.</li>
-<li>Copy <code>build/bin/evm</code> to a directory on the path.</li>
-</ol>
-<p><strong>Note:</strong> To update to a different Geth branch (for example one that supports a specific EIP) all you need to do is to change the <code>evm</code> in the path.</p>
-</li>
-<li>
-<p><a href="https://github.com/ethereum/solidity"><code>solc</code></a> &gt;= <code>v0.8.17</code>; <code>solc</code> must be in accessible in the <code>PATH</code>.</p>
-</li>
-</ol>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>To generate tests from the test "fillers", it's necessary to install the Python packages provided by <code>execution-spec-tests</code> (it's recommended to use a virtual environment for the installation):</p>
-<div class="highlight"><pre><span></span><code><span class="go">git clone https://github.com/ethereum/execution-spec-tests</span>
-<span class="go">cd execution-spec-tests</span>
-<span class="go">python3.10 -m venv ./venv/</span>
-<span class="go">source ./venv/bin/activate</span>
-<span class="go">pip install -e .</span>
-</code></pre></div>
-<p>After the installation, run this sanity check to ensure tests are generated.
-If everything is OK, you will see the beginning of the JSON format filled test.</p>
-<div class="highlight"><pre><span></span><code><span class="go">tf --test-case yul</span>
-<span class="go">head fixtures/example/yul_example/yul.json</span>
-</code></pre></div>
-<h2 id="generating-the-execution-spec-tests-for-use-with-clients">Generating the Execution Spec Tests For Use With Clients<a class="headerlink" href="#generating-the-execution-spec-tests-for-use-with-clients" title="Permanent link">&para;</a></h2>
-<p>To generate all the tests defined in the <code>./fillers</code> sub-directory, run the <code>tf</code> command:</p>
-<div class="highlight"><pre><span></span><code><span class="go">tf --filler-path=&quot;fillers&quot; --output=&quot;fixtures&quot; </span>
-</code></pre></div>
-<p>This is equivalent to running <code>tf</code> with no arguments. The paths<code>fillers/</code> and <code>fixtures/</code> are both defaults for the respective command.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The test <code>post</code> conditions are tested against the output of the <code>geth</code> <code>evm</code> utility during test generation.</p>
-</div>
-<p>To generate all the tests in the <code>./fillers/vm</code> sub-directory (category), for example, run:
-<div class="highlight"><pre><span></span><code><span class="go">tf --test-categories vm</span>
-</code></pre></div></p>
-<p>This extends to sub-directories. As an example, to generate all specific tests within the <code>./fillers/vm/vm_arith/vm_add</code> sub-directory, run:
-<div class="highlight"><pre><span></span><code><span class="go">tf --output=&quot;fixtures&quot; --test-categories vm.vm_arith.vm_add</span>
-</code></pre></div></p>
-<p>To generate all the tests in the <code>./fillers/*/dup.py</code> modules, for example, run:
-<div class="highlight"><pre><span></span><code><span class="go">tf --test-module dup</span>
-</code></pre></div></p>
-<p>To generate specific tests, such as <code>./fillers/*/*.py::test_dup</code>, for example, run (remove the <code>test_</code> prefix from the test case's function name):
-<div class="highlight"><pre><span></span><code><span class="go">tf --test-case dup</span>
-</code></pre></div></p>
-<p>To overwrite the existing set of fixtures, make sure you run the test filler with the <code>--force-refill</code> flag:
-<div class="highlight"><pre><span></span><code><span class="go">tf --force-refill</span>
-</code></pre></div></p>
-<p>For upcoming forks that are not already upgraded within the Ethereum network, use the <code>--latest-fork</code> flag. For example, currently (03/05/23) the next fork being developed is <code>Cancun</code>:
-<div class="highlight"><pre><span></span><code><span class="go">tf --latest-fork Cancun</span>
-</code></pre></div></p>
-<h2 id="testing-the-execution-spec-tests-framework">Testing the Execution Spec Tests Framework<a class="headerlink" href="#testing-the-execution-spec-tests-framework" title="Permanent link">&para;</a></h2>
-<p>The Python packages provided by the execution spec tests framework have their own test suite that can be ran via <code>tox</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="go">python -m venv ./venv/</span>
-<span class="go">source ./venv/bin/activate</span>
-<span class="go">pip install tox</span>
-<span class="go">tox -e py3</span>
-</code></pre></div>
+<h1 id="how-to-debug-test-execution-in-vs-vode">How to Debug Test Execution in VS Vode<a class="headerlink" href="#how-to-debug-test-execution-in-vs-vode" title="Permanent link">&para;</a></h1>
 
 
 
