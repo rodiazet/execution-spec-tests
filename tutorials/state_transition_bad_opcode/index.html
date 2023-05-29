@@ -10,20 +10,20 @@
       
       
       
-        <link rel="canonical" href="https://danceratopz.github.io/execution-spec-tests/getting_started/executing_tests_command_line/">
+        <link rel="canonical" href="https://danceratopz.github.io/execution-spec-tests/tutorials/state_transition_bad_opcode/">
       
       
-        <link rel="prev" href="../repository_overview/">
+        <link rel="prev" href="../state_transition/">
       
       
-        <link rel="next" href="../executing_tests_vs_code/">
+        <link rel="next" href="../../writing_tests/">
       
       <link rel="icon" href="../../img/ETH-logo-icon.svg">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>Executing Tests at a Prompt - Ethereum Execution Spec Tests</title>
+        <title>State transition bad opcode - Ethereum Execution Spec Tests</title>
       
     
     
@@ -57,11 +57,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Executing Tests at a Prompt - Ethereum Execution Spec Tests" >
+        <meta  property="og:title"  content="State transition bad opcode - Ethereum Execution Spec Tests" >
       
         <meta  property="og:description"  content="A collection of test cases implemented in Python for Ethereum execution clients" >
       
-        <meta  property="og:image"  content="https://danceratopz.github.io/execution-spec-tests/assets/images/social/getting_started/executing_tests_command_line.png" >
+        <meta  property="og:image"  content="https://danceratopz.github.io/execution-spec-tests/assets/images/social/tutorials/state_transition_bad_opcode.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -69,15 +69,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://danceratopz.github.io/execution-spec-tests/getting_started/executing_tests_command_line/" >
+        <meta  property="og:url"  content="https://danceratopz.github.io/execution-spec-tests/tutorials/state_transition_bad_opcode/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Executing Tests at a Prompt - Ethereum Execution Spec Tests" >
+        <meta  name="twitter:title"  content="State transition bad opcode - Ethereum Execution Spec Tests" >
       
         <meta  name="twitter:description"  content="A collection of test cases implemented in Python for Ethereum execution clients" >
       
-        <meta  name="twitter:image"  content="https://danceratopz.github.io/execution-spec-tests/assets/images/social/getting_started/executing_tests_command_line.png" >
+        <meta  name="twitter:image"  content="https://danceratopz.github.io/execution-spec-tests/assets/images/social/tutorials/state_transition_bad_opcode.png" >
       
     
     
@@ -114,7 +114,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#executing-tests-at-a-prompt" class="md-skip">
+        <a href="#bad-opcode-test" class="md-skip">
           Skip to content
         </a>
       
@@ -146,7 +146,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Executing Tests at a Prompt
+              State transition bad opcode
             
           </span>
         </div>
@@ -268,15 +268,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../quick_start/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../getting_started/quick_start/" class="md-tabs__link">
         Getting started
       </a>
     </li>
@@ -302,13 +300,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../tutorials/state_transition/" class="md-tabs__link">
+      <a href="../state_transition/" class="md-tabs__link md-tabs__link--active">
         Tutorials
       </a>
     </li>
@@ -443,16 +443,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
       
       
         
@@ -475,7 +473,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Getting started
@@ -488,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quick_start/" class="md-nav__link">
+      <a href="../../getting_started/quick_start/" class="md-nav__link">
         Quick Start
       </a>
     </li>
@@ -502,7 +500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../setup_vs_code/" class="md-nav__link">
+      <a href="../../getting_started/setup_vs_code/" class="md-nav__link">
         VS Code Setup
       </a>
     </li>
@@ -516,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../repository_overview/" class="md-nav__link">
+      <a href="../../getting_started/repository_overview/" class="md-nav__link">
         Repository Overview
       </a>
     </li>
@@ -528,73 +526,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Executing Tests at a Prompt
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../getting_started/executing_tests_command_line/" class="md-nav__link">
         Executing Tests at a Prompt
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#collection-test-exploration" class="md-nav__link">
-    Collection - Test Exploration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execution" class="md-nav__link">
-    Execution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execution-for-development-forks" class="md-nav__link">
-    Execution for Development Forks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#useful-pytest-command-line-options" class="md-nav__link">
-    Useful pytest Command-Line Options
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -606,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../executing_tests_vs_code/" class="md-nav__link">
+      <a href="../../getting_started/executing_tests_vs_code/" class="md-nav__link">
         Executing Tests in VS Code
       </a>
     </li>
@@ -620,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../executing_tests_dev_fork/" class="md-nav__link">
+      <a href="../../getting_started/executing_tests_dev_fork/" class="md-nav__link">
         Executing Tests for Features under Development
       </a>
     </li>
@@ -785,14 +721,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
         
@@ -805,7 +743,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Tutorials
@@ -818,7 +756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/state_transition/" class="md-nav__link">
+      <a href="../state_transition/" class="md-nav__link">
         State Transition Tests
       </a>
     </li>
@@ -1629,8 +1567,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1639,29 +1575,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#collection-test-exploration" class="md-nav__link">
-    Collection - Test Exploration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execution" class="md-nav__link">
-    Execution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execution-for-development-forks" class="md-nav__link">
-    Execution for Development Forks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#useful-pytest-command-line-options" class="md-nav__link">
-    Useful pytest Command-Line Options
+  <a href="#bad-opcode-test" class="md-nav__link">
+    Bad Opcode Test
   </a>
   
 </li>
@@ -1684,53 +1599,207 @@
   
 
 
-<h1 id="executing-tests-at-a-prompt">Executing Tests at a Prompt<a class="headerlink" href="#executing-tests-at-a-prompt" title="Permanent link">&para;</a></h1>
-<h2 id="collection-test-exploration">Collection - Test Exploration<a class="headerlink" href="#collection-test-exploration" title="Permanent link">&para;</a></h2>
-<p>The test fillers implemented in the <code>./fillers</code> sub-directory can be listed in the console using:
-<div class="highlight"><pre><span></span><code><span class="go">pytest --collect-only</span>
+  <h1>State transition bad opcode</h1>
+
+<h3 id="bad-opcode-test">Bad Opcode Test<a class="headerlink" href="#bad-opcode-test" title="Permanent link">&para;</a></h3>
+<p>The source code for this test is <a href="https://github.com/ethereum/execution-spec-tests/tree/main/fillers/vm/opcode_tests.py">here</a>.
+We will only go over the parts that are new.</p>
+<p>We use <a href="https://docs.python.org/3/library/string.html#template-strings">Python string templates</a>, so we need to import that library.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">Template</span>
 </code></pre></div>
-and can be filtered (by test path, function and parameter substring):
-<div class="highlight"><pre><span></span><code><span class="go">pytest --collect-only -k warm_coinbase</span>
+<p>In this test we need a couple of addresses, so we create them here.
+Python lets us specify <code>&lt;string&gt;*&lt;number&gt;</code> when we need a string repeated multiple times, which makes for more readable code than <code>0x00...000C0DE</code>.</p>
+<div class="highlight"><pre><span></span><code>    <span class="n">code_addr</span> <span class="o">=</span> <span class="s2">&quot;0x&quot;</span> <span class="o">+</span> <span class="s2">&quot;0&quot;</span><span class="o">*</span><span class="p">(</span><span class="mi">40</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;C0DE&quot;</span>
+    <span class="n">goat_addr</span> <span class="o">=</span> <span class="s2">&quot;0x&quot;</span> <span class="o">+</span> <span class="s2">&quot;0&quot;</span><span class="o">*</span><span class="p">(</span><span class="mi">40</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;60A7&quot;</span>
 </code></pre></div>
-Docstrings are additionally displayed when ran verbosely:
-<div class="highlight"><pre><span></span><code><span class="go">pytest --collect-only -k warm_coinbase -vv</span>
-</code></pre></div></p>
-<h2 id="execution">Execution<a class="headerlink" href="#execution" title="Permanent link">&para;</a></h2>
-<p>To generate all the test fixtures defined in the <code>./fillers</code> sub-directory and write them to the <code>./fixtures</code> directory, run <code>pytest</code> in the top-level directory as:
-<div class="highlight"><pre><span></span><code><span class="go">pytest --output=&quot;fixtures&quot;</span>
-</code></pre></div></p>
-<div class="admonition note">
-<p class="admonition-title">Test case verification</p>
-<p>Note, that the test <code>post</code> conditions are tested against the output of the <code>evm t8n</code> command for transition tests, respectively <code>evm b11r</code> command for blockchain tests, during test generation.</p>
-</div>
-<p>To generate all the test fixtures in the <code>./fillers/eips/</code> sub-directory (category), for example, run:
-<div class="highlight"><pre><span></span><code><span class="go">pytest fillers/eips</span>
-</code></pre></div></p>
-<p>To generate all the test fixtures in the <code>./fillers/eips/eip3651.py</code> module, for example, run:
-<div class="highlight"><pre><span></span><code><span class="go">pytest ./fillers/eips/eip3651.py</span>
-</code></pre></div></p>
-<p>To generate specific test fixtures, such as those from the test function <code>test_warm_coinbase_call_out_of_gas()</code>, for example, run:
-<div class="highlight"><pre><span></span><code><span class="go">pytest -k &quot;test_warm_coinbase_call_out_of_gas&quot;</span>
+<p>We create <code>env</code> and <code>tx</code> first because they are constant.
+This function will <code>yield</code> multiple tests, but always with the same <code>env</code> and <code>tx</code> values.</p>
+<div class="highlight"><pre><span></span><code>    <span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">()</span>
+
+    <span class="n">tx</span> <span class="o">=</span> <span class="n">Transaction</span><span class="p">(</span>
+           <span class="o">.</span>
+           <span class="o">.</span>
+           <span class="o">.</span>
+        <span class="p">)</span>
 </code></pre></div>
-or, additionally, only for the for Shanghai fork:
-<div class="highlight"><pre><span></span><code><span class="go">pytest -k &quot;test_warm_coinbase_call_out_of_gas and shanghai&quot;</span>
-</code></pre></div></p>
-<h2 id="execution-for-development-forks">Execution for Development Forks<a class="headerlink" href="#execution-for-development-forks" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p>By default, test cases are not executed with upcoming Ethereum forks so that they can be readily executed against the <code>evm</code> tool from the latest <code>geth</code> release. </p>
-<p>In order to execute test cases for an upcoming fork, ensure that the <code>evm</code> tool used supports that fork and features under test and use the <code>--latest-fork</code> flag.</p>
-<p>For example, as of May 2023, the current fork under active development is <code>Cancun</code>:
-<div class="highlight"><pre><span></span><code><span class="go">pytest --latest-fork Cancun</span>
-</code></pre></div></p>
-<p>See: <a href="../executing_tests_dev_fork/">Executing Tests for Features under Development</a>.</p>
-</div>
-<h2 id="useful-pytest-command-line-options">Useful pytest Command-Line Options<a class="headerlink" href="#useful-pytest-command-line-options" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="go">pytest -vv            # More verbose output</span>
-<span class="go">pytest -x             # Exit instantly on first error or failed test filler:</span>
-<span class="go">pytest --pdb          # drop into the debugger upon error in a test filler</span>
-<span class="go">pytest --traces       # Collect traces of the execution information from the transition tool</span>
-<span class="go">pytest --evm=EVM_BIN  # Specify the evm executable to generate fillers with</span>
+<p>Here we create two post states.
+We will use whichever one is appropriate to the test we create.</p>
+<div class="highlight"><pre><span></span><code>    <span class="n">post_valid</span> <span class="o">=</span> <span class="p">{</span>
+       <span class="n">code_addr</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span>
+         <span class="n">storage</span><span class="o">=</span><span class="p">{</span><span class="mh">0x00</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+       <span class="p">),</span>
+    <span class="p">}</span>
+
+    <span class="n">post_invalid</span> <span class="o">=</span> <span class="p">{</span>
+       <span class="n">code_addr</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span>
+         <span class="n">storage</span><span class="o">=</span><span class="p">{</span><span class="mh">0x00</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+       <span class="p">),</span>
+    <span class="p">}</span>
 </code></pre></div>
+<p>Here we define a function (<code>opc_valid</code>) inside another function.
+Python supports this, and it has two advantages:</p>
+<ul>
+<li>Avoid namespace pollution by restricting the function to where it is needed.</li>
+<li>Functions defined inside other functions can use the parameters and local variables of those functions.
+  In this case, we need to use <code>fork</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>    <span class="c1"># Check if an Opcode is valid</span>
+    <span class="k">def</span> <span class="nf">opc_valid</span><span class="p">(</span><span class="n">opc</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return whether opc will be evaluated as valid by the test or not.</span>
+<span class="sd">        Note that some opcodes are evaluated as invalid because the way they act</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+</code></pre></div>
+<p>This is the syntax for Python comments, <code># &lt;rest of the line&gt;</code>. </p>
+<div class="highlight"><pre><span></span><code>        <span class="c1"># PUSH0 is only valid Shanghai and later</span>
+</code></pre></div>
+<p>Opcode 0x5F (<code>PUSH0</code>) is only valid starting with the Shangai fork.
+We don't know what will be the fork names after Shanghai, so it is easiest to specify that prior to Shanghai it is invalid.
+We don't need to worry about forks prior to London because the decorator for this test says it is only valid from London.</p>
+<div class="highlight"><pre><span></span><code>        <span class="k">if</span> <span class="n">fork</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;london&quot;</span><span class="p">,</span> <span class="s2">&quot;merge&quot;</span><span class="p">}</span> <span class="ow">and</span> <span class="n">opc</span><span class="o">==</span><span class="mh">0x5F</span><span class="p">:</span>
+</code></pre></div>
+<p>Python has a <a href="https://docs.python.org/3/tutorial/datastructures.html#sets">set data structure</a>.
+We use this structure when the order of the values are irrelevant, and we just want to be able to check if something is a member or not.</p>
+<p>Note that <a href="https://docs.python.org/3/tutorial/controlflow.html#if-statements"><code>if</code> statements</a> are also followed by a colon (<code>:</code>) and the code inside them indented.
+That is the general Python syntax.</p>
+<div class="highlight"><pre><span></span><code>            <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+<p>Boolean values in Python are either <code>True</code> or <code>False</code>.</p>
+<p>This test works by running an opcode and then does a <a href="https://www.evm.codes/#55?fork=merge"><code>SSTORE</code></a>.
+Opcodes that terminate execution, such as <a href="https://www.evm.codes/#00?fork=merge"><code>STOP</code></a> and <a href="https://www.evm.codes/#f3?fork=merge"><code>RETURN</code></a> also cause the <code>SSTORE</code> not to happen, so they must be treated as invalid.
+The same is true for <a href="https://www.evm.codes/#56?fork=merge"><code>JUMP</code></a>.</p>
+<div class="highlight"><pre><span></span><code>        <span class="c1"># Valid opcodes, but they are terminal, and so cause</span>
+        <span class="c1"># the SSTORE not to happen</span>
+        <span class="k">if</span> <span class="n">opc</span> <span class="ow">in</span> <span class="p">{</span><span class="mh">0x00</span><span class="p">,</span> <span class="mh">0xF3</span><span class="p">,</span> <span class="mh">0xFD</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">}:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+
+        <span class="c1"># Jumps. If you jump to a random location, you skip the SSTORE</span>
+        <span class="k">if</span> <span class="n">opc</span> <span class="ow">in</span> <span class="p">{</span><span class="mh">0x56</span><span class="p">}:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+<p>Next we return <code>True</code> for supported opcodes.</p>
+<div class="highlight"><pre><span></span><code>        <span class="c1"># Opcodes that aren&#39;t part of a range</span>
+        <span class="c1"># 0x20 - SHA3</span>
+        <span class="c1"># 0xFA - STATICCALL</span>
+        <span class="k">if</span> <span class="n">opc</span> <span class="ow">in</span> <span class="p">{</span><span class="mh">0x20</span><span class="p">,</span> <span class="mh">0xFA</span><span class="p">}:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div>
+<p>In Python, as in math, you can use <code>a &lt; b &lt; c</code> for <code>a &lt; b and b &lt; c</code>.</p>
+<div class="highlight"><pre><span></span><code>        <span class="c1"># Arithmetic opcodes</span>
+        <span class="k">if</span> <span class="mh">0x01</span> <span class="o">&lt;=</span> <span class="n">opc</span> <span class="o">&lt;=</span> <span class="mh">0x0b</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+        <span class="o">.</span>
+        <span class="o">.</span>
+        <span class="o">.</span>
+</code></pre></div>
+<p>The last part the function returns <code>False</code>.
+If we got here, then this is not a valid opcode.</p>
+<div class="highlight"><pre><span></span><code>        <span class="k">return</span> <span class="kc">False</span>
+        <span class="c1"># End of opc_valid</span>
+</code></pre></div>
+<p>As this is the end of the function, the next code line is unindented (compared to the function definition code).</p>
+<p>This is a <a href="https://docs.python.org/3/tutorial/controlflow.html#for-statements"><code>for</code> loop</a>.
+For loops iterate over a sequnce, and the <a href="https://docs.python.org/3/tutorial/controlflow.html#the-range-function"><code>range</code></a> function, in this case, gives us the range 0..255.
+As with functions and <code>if</code> statements, the <code>for</code> loop has a colon and includes the indented code.</p>
+<div class="highlight"><pre><span></span><code>    <span class="c1"># For every possible opcode</span>
+    <span class="k">for</span> <span class="n">opc</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">):</span>
+</code></pre></div>
+<p>We have two post states. 
+One, <code>post_valid</code>, has the value of <code>1</code> in storage location <code>0</code>.
+The other, <code>post_invalid</code> has the value of <code>0</code> in storage location <code>0</code>.
+But <code>SELFDESTRUCT</code> destroys the contract so there is no longer an account at that address. 
+Neither is valid, so we just skip that test case.</p>
+<div class="highlight"><pre><span></span><code>        <span class="c1"># We can&#39;t check SELFDESTRUCT using this technique</span>
+        <span class="k">if</span> <span class="n">opc</span> <span class="ow">in</span> <span class="p">{</span><span class="mh">0xFF</span><span class="p">}:</span>
+           <span class="k">continue</span>
+</code></pre></div>
+<p>We need the opcode in hexadecimal. 
+The function <a href="https://docs.python.org/3/library/functions.html#hex"><code>hex</code></a> gives us the hexadecimal number in hex.
+However, it also gives us a <code>0x</code> prefix, which we don't want, so we use a <a href="https://www.w3schools.com/python/gloss_python_string_slice.asp">slice</a> to remove the first two characters.</p>
+<div class="highlight"><pre><span></span><code>        <span class="n">opc_hex</span> <span class="o">=</span> <span class="nb">hex</span><span class="p">(</span><span class="n">opc</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span>
+</code></pre></div>
+<p>We need <code>opc_hex</code> to be two characters.
+If the length is only one, prepend a zero.</p>
+<div class="highlight"><pre><span></span><code>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">opc_hex</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+          <span class="n">opc_hex</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="o">+</span> <span class="n">opc_hex</span>
+</code></pre></div>
+<p>This is a <a href="https://docs.python.org/3/library/string.html#template-strings"><code>Template</code> string</a>.
+This means we'll be able to substitute template variables (<code>${&lt;var name&gt;}</code>) with values to produce the actual code.</p>
+<div class="highlight"><pre><span></span><code>        <span class="n">yul_code</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        {</span>
+</code></pre></div>
+<p>We start with a call <code>0x00...0060A7</code> (a.k.a. <code>goat_addr</code>) so we'll have some return data.
+Otherwise, <a href="https://www.evm.codes/#3e?fork=merge"><code>RETURNDATACOPY</code></a> will fail and appear like it is not an opcode.</p>
+<div class="highlight"><pre><span></span><code>           <span class="n">pop</span><span class="p">(</span><span class="n">call</span><span class="p">(</span><span class="n">gas</span><span class="p">(),</span> <span class="mh">0x60A7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+           <span class="o">//</span> <span class="n">fails</span> <span class="n">on</span> <span class="n">opcodes</span> <span class="k">with</span> <span class="o">&gt;</span><span class="mi">20</span> <span class="n">inputs</span>
+           <span class="o">//</span> <span class="p">(</span><span class="n">currently</span> <span class="n">dup16</span><span class="p">,</span> <span class="n">at</span> <span class="mi">17</span> <span class="n">inputs</span><span class="p">,</span> <span class="ow">is</span> <span class="n">the</span>
+           <span class="o">//</span> <span class="n">one</span> <span class="n">that</span> <span class="n">goes</span> <span class="n">deepest</span><span class="p">)</span>
+           <span class="o">//</span>
+           <span class="o">//</span> <span class="n">Follow</span> <span class="k">with</span> <span class="mi">32</span> <span class="n">NOPs</span> <span class="p">(</span><span class="mh">0x5B</span><span class="p">)</span> <span class="n">to</span> <span class="n">handle</span> <span class="n">PUSH</span><span class="p">,</span> <span class="n">which</span> <span class="n">has</span> <span class="n">an</span> <span class="n">immediate</span>
+           <span class="o">//</span> <span class="n">operand</span>
+</code></pre></div>
+<p>Opcodes can have two types of operands:</p>
+<ul>
+<li>Immediate operands, which are part of the bytecode.
+  For example, <code>6001</code> is <a href="https://www.evm.codes/#60?fork=merge"><code>PUSH1</code></a> with the value <code>0x01</code>.</li>
+<li>Implied operands (a.k.a. stack operands), which come from the stack.</li>
+</ul>
+<p>This <a href="https://docs.soliditylang.org/en/v0.8.17/yul.html#verbatim"><code>verbatim</code></a> code provides both operand types.
+The code, <code>${opcode}${nop32}</code> is the opcode we are testing, followed by 32 copies of 0x5B.
+When <code>0x5B</code> is not used as an operand, it is <a href="https://www.evm.codes/#5b?fork=merge"><code>JUMPDEST</code></a> and does nothing.</p>
+<div class="highlight"><pre><span></span><code>           <span class="n">verbatim_20i_0o</span><span class="p">(</span><span class="nb">hex</span><span class="s2">&quot;$</span><span class="si">{opcode}</span><span class="s2">$</span><span class="si">{nop32}</span><span class="s2">&quot;</span><span class="p">,</span>
+</code></pre></div>
+<p>The opcode string is followed by the input parameters (in this case, twenty of them).
+These can be Yul expressions, but for the sake of simplicity here we just use constant values.</p>
+<div class="highlight"><pre><span></span><code>              <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span>
+              <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span>
+              <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span>
+              <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">)</span>
+</code></pre></div>
+<p>If the opcode terminates the smart contract execution (as invalid opcodes do), we don't get here.
+If we do get here, write to storage cell <code>0x00</code> to record that fact.</p>
+<p>Note the syntax <code>let &lt;var&gt; := &lt;value&gt;</code>. This is how you specify variables in Yul.</p>
+<div class="highlight"><pre><span></span><code>           <span class="o">//</span> <span class="n">We</span> <span class="n">only</span> <span class="n">get</span> <span class="n">here</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">opcode</span> <span class="ow">is</span> <span class="n">legit</span> <span class="p">(</span><span class="ow">and</span> <span class="n">it</span> <span class="n">doesn</span><span class="s1">&#39;t terminate</span>
+           <span class="o">//</span> <span class="n">execution</span> <span class="n">like</span> <span class="n">STOP</span> <span class="ow">and</span> <span class="n">RETURN</span><span class="p">)</span>
+           <span class="n">let</span> <span class="n">zero</span> <span class="o">:=</span> <span class="mi">0</span>
+           <span class="n">let</span> <span class="n">one</span> <span class="o">:=</span> <span class="mi">1</span>
+           <span class="n">sstore</span><span class="p">(</span><span class="n">zero</span><span class="p">,</span> <span class="n">one</span><span class="p">)</span>
+        <span class="p">}</span>
+</code></pre></div>
+<p>Replace <code>${opcode}</code> with the one byte hex code, and <code>${nop32}</code> with 32 copies of <code>5b</code> (for NOP).</p>
+<div class="highlight"><pre><span></span><code>        <span class="s2">&quot;&quot;&quot;).substitute(opcode=opc_hex, nop32=&quot;5B&quot;*32)</span>
+<span class="s2">        pre = {</span>
+<span class="s2">           TestAddress: Account(balance=0x0BA1A9CE0BA1A9CE),</span>
+<span class="s2">           codeAddr: Account(</span>
+<span class="s2">        balance=0,</span>
+<span class="s2">        nonce=1,</span>
+<span class="s2">        code=Yul(yul_code)</span>
+<span class="s2">           ),</span>
+</code></pre></div>
+<p>This is the account for <code>0x00..0060A7</code>. 
+It just returns data (all zeros).</p>
+<div class="highlight"><pre><span></span><code>           <span class="n">goat_addr</span><span class="p">:</span> <span class="n">Account</span><span class="p">(</span>
+                <span class="n">balance</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                <span class="n">nonce</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                <span class="n">code</span><span class="o">=</span><span class="n">Yul</span><span class="p">(</span><span class="s2">&quot;{ return(0, 0x100) }&quot;</span><span class="p">),</span>
+           <span class="p">)</span>
+        <span class="p">}</span>
+</code></pre></div>
+<p>Every time the <code>for</code> loop gets here, it <a href="https://docs.python.org/3/reference/expressions.html#yieldexpr"><code>yields</code></a> a separate test. 
+Over the entire for loop, it yields 255 different tests.</p>
+<div class="highlight"><pre><span></span><code>    <span class="k">yield</span> <span class="n">StateTest</span><span class="p">(</span>
+        <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">,</span> 
+        <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span> 
+        <span class="n">txs</span><span class="o">=</span><span class="p">[</span><span class="n">tx</span><span class="p">],</span>
+        <span class="n">post</span><span class="o">=</span><span class="p">(</span><span class="n">post_valid</span> <span class="k">if</span> <span class="n">opc_valid</span><span class="p">(</span><span class="n">opc</span><span class="p">)</span> <span class="k">else</span> <span class="n">post_invalid</span><span class="p">),</span>
+    <span class="p">)</span>
+</code></pre></div>
+<p>The Python format for the <a href="https://en.wikipedia.org/wiki/Ternary_conditional_operator">ternary operation</a> is a bit different from C-like languages.
+In C like languages the syntax is <code>&lt;condition&gt; ? &lt;yes value&gt; : &lt;no value&gt;</code>.
+In Python it is <code>&lt;yes value&gt; if &lt;condition&gt; else &lt;no value&gt;</code>.</p>
 
 
 

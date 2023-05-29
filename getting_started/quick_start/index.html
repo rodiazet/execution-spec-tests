@@ -363,6 +363,22 @@
   
 
       
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting_help/" class="md-tabs__link">
+        Getting help
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -506,8 +522,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#optional-next-steps" class="md-nav__link">
-    Optional Next Steps:
+  <a href="#next-steps" class="md-nav__link">
+    Next Steps:
   </a>
   
 </li>
@@ -628,6 +644,8 @@
         
           
         
+          
+        
       
       
         
@@ -712,6 +730,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../writing_tests/reference_specification/" class="md-nav__link">
+        Referencing an EIP Spec Version
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../writing_tests/verifying_changes/" class="md-nav__link">
         Verifying Changes
       </a>
@@ -745,10 +777,6 @@
         
           
         
-          
-        
-          
-        
       
       
         <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -771,34 +799,6 @@
     <li class="md-nav__item">
       <a href="../../tutorials/state_transition/" class="md-nav__link">
         State Transition Tests
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorials/blockchain/" class="md-nav__link">
-        Blockchain Tests
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorials/reference_specification/" class="md-nav__link">
-        Referencing Specification Documents
       </a>
     </li>
   
@@ -1546,6 +1546,51 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../getting_help/">Getting help</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Getting help
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1573,8 +1618,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#optional-next-steps" class="md-nav__link">
-    Optional Next Steps:
+  <a href="#next-steps" class="md-nav__link">
+    Next Steps:
   </a>
   
 </li>
@@ -1599,8 +1644,8 @@
 
 <h1 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
-<p class="admonition-title">Deployed forks vs forks under active development</p>
-<p>The EVM features under test must be implemented in the <code>evm</code> tool and <code>solc</code> executables that are used by execution-spec-tests. The following installs stable versions of these tools. </p>
+<p class="admonition-title">Testing features under active development</p>
+<p>The EVM features under test must be implemented in the <code>evm</code> tool and <code>solc</code> executables that are used by the execution-spec-tests framework. The following guide installs stable versions of these tools. </p>
 <p>To test features under active development, start with this base configuration and then follow the steps in <a href="../executing_tests_dev_fork/">executing tests for features under development</a>. </p>
 </div>
 <p>The following requires a Python 3.10 installation.</p>
@@ -1678,35 +1723,19 @@
     </figure>
     Check:</p>
 <ol>
-<li>The versions of the <code>evm</code> and <code>solc</code> tools are as expected (the versions may differ from those in the highlighted box).</li>
+<li>The versions of the <code>evm</code> and <code>solc</code> tools are as expected (your versions may differ from those in the highlighted box).</li>
 <li>The fixture file <code>out/example/acl_example/test_access_list.json</code> has been generated.</li>
 </ol>
 </li>
 </ol>
 </li>
 </ol>
-<h2 id="optional-next-steps">Optional Next Steps:<a class="headerlink" href="#optional-next-steps" title="Permanent link">&para;</a></h2>
+<h2 id="next-steps">Next Steps:<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Learn <a href="../executing_tests_command_line/">useful command-line flags</a>.</li>
-<li><a href="../setup_vs_code/">Configure VS Code</a> to auto-format and lint your Python code.</li>
-<li>
-<p>Learn how to <a href="../executing_tests_vs_code/">execute tests in VS Code's debugger</a>.</p>
-</li>
-<li>
-<p>Implement tests cases in an appropriate <code>fillers/</code> sub-directory and Python module, see <a href="../../writing_tests/">Writing Tests</a>.</p>
-</li>
 <li><a href="../executing_tests_dev_fork/">Execute tests for features under development</a> via the <code>--latest-fork</code> flag.</li>
-<li><a href="../../writing_tests/verifying_changes/">Run checks</a> (lint, spell-check, type-check, tests, docs):
-   <div class="highlight"><pre><span></span><code><span class="go">tox -e fillers</span>
-</code></pre></div>
-   If <code>tox</code> congratulates you, Github actions CI/CD should pass upon pushing to remote.</li>
-<li>
-<p>Take a deep dive in to test writing:</p>
-<ul>
-<li>Tutorial: <a href="../../tutorials/state_transition/">Writing a State Test</a>.</li>
-<li>Tutorial: <a href="../../tutorials/blockchain/">Writing a Blockchain Test</a>.</li>
-</ul>
-</li>
+<li><em>Optional:</em> <a href="../setup_vs_code/">Configure VS Code</a> to auto-format Python code and <a href="../executing_tests_vs_code/#executing-and-debugging-test-cases">execute tests within VS Code</a>.</li>
+<li>Implement a new test case, see <a href="../../writing_tests/">Writing Tests</a>.</li>
 </ol>
 
 

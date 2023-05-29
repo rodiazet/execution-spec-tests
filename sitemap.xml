@@ -111,6 +111,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://danceratopz.github.io/execution-spec-tests/getting_help/</loc>
+         <lastmod>2023-05-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://danceratopz.github.io/execution-spec-tests/getting_started/executing_tests_command_line/</loc>
          <lastmod>2023-05-29</lastmod>
          <changefreq>daily</changefreq>
@@ -181,12 +186,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://danceratopz.github.io/execution-spec-tests/tutorials/reference_specification/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/tutorials/state_transition/</loc>
          <lastmod>2023-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://danceratopz.github.io/execution-spec-tests/tutorials/state_transition/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/tutorials/state_transition_bad_opcode/</loc>
          <lastmod>2023-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -202,6 +207,11 @@
     </url>
     <url>
          <loc>https://danceratopz.github.io/execution-spec-tests/writing_tests/code_standards/</loc>
+         <lastmod>2023-05-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://danceratopz.github.io/execution-spec-tests/writing_tests/reference_specification/</loc>
          <lastmod>2023-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
