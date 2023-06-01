@@ -16,10 +16,10 @@
         <link rel="prev" href="../test_cases/">
       
       
-        <link rel="next" href="../excess_data_gas/">
+        <link rel="next" href="../point_evaluation_precompile/">
       
       <link rel="icon" href="../../../../img/ETH-logo-icon.svg">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -1148,6 +1148,10 @@
         
           
         
+          
+        
+          
+        
       
       
         
@@ -1280,9 +1284,75 @@
   
   
     <li class="md-nav__item">
+      <a href="../point_evaluation_precompile/" class="md-nav__link">
+        point_evaluation_precompile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../excess_data_gas/" class="md-nav__link">
         excess_data_gas
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_5_6" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8_2_5_6" id="__nav_8_2_5_6_label" tabindex="0">
+          point_evaluation_vectors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_5_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_2_5_6">
+          <span class="md-nav__icon md-icon"></span>
+          point_evaluation_vectors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../point_evaluation_vectors/test_cases/" class="md-nav__link">
+        Test Cases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1722,9 +1792,7 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/datahash_opcode.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 55</span>
-<span class="normal"> 56</span>
-<span class="normal"> 57</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 57</span>
 <span class="normal"> 58</span>
 <span class="normal"> 59</span>
 <span class="normal"> 60</span>
@@ -2097,7 +2165,10 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 <span class="normal">427</span>
 <span class="normal">428</span>
 <span class="normal">429</span>
-<span class="normal">430</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@test_from</span><span class="p">(</span><span class="n">fork</span><span class="o">=</span><span class="n">Cancun</span><span class="p">)</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@test_from</span><span class="p">(</span><span class="n">fork</span><span class="o">=</span><span class="n">Cancun</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">test_datahash_opcode_contexts</span><span class="p">(</span><span class="n">_</span><span class="p">:</span> <span class="n">Fork</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Test DATAHASH opcode called on different contexts.</span>
@@ -2244,9 +2315,10 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
         <span class="n">initcode_datahash_sstore_bytecode</span><span class="o">.</span><span class="n">assemble</span><span class="p">(),</span>
     <span class="p">)</span>
 
-    <span class="n">b_hashes</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">bytes</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">to_hash_bytes</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)</span>
-    <span class="p">]</span>
+    <span class="n">b_hashes</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">bytes</span><span class="p">]</span> <span class="o">=</span> <span class="n">add_kzg_version</span><span class="p">(</span>
+        <span class="p">[(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)],</span>
+        <span class="n">BLOB_COMMITMENT_VERSION_KZG</span><span class="p">,</span>
+    <span class="p">)</span>
 
     <span class="n">tags</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s2">&quot;at_top_level_call_stack&quot;</span><span class="p">,</span>
@@ -2500,10 +2572,7 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/datahash_opcode.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">433</span>
-<span class="normal">434</span>
-<span class="normal">435</span>
-<span class="normal">436</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">436</span>
 <span class="normal">437</span>
 <span class="normal">438</span>
 <span class="normal">439</span>
@@ -2588,7 +2657,13 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 <span class="normal">518</span>
 <span class="normal">519</span>
 <span class="normal">520</span>
-<span class="normal">521</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@test_from</span><span class="p">(</span><span class="n">fork</span><span class="o">=</span><span class="n">Cancun</span><span class="p">)</span>
+<span class="normal">521</span>
+<span class="normal">522</span>
+<span class="normal">523</span>
+<span class="normal">524</span>
+<span class="normal">525</span>
+<span class="normal">526</span>
+<span class="normal">527</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@test_from</span><span class="p">(</span><span class="n">fork</span><span class="o">=</span><span class="n">Cancun</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">test_datahash_gas_cost</span><span class="p">(</span><span class="n">_</span><span class="p">:</span> <span class="n">Fork</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Test DATAHASH opcode gas cost using a variety of indexes.</span>
@@ -2643,7 +2718,7 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
                 <span class="n">to</span><span class="o">=</span><span class="n">address</span><span class="p">,</span>
                 <span class="n">nonce</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>
                 <span class="n">max_priority_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-                <span class="n">blob_versioned_hashes</span><span class="o">=</span><span class="p">[</span><span class="n">BLOB_HASHES</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">]],</span>
+                <span class="n">access_list</span><span class="o">=</span><span class="p">[],</span>
             <span class="p">)</span>
         <span class="p">)</span>
         <span class="n">txs_type_3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
@@ -2652,7 +2727,10 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
                 <span class="n">to</span><span class="o">=</span><span class="n">address</span><span class="p">,</span>
                 <span class="n">nonce</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>
                 <span class="n">max_priority_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-                <span class="n">blob_versioned_hashes</span><span class="o">=</span><span class="p">[</span><span class="n">BLOB_HASHES</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">]],</span>
+                <span class="n">blob_versioned_hashes</span><span class="o">=</span><span class="n">add_kzg_version</span><span class="p">(</span>
+                    <span class="p">[</span><span class="n">BLOB_HASHES</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">]],</span>
+                    <span class="n">BLOB_COMMITMENT_VERSION_KZG</span><span class="p">,</span>
+                <span class="p">),</span>
             <span class="p">)</span>
         <span class="p">)</span>
         <span class="n">post</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span><span class="n">storage</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="n">DATAHASH_GAS_COST</span><span class="p">})</span>
@@ -2705,13 +2783,7 @@ various valid index scenarios.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/datahash_opcode.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">524</span>
-<span class="normal">525</span>
-<span class="normal">526</span>
-<span class="normal">527</span>
-<span class="normal">528</span>
-<span class="normal">529</span>
-<span class="normal">530</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">530</span>
 <span class="normal">531</span>
 <span class="normal">532</span>
 <span class="normal">533</span>
@@ -2832,7 +2904,16 @@ various valid index scenarios.</p>
 <span class="normal">648</span>
 <span class="normal">649</span>
 <span class="normal">650</span>
-<span class="normal">651</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@test_from</span><span class="p">(</span><span class="n">fork</span><span class="o">=</span><span class="n">Cancun</span><span class="p">)</span>
+<span class="normal">651</span>
+<span class="normal">652</span>
+<span class="normal">653</span>
+<span class="normal">654</span>
+<span class="normal">655</span>
+<span class="normal">656</span>
+<span class="normal">657</span>
+<span class="normal">658</span>
+<span class="normal">659</span>
+<span class="normal">660</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@test_from</span><span class="p">(</span><span class="n">fork</span><span class="o">=</span><span class="n">Cancun</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">test_datahash_blob_versioned_hash</span><span class="p">(</span><span class="n">_</span><span class="p">:</span> <span class="n">Fork</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Tests that the `DATAHASH` opcode returns the correct versioned hash for</span>
@@ -2848,11 +2929,14 @@ various valid index scenarios.</p>
 
     <span class="c1"># Create an arbitrary repeated list of blob hashes</span>
     <span class="c1"># with length MAX_BLOB_PER_BLOCK * TOTAL_BLOCKS</span>
-    <span class="n">b_hashes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
-        <span class="n">itertools</span><span class="o">.</span><span class="n">islice</span><span class="p">(</span>
-            <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">(</span><span class="n">BLOB_HASHES</span><span class="p">),</span>
-            <span class="n">MAX_BLOB_PER_BLOCK</span> <span class="o">*</span> <span class="n">TOTAL_BLOCKS</span><span class="p">,</span>
-        <span class="p">)</span>
+    <span class="n">b_hashes</span> <span class="o">=</span> <span class="n">add_kzg_version</span><span class="p">(</span>
+        <span class="nb">list</span><span class="p">(</span>
+            <span class="n">itertools</span><span class="o">.</span><span class="n">islice</span><span class="p">(</span>
+                <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">(</span><span class="n">BLOB_HASHES</span><span class="p">),</span>
+                <span class="n">MAX_BLOB_PER_BLOCK</span> <span class="o">*</span> <span class="n">TOTAL_BLOCKS</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">),</span>
+        <span class="n">BLOB_COMMITMENT_VERSION_KZG</span><span class="p">,</span>
     <span class="p">)</span>
 
     <span class="c1"># `DATAHASH` sstore template helper</span>
@@ -2988,16 +3072,7 @@ for invalid indexes.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/datahash_opcode.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">654</span>
-<span class="normal">655</span>
-<span class="normal">656</span>
-<span class="normal">657</span>
-<span class="normal">658</span>
-<span class="normal">659</span>
-<span class="normal">660</span>
-<span class="normal">661</span>
-<span class="normal">662</span>
-<span class="normal">663</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">663</span>
 <span class="normal">664</span>
 <span class="normal">665</span>
 <span class="normal">666</span>
@@ -3053,7 +3128,19 @@ for invalid indexes.</p>
 <span class="normal">716</span>
 <span class="normal">717</span>
 <span class="normal">718</span>
-<span class="normal">719</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@test_from</span><span class="p">(</span><span class="n">fork</span><span class="o">=</span><span class="n">Cancun</span><span class="p">)</span>
+<span class="normal">719</span>
+<span class="normal">720</span>
+<span class="normal">721</span>
+<span class="normal">722</span>
+<span class="normal">723</span>
+<span class="normal">724</span>
+<span class="normal">725</span>
+<span class="normal">726</span>
+<span class="normal">727</span>
+<span class="normal">728</span>
+<span class="normal">729</span>
+<span class="normal">730</span>
+<span class="normal">731</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@test_from</span><span class="p">(</span><span class="n">fork</span><span class="o">=</span><span class="n">Cancun</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">test_datahash_invalid_blob_index</span><span class="p">(</span><span class="n">_</span><span class="p">:</span> <span class="n">Fork</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Tests that the `DATAHASH` opcode returns a zeroed bytes32 value</span>
@@ -3080,7 +3167,10 @@ for invalid indexes.</p>
         <span class="n">address</span> <span class="o">=</span> <span class="n">to_address</span><span class="p">(</span><span class="mh">0x100</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="mh">0x100</span><span class="p">)</span>
         <span class="n">pre</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">datahash_invalid_calls</span><span class="p">)</span>
         <span class="n">blob_per_block</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="n">blob_hashes</span> <span class="o">=</span> <span class="p">[</span><span class="n">BLOB_HASHES</span><span class="p">[</span><span class="n">blob</span><span class="p">]</span> <span class="k">for</span> <span class="n">blob</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">blob_per_block</span><span class="p">)]</span>
+        <span class="n">blob_hashes</span> <span class="o">=</span> <span class="n">add_kzg_version</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">BLOB_HASHES</span><span class="p">[</span><span class="n">blob</span><span class="p">]</span> <span class="k">for</span> <span class="n">blob</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">blob_per_block</span><span class="p">)],</span>
+            <span class="n">BLOB_COMMITMENT_VERSION_KZG</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="n">blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
             <span class="n">Block</span><span class="p">(</span>
                 <span class="n">txs</span><span class="o">=</span><span class="p">[</span>
@@ -3147,19 +3237,7 @@ when there is more than one blob tx type within a block.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/datahash_opcode.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">722</span>
-<span class="normal">723</span>
-<span class="normal">724</span>
-<span class="normal">725</span>
-<span class="normal">726</span>
-<span class="normal">727</span>
-<span class="normal">728</span>
-<span class="normal">729</span>
-<span class="normal">730</span>
-<span class="normal">731</span>
-<span class="normal">732</span>
-<span class="normal">733</span>
-<span class="normal">734</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">734</span>
 <span class="normal">735</span>
 <span class="normal">736</span>
 <span class="normal">737</span>
@@ -3207,7 +3285,23 @@ when there is more than one blob tx type within a block.</p>
 <span class="normal">779</span>
 <span class="normal">780</span>
 <span class="normal">781</span>
-<span class="normal">782</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@test_from</span><span class="p">(</span><span class="n">fork</span><span class="o">=</span><span class="n">Cancun</span><span class="p">)</span>
+<span class="normal">782</span>
+<span class="normal">783</span>
+<span class="normal">784</span>
+<span class="normal">785</span>
+<span class="normal">786</span>
+<span class="normal">787</span>
+<span class="normal">788</span>
+<span class="normal">789</span>
+<span class="normal">790</span>
+<span class="normal">791</span>
+<span class="normal">792</span>
+<span class="normal">793</span>
+<span class="normal">794</span>
+<span class="normal">795</span>
+<span class="normal">796</span>
+<span class="normal">797</span>
+<span class="normal">798</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@test_from</span><span class="p">(</span><span class="n">fork</span><span class="o">=</span><span class="n">Cancun</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">test_datahash_multiple_txs_in_block</span><span class="p">(</span><span class="n">_</span><span class="p">:</span> <span class="n">Fork</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Tests that the `DATAHASH` opcode returns the appropriate values</span>
@@ -3223,6 +3317,10 @@ when there is more than one blob tx type within a block.</p>
     <span class="p">}</span>
     <span class="n">pre</span><span class="p">[</span><span class="n">TestAddress</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span><span class="n">balance</span><span class="o">=</span><span class="mi">10000000000000000000000</span><span class="p">)</span>
 
+    <span class="n">b_hashes</span> <span class="o">=</span> <span class="n">add_kzg_version</span><span class="p">(</span>
+        <span class="n">BLOB_HASHES</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">],</span> <span class="n">BLOB_COMMITMENT_VERSION_KZG</span>
+    <span class="p">)</span>
+
     <span class="n">tx</span> <span class="o">=</span> <span class="n">Transaction</span><span class="p">(</span>
         <span class="n">data</span><span class="o">=</span><span class="n">to_hash_bytes</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
         <span class="n">gas_limit</span><span class="o">=</span><span class="mi">3000000</span><span class="p">,</span>
@@ -3230,7 +3328,7 @@ when there is more than one blob tx type within a block.</p>
         <span class="n">max_priority_fee_per_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
         <span class="n">max_fee_per_data_gas</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
         <span class="n">access_list</span><span class="o">=</span><span class="p">[],</span>
-        <span class="n">blob_versioned_hashes</span><span class="o">=</span><span class="n">BLOB_HASHES</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">],</span>
+        <span class="n">blob_versioned_hashes</span><span class="o">=</span><span class="n">b_hashes</span><span class="p">,</span>
     <span class="p">)</span>
 
     <span class="n">blocks</span> <span class="o">=</span> <span class="p">[</span>
@@ -3256,7 +3354,7 @@ when there is more than one blob tx type within a block.</p>
 
     <span class="n">post</span> <span class="o">=</span> <span class="p">{</span>
         <span class="n">to_address</span><span class="p">(</span><span class="n">address</span><span class="p">):</span> <span class="n">Account</span><span class="p">(</span>
-            <span class="n">storage</span><span class="o">=</span><span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">BLOB_HASHES</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)}</span>
+            <span class="n">storage</span><span class="o">=</span><span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">b_hashes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)}</span>
         <span class="p">)</span>
         <span class="k">if</span> <span class="n">address</span> <span class="ow">in</span> <span class="p">(</span><span class="mh">0x200</span><span class="p">,</span> <span class="mh">0x400</span><span class="p">)</span>
         <span class="k">else</span> <span class="n">Account</span><span class="p">(</span><span class="n">storage</span><span class="o">=</span><span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_BLOB_PER_BLOCK</span><span class="p">)})</span>

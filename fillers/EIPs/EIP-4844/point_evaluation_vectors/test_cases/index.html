@@ -10,27 +10,27 @@
       
       
       
-        <link rel="canonical" href="https://danceratopz.github.io/execution-spec-tests/getting_started/executing_tests_command_line/">
+        <link rel="canonical" href="https://danceratopz.github.io/execution-spec-tests/fillers/EIPs/EIP-4844/point_evaluation_vectors/test_cases/">
       
       
-        <link rel="prev" href="../repository_overview/">
+        <link rel="prev" href="../../excess_data_gas/">
       
       
-        <link rel="next" href="../executing_tests_vs_code/">
+        <link rel="next" href="../../../../example/">
       
-      <link rel="icon" href="../../img/ETH-logo-icon.svg">
+      <link rel="icon" href="../../../../../img/ETH-logo-icon.svg">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>Executing Tests at a Prompt - Ethereum Execution Spec Tests</title>
+        <title>Test Cases - Ethereum Execution Spec Tests</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -57,11 +57,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Executing Tests at a Prompt - Ethereum Execution Spec Tests" >
+        <meta  property="og:title"  content="Test Cases - Ethereum Execution Spec Tests" >
       
         <meta  property="og:description"  content="A collection of test cases implemented in Python for Ethereum execution clients" >
       
-        <meta  property="og:image"  content="https://danceratopz.github.io/execution-spec-tests/assets/images/social/getting_started/executing_tests_command_line.png" >
+        <meta  property="og:image"  content="https://danceratopz.github.io/execution-spec-tests/assets/images/social/fillers/EIPs/EIP-4844/point_evaluation_vectors/test_cases.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -69,19 +69,19 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://danceratopz.github.io/execution-spec-tests/getting_started/executing_tests_command_line/" >
+        <meta  property="og:url"  content="https://danceratopz.github.io/execution-spec-tests/fillers/EIPs/EIP-4844/point_evaluation_vectors/test_cases/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Executing Tests at a Prompt - Ethereum Execution Spec Tests" >
+        <meta  name="twitter:title"  content="Test Cases - Ethereum Execution Spec Tests" >
       
         <meta  name="twitter:description"  content="A collection of test cases implemented in Python for Ethereum execution clients" >
       
-        <meta  name="twitter:image"  content="https://danceratopz.github.io/execution-spec-tests/assets/images/social/getting_started/executing_tests_command_line.png" >
+        <meta  name="twitter:image"  content="https://danceratopz.github.io/execution-spec-tests/assets/images/social/fillers/EIPs/EIP-4844/point_evaluation_vectors/test_cases.png" >
       
     
     
-   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
         .gslide-title { margin-top: 0px; user-select: text; }
         .gslide-desc { color: #666; user-select: text; }
@@ -92,7 +92,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+            </style> <script src="../../../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -114,7 +114,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#executing-tests-at-a-prompt" class="md-skip">
+        <a href="#kzg-point-evaluation-test-vectors" class="md-skip">
           Skip to content
         </a>
       
@@ -128,9 +128,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Ethereum Execution Spec Tests" class="md-header__button md-logo" aria-label="Ethereum Execution Spec Tests" data-md-component="logo">
+    <a href="../../../../.." title="Ethereum Execution Spec Tests" class="md-header__button md-logo" aria-label="Ethereum Execution Spec Tests" data-md-component="logo">
       
-  <img src="../../img/Ethereum-logo-600px.png" alt="logo">
+  <img src="../../../../../img/Ethereum-logo-600px.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -146,7 +146,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Executing Tests at a Prompt
+              Test Cases
             
           </span>
         </div>
@@ -259,7 +259,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../../../.." class="md-tabs__link">
       Overview
     </a>
   </li>
@@ -268,15 +268,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../quick_start/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../../../getting_started/quick_start/" class="md-tabs__link">
         Getting Started
       </a>
     </li>
@@ -292,7 +290,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../writing_tests/" class="md-tabs__link">
+      <a href="../../../../../writing_tests/" class="md-tabs__link">
         Writing Tests
       </a>
     </li>
@@ -308,7 +306,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../tutorials/state_transition/" class="md-tabs__link">
+      <a href="../../../../../tutorials/state_transition/" class="md-tabs__link">
         Tutorials
       </a>
     </li>
@@ -321,7 +319,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../getting_help/" class="md-tabs__link">
+    <a href="../../../../../getting_help/" class="md-tabs__link">
       Getting Help
     </a>
   </li>
@@ -336,7 +334,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../dev/" class="md-tabs__link">
+      <a href="../../../../../dev/" class="md-tabs__link">
         Developer Doc
       </a>
     </li>
@@ -352,7 +350,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../library/" class="md-tabs__link">
+      <a href="../../../../../library/" class="md-tabs__link">
         Library Reference
       </a>
     </li>
@@ -362,13 +360,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../fillers/" class="md-tabs__link">
+      <a href="../../../../" class="md-tabs__link md-tabs__link--active">
         Test Case Reference
       </a>
     </li>
@@ -396,9 +396,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Ethereum Execution Spec Tests" class="md-nav__button md-logo" aria-label="Ethereum Execution Spec Tests" data-md-component="logo">
+    <a href="../../../../.." title="Ethereum Execution Spec Tests" class="md-nav__button md-logo" aria-label="Ethereum Execution Spec Tests" data-md-component="logo">
       
-  <img src="../../img/Ethereum-logo-600px.png" alt="logo">
+  <img src="../../../../../img/Ethereum-logo-600px.png" alt="logo">
 
     </a>
     Ethereum Execution Spec Tests
@@ -426,7 +426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../../../.." class="md-nav__link">
         Overview
       </a>
     </li>
@@ -439,16 +439,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
       
       
         
@@ -471,7 +469,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Getting Started
@@ -484,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quick_start/" class="md-nav__link">
+      <a href="../../../../../getting_started/quick_start/" class="md-nav__link">
         Quick Start
       </a>
     </li>
@@ -498,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../setup_vs_code/" class="md-nav__link">
+      <a href="../../../../../getting_started/setup_vs_code/" class="md-nav__link">
         VS Code Setup
       </a>
     </li>
@@ -512,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../repository_overview/" class="md-nav__link">
+      <a href="../../../../../getting_started/repository_overview/" class="md-nav__link">
         Repository Overview
       </a>
     </li>
@@ -524,73 +522,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Executing Tests at a Prompt
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../../getting_started/executing_tests_command_line/" class="md-nav__link">
         Executing Tests at a Prompt
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#collection-test-exploration" class="md-nav__link">
-    Collection - Test Exploration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execution" class="md-nav__link">
-    Execution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execution-for-development-forks" class="md-nav__link">
-    Execution for Development Forks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#useful-pytest-command-line-options" class="md-nav__link">
-    Useful pytest Command-Line Options
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -602,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../executing_tests_vs_code/" class="md-nav__link">
+      <a href="../../../../../getting_started/executing_tests_vs_code/" class="md-nav__link">
         Executing Tests in VS Code
       </a>
     </li>
@@ -616,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../executing_tests_dev_fork/" class="md-nav__link">
+      <a href="../../../../../getting_started/executing_tests_dev_fork/" class="md-nav__link">
         Executing Tests for Features Under Development
       </a>
     </li>
@@ -668,7 +604,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../writing_tests/">Writing Tests</a>
+          <a href="../../../../../writing_tests/">Writing Tests</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -691,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../writing_tests/code_standards/" class="md-nav__link">
+      <a href="../../../../../writing_tests/code_standards/" class="md-nav__link">
         Code Standards
       </a>
     </li>
@@ -705,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../writing_tests/types_of_tests/" class="md-nav__link">
+      <a href="../../../../../writing_tests/types_of_tests/" class="md-nav__link">
         Types of Test
       </a>
     </li>
@@ -719,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../writing_tests/adding_a_new_test/" class="md-nav__link">
+      <a href="../../../../../writing_tests/adding_a_new_test/" class="md-nav__link">
         Adding a New Test
       </a>
     </li>
@@ -733,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../writing_tests/writing_a_new_test/" class="md-nav__link">
+      <a href="../../../../../writing_tests/writing_a_new_test/" class="md-nav__link">
         Writing a New Test
       </a>
     </li>
@@ -747,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../writing_tests/reference_specification/" class="md-nav__link">
+      <a href="../../../../../writing_tests/reference_specification/" class="md-nav__link">
         Referencing an EIP Spec Version
       </a>
     </li>
@@ -761,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../writing_tests/verifying_changes/" class="md-nav__link">
+      <a href="../../../../../writing_tests/verifying_changes/" class="md-nav__link">
         Verifying Changes Locally
       </a>
     </li>
@@ -814,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/state_transition/" class="md-nav__link">
+      <a href="../../../../../tutorials/state_transition/" class="md-nav__link">
         State Transition Tests
       </a>
     </li>
@@ -836,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting_help/" class="md-nav__link">
+      <a href="../../../../../getting_help/" class="md-nav__link">
         Getting Help
       </a>
     </li>
@@ -871,7 +807,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../dev/">Developer Doc</a>
+          <a href="../../../../../dev/">Developer Doc</a>
           
             <label for="__nav_6">
               <span class="md-nav__icon md-icon"></span>
@@ -894,7 +830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dev/docs/" class="md-nav__link">
+      <a href="../../../../../dev/docs/" class="md-nav__link">
         Documentation
       </a>
     </li>
@@ -944,7 +880,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../library/">Library Reference</a>
+          <a href="../../../../../library/">Library Reference</a>
           
             <label for="__nav_7">
               <span class="md-nav__icon md-icon"></span>
@@ -967,7 +903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../library/evm_transition_tool/" class="md-nav__link">
+      <a href="../../../../../library/evm_transition_tool/" class="md-nav__link">
         EVM Transition Tool Package
       </a>
     </li>
@@ -981,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../library/evm_block_builder/" class="md-nav__link">
+      <a href="../../../../../library/evm_block_builder/" class="md-nav__link">
         EVM Block Builder Package
       </a>
     </li>
@@ -995,7 +931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../library/ethereum_test_tools/" class="md-nav__link">
+      <a href="../../../../../library/ethereum_test_tools/" class="md-nav__link">
         Ethereum Test Tools Package
       </a>
     </li>
@@ -1009,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../library/ethereum_test_forks/" class="md-nav__link">
+      <a href="../../../../../library/ethereum_test_forks/" class="md-nav__link">
         Ethereum Test Forks Package
       </a>
     </li>
@@ -1023,7 +959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../library/pytest_plugins/" class="md-nav__link">
+      <a href="../../../../../library/pytest_plugins/" class="md-nav__link">
         Pytest Plugins
       </a>
     </li>
@@ -1043,14 +979,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
       
       
         
@@ -1073,7 +1011,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../fillers/">Test Case Reference</a>
+          <a href="../../../../">Test Case Reference</a>
           
             <label for="__nav_8">
               <span class="md-nav__icon md-icon"></span>
@@ -1081,7 +1019,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           Test Case Reference
@@ -1094,14 +1032,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" checked>
       
       
         
@@ -1122,7 +1062,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../fillers/EIPs/">EIPs</a>
+          <a href="../../../">EIPs</a>
           
             <label for="__nav_8_2">
               <span class="md-nav__icon md-icon"></span>
@@ -1130,7 +1070,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_8_2">
           <span class="md-nav__icon md-icon"></span>
           EIPs
@@ -1145,7 +1085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/EIPs/eip3651/" class="md-nav__link">
+      <a href="../../../eip3651/" class="md-nav__link">
         EIP-3651
       </a>
     </li>
@@ -1159,7 +1099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/EIPs/eip3855/" class="md-nav__link">
+      <a href="../../../eip3855/" class="md-nav__link">
         EIP-3855
       </a>
     </li>
@@ -1173,7 +1113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/EIPs/eip3860/" class="md-nav__link">
+      <a href="../../../eip3860/" class="md-nav__link">
         EIP-3860
       </a>
     </li>
@@ -1185,14 +1125,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_5" checked>
       
       
         
@@ -1215,7 +1157,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../fillers/EIPs/EIP-4844/">EIP-4844</a>
+          <a href="../../">EIP-4844</a>
           
             <label for="__nav_8_2_5">
               <span class="md-nav__icon md-icon"></span>
@@ -1223,7 +1165,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_8_2_5">
           <span class="md-nav__icon md-icon"></span>
           EIP-4844
@@ -1238,7 +1180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/EIPs/EIP-4844/test_cases/" class="md-nav__link">
+      <a href="../../test_cases/" class="md-nav__link">
         Test Cases
       </a>
     </li>
@@ -1252,7 +1194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/EIPs/EIP-4844/datahash_opcode/" class="md-nav__link">
+      <a href="../../datahash_opcode/" class="md-nav__link">
         datahash_opcode
       </a>
     </li>
@@ -1266,7 +1208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/EIPs/EIP-4844/point_evaluation_precompile/" class="md-nav__link">
+      <a href="../../point_evaluation_precompile/" class="md-nav__link">
         point_evaluation_precompile
       </a>
     </li>
@@ -1280,7 +1222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/EIPs/EIP-4844/excess_data_gas/" class="md-nav__link">
+      <a href="../../excess_data_gas/" class="md-nav__link">
         excess_data_gas
       </a>
     </li>
@@ -1292,14 +1234,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_5_6" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_5_6" checked>
       
       
         
@@ -1312,7 +1256,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_5_6_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_5_6_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_8_2_5_6">
           <span class="md-nav__icon md-icon"></span>
           point_evaluation_vectors
@@ -1323,11 +1267,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../fillers/EIPs/EIP-4844/point_evaluation_vectors/test_cases/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Test Cases
       </a>
+      
     </li>
   
 
@@ -1382,7 +1336,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../fillers/example/">example</a>
+          <a href="../../../../example/">example</a>
           
             <label for="__nav_8_3">
               <span class="md-nav__icon md-icon"></span>
@@ -1405,7 +1359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/example/acl_example/" class="md-nav__link">
+      <a href="../../../../example/acl_example/" class="md-nav__link">
         acl_example
       </a>
     </li>
@@ -1419,7 +1373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/example/yul_example/" class="md-nav__link">
+      <a href="../../../../example/yul_example/" class="md-nav__link">
         yul_example
       </a>
     </li>
@@ -1460,7 +1414,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../fillers/security/">security</a>
+          <a href="../../../../security/">security</a>
           
             <label for="__nav_8_4">
               <span class="md-nav__icon md-icon"></span>
@@ -1483,7 +1437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/security/selfdestruct_balance_bug/" class="md-nav__link">
+      <a href="../../../../security/selfdestruct_balance_bug/" class="md-nav__link">
         selfdestruct_balance_bug
       </a>
     </li>
@@ -1526,7 +1480,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../fillers/VM/">VM</a>
+          <a href="../../../../VM/">VM</a>
           
             <label for="__nav_8_5">
               <span class="md-nav__icon md-icon"></span>
@@ -1549,7 +1503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/VM/dup/" class="md-nav__link">
+      <a href="../../../../VM/dup/" class="md-nav__link">
         dup
       </a>
     </li>
@@ -1563,7 +1517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/VM/chain_id/" class="md-nav__link">
+      <a href="../../../../VM/chain_id/" class="md-nav__link">
         chain_id
       </a>
     </li>
@@ -1604,7 +1558,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../fillers/withdrawals/">withdrawals</a>
+          <a href="../../../../withdrawals/">withdrawals</a>
           
             <label for="__nav_8_6">
               <span class="md-nav__icon md-icon"></span>
@@ -1627,7 +1581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/withdrawals/withdrawals/" class="md-nav__link">
+      <a href="../../../../withdrawals/withdrawals/" class="md-nav__link">
         withdrawals
       </a>
     </li>
@@ -1668,42 +1622,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#collection-test-exploration" class="md-nav__link">
-    Collection - Test Exploration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execution" class="md-nav__link">
-    Execution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execution-for-development-forks" class="md-nav__link">
-    Execution for Development Forks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#useful-pytest-command-line-options" class="md-nav__link">
-    Useful pytest Command-Line Options
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1716,57 +1634,16 @@
                 
                   
 
-  
-  
 
-
-<h1 id="executing-tests-at-a-prompt">Executing Tests at a Prompt<a class="headerlink" href="#executing-tests-at-a-prompt" title="Permanent link">&para;</a></h1>
-<h2 id="collection-test-exploration">Collection - Test Exploration<a class="headerlink" href="#collection-test-exploration" title="Permanent link">&para;</a></h2>
-<p>The test fillers implemented in the <code>./fillers</code> sub-directory can be listed in the console using:
-<div class="highlight"><pre><span></span><code><span class="go">pytest --collect-only</span>
-</code></pre></div>
-and can be filtered (by test path, function and parameter substring):
-<div class="highlight"><pre><span></span><code><span class="go">pytest --collect-only -k warm_coinbase</span>
-</code></pre></div>
-Docstrings are additionally displayed when ran verbosely:
-<div class="highlight"><pre><span></span><code><span class="go">pytest --collect-only -k warm_coinbase -vv</span>
-</code></pre></div></p>
-<h2 id="execution">Execution<a class="headerlink" href="#execution" title="Permanent link">&para;</a></h2>
-<p>To generate all the test fixtures defined in the <code>./fillers</code> sub-directory and write them to the <code>./fixtures</code> directory, run <code>pytest</code> in the top-level directory as:
-<div class="highlight"><pre><span></span><code><span class="go">pytest --output=&quot;fixtures&quot;</span>
-</code></pre></div></p>
-<div class="admonition note">
-<p class="admonition-title">Test case verification</p>
-<p>Note, that the test <code>post</code> conditions are tested against the output of the <code>evm t8n</code> command for transition tests, respectively <code>evm b11r</code> command for blockchain tests, during test generation.</p>
-</div>
-<p>To generate all the test fixtures in the <code>./fillers/eips/</code> sub-directory (category), for example, run:
-<div class="highlight"><pre><span></span><code><span class="go">pytest fillers/eips</span>
-</code></pre></div></p>
-<p>To generate all the test fixtures in the <code>./fillers/eips/eip3651.py</code> module, for example, run:
-<div class="highlight"><pre><span></span><code><span class="go">pytest ./fillers/eips/eip3651.py</span>
-</code></pre></div></p>
-<p>To generate specific test fixtures, such as those from the test function <code>test_warm_coinbase_call_out_of_gas()</code>, for example, run:
-<div class="highlight"><pre><span></span><code><span class="go">pytest -k &quot;test_warm_coinbase_call_out_of_gas&quot;</span>
-</code></pre></div>
-or, additionally, only for the for Shanghai fork:
-<div class="highlight"><pre><span></span><code><span class="go">pytest -k &quot;test_warm_coinbase_call_out_of_gas and shanghai&quot;</span>
-</code></pre></div></p>
-<h2 id="execution-for-development-forks">Execution for Development Forks<a class="headerlink" href="#execution-for-development-forks" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p>By default, test cases are not executed with upcoming Ethereum forks so that they can be readily executed against the <code>evm</code> tool from the latest <code>geth</code> release. </p>
-<p>In order to execute test cases for an upcoming fork, ensure that the <code>evm</code> tool used supports that fork and features under test and use the <code>--latest-fork</code> flag.</p>
-<p>For example, as of May 2023, the current fork under active development is <code>Cancun</code>:
-<div class="highlight"><pre><span></span><code><span class="go">pytest --latest-fork Cancun</span>
-</code></pre></div></p>
-<p>See: <a href="../executing_tests_dev_fork/">Executing Tests for Features under Development</a>.</p>
-</div>
-<h2 id="useful-pytest-command-line-options">Useful pytest Command-Line Options<a class="headerlink" href="#useful-pytest-command-line-options" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="go">pytest -vv            # More verbose output</span>
-<span class="go">pytest -x             # Exit instantly on first error or failed test filler:</span>
-<span class="go">pytest --pdb          # drop into the debugger upon error in a test filler</span>
-<span class="go">pytest --traces       # Collect traces of the execution information from the transition tool</span>
-<span class="go">pytest --evm=EVM_BIN  # Specify the evm executable to generate fillers with</span>
-</code></pre></div>
+<h1 id="kzg-point-evaluation-test-vectors">KZG Point Evaluation Test Vectors<a class="headerlink" href="#kzg-point-evaluation-test-vectors" title="Permanent link">&para;</a></h1>
+<p>This directory contains test vectors for the KZG point evaluation algorithm, compiled from different sources.</p>
+<p>Each file must contain a JSON list of objects, each with the following fields:
+- <code>name</code>: a string describing the test case
+- <code>input</code>: object containing <code>commitment</code>, <code>proof</code>, <code>z</code> and <code>y</code>
+- <code>output</code>: expected output of the evaluation, true, false or null.</p>
+<p>The files are loaded and used throughout different test fillers.</p>
+<p>Current files and their sources:
+- <code>go_kzg_4844_verify_kzg_proof.json</code>: test vectors from the <a href="https://github.com/crate-crypto/go-kzg-4844">go-kzg-4844</a> repository.</p>
 
 
 
@@ -1810,10 +1687,10 @@ or, additionally, only for the for Shanghai fork:
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "search.suggest", "search.highlight", "content.tabs.link", "navigation.indexes", "navigation.instant", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "search.suggest", "search.highlight", "content.tabs.link", "navigation.indexes", "navigation.instant", "navigation.tabs"], "search": "../../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>

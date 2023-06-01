@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../img/ETH-logo-icon.svg">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -1136,6 +1136,10 @@
         
           
         
+          
+        
+          
+        
       
       
         
@@ -1192,9 +1196,75 @@
   
   
     <li class="md-nav__item">
+      <a href="../../fillers/EIPs/EIP-4844/point_evaluation_precompile/" class="md-nav__link">
+        point_evaluation_precompile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../fillers/EIPs/EIP-4844/excess_data_gas/" class="md-nav__link">
         excess_data_gas
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_5_6" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8_2_5_6" id="__nav_8_2_5_6_label" tabindex="0">
+          point_evaluation_vectors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_5_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_2_5_6">
+          <span class="md-nav__icon md-icon"></span>
+          point_evaluation_vectors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fillers/EIPs/EIP-4844/point_evaluation_vectors/test_cases/" class="md-nav__link">
+        Test Cases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1548,6 +1618,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#point-evaluation-precompile" class="md-nav__link">
+    📖 Point Evaluation Precompile
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1589,7 +1666,7 @@
 <p>Tests that the <code>DATAHASH</code> opcode returns the appropriate values when there is more than one blob tx type within a block (for tx types 2 and 3). Scenarios involve tx type 3 followed by tx type 2 running the same code within a block. In this case <code>DATAHASH</code> returns 0, but for the opposite scenario <code>DATAHASH</code> returns the correct <code>blob_versioned_hash</code>.</p>
 <h2 id="excess-data-gas">💽⛽💸 Excess Data Gas<a class="headerlink" href="#excess-data-gas" title="Permanent link">&para;</a></h2>
 <p>Test Module - <code>eip4844/excess_data_gas.py</code></p>
-<p>Predominantly verifies that <code>excess_data_gas</code> &amp; <code>data_gasprice</code> are calculated correctly ensuring both valid and invalid transactions are processed accordingly. Extra verification is added specifically for invalid blob transactions when the <code>max_fee_per_data_gas</code>, number of blobs or transaction type are errorneous. </p>
+<p>Predominantly verifies that <code>excess_data_gas</code> &amp; <code>data_gasprice</code> are calculated correctly ensuring both valid and invalid transactions are processed accordingly. Extra verification is added specifically for invalid blob transactions when the <code>max_fee_per_data_gas</code>, number of blobs or transaction type are erroneous. </p>
 <p><strong>1) 🔴 test_excess_data_gas_calculation():</strong></p>
 <p>Tests that the <code>excess_data_gas</code> is calculated correctly within a single block for various contexts, where the <code>parent.excess_data_gas</code> and the proposed block <code>excess_data_gas</code> have a variety of values. The excess data gas is calculated using the following formula:</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">calc_excess_data_gas</span><span class="p">(</span><span class="n">parent</span><span class="p">:</span> <span class="n">Header</span><span class="p">,</span> <span class="n">new_blobs</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -1628,7 +1705,7 @@
 <p><strong>4) 🔴 test_invalid_blob_txs():</strong></p>
 <p>Asserts that blocks with invalid blob transactions are rejected and no state changes occur. This is tested across the following scenarios:</p>
 <ul>
-<li><code>max_fee_per_data_gas</code> is less than the required <code>data_gasprice</code> for a set number of excess blobs. This is invaild as a valid block must obey the following condition:</li>
+<li><code>max_fee_per_data_gas</code> is less than the required <code>data_gasprice</code> for a set number of excess blobs. This is invalid as a valid block must obey the following condition:</li>
 <li>
 <p><code>tx.message.max_fee_per_data_gas &gt;= get_data_gasprice(parent(block).header)</code></p>
 </li>
@@ -1654,9 +1731,42 @@
 <p><code>len(tx.message.blob_versioned_hashes) &gt; 0</code></p>
 </li>
 <li>
-<p>Blob transaction type 3 is used in a pre-Cancun fork. This transcation type can only be used in a post-Cancun fork.</p>
+<p>Blob transaction type 3 is used in a pre-Cancun fork. This transaction type can only be used in a post-Cancun fork.</p>
 </li>
 </ul>
+<h2 id="point-evaluation-precompile">📖 Point Evaluation Precompile<a class="headerlink" href="#point-evaluation-precompile" title="Permanent link">&para;</a></h2>
+<p>Test Module - <code>eip4844/point_evaluation_precompile.py</code></p>
+<p>Verifies correct behavior on calls to the point evaluation precompile introduced by EIP-4844.</p>
+<p><strong>1) 🔴 test_point_evaluation_precompile():</strong></p>
+<ul>
+<li>Correct Proof, verify call return values are <code>bytes32(FIELD_ELEMENTS_PER_BLOB) + bytes32(BLS_MODULUS)</code></li>
+<li>Out of bounds Z value (equal to BLS_MODULUS)</li>
+<li>Out of bounds Y value (equal to BLS_MODULUS)</li>
+<li>Correct Proof, input length 1 byte too short</li>
+<li>Correct Proof, input length 47 bytes too short</li>
+<li>Correct Proof, input length 1 byte too long</li>
+<li>Correct Proof, input length 976 bytes too long</li>
+<li>Null length input</li>
+<li>Correct length input, but all zeros</li>
+<li>Correct length input, but all zeros except for versioned hash (correct)</li>
+<li>Correct Proof, but inverted endianness</li>
+<li>Correct Proof, but incorrect versioned hash version (0x00, 0x02, 0xFF)</li>
+</ul>
+<p>Test also all vectors included in <code>eip4844/point_evaluation_vectors</code> in json format.</p>
+<p><strong>2) 🔴 test_point_evaluation_precompile_calls():</strong>
+Test return values of the precompile contract using different call opcodes, and gas amounts.
+- Test correct and incorrect point evaluations using CALL, DELEGATECALL, CALLCODE, STATICCALL
+- Test using sufficient and insufficient gas (50,000 gas)</p>
+<p><strong>3) 🔴 test_point_evaluation_precompile_gas_usage():</strong>
+Test gas consumption of a call to the precompile:
+- Test 50,000 gas consumption on a correct evaluation
+- Test 50,001+ gas consumption on a incorrect evaluation
+- Test gas consumption using CALL, DELEGATECALL, CALLCODE, and STATICCALL opcodes
+- Test full gas consumption on calls with less than 50,000 gas</p>
+<p><strong>3) 🔴 test_point_evaluation_precompile_before_fork():</strong>
+Test sending an incorrect kzg proof point evaluation to the precompile address before and after the fork:
+- Before the fork, the call must succeed
+- After the fork, the call must fail</p>
 
 
 
