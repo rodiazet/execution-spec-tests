@@ -958,10 +958,92 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../library/pytest_plugins/">Pytest Plugins</a>
+          
+            <label for="__nav_7_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_6">
+          <span class="md-nav__icon md-icon"></span>
+          Pytest Plugins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../library/pytest_plugins/" class="md-nav__link">
-        Pytest Plugins
+      <a href="../../../library/pytest_plugins/forks/" class="md-nav__link">
+        Forks
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../library/pytest_plugins/test_filler/" class="md-nav__link">
+        Test Filler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../library/pytest_plugins/spec_version_checker/" class="md-nav__link">
+        Spec Version Checker
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1770,7 +1852,7 @@
 
 
 <h2 id="fillers.vm.dup.test_dup" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">test_dup</span><span class="p">(</span><span class="n">state_test</span><span class="p">,</span> <span class="n">fork</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">test_dup</span><span class="p">(</span><span class="n">state_test</span><span class="p">)</span></code>
 
 <a href="#fillers.vm.dup.test_dup" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -1783,7 +1865,10 @@ Original test by: Ori Pomerantz qbzzt1@gmail.com</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/vm/dup.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 17</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
 <span class="normal"> 18</span>
 <span class="normal"> 19</span>
 <span class="normal"> 20</span>
@@ -1870,12 +1955,7 @@ Original test by: Ori Pomerantz qbzzt1@gmail.com</p>
 <span class="normal">101</span>
 <span class="normal">102</span>
 <span class="normal">103</span>
-<span class="normal">104</span>
-<span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span>
-<span class="normal">108</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;fork&quot;</span><span class="p">,</span> <span class="n">forks_from</span><span class="p">(</span><span class="n">Istanbul</span><span class="p">))</span>
-<span class="k">def</span> <span class="nf">test_dup</span><span class="p">(</span><span class="n">state_test</span><span class="p">:</span> <span class="n">StateTestFiller</span><span class="p">,</span> <span class="n">fork</span><span class="p">:</span> <span class="n">Fork</span><span class="p">):</span>
+<span class="normal">104</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">test_dup</span><span class="p">(</span><span class="n">state_test</span><span class="p">:</span> <span class="n">StateTestFiller</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Test DUP1-DUP16 opcodes.</span>
 <span class="sd">    Based on ethereum/tests: GeneralStateTests/VMTests/vmTests/dup</span>

@@ -10,27 +10,27 @@
       
       
       
-        <link rel="canonical" href="https://danceratopz.github.io/execution-spec-tests/library/evm_transition_tool/">
+        <link rel="canonical" href="https://danceratopz.github.io/execution-spec-tests/library/pytest_plugins/forks/">
       
       
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../evm_block_builder/">
+        <link rel="next" href="../test_filler/">
       
-      <link rel="icon" href="../../img/ETH-logo-icon.svg">
+      <link rel="icon" href="../../../img/ETH-logo-icon.svg">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>EVM Transition Tool Package - Ethereum Execution Spec Tests</title>
+        <title>Forks - Ethereum Execution Spec Tests</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -57,11 +57,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="EVM Transition Tool Package - Ethereum Execution Spec Tests" >
+        <meta  property="og:title"  content="Forks - Ethereum Execution Spec Tests" >
       
         <meta  property="og:description"  content="A collection of test cases implemented in Python for Ethereum execution clients" >
       
-        <meta  property="og:image"  content="https://danceratopz.github.io/execution-spec-tests/assets/images/social/library/evm_transition_tool.png" >
+        <meta  property="og:image"  content="https://danceratopz.github.io/execution-spec-tests/assets/images/social/library/pytest_plugins/forks.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -69,19 +69,19 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://danceratopz.github.io/execution-spec-tests/library/evm_transition_tool/" >
+        <meta  property="og:url"  content="https://danceratopz.github.io/execution-spec-tests/library/pytest_plugins/forks/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="EVM Transition Tool Package - Ethereum Execution Spec Tests" >
+        <meta  name="twitter:title"  content="Forks - Ethereum Execution Spec Tests" >
       
         <meta  name="twitter:description"  content="A collection of test cases implemented in Python for Ethereum execution clients" >
       
-        <meta  name="twitter:image"  content="https://danceratopz.github.io/execution-spec-tests/assets/images/social/library/evm_transition_tool.png" >
+        <meta  name="twitter:image"  content="https://danceratopz.github.io/execution-spec-tests/assets/images/social/library/pytest_plugins/forks.png" >
       
     
     
-   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
         .gslide-title { margin-top: 0px; user-select: text; }
         .gslide-desc { color: #666; user-select: text; }
@@ -92,7 +92,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -114,7 +114,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#evm-transition-tool-package" class="md-skip">
+        <a href="#forks-plugin" class="md-skip">
           Skip to content
         </a>
       
@@ -128,9 +128,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Ethereum Execution Spec Tests" class="md-header__button md-logo" aria-label="Ethereum Execution Spec Tests" data-md-component="logo">
+    <a href="../../.." title="Ethereum Execution Spec Tests" class="md-header__button md-logo" aria-label="Ethereum Execution Spec Tests" data-md-component="logo">
       
-  <img src="../../img/Ethereum-logo-600px.png" alt="logo">
+  <img src="../../../img/Ethereum-logo-600px.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -146,7 +146,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              EVM Transition Tool Package
+              Forks
             
           </span>
         </div>
@@ -259,7 +259,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Overview
     </a>
   </li>
@@ -274,7 +274,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../getting_started/quick_start/" class="md-tabs__link">
+      <a href="../../../getting_started/quick_start/" class="md-tabs__link">
         Getting Started
       </a>
     </li>
@@ -290,7 +290,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../writing_tests/" class="md-tabs__link">
+      <a href="../../../writing_tests/" class="md-tabs__link">
         Writing Tests
       </a>
     </li>
@@ -306,7 +306,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../tutorials/state_transition/" class="md-tabs__link">
+      <a href="../../../tutorials/state_transition/" class="md-tabs__link">
         Tutorials
       </a>
     </li>
@@ -319,7 +319,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../getting_help/" class="md-tabs__link">
+    <a href="../../../getting_help/" class="md-tabs__link">
       Getting Help
     </a>
   </li>
@@ -334,7 +334,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../dev/" class="md-tabs__link">
+      <a href="../../../dev/" class="md-tabs__link">
         Developer Doc
       </a>
     </li>
@@ -352,7 +352,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Library Reference
       </a>
     </li>
@@ -368,7 +368,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../fillers/" class="md-tabs__link">
+      <a href="../../../fillers/" class="md-tabs__link">
         Test Case Reference
       </a>
     </li>
@@ -396,9 +396,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Ethereum Execution Spec Tests" class="md-nav__button md-logo" aria-label="Ethereum Execution Spec Tests" data-md-component="logo">
+    <a href="../../.." title="Ethereum Execution Spec Tests" class="md-nav__button md-logo" aria-label="Ethereum Execution Spec Tests" data-md-component="logo">
       
-  <img src="../../img/Ethereum-logo-600px.png" alt="logo">
+  <img src="../../../img/Ethereum-logo-600px.png" alt="logo">
 
     </a>
     Ethereum Execution Spec Tests
@@ -426,7 +426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Overview
       </a>
     </li>
@@ -482,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting_started/quick_start/" class="md-nav__link">
+      <a href="../../../getting_started/quick_start/" class="md-nav__link">
         Quick Start
       </a>
     </li>
@@ -496,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting_started/setup_vs_code/" class="md-nav__link">
+      <a href="../../../getting_started/setup_vs_code/" class="md-nav__link">
         VS Code Setup
       </a>
     </li>
@@ -510,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting_started/repository_overview/" class="md-nav__link">
+      <a href="../../../getting_started/repository_overview/" class="md-nav__link">
         Repository Overview
       </a>
     </li>
@@ -524,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting_started/executing_tests_command_line/" class="md-nav__link">
+      <a href="../../../getting_started/executing_tests_command_line/" class="md-nav__link">
         Executing Tests at a Prompt
       </a>
     </li>
@@ -538,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting_started/executing_tests_vs_code/" class="md-nav__link">
+      <a href="../../../getting_started/executing_tests_vs_code/" class="md-nav__link">
         Executing Tests in VS Code
       </a>
     </li>
@@ -552,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting_started/executing_tests_dev_fork/" class="md-nav__link">
+      <a href="../../../getting_started/executing_tests_dev_fork/" class="md-nav__link">
         Executing Tests for Features Under Development
       </a>
     </li>
@@ -604,7 +604,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../writing_tests/">Writing Tests</a>
+          <a href="../../../writing_tests/">Writing Tests</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -627,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../writing_tests/code_standards/" class="md-nav__link">
+      <a href="../../../writing_tests/code_standards/" class="md-nav__link">
         Code Standards
       </a>
     </li>
@@ -641,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../writing_tests/types_of_tests/" class="md-nav__link">
+      <a href="../../../writing_tests/types_of_tests/" class="md-nav__link">
         Types of Test
       </a>
     </li>
@@ -655,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../writing_tests/adding_a_new_test/" class="md-nav__link">
+      <a href="../../../writing_tests/adding_a_new_test/" class="md-nav__link">
         Adding a New Test
       </a>
     </li>
@@ -669,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../writing_tests/writing_a_new_test/" class="md-nav__link">
+      <a href="../../../writing_tests/writing_a_new_test/" class="md-nav__link">
         Writing a New Test
       </a>
     </li>
@@ -683,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../writing_tests/reference_specification/" class="md-nav__link">
+      <a href="../../../writing_tests/reference_specification/" class="md-nav__link">
         Referencing an EIP Spec Version
       </a>
     </li>
@@ -697,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../writing_tests/verifying_changes/" class="md-nav__link">
+      <a href="../../../writing_tests/verifying_changes/" class="md-nav__link">
         Verifying Changes Locally
       </a>
     </li>
@@ -750,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/state_transition/" class="md-nav__link">
+      <a href="../../../tutorials/state_transition/" class="md-nav__link">
         State Transition Tests
       </a>
     </li>
@@ -772,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting_help/" class="md-nav__link">
+      <a href="../../../getting_help/" class="md-nav__link">
         Getting Help
       </a>
     </li>
@@ -807,7 +807,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../dev/">Developer Doc</a>
+          <a href="../../../dev/">Developer Doc</a>
           
             <label for="__nav_6">
               <span class="md-nav__icon md-icon"></span>
@@ -830,7 +830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dev/docs/" class="md-nav__link">
+      <a href="../../../dev/docs/" class="md-nav__link">
         Documentation
       </a>
     </li>
@@ -882,7 +882,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">Library Reference</a>
+          <a href="../../">Library Reference</a>
           
             <label for="__nav_7">
               <span class="md-nav__icon md-icon"></span>
@@ -894,6 +894,111 @@
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           Library Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evm_transition_tool/" class="md-nav__link">
+        EVM Transition Tool Package
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evm_block_builder/" class="md-nav__link">
+        EVM Block Builder Package
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ethereum_test_tools/" class="md-nav__link">
+        Ethereum Test Tools Package
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ethereum_test_forks/" class="md-nav__link">
+        Ethereum Test Forks Package
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Pytest Plugins</a>
+          
+            <label for="__nav_7_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_7_6">
+          <span class="md-nav__icon md-icon"></span>
+          Pytest Plugins
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -915,12 +1020,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          EVM Transition Tool Package
+          Forks
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        EVM Transition Tool Package
+        Forks
       </a>
       
         
@@ -939,83 +1044,70 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#evm_transition_tool" class="md-nav__link">
-    evm_transition_tool
+  <a href="#pytest_plugins.forks" class="md-nav__link">
+    pytest_plugins.forks
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#evm_transition_tool.TransitionTool" class="md-nav__link">
-    TransitionTool
+  <a href="#pytest_plugins.forks.forks" class="md-nav__link">
+    pytest_plugins.forks.forks
   </a>
-  
-    <nav class="md-nav" aria-label="TransitionTool">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#evm_transition_tool.TransitionTool.evaluate" class="md-nav__link">
-    evaluate()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evm_transition_tool.TransitionTool.version" class="md-nav__link">
-    version()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evm_transition_tool.TransitionTool.is_fork_supported" class="md-nav__link">
-    is_fork_supported()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evm_transition_tool.TransitionTool.reset_traces" class="md-nav__link">
-    reset_traces()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evm_transition_tool.TransitionTool.append_traces" class="md-nav__link">
-    append_traces()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evm_transition_tool.TransitionTool.get_traces" class="md-nav__link">
-    get_traces()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evm_transition_tool.TransitionTool.calc_state_root" class="md-nav__link">
-    calc_state_root()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evm_transition_tool.TransitionTool.calc_withdrawals_root" class="md-nav__link">
-    calc_withdrawals_root()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#evm_transition_tool.EvmTransitionTool" class="md-nav__link">
+  <a href="#pytest_plugins.forks.forks.pytest_addoption" class="md-nav__link">
+    pytest_addoption()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.get_forks" class="md-nav__link">
+    get_forks()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.get_deployed_forks" class="md-nav__link">
+    get_deployed_forks()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.pytest_configure" class="md-nav__link">
+    pytest_configure()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.get_transition_forks" class="md-nav__link">
+    get_transition_forks()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.transition_fork_to" class="md-nav__link">
+    transition_fork_to()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.forks_from_until" class="md-nav__link">
+    forks_from_until()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.EvmTransitionTool" class="md-nav__link">
     EvmTransitionTool
   </a>
   
@@ -1048,6 +1140,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.pytest_report_header" class="md-nav__link">
+    pytest_report_header()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.fork" class="md-nav__link">
+    fork()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.pytest_generate_tests" class="md-nav__link">
+    pytest_generate_tests()
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1063,110 +1176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../evm_block_builder/" class="md-nav__link">
-        EVM Block Builder Package
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ethereum_test_tools/" class="md-nav__link">
-        Ethereum Test Tools Package
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ethereum_test_forks/" class="md-nav__link">
-        Ethereum Test Forks Package
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
-      
-      
-        
-          
-            
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../pytest_plugins/">Pytest Plugins</a>
-          
-            <label for="__nav_7_6">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_7_6">
-          <span class="md-nav__icon md-icon"></span>
-          Pytest Plugins
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pytest_plugins/forks/" class="md-nav__link">
-        Forks
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pytest_plugins/test_filler/" class="md-nav__link">
+      <a href="../test_filler/" class="md-nav__link">
         Test Filler
       </a>
     </li>
@@ -1180,7 +1190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pytest_plugins/spec_version_checker/" class="md-nav__link">
+      <a href="../spec_version_checker/" class="md-nav__link">
         Spec Version Checker
       </a>
     </li>
@@ -1237,7 +1247,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../fillers/">Test Case Reference</a>
+          <a href="../../../fillers/">Test Case Reference</a>
           
             <label for="__nav_8">
               <span class="md-nav__icon md-icon"></span>
@@ -1286,7 +1296,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../fillers/EIPs/">EIPs</a>
+          <a href="../../../fillers/EIPs/">EIPs</a>
           
             <label for="__nav_8_2">
               <span class="md-nav__icon md-icon"></span>
@@ -1309,7 +1319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/EIPs/eip3651/" class="md-nav__link">
+      <a href="../../../fillers/EIPs/eip3651/" class="md-nav__link">
         EIP-3651
       </a>
     </li>
@@ -1323,7 +1333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/EIPs/eip3855/" class="md-nav__link">
+      <a href="../../../fillers/EIPs/eip3855/" class="md-nav__link">
         EIP-3855
       </a>
     </li>
@@ -1337,7 +1347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/EIPs/eip3860/" class="md-nav__link">
+      <a href="../../../fillers/EIPs/eip3860/" class="md-nav__link">
         EIP-3860
       </a>
     </li>
@@ -1385,7 +1395,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../fillers/EIPs/EIP-4844/">EIP-4844</a>
+          <a href="../../../fillers/EIPs/EIP-4844/">EIP-4844</a>
           
             <label for="__nav_8_2_5">
               <span class="md-nav__icon md-icon"></span>
@@ -1408,7 +1418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/EIPs/EIP-4844/test_cases/" class="md-nav__link">
+      <a href="../../../fillers/EIPs/EIP-4844/test_cases/" class="md-nav__link">
         Test Cases
       </a>
     </li>
@@ -1422,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/EIPs/EIP-4844/excess_data_gas_fork_transition/" class="md-nav__link">
+      <a href="../../../fillers/EIPs/EIP-4844/excess_data_gas_fork_transition/" class="md-nav__link">
         excess_data_gas_fork_transition
       </a>
     </li>
@@ -1436,7 +1446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/EIPs/EIP-4844/datahash_opcode/" class="md-nav__link">
+      <a href="../../../fillers/EIPs/EIP-4844/datahash_opcode/" class="md-nav__link">
         datahash_opcode
       </a>
     </li>
@@ -1450,7 +1460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/EIPs/EIP-4844/point_evaluation_precompile/" class="md-nav__link">
+      <a href="../../../fillers/EIPs/EIP-4844/point_evaluation_precompile/" class="md-nav__link">
         point_evaluation_precompile
       </a>
     </li>
@@ -1464,7 +1474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/EIPs/EIP-4844/excess_data_gas/" class="md-nav__link">
+      <a href="../../../fillers/EIPs/EIP-4844/excess_data_gas/" class="md-nav__link">
         excess_data_gas
       </a>
     </li>
@@ -1478,7 +1488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/EIPs/EIP-4844/point_evaluation_precompile_gas/" class="md-nav__link">
+      <a href="../../../fillers/EIPs/EIP-4844/point_evaluation_precompile_gas/" class="md-nav__link">
         point_evaluation_precompile_gas
       </a>
     </li>
@@ -1492,7 +1502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/EIPs/EIP-4844/blob_txs/" class="md-nav__link">
+      <a href="../../../fillers/EIPs/EIP-4844/blob_txs/" class="md-nav__link">
         blob_txs
       </a>
     </li>
@@ -1537,7 +1547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/EIPs/EIP-4844/point_evaluation_vectors/test_cases/" class="md-nav__link">
+      <a href="../../../fillers/EIPs/EIP-4844/point_evaluation_vectors/test_cases/" class="md-nav__link">
         Test Cases
       </a>
     </li>
@@ -1594,7 +1604,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../fillers/example/">example</a>
+          <a href="../../../fillers/example/">example</a>
           
             <label for="__nav_8_3">
               <span class="md-nav__icon md-icon"></span>
@@ -1617,7 +1627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/example/acl_example/" class="md-nav__link">
+      <a href="../../../fillers/example/acl_example/" class="md-nav__link">
         acl_example
       </a>
     </li>
@@ -1631,7 +1641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/example/yul_example/" class="md-nav__link">
+      <a href="../../../fillers/example/yul_example/" class="md-nav__link">
         yul_example
       </a>
     </li>
@@ -1672,7 +1682,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../fillers/security/">security</a>
+          <a href="../../../fillers/security/">security</a>
           
             <label for="__nav_8_4">
               <span class="md-nav__icon md-icon"></span>
@@ -1695,7 +1705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/security/selfdestruct_balance_bug/" class="md-nav__link">
+      <a href="../../../fillers/security/selfdestruct_balance_bug/" class="md-nav__link">
         selfdestruct_balance_bug
       </a>
     </li>
@@ -1738,7 +1748,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../fillers/VM/">VM</a>
+          <a href="../../../fillers/VM/">VM</a>
           
             <label for="__nav_8_5">
               <span class="md-nav__icon md-icon"></span>
@@ -1761,7 +1771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/VM/dup/" class="md-nav__link">
+      <a href="../../../fillers/VM/dup/" class="md-nav__link">
         dup
       </a>
     </li>
@@ -1775,7 +1785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/VM/chain_id/" class="md-nav__link">
+      <a href="../../../fillers/VM/chain_id/" class="md-nav__link">
         chain_id
       </a>
     </li>
@@ -1816,7 +1826,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../fillers/withdrawals/">withdrawals</a>
+          <a href="../../../fillers/withdrawals/">withdrawals</a>
           
             <label for="__nav_8_6">
               <span class="md-nav__icon md-icon"></span>
@@ -1839,7 +1849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fillers/withdrawals/withdrawals/" class="md-nav__link">
+      <a href="../../../fillers/withdrawals/withdrawals/" class="md-nav__link">
         withdrawals
       </a>
     </li>
@@ -1887,83 +1897,70 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#evm_transition_tool" class="md-nav__link">
-    evm_transition_tool
+  <a href="#pytest_plugins.forks" class="md-nav__link">
+    pytest_plugins.forks
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#evm_transition_tool.TransitionTool" class="md-nav__link">
-    TransitionTool
+  <a href="#pytest_plugins.forks.forks" class="md-nav__link">
+    pytest_plugins.forks.forks
   </a>
-  
-    <nav class="md-nav" aria-label="TransitionTool">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#evm_transition_tool.TransitionTool.evaluate" class="md-nav__link">
-    evaluate()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evm_transition_tool.TransitionTool.version" class="md-nav__link">
-    version()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evm_transition_tool.TransitionTool.is_fork_supported" class="md-nav__link">
-    is_fork_supported()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evm_transition_tool.TransitionTool.reset_traces" class="md-nav__link">
-    reset_traces()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evm_transition_tool.TransitionTool.append_traces" class="md-nav__link">
-    append_traces()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evm_transition_tool.TransitionTool.get_traces" class="md-nav__link">
-    get_traces()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evm_transition_tool.TransitionTool.calc_state_root" class="md-nav__link">
-    calc_state_root()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evm_transition_tool.TransitionTool.calc_withdrawals_root" class="md-nav__link">
-    calc_withdrawals_root()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#evm_transition_tool.EvmTransitionTool" class="md-nav__link">
+  <a href="#pytest_plugins.forks.forks.pytest_addoption" class="md-nav__link">
+    pytest_addoption()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.get_forks" class="md-nav__link">
+    get_forks()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.get_deployed_forks" class="md-nav__link">
+    get_deployed_forks()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.pytest_configure" class="md-nav__link">
+    pytest_configure()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.get_transition_forks" class="md-nav__link">
+    get_transition_forks()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.transition_fork_to" class="md-nav__link">
+    transition_fork_to()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.forks_from_until" class="md-nav__link">
+    forks_from_until()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.EvmTransitionTool" class="md-nav__link">
     EvmTransitionTool
   </a>
   
@@ -1996,6 +1993,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.pytest_report_header" class="md-nav__link">
+    pytest_report_header()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.fork" class="md-nav__link">
+    fork()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.pytest_generate_tests" class="md-nav__link">
+    pytest_generate_tests()
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2014,16 +2032,18 @@
   
 
 
-<h1 id="evm-transition-tool-package">EVM Transition Tool Package<a class="headerlink" href="#evm-transition-tool-package" title="Permanent link">&para;</a></h1>
+<h1 id="forks-plugin">Forks Plugin<a class="headerlink" href="#forks-plugin" title="Permanent link">&para;</a></h1>
 
 
 <div class="doc doc-object doc-module">
 
 
-<a id="evm_transition_tool"></a>
+<a id="pytest_plugins.forks"></a>
   <div class="doc doc-contents first">
   
-      <p>Python wrapper for the <code>evm t8n</code> tool.</p>
+      <p>A pytest plugin to configure the forks in the test session. It parametrizes
+tests based on the user-provided fork range the tests' specified validity
+markers.</p>
 
   
 
@@ -2035,64 +2055,239 @@
 
 
 
-<div class="doc doc-object doc-class">
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+<a id="pytest_plugins.forks.forks"></a>
+  <div class="doc doc-contents first">
+  
+      <p>Pytest plugin to enable fork range configuration for the test session.</p>
+
+  
+
+  <div class="doc doc-children">
 
 
 
-<h2 id="evm_transition_tool.TransitionTool" class="doc doc-heading">
-        <code>TransitionTool</code>
 
 
-<a href="#evm_transition_tool.TransitionTool" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pytest_plugins.forks.forks.pytest_addoption" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">pytest_addoption</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span></code>
+
+<a href="#pytest_plugins.forks.forks.pytest_addoption" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
-
   
-      <p>Transition tool frontend.</p>
+      <p>Adds command-line options to pytest.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>src/pytest_plugins/forks/forks.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">pytest_addoption</span><span class="p">(</span><span class="n">parser</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adds command-line options to pytest.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fork_group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">getgroup</span><span class="p">(</span>
+        <span class="s2">&quot;Forks&quot;</span><span class="p">,</span> <span class="s2">&quot;Specify the fork range to generate fixtures for&quot;</span>
+    <span class="p">)</span>
+    <span class="n">fork_group</span><span class="o">.</span><span class="n">addoption</span><span class="p">(</span>
+        <span class="s2">&quot;--forks&quot;</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+        <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;show_fork_help&quot;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Display forks supported by the test framework and exit.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">fork_group</span><span class="o">.</span><span class="n">addoption</span><span class="p">(</span>
+        <span class="s2">&quot;--fork&quot;</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">,</span>
+        <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;single_fork&quot;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Only fill tests for the specified fork.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">fork_group</span><span class="o">.</span><span class="n">addoption</span><span class="p">(</span>
+        <span class="s2">&quot;--from&quot;</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">,</span>
+        <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;forks_from&quot;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Fill tests from and including the specified fork.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">fork_group</span><span class="o">.</span><span class="n">addoption</span><span class="p">(</span>
+        <span class="s2">&quot;--until&quot;</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">,</span>
+        <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;forks_until&quot;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="n">get_deployed_forks</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">(),</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Fill tests until and including the specified fork.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
 
 
-        <details class="quote">
-          <summary>Source code in <code>src/evm_transition_tool/__init__.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 17</span>
-<span class="normal"> 18</span>
-<span class="normal"> 19</span>
-<span class="normal"> 20</span>
-<span class="normal"> 21</span>
-<span class="normal"> 22</span>
-<span class="normal"> 23</span>
-<span class="normal"> 24</span>
-<span class="normal"> 25</span>
-<span class="normal"> 26</span>
-<span class="normal"> 27</span>
-<span class="normal"> 28</span>
-<span class="normal"> 29</span>
-<span class="normal"> 30</span>
-<span class="normal"> 31</span>
-<span class="normal"> 32</span>
-<span class="normal"> 33</span>
-<span class="normal"> 34</span>
-<span class="normal"> 35</span>
-<span class="normal"> 36</span>
-<span class="normal"> 37</span>
-<span class="normal"> 38</span>
-<span class="normal"> 39</span>
-<span class="normal"> 40</span>
-<span class="normal"> 41</span>
-<span class="normal"> 42</span>
-<span class="normal"> 43</span>
-<span class="normal"> 44</span>
-<span class="normal"> 45</span>
-<span class="normal"> 46</span>
-<span class="normal"> 47</span>
-<span class="normal"> 48</span>
-<span class="normal"> 49</span>
-<span class="normal"> 50</span>
-<span class="normal"> 51</span>
-<span class="normal"> 52</span>
-<span class="normal"> 53</span>
-<span class="normal"> 54</span>
-<span class="normal"> 55</span>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pytest_plugins.forks.forks.get_forks" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_forks</span><span class="p">()</span></code>
+
+<a href="#pytest_plugins.forks.forks.get_forks" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns a list of all the fork classes implemented by
+<code>ethereum_test_forks</code> ordered chronologically by deployment.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>src/ethereum_test_forks/helpers.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_forks</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Fork</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns a list of all the fork classes implemented by</span>
+<span class="sd">    `ethereum_test_forks` ordered chronologically by deployment.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">all_forks</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Fork</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">fork_name</span> <span class="ow">in</span> <span class="n">forks</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">:</span>
+        <span class="n">fork</span> <span class="o">=</span> <span class="n">forks</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">fork_name</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fork</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">fork</span><span class="p">,</span> <span class="n">BaseFork</span><span class="p">)</span> <span class="ow">and</span> <span class="n">fork</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">BaseFork</span><span class="p">:</span>
+            <span class="n">all_forks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fork</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">all_forks</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pytest_plugins.forks.forks.get_deployed_forks" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_deployed_forks</span><span class="p">()</span></code>
+
+<a href="#pytest_plugins.forks.forks.get_deployed_forks" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns a list of all the fork classes implemented by <code>ethereum_test_forks</code>
+that have been deployed to mainnet, chronologically ordered by deployment.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>src/ethereum_test_forks/helpers.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_deployed_forks</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns a list of all the fork classes implemented by `ethereum_test_forks`</span>
+<span class="sd">    that have been deployed to mainnet, chronologically ordered by deployment.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">fork</span> <span class="k">for</span> <span class="n">fork</span> <span class="ow">in</span> <span class="n">get_forks</span><span class="p">()</span> <span class="k">if</span> <span class="n">fork</span><span class="o">.</span><span class="n">is_deployed</span><span class="p">()]</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pytest_plugins.forks.forks.pytest_configure" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">pytest_configure</span><span class="p">(</span><span class="n">config</span><span class="p">)</span></code>
+
+<a href="#pytest_plugins.forks.forks.pytest_configure" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Register the plugin's custom markers and process command-line options.</p>
+<p>Custom marker registration:
+https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html#registering-custom-markers</p>
+
+      <details class="quote">
+        <summary>Source code in <code>src/pytest_plugins/forks/forks.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 55</span>
 <span class="normal"> 56</span>
 <span class="normal"> 57</span>
 <span class="normal"> 58</span>
@@ -2177,192 +2372,188 @@
 <span class="normal">137</span>
 <span class="normal">138</span>
 <span class="normal">139</span>
-<span class="normal">140</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">TransitionTool</span><span class="p">:</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">hookimpl</span><span class="p">(</span><span class="n">tryfirst</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">pytest_configure</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Transition tool frontend.</span>
+<span class="sd">    Register the plugin&#39;s custom markers and process command-line options.</span>
+
+<span class="sd">    Custom marker registration:</span>
+<span class="sd">    https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html#registering-custom-markers</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">addinivalue_line</span><span class="p">(</span>
+        <span class="s2">&quot;markers&quot;</span><span class="p">,</span>
+        <span class="p">(</span>
+            <span class="s2">&quot;valid_at_transition_to(fork): specifies a test case is valid &quot;</span>
+            <span class="s2">&quot;only at fork transition boundary to the specified fork&quot;</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">addinivalue_line</span><span class="p">(</span>
+        <span class="s2">&quot;markers&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;valid_from(fork): specifies from which fork a test case is valid&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">addinivalue_line</span><span class="p">(</span>
+        <span class="s2">&quot;markers&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;valid_until(fork): specifies until which fork a test case is valid&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
 
-    <span class="n">traces</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">single_fork</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">getoption</span><span class="p">(</span><span class="s2">&quot;single_fork&quot;</span><span class="p">)</span>
+    <span class="n">forks_from</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">getoption</span><span class="p">(</span><span class="s2">&quot;forks_from&quot;</span><span class="p">)</span>
+    <span class="n">forks_until</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">getoption</span><span class="p">(</span><span class="s2">&quot;forks_until&quot;</span><span class="p">)</span>
+    <span class="n">show_fork_help</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">getoption</span><span class="p">(</span><span class="s2">&quot;show_fork_help&quot;</span><span class="p">)</span>
 
-    <span class="nd">@abstractmethod</span>
-    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span>
-        <span class="n">alloc</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
-        <span class="n">txs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
-        <span class="n">env</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
-        <span class="n">fork</span><span class="p">:</span> <span class="n">Fork</span><span class="p">,</span>
-        <span class="n">chain_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="n">reward</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="n">eips</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="nb">str</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Simulate a state transition with specified parameters</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span>
+    <span class="n">all_forks</span> <span class="o">=</span> <span class="n">get_forks</span><span class="p">()</span>
+    <span class="c1"># TODO: Tricky, this removes the *Glacier forks.</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">all_forks</span> <span class="o">=</span> <span class="n">forks_from_until</span><span class="p">(</span><span class="n">all_forks</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">all_forks</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">fork_map</span> <span class="o">=</span> <span class="p">{</span><span class="n">fork</span><span class="o">.</span><span class="n">name</span><span class="p">():</span> <span class="n">fork</span> <span class="k">for</span> <span class="n">fork</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">all_forks</span><span class="p">}</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">fork_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">fork_map</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 
-    <span class="nd">@abstractmethod</span>
-    <span class="k">def</span> <span class="nf">version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return name and version of tool used to state transition</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span>
+    <span class="n">available_forks_help</span> <span class="o">=</span> <span class="n">textwrap</span><span class="o">.</span><span class="n">dedent</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">        Available forks:</span>
+<span class="s2">        </span><span class="si">{</span><span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">)</span><span class="si">}</span>
+<span class="s2">        &quot;&quot;&quot;</span>
+    <span class="p">)</span>
+    <span class="n">available_forks_help</span> <span class="o">+=</span> <span class="n">textwrap</span><span class="o">.</span><span class="n">dedent</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">        Available transition forks:</span>
+<span class="s2">        </span><span class="si">{</span><span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">fork</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">fork</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">get_transition_forks</span><span class="p">()])</span><span class="si">}</span>
+<span class="s2">        &quot;&quot;&quot;</span>
+    <span class="p">)</span>
+    <span class="n">dev_forks_help</span> <span class="o">=</span> <span class="n">textwrap</span><span class="o">.</span><span class="n">dedent</span><span class="p">(</span>
+        <span class="s2">&quot;To run tests for a fork under active development, it must be &quot;</span>
+        <span class="s2">&quot;specified explicitly via --forks-until=FORK.</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;Tests are only &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;ran for deployed mainnet forks by default, i.e., until &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">get_deployed_forks</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">show_fork_help</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">available_forks_help</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">dev_forks_help</span><span class="p">)</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;After displaying help.&quot;</span><span class="p">,</span> <span class="n">returncode</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-    <span class="nd">@abstractmethod</span>
-    <span class="k">def</span> <span class="nf">is_fork_supported</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fork</span><span class="p">:</span> <span class="n">Fork</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Returns True if the fork is supported by the tool</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span>
+    <span class="k">if</span> <span class="n">single_fork</span> <span class="ow">and</span> <span class="n">single_fork</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">fork_map</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: Unsupported fork provided to --fork:&quot;</span><span class="p">,</span> <span class="n">single_fork</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">available_forks_help</span><span class="p">)</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Invalid command-line options.&quot;</span><span class="p">,</span> <span class="n">returncode</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">reset_traces</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Resets the internal trace storage for a new test to begin</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">traces</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">single_fork</span> <span class="ow">and</span> <span class="p">(</span><span class="n">forks_from</span> <span class="ow">or</span> <span class="n">forks_until</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;Error: --fork cannot be used in combination with --forks-from or &quot;</span>
+            <span class="s2">&quot;--forks-until&quot;</span>
+        <span class="p">)</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Invalid command-line options.&quot;</span><span class="p">,</span> <span class="n">returncode</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">append_traces</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_traces</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]]):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Appends a list of traces of a state transition to the current list</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">traces</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">traces</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">traces</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_traces</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">single_fork</span><span class="p">:</span>
+        <span class="n">forks_from</span> <span class="o">=</span> <span class="n">single_fork</span>
+        <span class="n">forks_until</span> <span class="o">=</span> <span class="n">single_fork</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">forks_from</span><span class="p">:</span>
+            <span class="n">forks_from</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-    <span class="k">def</span> <span class="nf">get_traces</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]]]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Returns the accumulated traces</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">traces</span>
+    <span class="k">if</span> <span class="n">forks_from</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">fork_map</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;Error: Unsupported fork provided to --forks-from:&quot;</span><span class="p">,</span>
+            <span class="n">forks_from</span><span class="p">,</span>
+            <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">available_forks_help</span><span class="p">)</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Invalid command-line options.&quot;</span><span class="p">,</span> <span class="n">returncode</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">calc_state_root</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alloc</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">fork</span><span class="p">:</span> <span class="n">Fork</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Calculate the state root for the given `alloc`.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">env</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;currentCoinbase&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;currentDifficulty&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;currentGasLimit&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;currentNumber&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;currentTimestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
-        <span class="p">}</span>
+    <span class="k">if</span> <span class="n">forks_until</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">fork_map</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;Error: Unsupported fork provided to --forks-until:&quot;</span><span class="p">,</span>
+            <span class="n">forks_until</span><span class="p">,</span>
+            <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">available_forks_help</span><span class="p">)</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Invalid command-line options.&quot;</span><span class="p">,</span> <span class="n">returncode</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">fork</span><span class="o">.</span><span class="n">header_base_fee_required</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="n">env</span><span class="p">[</span><span class="s2">&quot;currentBaseFee&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;7&quot;</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">fork_range</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">[</span>
+        <span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">forks_from</span><span class="p">)</span> <span class="p">:</span> <span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span>
+            <span class="n">forks_until</span>
+        <span class="p">)</span>
+        <span class="o">+</span> <span class="mi">1</span>
+    <span class="p">]</span>
 
-        <span class="k">if</span> <span class="n">fork</span><span class="o">.</span><span class="n">header_prev_randao_required</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="n">env</span><span class="p">[</span><span class="s2">&quot;currentRandom&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">config</span><span class="o">.</span><span class="n">fork_range</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Error: --forks-from </span><span class="si">{</span><span class="n">forks_from</span><span class="si">}</span><span class="s2"> --forks-until </span><span class="si">{</span><span class="n">forks_until</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="s2">&quot;creates an empty fork range.&quot;</span>
+        <span class="p">)</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span>
+            <span class="s2">&quot;Command-line options produce empty fork range.&quot;</span><span class="p">,</span> <span class="n">returncode</span><span class="o">=</span><span class="mi">1</span>
+        <span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">fork</span><span class="o">.</span><span class="n">header_withdrawals_required</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="n">env</span><span class="p">[</span><span class="s2">&quot;withdrawals&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-
-        <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">alloc</span><span class="p">,</span> <span class="p">[],</span> <span class="n">env</span><span class="p">,</span> <span class="n">fork</span><span class="p">)</span>
-        <span class="n">state_root</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;stateRoot&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">state_root</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">state_root</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Unable to calculate state root&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">state_root</span>
-
-    <span class="k">def</span> <span class="nf">calc_withdrawals_root</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">withdrawals</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">fork</span><span class="p">:</span> <span class="n">Fork</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Calculate the state root for the given `alloc`.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">withdrawals</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">withdrawals</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="c1"># Optimize returning the empty root immediately</span>
-            <span class="k">return</span> <span class="s2">&quot;0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421&quot;</span>  <span class="c1"># noqa: E501</span>
-
-        <span class="n">env</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;currentCoinbase&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;currentDifficulty&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;currentGasLimit&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;currentNumber&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;currentTimestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;withdrawals&quot;</span><span class="p">:</span> <span class="n">withdrawals</span><span class="p">,</span>
-        <span class="p">}</span>
-
-        <span class="k">if</span> <span class="n">fork</span><span class="o">.</span><span class="n">header_base_fee_required</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="n">env</span><span class="p">[</span><span class="s2">&quot;currentBaseFee&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;7&quot;</span>
-
-        <span class="k">if</span> <span class="n">fork</span><span class="o">.</span><span class="n">header_prev_randao_required</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="n">env</span><span class="p">[</span><span class="s2">&quot;currentRandom&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span>
-
-        <span class="k">if</span> <span class="n">fork</span><span class="o">.</span><span class="n">header_excess_data_gas_required</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="n">env</span><span class="p">[</span><span class="s2">&quot;currentExcessDataGas&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span>
-
-        <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate</span><span class="p">({},</span> <span class="p">[],</span> <span class="n">env</span><span class="p">,</span> <span class="n">fork</span><span class="p">)</span>
-        <span class="n">withdrawals_root</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;withdrawalsRoot&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">withdrawals_root</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
-                <span class="s2">&quot;Unable to calculate withdrawals root: &quot;</span>
-                <span class="o">+</span> <span class="s2">&quot;no value returned from transition tool&quot;</span>
-            <span class="p">)</span>
-        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">withdrawals_root</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">str</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
-                <span class="s2">&quot;Unable to calculate withdrawals root: &quot;</span>
-                <span class="o">+</span> <span class="s2">&quot;incorrect type returned from transition tool: &quot;</span>
-                <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">withdrawals_root</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="p">)</span>
-        <span class="k">return</span> <span class="n">withdrawals_root</span>
-</code></pre></div></td></tr></table></div>
-        </details>
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="evm_transition_tool.TransitionTool.evaluate" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">evaluate</span><span class="p">(</span><span class="n">alloc</span><span class="p">,</span> <span class="n">txs</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">fork</span><span class="p">,</span> <span class="n">chain_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">reward</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">eips</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
-  </span>
-
-<a href="#evm_transition_tool.TransitionTool.evaluate" class="headerlink" title="Permanent link">&para;</a></h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Simulate a state transition with specified parameters</p>
-
-      <details class="quote">
-        <summary>Source code in <code>src/evm_transition_tool/__init__.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
-<span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span>
-    <span class="bp">self</span><span class="p">,</span>
-    <span class="n">alloc</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
-    <span class="n">txs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
-    <span class="n">env</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
-    <span class="n">fork</span><span class="p">:</span> <span class="n">Fork</span><span class="p">,</span>
-    <span class="n">chain_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="n">reward</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="n">eips</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="nb">str</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Simulate a state transition with specified parameters</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">pass</span>
+    <span class="c1"># with --collect-only, we don&#39;t have access to these config options</span>
+    <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">option</span><span class="o">.</span><span class="n">collectonly</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">t8n</span> <span class="o">=</span> <span class="n">EvmTransitionTool</span><span class="p">(</span>
+        <span class="n">binary</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">getoption</span><span class="p">(</span><span class="s2">&quot;evm_bin&quot;</span><span class="p">),</span>
+        <span class="n">trace</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">getoption</span><span class="p">(</span><span class="s2">&quot;evm_collect_traces&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">unsupported_forks</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">fork</span>
+        <span class="k">for</span> <span class="n">fork</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">fork_range</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">t8n</span><span class="o">.</span><span class="n">is_fork_supported</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">fork_map</span><span class="p">[</span><span class="n">fork</span><span class="p">])</span>
+    <span class="p">]</span>
+    <span class="k">if</span> <span class="n">unsupported_forks</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;Error: The configured evm tool doesn&#39;t support the following &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;forks: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">unsupported_forks</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span>
+        <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Please specify a version of the evm tool which supports these &quot;</span>
+            <span class="s2">&quot;forks or use --until FORK to specify a supported fork.</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Incompatible evm tool with fork range.&quot;</span><span class="p">,</span> <span class="n">returncode</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -2378,187 +2569,49 @@
 
 
 
-<h3 id="evm_transition_tool.TransitionTool.version" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">version</span><span class="p">()</span></code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
-  </span>
+<h2 id="pytest_plugins.forks.forks.get_transition_forks" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_transition_forks</span><span class="p">()</span></code>
 
-<a href="#evm_transition_tool.TransitionTool.version" class="headerlink" title="Permanent link">&para;</a></h3>
+<a href="#pytest_plugins.forks.forks.get_transition_forks" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
   
-      <p>Return name and version of tool used to state transition</p>
+      <p>Returns all the transition forks</p>
 
       <details class="quote">
-        <summary>Source code in <code>src/evm_transition_tool/__init__.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
-<span class="k">def</span> <span class="nf">version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Return name and version of tool used to state transition</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">pass</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="evm_transition_tool.TransitionTool.is_fork_supported" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">is_fork_supported</span><span class="p">(</span><span class="n">fork</span><span class="p">)</span></code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
-  </span>
-
-<a href="#evm_transition_tool.TransitionTool.is_fork_supported" class="headerlink" title="Permanent link">&para;</a></h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Returns True if the fork is supported by the tool</p>
-
-      <details class="quote">
-        <summary>Source code in <code>src/evm_transition_tool/__init__.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
-<span class="k">def</span> <span class="nf">is_fork_supported</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fork</span><span class="p">:</span> <span class="n">Fork</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Returns True if the fork is supported by the tool</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">pass</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="evm_transition_tool.TransitionTool.reset_traces" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">reset_traces</span><span class="p">()</span></code>
-
-<a href="#evm_transition_tool.TransitionTool.reset_traces" class="headerlink" title="Permanent link">&para;</a></h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Resets the internal trace storage for a new test to begin</p>
-
-      <details class="quote">
-        <summary>Source code in <code>src/evm_transition_tool/__init__.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">reset_traces</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Resets the internal trace storage for a new test to begin</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">traces</span> <span class="o">=</span> <span class="kc">None</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="evm_transition_tool.TransitionTool.append_traces" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">append_traces</span><span class="p">(</span><span class="n">new_traces</span><span class="p">)</span></code>
-
-<a href="#evm_transition_tool.TransitionTool.append_traces" class="headerlink" title="Permanent link">&para;</a></h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Appends a list of traces of a state transition to the current list</p>
-
-      <details class="quote">
-        <summary>Source code in <code>src/evm_transition_tool/__init__.py</code></summary>
+        <summary>Source code in <code>src/ethereum_test_forks/helpers.py</code></summary>
         <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">60</span>
 <span class="normal">61</span>
 <span class="normal">62</span>
 <span class="normal">63</span>
 <span class="normal">64</span>
 <span class="normal">65</span>
-<span class="normal">66</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">append_traces</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_traces</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]]):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Appends a list of traces of a state transition to the current list</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">traces</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">traces</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">traces</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_traces</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="evm_transition_tool.TransitionTool.get_traces" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_traces</span><span class="p">()</span></code>
-
-<a href="#evm_transition_tool.TransitionTool.get_traces" class="headerlink" title="Permanent link">&para;</a></h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Returns the accumulated traces</p>
-
-      <details class="quote">
-        <summary>Source code in <code>src/evm_transition_tool/__init__.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">68</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
 <span class="normal">69</span>
 <span class="normal">70</span>
 <span class="normal">71</span>
-<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_traces</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]]]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_transition_forks</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Fork</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Returns the accumulated traces</span>
+<span class="sd">    Returns all the transition forks</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">traces</span>
+    <span class="n">transition_forks</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Fork</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">fork_name</span> <span class="ow">in</span> <span class="n">transition</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">:</span>
+        <span class="n">fork</span> <span class="o">=</span> <span class="n">transition</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">fork_name</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fork</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">fork</span><span class="p">,</span> <span class="n">TransitionBaseClass</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">issubclass</span><span class="p">(</span>
+            <span class="n">fork</span><span class="p">,</span> <span class="n">BaseFork</span>
+        <span class="p">):</span>
+            <span class="n">transition_forks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fork</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">transition_forks</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -2574,105 +2627,70 @@
 
 
 
-<h3 id="evm_transition_tool.TransitionTool.calc_state_root" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">calc_state_root</span><span class="p">(</span><span class="n">alloc</span><span class="p">,</span> <span class="n">fork</span><span class="p">)</span></code>
+<h2 id="pytest_plugins.forks.forks.transition_fork_to" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">transition_fork_to</span><span class="p">(</span><span class="n">fork_to</span><span class="p">)</span></code>
 
-<a href="#evm_transition_tool.TransitionTool.calc_state_root" class="headerlink" title="Permanent link">&para;</a></h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Calculate the state root for the given <code>alloc</code>.</p>
-
-      <details class="quote">
-        <summary>Source code in <code>src/evm_transition_tool/__init__.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">74</span>
-<span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span>
-<span class="normal">82</span>
-<span class="normal">83</span>
-<span class="normal">84</span>
-<span class="normal">85</span>
-<span class="normal">86</span>
-<span class="normal">87</span>
-<span class="normal">88</span>
-<span class="normal">89</span>
-<span class="normal">90</span>
-<span class="normal">91</span>
-<span class="normal">92</span>
-<span class="normal">93</span>
-<span class="normal">94</span>
-<span class="normal">95</span>
-<span class="normal">96</span>
-<span class="normal">97</span>
-<span class="normal">98</span>
-<span class="normal">99</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calc_state_root</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alloc</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">fork</span><span class="p">:</span> <span class="n">Fork</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Calculate the state root for the given `alloc`.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">env</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;currentCoinbase&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;currentDifficulty&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;currentGasLimit&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;currentNumber&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;currentTimestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
-    <span class="p">}</span>
-
-    <span class="k">if</span> <span class="n">fork</span><span class="o">.</span><span class="n">header_base_fee_required</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-        <span class="n">env</span><span class="p">[</span><span class="s2">&quot;currentBaseFee&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;7&quot;</span>
-
-    <span class="k">if</span> <span class="n">fork</span><span class="o">.</span><span class="n">header_prev_randao_required</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-        <span class="n">env</span><span class="p">[</span><span class="s2">&quot;currentRandom&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span>
-
-    <span class="k">if</span> <span class="n">fork</span><span class="o">.</span><span class="n">header_withdrawals_required</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-        <span class="n">env</span><span class="p">[</span><span class="s2">&quot;withdrawals&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">alloc</span><span class="p">,</span> <span class="p">[],</span> <span class="n">env</span><span class="p">,</span> <span class="n">fork</span><span class="p">)</span>
-    <span class="n">state_root</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;stateRoot&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">state_root</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">state_root</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Unable to calculate state root&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">state_root</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="evm_transition_tool.TransitionTool.calc_withdrawals_root" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">calc_withdrawals_root</span><span class="p">(</span><span class="n">withdrawals</span><span class="p">,</span> <span class="n">fork</span><span class="p">)</span></code>
-
-<a href="#evm_transition_tool.TransitionTool.calc_withdrawals_root" class="headerlink" title="Permanent link">&para;</a></h3>
+<a href="#pytest_plugins.forks.forks.transition_fork_to" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
   
-      <p>Calculate the state root for the given <code>alloc</code>.</p>
+      <p>Returns the transition fork that transitions to the specified fork.</p>
 
       <details class="quote">
-        <summary>Source code in <code>src/evm_transition_tool/__init__.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">101</span>
+        <summary>Source code in <code>src/ethereum_test_forks/helpers.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
 <span class="normal">102</span>
 <span class="normal">103</span>
 <span class="normal">104</span>
 <span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span>
-<span class="normal">108</span>
-<span class="normal">109</span>
+<span class="normal">106</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">transition_fork_to</span><span class="p">(</span><span class="n">fork_to</span><span class="p">:</span> <span class="n">Fork</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Fork</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the transition fork that transitions to the specified fork.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">transition_forks</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Fork</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">transition_fork</span> <span class="ow">in</span> <span class="n">get_transition_forks</span><span class="p">():</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">transition_fork</span><span class="p">,</span> <span class="n">TransitionBaseClass</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">transition_fork</span><span class="o">.</span><span class="n">transitions_to</span><span class="p">()</span> <span class="o">==</span> <span class="n">fork_to</span><span class="p">:</span>
+            <span class="n">transition_forks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">transition_fork</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">transition_forks</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pytest_plugins.forks.forks.forks_from_until" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">forks_from_until</span><span class="p">(</span><span class="n">fork_from</span><span class="p">,</span> <span class="n">fork_until</span><span class="p">)</span></code>
+
+<a href="#pytest_plugins.forks.forks.forks_from_until" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns the specified fork and all forks after it until and including the
+second specified fork</p>
+
+      <details class="quote">
+        <summary>Source code in <code>src/ethereum_test_forks/helpers.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">109</span>
 <span class="normal">110</span>
 <span class="normal">111</span>
 <span class="normal">112</span>
@@ -2691,69 +2709,28 @@
 <span class="normal">125</span>
 <span class="normal">126</span>
 <span class="normal">127</span>
-<span class="normal">128</span>
-<span class="normal">129</span>
-<span class="normal">130</span>
-<span class="normal">131</span>
-<span class="normal">132</span>
-<span class="normal">133</span>
-<span class="normal">134</span>
-<span class="normal">135</span>
-<span class="normal">136</span>
-<span class="normal">137</span>
-<span class="normal">138</span>
-<span class="normal">139</span>
-<span class="normal">140</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calc_withdrawals_root</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">withdrawals</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">fork</span><span class="p">:</span> <span class="n">Fork</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="normal">128</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forks_from_until</span><span class="p">(</span><span class="n">fork_from</span><span class="p">:</span> <span class="n">Fork</span><span class="p">,</span> <span class="n">fork_until</span><span class="p">:</span> <span class="n">Fork</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Fork</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Calculate the state root for the given `alloc`.</span>
+<span class="sd">    Returns the specified fork and all forks after it until and including the</span>
+<span class="sd">    second specified fork</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">withdrawals</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">withdrawals</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="c1"># Optimize returning the empty root immediately</span>
-        <span class="k">return</span> <span class="s2">&quot;0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421&quot;</span>  <span class="c1"># noqa: E501</span>
+    <span class="n">prev_fork</span> <span class="o">=</span> <span class="n">fork_until</span>
 
-    <span class="n">env</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;currentCoinbase&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;currentDifficulty&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;currentGasLimit&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;currentNumber&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;currentTimestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;withdrawals&quot;</span><span class="p">:</span> <span class="n">withdrawals</span><span class="p">,</span>
-    <span class="p">}</span>
+    <span class="n">forks</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Fork</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">if</span> <span class="n">fork</span><span class="o">.</span><span class="n">header_base_fee_required</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-        <span class="n">env</span><span class="p">[</span><span class="s2">&quot;currentBaseFee&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;7&quot;</span>
+    <span class="k">while</span> <span class="n">prev_fork</span> <span class="o">!=</span> <span class="n">BaseFork</span> <span class="ow">and</span> <span class="n">prev_fork</span> <span class="o">!=</span> <span class="n">fork_from</span><span class="p">:</span>
+        <span class="n">forks</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">prev_fork</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">fork</span><span class="o">.</span><span class="n">header_prev_randao_required</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-        <span class="n">env</span><span class="p">[</span><span class="s2">&quot;currentRandom&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span>
+        <span class="n">prev_fork</span> <span class="o">=</span> <span class="n">prev_fork</span><span class="o">.</span><span class="n">__base__</span>
 
-    <span class="k">if</span> <span class="n">fork</span><span class="o">.</span><span class="n">header_excess_data_gas_required</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-        <span class="n">env</span><span class="p">[</span><span class="s2">&quot;currentExcessDataGas&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span>
+    <span class="k">if</span> <span class="n">prev_fork</span> <span class="o">==</span> <span class="n">BaseFork</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
 
-    <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate</span><span class="p">({},</span> <span class="p">[],</span> <span class="n">env</span><span class="p">,</span> <span class="n">fork</span><span class="p">)</span>
-    <span class="n">withdrawals_root</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;withdrawalsRoot&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">withdrawals_root</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
-            <span class="s2">&quot;Unable to calculate withdrawals root: &quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;no value returned from transition tool&quot;</span>
-        <span class="p">)</span>
-    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">withdrawals_root</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
-            <span class="s2">&quot;Unable to calculate withdrawals root: &quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;incorrect type returned from transition tool: &quot;</span>
-            <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">withdrawals_root</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="p">)</span>
-    <span class="k">return</span> <span class="n">withdrawals_root</span>
+    <span class="n">forks</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">fork_from</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">forks</span>
 </code></pre></div></td></tr></table></div>
       </details>
-  </div>
-
-</div>
-
-
-
-
-  </div>
-
   </div>
 
 </div>
@@ -2767,16 +2744,16 @@
 
 
 
-<h2 id="evm_transition_tool.EvmTransitionTool" class="doc doc-heading">
+<h2 id="pytest_plugins.forks.forks.EvmTransitionTool" class="doc doc-heading">
         <code>EvmTransitionTool</code>
 
 
-<a href="#evm_transition_tool.EvmTransitionTool" class="headerlink" title="Permanent link">&para;</a></h2>
+<a href="#pytest_plugins.forks.forks.EvmTransitionTool" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="evm_transition_tool.TransitionTool" href="#evm_transition_tool.TransitionTool">TransitionTool</a></code></p>
+        Bases: <code><a class="autorefs autorefs-internal" title="evm_transition_tool.TransitionTool" href="../../evm_transition_tool/#evm_transition_tool.TransitionTool">TransitionTool</a></code></p>
 
   
       <p>Go-ethereum <code>evm</code> Transition tool frontend.</p>
@@ -3373,6 +3350,326 @@
 
 
 
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pytest_plugins.forks.forks.pytest_report_header" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">pytest_report_header</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">start_path</span><span class="p">)</span></code>
+
+<a href="#pytest_plugins.forks.forks.pytest_report_header" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>A pytest hook called to obtain the report header.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>src/pytest_plugins/forks/forks.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">hookimpl</span><span class="p">(</span><span class="n">trylast</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">pytest_report_header</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">start_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A pytest hook called to obtain the report header.&quot;&quot;&quot;</span>
+    <span class="n">bold</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1m&quot;</span>
+    <span class="n">warning</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[93m&quot;</span>
+    <span class="n">reset</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[39;49m&quot;</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span>
+            <span class="n">bold</span>
+            <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;Executing tests for: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">fork_range</span><span class="p">)</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="o">+</span> <span class="n">reset</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+    <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">getoption</span><span class="p">(</span><span class="s2">&quot;forks_until&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">header</span> <span class="o">+=</span> <span class="p">[</span>
+            <span class="p">(</span>
+                <span class="n">bold</span>
+                <span class="o">+</span> <span class="n">warning</span>
+                <span class="o">+</span> <span class="s2">&quot;Only executing tests with stable/deployed forks: &quot;</span>
+                <span class="s2">&quot;Specify an upcoming fork via --until=fork to &quot;</span>
+                <span class="s2">&quot;add forks under development.&quot;</span> <span class="o">+</span> <span class="n">reset</span>
+            <span class="p">)</span>
+        <span class="p">]</span>
+    <span class="k">return</span> <span class="n">header</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pytest_plugins.forks.forks.fork" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">fork</span><span class="p">(</span><span class="n">request</span><span class="p">)</span></code>
+
+<a href="#pytest_plugins.forks.forks.fork" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Parametrize test cases by fork.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>src/pytest_plugins/forks/forks.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">fork</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parametrize test cases by fork.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pytest_plugins.forks.forks.pytest_generate_tests" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">pytest_generate_tests</span><span class="p">(</span><span class="n">metafunc</span><span class="p">)</span></code>
+
+<a href="#pytest_plugins.forks.forks.pytest_generate_tests" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Pytest hook used to dynamically generate test cases.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>src/pytest_plugins/forks/forks.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">pytest_generate_tests</span><span class="p">(</span><span class="n">metafunc</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Pytest hook used to dynamically generate test cases.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">valid_at_transition_to</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">marker</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">marker</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">iter_markers</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;valid_at_transition_to&quot;</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">valid_from</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">marker</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">marker</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">iter_markers</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;valid_from&quot;</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">valid_until</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">marker</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">marker</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">iter_markers</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;valid_until&quot;</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">if</span> <span class="n">valid_at_transition_to</span> <span class="ow">and</span> <span class="p">(</span><span class="n">valid_from</span> <span class="ow">or</span> <span class="n">valid_until</span><span class="p">):</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span>
+            <span class="s2">&quot;The test function &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">metafunc</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> specifies both a &quot;</span>
+            <span class="s2">&quot;pytest.mark.valid_at_transition_to and a pytest.mark.valid_from &quot;</span>
+            <span class="s2">&quot;or pytest.mark.valid_until marker. &quot;</span>
+        <span class="p">)</span>
+
+    <span class="n">intersection_range</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="n">valid_at_transition_to</span><span class="p">:</span>
+        <span class="n">fork_to</span> <span class="o">=</span> <span class="n">valid_at_transition_to</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">fork_to</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">:</span>
+            <span class="n">pytest</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span>
+                <span class="s2">&quot;The test function &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">metafunc</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> specifies an invalid fork &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">fork_to</span><span class="si">}</span><span class="s2"> to the pytest.mark.valid_at_transition_to marker. &quot;</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">fork_to</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_range</span><span class="p">:</span>
+            <span class="n">to_fork</span> <span class="o">=</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_map</span><span class="p">[</span><span class="n">fork_to</span><span class="p">]</span>
+            <span class="n">intersection_range</span> <span class="o">=</span> <span class="n">transition_fork_to</span><span class="p">(</span><span class="n">to_fork</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">valid_from</span><span class="p">:</span>
+            <span class="n">valid_from</span> <span class="o">=</span> <span class="p">[</span><span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+
+        <span class="k">if</span> <span class="n">valid_from</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">:</span>
+            <span class="n">pytest</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span>
+                <span class="s2">&quot;The test function &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">metafunc</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> specifies an invalid fork &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">valid_from</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> to the pytest.mark.valid_from marker. &quot;</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">valid_until</span> <span class="ow">and</span> <span class="n">valid_until</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">:</span>
+            <span class="n">pytest</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span>
+                <span class="s2">&quot;The test function &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">metafunc</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> specifies an invalid fork &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">valid_until</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> to the pytest.mark.valid_until marker. &quot;</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">valid_until</span><span class="p">:</span>
+            <span class="n">valid_until</span> <span class="o">=</span> <span class="p">[</span><span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+
+        <span class="n">test_fork_range</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
+            <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">[</span>
+                <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span>
+                    <span class="n">valid_from</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="p">)</span> <span class="p">:</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">valid_until</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="o">+</span> <span class="mi">1</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">test_fork_range</span><span class="p">:</span>
+            <span class="n">pytest</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span>
+                <span class="s2">&quot;The test function&#39;s &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">metafunc</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> fork validity markers generate &quot;</span>
+                <span class="s2">&quot;an empty fork range. Please check the arguments to it&#39;s &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;markers:  @pytest.mark.valid_from (</span><span class="si">{</span><span class="n">valid_from</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">) and &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;@pytest.mark.valid_until (</span><span class="si">{</span><span class="n">valid_until</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">).&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">intersection_range</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+            <span class="nb">set</span><span class="p">(</span><span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_range</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">test_fork_range</span>
+        <span class="p">)</span>
+
+        <span class="n">intersection_range</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_range</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="n">intersection_range</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_map</span><span class="p">[</span><span class="n">fork</span><span class="p">]</span> <span class="k">for</span> <span class="n">fork</span> <span class="ow">in</span> <span class="n">intersection_range</span>
+        <span class="p">]</span>
+
+    <span class="c1"># TODO: skip: test is not valid for any forks in the configured range</span>
+    <span class="c1"># (from, until).</span>
+
+    <span class="k">if</span> <span class="s2">&quot;fork&quot;</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">fixturenames</span><span class="p">:</span>
+        <span class="n">metafunc</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;fork&quot;</span><span class="p">,</span> <span class="n">intersection_range</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;function&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+
   </div>
 
   </div>
@@ -3421,10 +3718,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "search.suggest", "search.highlight", "content.tabs.link", "navigation.indexes", "navigation.instant", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "search.suggest", "search.highlight", "content.tabs.link", "navigation.indexes", "navigation.instant", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>

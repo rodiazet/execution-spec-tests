@@ -958,10 +958,92 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../library/pytest_plugins/">Pytest Plugins</a>
+          
+            <label for="__nav_7_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_6">
+          <span class="md-nav__icon md-icon"></span>
+          Pytest Plugins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../../library/pytest_plugins/" class="md-nav__link">
-        Pytest Plugins
+      <a href="../../../../library/pytest_plugins/forks/" class="md-nav__link">
+        Forks
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../library/pytest_plugins/test_filler/" class="md-nav__link">
+        Test Filler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../library/pytest_plugins/spec_version_checker/" class="md-nav__link">
+        Spec Version Checker
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -2022,7 +2104,8 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/excess_data_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">59</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">58</span>
+<span class="normal">59</span>
 <span class="normal">60</span>
 <span class="normal">61</span>
 <span class="normal">62</span>
@@ -2034,8 +2117,7 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 <span class="normal">68</span>
 <span class="normal">69</span>
 <span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">fake_exponential</span><span class="p">(</span><span class="n">factor</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">numerator</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">denominator</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="normal">71</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">fake_exponential</span><span class="p">(</span><span class="n">factor</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">numerator</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">denominator</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Used to calculate the data gas cost.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2076,11 +2158,11 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/excess_data_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">75</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">74</span>
+<span class="normal">75</span>
 <span class="normal">76</span>
 <span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calc_data_fee</span><span class="p">(</span><span class="n">tx</span><span class="p">:</span> <span class="n">Transaction</span><span class="p">,</span> <span class="n">excess_data_gas</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calc_data_fee</span><span class="p">(</span><span class="n">tx</span><span class="p">:</span> <span class="n">Transaction</span><span class="p">,</span> <span class="n">excess_data_gas</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate the data fee for a transaction.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2112,13 +2194,13 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/excess_data_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">82</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">81</span>
+<span class="normal">82</span>
 <span class="normal">83</span>
 <span class="normal">84</span>
 <span class="normal">85</span>
 <span class="normal">86</span>
-<span class="normal">87</span>
-<span class="normal">88</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_total_data_gas</span><span class="p">(</span><span class="n">tx</span><span class="p">:</span> <span class="n">Transaction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="normal">87</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_total_data_gas</span><span class="p">(</span><span class="n">tx</span><span class="p">:</span> <span class="n">Transaction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate the total data gas for a transaction.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2152,15 +2234,15 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/excess_data_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">91</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">90</span>
+<span class="normal">91</span>
 <span class="normal">92</span>
 <span class="normal">93</span>
 <span class="normal">94</span>
 <span class="normal">95</span>
 <span class="normal">96</span>
 <span class="normal">97</span>
-<span class="normal">98</span>
-<span class="normal">99</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_data_gasprice_from_blobs</span><span class="p">(</span><span class="n">excess_blobs</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="normal">98</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_data_gasprice_from_blobs</span><span class="p">(</span><span class="n">excess_blobs</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate the data gas price from the excess blob count.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2196,15 +2278,15 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/excess_data_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">102</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">101</span>
+<span class="normal">102</span>
 <span class="normal">103</span>
 <span class="normal">104</span>
 <span class="normal">105</span>
 <span class="normal">106</span>
 <span class="normal">107</span>
 <span class="normal">108</span>
-<span class="normal">109</span>
-<span class="normal">110</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_data_gasprice</span><span class="p">(</span><span class="n">excess_data_gas</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="normal">109</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_data_gasprice</span><span class="p">(</span><span class="n">excess_data_gas</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate the data gas price from the excess.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2241,7 +2323,8 @@ and the number of blobs in the block.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/excess_data_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">113</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">112</span>
+<span class="normal">113</span>
 <span class="normal">114</span>
 <span class="normal">115</span>
 <span class="normal">116</span>
@@ -2253,8 +2336,7 @@ and the number of blobs in the block.</p>
 <span class="normal">122</span>
 <span class="normal">123</span>
 <span class="normal">124</span>
-<span class="normal">125</span>
-<span class="normal">126</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calc_excess_data_gas</span><span class="p">(</span><span class="n">parent_excess_data_gas</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">new_blobs</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="normal">125</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calc_excess_data_gas</span><span class="p">(</span><span class="n">parent_excess_data_gas</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">new_blobs</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate the excess data gas for a block given the parent excess data gas</span>
 <span class="sd">    and the number of blobs in the block.</span>
@@ -2295,12 +2377,12 @@ and the number of blobs in the block.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/excess_data_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">129</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">128</span>
+<span class="normal">129</span>
 <span class="normal">130</span>
 <span class="normal">131</span>
 <span class="normal">132</span>
-<span class="normal">133</span>
-<span class="normal">134</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="normal">133</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
 <span class="k">def</span> <span class="nf">parent_excess_blobs</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>  <span class="c1"># noqa: D103</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    By default we start with an intermediate value between the target and max.</span>
@@ -2334,7 +2416,8 @@ multiple blocks with and without blobs.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/excess_data_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">310</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">309</span>
+<span class="normal">310</span>
 <span class="normal">311</span>
 <span class="normal">312</span>
 <span class="normal">313</span>
@@ -2355,8 +2438,7 @@ multiple blocks with and without blobs.</p>
 <span class="normal">328</span>
 <span class="normal">329</span>
 <span class="normal">330</span>
-<span class="normal">331</span>
-<span class="normal">332</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;new_blobs&quot;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">MAX_BLOBS_PER_BLOCK</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+<span class="normal">331</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;new_blobs&quot;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">MAX_BLOBS_PER_BLOCK</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;parent_excess_blobs&quot;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">TARGET_BLOBS_PER_BLOCK</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 <span class="p">)</span>
@@ -2407,7 +2489,8 @@ value points where the cost increases to interesting amounts.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/excess_data_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">335</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">334</span>
+<span class="normal">335</span>
 <span class="normal">336</span>
 <span class="normal">337</span>
 <span class="normal">338</span>
@@ -2442,8 +2525,7 @@ value points where the cost increases to interesting amounts.</p>
 <span class="normal">367</span>
 <span class="normal">368</span>
 <span class="normal">369</span>
-<span class="normal">370</span>
-<span class="normal">371</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">370</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;parent_excess_blobs&quot;</span><span class="p">,</span>
     <span class="p">[</span>
         <span class="c1"># Data gas cost increase to 2</span>
@@ -2508,7 +2590,8 @@ value points where the cost decreases to interesting amounts.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/excess_data_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">374</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">373</span>
+<span class="normal">374</span>
 <span class="normal">375</span>
 <span class="normal">376</span>
 <span class="normal">377</span>
@@ -2541,8 +2624,7 @@ value points where the cost decreases to interesting amounts.</p>
 <span class="normal">404</span>
 <span class="normal">405</span>
 <span class="normal">406</span>
-<span class="normal">407</span>
-<span class="normal">408</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">407</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;parent_excess_blobs&quot;</span><span class="p">,</span>
     <span class="p">[</span>
         <span class="c1"># Data gas cost decrease to 1</span>
@@ -2606,7 +2688,8 @@ greater than target in the previous block.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/excess_data_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">411</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">410</span>
+<span class="normal">411</span>
 <span class="normal">412</span>
 <span class="normal">413</span>
 <span class="normal">414</span>
@@ -2637,8 +2720,7 @@ greater than target in the previous block.</p>
 <span class="normal">439</span>
 <span class="normal">440</span>
 <span class="normal">441</span>
-<span class="normal">442</span>
-<span class="normal">443</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;header_excess_data_gas&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="normal">442</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;header_excess_data_gas&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;new_blobs&quot;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">MAX_BLOBS_PER_BLOCK</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
 <span class="k">def</span> <span class="nf">test_invalid_zero_excess_data_gas_in_header</span><span class="p">(</span>
     <span class="n">blockchain_test</span><span class="p">:</span> <span class="n">BlockchainTestFiller</span><span class="p">,</span>
@@ -2699,7 +2781,8 @@ more than TARGET_DATA_GAS_PER_BLOCK in a single block.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/excess_data_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">446</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">445</span>
+<span class="normal">446</span>
 <span class="normal">447</span>
 <span class="normal">448</span>
 <span class="normal">449</span>
@@ -2732,8 +2815,7 @@ more than TARGET_DATA_GAS_PER_BLOCK in a single block.</p>
 <span class="normal">476</span>
 <span class="normal">477</span>
 <span class="normal">478</span>
-<span class="normal">479</span>
-<span class="normal">480</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">479</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;header_excess_blobs_delta&quot;</span><span class="p">,</span>
     <span class="p">[</span><span class="o">-</span><span class="p">(</span><span class="n">TARGET_BLOBS_PER_BLOCK</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">TARGET_BLOBS_PER_BLOCK</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)],</span>
 <span class="p">)</span>
@@ -2796,7 +2878,8 @@ but the blobs included are not TARGET_BLOBS_PER_BLOCK.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/excess_data_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">483</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">482</span>
+<span class="normal">483</span>
 <span class="normal">484</span>
 <span class="normal">485</span>
 <span class="normal">486</span>
@@ -2833,8 +2916,7 @@ but the blobs included are not TARGET_BLOBS_PER_BLOCK.</p>
 <span class="normal">517</span>
 <span class="normal">518</span>
 <span class="normal">519</span>
-<span class="normal">520</span>
-<span class="normal">521</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;header_excess_blobs_delta&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="normal">520</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;header_excess_blobs_delta&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;new_blobs&quot;</span><span class="p">,</span>
     <span class="p">[</span>
@@ -2901,7 +2983,8 @@ even when the included blobs are on or below target.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/excess_data_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">524</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">523</span>
+<span class="normal">524</span>
 <span class="normal">525</span>
 <span class="normal">526</span>
 <span class="normal">527</span>
@@ -2934,8 +3017,7 @@ even when the included blobs are on or below target.</p>
 <span class="normal">554</span>
 <span class="normal">555</span>
 <span class="normal">556</span>
-<span class="normal">557</span>
-<span class="normal">558</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">557</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;header_excess_blobs_delta&quot;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">MAX_BLOBS_PER_BLOCK</span><span class="p">)</span>
 <span class="p">)</span>
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;new_blobs&quot;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">TARGET_BLOBS_PER_BLOCK</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
@@ -2998,7 +3080,8 @@ zero, even when the included blobs is above target.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/excess_data_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">561</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">560</span>
+<span class="normal">561</span>
 <span class="normal">562</span>
 <span class="normal">563</span>
 <span class="normal">564</span>
@@ -3031,8 +3114,7 @@ zero, even when the included blobs is above target.</p>
 <span class="normal">591</span>
 <span class="normal">592</span>
 <span class="normal">593</span>
-<span class="normal">594</span>
-<span class="normal">595</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;header_excess_blobs_delta&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="normal">594</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;header_excess_blobs_delta&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;new_blobs&quot;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="n">TARGET_BLOBS_PER_BLOCK</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MAX_BLOBS_PER_BLOCK</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 <span class="p">)</span>
@@ -3095,7 +3177,8 @@ value.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/excess_data_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">598</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">597</span>
+<span class="normal">598</span>
 <span class="normal">599</span>
 <span class="normal">600</span>
 <span class="normal">601</span>
@@ -3137,8 +3220,7 @@ value.</p>
 <span class="normal">637</span>
 <span class="normal">638</span>
 <span class="normal">639</span>
-<span class="normal">640</span>
-<span class="normal">641</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">640</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;new_blobs,header_excess_blobs_delta&quot;</span><span class="p">,</span>
     <span class="p">[</span>
         <span class="n">c</span>
@@ -3210,7 +3292,8 @@ complement equivalent of the negative value after subtracting target blobs.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/excess_data_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">644</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">643</span>
+<span class="normal">644</span>
 <span class="normal">645</span>
 <span class="normal">646</span>
 <span class="normal">647</span>
@@ -3247,8 +3330,7 @@ complement equivalent of the negative value after subtracting target blobs.</p>
 <span class="normal">678</span>
 <span class="normal">679</span>
 <span class="normal">680</span>
-<span class="normal">681</span>
-<span class="normal">682</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">681</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;header_excess_data_gas&quot;</span><span class="p">,</span>
     <span class="p">[</span>
         <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">256</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">DATA_GAS_PER_BLOB</span><span class="p">))</span>
@@ -3315,7 +3397,8 @@ is not a multiple of DATA_GAS_PER_BLOB.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/excess_data_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">685</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">684</span>
+<span class="normal">685</span>
 <span class="normal">686</span>
 <span class="normal">687</span>
 <span class="normal">688</span>
@@ -3353,8 +3436,7 @@ is not a multiple of DATA_GAS_PER_BLOB.</p>
 <span class="normal">720</span>
 <span class="normal">721</span>
 <span class="normal">722</span>
-<span class="normal">723</span>
-<span class="normal">724</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">723</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;new_blobs,header_excess_data_gas_delta&quot;</span><span class="p">,</span>
     <span class="p">[</span>
         <span class="p">(</span><span class="n">TARGET_BLOBS_PER_BLOCK</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>

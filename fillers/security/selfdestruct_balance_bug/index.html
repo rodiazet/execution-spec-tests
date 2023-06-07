@@ -958,10 +958,92 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../library/pytest_plugins/">Pytest Plugins</a>
+          
+            <label for="__nav_7_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_6">
+          <span class="md-nav__icon md-icon"></span>
+          Pytest Plugins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../library/pytest_plugins/" class="md-nav__link">
-        Pytest Plugins
+      <a href="../../../library/pytest_plugins/forks/" class="md-nav__link">
+        Forks
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../library/pytest_plugins/test_filler/" class="md-nav__link">
+        Test Filler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../library/pytest_plugins/spec_version_checker/" class="md-nav__link">
+        Spec Version Checker
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1774,7 +1856,7 @@ v1.9.20 &gt; geth &gt;= v1.9.4</p>
 
 
 <h2 id="fillers.security.selfdestruct_balance_bug.test_tx_selfdestruct_balance_bug" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">test_tx_selfdestruct_balance_bug</span><span class="p">(</span><span class="n">blockchain_test</span><span class="p">,</span> <span class="n">fork</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">test_tx_selfdestruct_balance_bug</span><span class="p">(</span><span class="n">blockchain_test</span><span class="p">)</span></code>
 
 <a href="#fillers.security.selfdestruct_balance_bug.test_tx_selfdestruct_balance_bug" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -1817,7 +1899,8 @@ v1.9.20 &gt; geth &gt;= v1.9.4</p>
 </details>
       <details class="quote">
         <summary>Source code in <code>fillers/security/selfdestruct_balance_bug.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 26</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 25</span>
+<span class="normal"> 26</span>
 <span class="normal"> 27</span>
 <span class="normal"> 28</span>
 <span class="normal"> 29</span>
@@ -1926,13 +2009,8 @@ v1.9.20 &gt; geth &gt;= v1.9.4</p>
 <span class="normal">132</span>
 <span class="normal">133</span>
 <span class="normal">134</span>
-<span class="normal">135</span>
-<span class="normal">136</span>
-<span class="normal">137</span>
-<span class="normal">138</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;fork&quot;</span><span class="p">,</span> <span class="n">forks_from</span><span class="p">(</span><span class="n">Constantinople</span><span class="p">))</span>
-<span class="k">def</span> <span class="nf">test_tx_selfdestruct_balance_bug</span><span class="p">(</span>
-    <span class="n">blockchain_test</span><span class="p">:</span> <span class="n">BlockchainTestFiller</span><span class="p">,</span> <span class="n">fork</span><span class="p">:</span> <span class="n">Fork</span>
-<span class="p">):</span>
+<span class="normal">135</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">valid_from</span><span class="p">(</span><span class="s2">&quot;Constantinople&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_tx_selfdestruct_balance_bug</span><span class="p">(</span><span class="n">blockchain_test</span><span class="p">:</span> <span class="n">BlockchainTestFiller</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Checks balance of 0xaa after executing specific txs:</span>
 

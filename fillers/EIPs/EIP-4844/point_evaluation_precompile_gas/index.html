@@ -958,10 +958,92 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../library/pytest_plugins/">Pytest Plugins</a>
+          
+            <label for="__nav_7_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_6">
+          <span class="md-nav__icon md-icon"></span>
+          Pytest Plugins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../../library/pytest_plugins/" class="md-nav__link">
-        Pytest Plugins
+      <a href="../../../../library/pytest_plugins/forks/" class="md-nav__link">
+        Forks
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../library/pytest_plugins/test_filler/" class="md-nav__link">
+        Test Filler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../library/pytest_plugins/spec_version_checker/" class="md-nav__link">
+        Spec Version Checker
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1910,7 +1992,8 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/point_evaluation_precompile_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">34</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">33</span>
+<span class="normal">34</span>
 <span class="normal">35</span>
 <span class="normal">36</span>
 <span class="normal">37</span>
@@ -1922,8 +2005,7 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 <span class="normal">43</span>
 <span class="normal">44</span>
 <span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">kzg_to_versioned_hash</span><span class="p">(</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">kzg_to_versioned_hash</span><span class="p">(</span>
     <span class="n">kzg_commitment</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="nb">int</span><span class="p">,</span>  <span class="c1"># 48 bytes</span>
     <span class="n">blob_commitment_version_kzg</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">BLOB_COMMITMENT_VERSION_KZG</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
@@ -1964,7 +2046,8 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/point_evaluation_precompile_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">50</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">49</span>
+<span class="normal">50</span>
 <span class="normal">51</span>
 <span class="normal">52</span>
 <span class="normal">53</span>
@@ -1981,8 +2064,7 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 <span class="normal">64</span>
 <span class="normal">65</span>
 <span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="normal">67</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
 <span class="k">def</span> <span class="nf">precompile_input</span><span class="p">(</span><span class="n">proof</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;correct&quot;</span><span class="p">,</span> <span class="s2">&quot;incorrect&quot;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Format depending on whether we want a correct proof or not.</span>
@@ -2029,14 +2111,14 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/point_evaluation_precompile_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">71</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">70</span>
+<span class="normal">71</span>
 <span class="normal">72</span>
 <span class="normal">73</span>
 <span class="normal">74</span>
 <span class="normal">75</span>
 <span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="normal">77</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
 <span class="k">def</span> <span class="nf">call_type</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Op</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Type of call to use to call the precompile.</span>
@@ -2073,15 +2155,15 @@ test different amounts.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/point_evaluation_precompile_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">81</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">80</span>
+<span class="normal">81</span>
 <span class="normal">82</span>
 <span class="normal">83</span>
 <span class="normal">84</span>
 <span class="normal">85</span>
 <span class="normal">86</span>
 <span class="normal">87</span>
-<span class="normal">88</span>
-<span class="normal">89</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="normal">88</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
 <span class="k">def</span> <span class="nf">call_gas</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Amount of gas to pass to the precompile.</span>
@@ -2117,7 +2199,8 @@ test different amounts.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/point_evaluation_precompile_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 92</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 91</span>
+<span class="normal"> 92</span>
 <span class="normal"> 93</span>
 <span class="normal"> 94</span>
 <span class="normal"> 95</span>
@@ -2168,8 +2251,7 @@ test different amounts.</p>
 <span class="normal">140</span>
 <span class="normal">141</span>
 <span class="normal">142</span>
-<span class="normal">143</span>
-<span class="normal">144</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="normal">143</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
 <span class="k">def</span> <span class="nf">precompile_caller_account</span><span class="p">(</span>
     <span class="n">call_type</span><span class="p">:</span> <span class="n">Op</span><span class="p">,</span>
     <span class="n">call_gas</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -2249,12 +2331,12 @@ test different amounts.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/point_evaluation_precompile_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">147</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">146</span>
+<span class="normal">147</span>
 <span class="normal">148</span>
 <span class="normal">149</span>
 <span class="normal">150</span>
-<span class="normal">151</span>
-<span class="normal">152</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="normal">151</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
 <span class="k">def</span> <span class="nf">precompile_caller_address</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Address of the precompile caller account.</span>
@@ -2288,7 +2370,8 @@ source account of all test transactions, and the precompile caller account.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/point_evaluation_precompile_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">155</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">154</span>
+<span class="normal">155</span>
 <span class="normal">156</span>
 <span class="normal">157</span>
 <span class="normal">158</span>
@@ -2302,8 +2385,7 @@ source account of all test transactions, and the precompile caller account.</p>
 <span class="normal">166</span>
 <span class="normal">167</span>
 <span class="normal">168</span>
-<span class="normal">169</span>
-<span class="normal">170</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="normal">169</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
 <span class="k">def</span> <span class="nf">pre</span><span class="p">(</span>
     <span class="n">precompile_caller_account</span><span class="p">:</span> <span class="n">Account</span><span class="p">,</span>
     <span class="n">precompile_caller_address</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -2346,7 +2428,8 @@ source account of all test transactions, and the precompile caller account.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/point_evaluation_precompile_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">173</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">172</span>
+<span class="normal">173</span>
 <span class="normal">174</span>
 <span class="normal">175</span>
 <span class="normal">176</span>
@@ -2362,8 +2445,7 @@ source account of all test transactions, and the precompile caller account.</p>
 <span class="normal">186</span>
 <span class="normal">187</span>
 <span class="normal">188</span>
-<span class="normal">189</span>
-<span class="normal">190</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="normal">189</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
 <span class="k">def</span> <span class="nf">tx</span><span class="p">(</span>
     <span class="n">precompile_caller_address</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">precompile_input</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">,</span>
@@ -2409,7 +2491,8 @@ failure of the precompile call and the gas usage.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/point_evaluation_precompile_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">193</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">192</span>
+<span class="normal">193</span>
 <span class="normal">194</span>
 <span class="normal">195</span>
 <span class="normal">196</span>
@@ -2432,8 +2515,7 @@ failure of the precompile call and the gas usage.</p>
 <span class="normal">213</span>
 <span class="normal">214</span>
 <span class="normal">215</span>
-<span class="normal">216</span>
-<span class="normal">217</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="normal">216</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
 <span class="k">def</span> <span class="nf">post</span><span class="p">(</span>
     <span class="n">precompile_caller_address</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">proof</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;correct&quot;</span><span class="p">,</span> <span class="s2">&quot;incorrect&quot;</span><span class="p">],</span>
@@ -2474,7 +2556,7 @@ failure of the precompile call and the gas usage.</p>
 
 
 <h2 id="fillers.eips.eip4844.point_evaluation_precompile_gas.test_point_evaluation_precompile_gas_usage" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">test_point_evaluation_precompile_gas_usage</span><span class="p">(</span><span class="n">blockchain_test</span><span class="p">,</span> <span class="n">pre</span><span class="p">,</span> <span class="n">tx</span><span class="p">,</span> <span class="n">post</span><span class="p">,</span> <span class="n">fork</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">test_point_evaluation_precompile_gas_usage</span><span class="p">(</span><span class="n">blockchain_test</span><span class="p">,</span> <span class="n">pre</span><span class="p">,</span> <span class="n">tx</span><span class="p">,</span> <span class="n">post</span><span class="p">)</span></code>
 
 <a href="#fillers.eips.eip4844.point_evaluation_precompile_gas.test_point_evaluation_precompile_gas_usage" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -2485,7 +2567,8 @@ failure of the precompile call and the gas usage.</p>
 
       <details class="quote">
         <summary>Source code in <code>fillers/eips/eip4844/point_evaluation_precompile_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">220</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">219</span>
+<span class="normal">220</span>
 <span class="normal">221</span>
 <span class="normal">222</span>
 <span class="normal">223</span>
@@ -2512,9 +2595,7 @@ failure of the precompile call and the gas usage.</p>
 <span class="normal">244</span>
 <span class="normal">245</span>
 <span class="normal">246</span>
-<span class="normal">247</span>
-<span class="normal">248</span>
-<span class="normal">249</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">247</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;call_type&quot;</span><span class="p">,</span>
     <span class="p">[</span><span class="n">Op</span><span class="o">.</span><span class="n">CALL</span><span class="p">,</span> <span class="n">Op</span><span class="o">.</span><span class="n">DELEGATECALL</span><span class="p">,</span> <span class="n">Op</span><span class="o">.</span><span class="n">CALLCODE</span><span class="p">,</span> <span class="n">Op</span><span class="o">.</span><span class="n">STATICCALL</span><span class="p">],</span>
 <span class="p">)</span>
@@ -2528,13 +2609,12 @@ failure of the precompile call and the gas usage.</p>
     <span class="n">ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;exact_gas&quot;</span><span class="p">,</span> <span class="s2">&quot;insufficient_gas&quot;</span><span class="p">,</span> <span class="s2">&quot;extra_gas&quot;</span><span class="p">],</span>
 <span class="p">)</span>
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;proof&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;correct&quot;</span><span class="p">,</span> <span class="s2">&quot;incorrect&quot;</span><span class="p">])</span>
-<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;fork&quot;</span><span class="p">,</span> <span class="n">forks_from</span><span class="p">(</span><span class="n">Cancun</span><span class="p">))</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">valid_from</span><span class="p">(</span><span class="s2">&quot;Cancun&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">test_point_evaluation_precompile_gas_usage</span><span class="p">(</span>
     <span class="n">blockchain_test</span><span class="p">:</span> <span class="n">BlockchainTestFiller</span><span class="p">,</span>
     <span class="n">pre</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
     <span class="n">tx</span><span class="p">:</span> <span class="n">Transaction</span><span class="p">,</span>
     <span class="n">post</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
-    <span class="n">fork</span><span class="p">:</span> <span class="n">Fork</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Test Precompile Gas Usage.</span>
