@@ -886,6 +886,19 @@
     Formatting and Line Length
   </a>
   
+    <nav class="md-nav" aria-label="Formatting and Line Length">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ignoring-bulk-change-commits" class="md-nav__link">
+    Ignoring Bulk Change Commits
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1836,6 +1849,19 @@
     Formatting and Line Length
   </a>
   
+    <nav class="md-nav" aria-label="Formatting and Line Length">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ignoring-bulk-change-commits" class="md-nav__link">
+    Ignoring Bulk Change Commits
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1858,7 +1884,8 @@
 
 <h1 id="coding-style">Coding Style<a class="headerlink" href="#coding-style" title="Permanent link">&para;</a></h1>
 <h2 id="formatting-and-line-length">Formatting and Line Length<a class="headerlink" href="#formatting-and-line-length" title="Permanent link">&para;</a></h2>
-<p>The Python code in execution-spec-tests is black formatted with a maximum line length of 100.</p>
+<p>The Python code in execution-spec-tests is black formatted with a maximum line length of 100. Using VS Code with <code>editor.formatOnSave</code> is a big help to ensure files conform to the repo's coding style, see <a href="../../getting_started/setup_vs_code/">VS Code Setup</a> to configure this and other useful settings.</p>
+<h3 id="ignoring-bulk-change-commits">Ignoring Bulk Change Commits<a class="headerlink" href="#ignoring-bulk-change-commits" title="Permanent link">&para;</a></h3>
 <p>The max line length was changed from 80 to 100 in Q2 2023. To ignore this bulk change commit in git blame output, use the <code>.git-blame-ignore-revs</code> file, for example:</p>
 <div class="highlight"><pre><span></span><code><span class="go">git blame --ignore-revs-file .git-blame-ignore-revs docs/gen_filler_pages.py</span>
 </code></pre></div>
