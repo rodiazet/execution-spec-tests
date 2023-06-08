@@ -11,6 +11,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://danceratopz.github.io/execution-spec-tests/dev/coding_style/</loc>
+         <lastmod>2023-06-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://danceratopz.github.io/execution-spec-tests/dev/docs/</loc>
          <lastmod>2023-06-08</lastmod>
          <changefreq>daily</changefreq>

@@ -906,6 +906,8 @@
         
           
         
+          
+        
       
       
         
@@ -936,6 +938,20 @@
     <li class="md-nav__item">
       <a href="../../dev/docs/" class="md-nav__link">
         Documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/coding_style/" class="md-nav__link">
+        Coding Style
       </a>
     </li>
   
@@ -2093,7 +2109,7 @@ For more information, <a href="https://ethereum-tests.readthedocs.io/en/latest/t
 <h4 id="state-test">State Test<a class="headerlink" href="#state-test" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>    <span class="n">state_test</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span> <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">,</span> <span class="n">txs</span><span class="o">=</span><span class="p">[</span><span class="n">tx</span><span class="p">])</span>
 </code></pre></div>
-<p>This line calls the wrapper to the <code>StateTest</code> object that provides all the objects required (for example, the fork parameter) in order to fill the test, generate the test fixtures and write them to file (by default, <code>../out/example/yul_example/test_yul.json</code>).</p>
+<p>This line calls the wrapper to the <code>StateTest</code> object that provides all the objects required (for example, the fork parameter) in order to fill the test, generate the test fixtures and write them to file (by default, <code>./fixtures/example/yul_example/test_yul.json</code>).</p>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
 <p>At this point you should be able to state transition tests within a single block.</p>
 
