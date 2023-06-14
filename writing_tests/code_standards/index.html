@@ -1812,24 +1812,61 @@
 
 <h1 id="code-standards">Code Standards<a class="headerlink" href="#code-standards" title="Permanent link">&para;</a></h1>
 <p>The Python code in the tests subdirectory <code>./tests</code> must fulfill the following checks:</p>
-<ol>
-<li><code>fname8 tests</code> - spell check passes using the <code>./whitelist.txt</code> dictionary file.</li>
-<li><code>isort tests --check --diff</code> - Python imports ordered and arranged according to <code>isort</code>'s standards.</li>
-<li><code>black tests --check --diff</code> - Python source must be <a href="https://black.readthedocs.io/en/stable/">black-formatted</a>.</li>
-<li><code>flake8 tests</code> - Python lint checked.</li>
-<li><code>mypy tests</code> - Objects that provide typehints pass type-checking via <code>mypy</code>.</li>
-<li><code>fill</code> - All tests tests must execute correctly.</li>
-<li><code>mkdocs build --strict</code> - Documentation generated without warnings.</li>
-</ol>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Command</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>fname8 tests</code></td>
+<td>Spell check passes using the <code>./whitelist.txt</code> dictionary file.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>isort tests --check --diff</code></td>
+<td>Python imports ordered and arranged according to isort's standards.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>black tests --check --diff</code></td>
+<td>Python source must be black-formatted.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>flake8 tests</code></td>
+<td>Python lint checked.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>mypy tests</code></td>
+<td>Objects that provide typehints pass type-checking via mypy.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>fill</code></td>
+<td>All tests tests must execute correctly.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>mkdocs build --strict</code></td>
+<td>Documentation generated without warnings.</td>
+</tr>
+</tbody>
+</table>
 <p>While this seems like a long list, a correctly configured editor (see <a href="../../getting_started/setup_vs_code/">VS Code Setup</a>) essentially assures:</p>
 <ol>
 <li>Points 2 and 3 are automatically covered.</li>
 <li>Points 1, 4 &amp; 5 are mostly covered. Additionally, if you skip type hints, they won't be checked; we can help you add these in the PR.</li>
 </ol>
-<p>These checks must pass in order for the execution-spec-tests Github Actions to pass upon pushing to remote. </p>
+<p>These checks must pass in order for the execution-spec-tests Github Actions to pass upon pushing to remote.</p>
 <div class="admonition info">
 <p class="admonition-title">Running the checks with tox</p>
-<p>All these checks can be executed locally in a single command, <code>tox</code>, see <a href="../verifying_changes/">Verifying Changes</a>. </p>
+<p>All these checks can be executed locally in a single command, <code>tox</code>, see <a href="../verifying_changes/">Verifying Changes</a>.</p>
 <p>If you need help, <a href="../../getting_help/">get in touch</a>!</p>
 </div>
 

@@ -1826,8 +1826,7 @@
 │   ├── 📁 withdrawals/
 │   └── 📁 ...
 </code></pre></div>
-<p>Each category/sub-directory may have multiple Python test modules (<code>*.py</code>) which in turn may contain many test functions. The test functions themselves are always parametrized by fork, although when new tests are added for a feature under development, they will only be valid for the fork under active development.</p>
-<p>Look for a relevant test category and add new tests to this category, if appropriate.</p>
+<p>Each category/sub-directory may have multiple Python test modules (<code>*.py</code>) which in turn may contain many test functions. The test functions themselves are always parametrized by fork (by the framework).</p>
 <p>A new test can be added by either:</p>
 <ul>
 <li>Adding a new <code>test_</code> python function to an existing file in any of the existing category subdirectories within <code>tests</code>.</li>

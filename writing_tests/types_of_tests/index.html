@@ -1918,7 +1918,18 @@
 <li>Verify blocks with invalid transactions/properties are rejected.</li>
 </ul>
 <h3 id="fork-transition-tests">Fork Transition Tests<a class="headerlink" href="#fork-transition-tests" title="Permanent link">&para;</a></h3>
-<p>There is a special type of blockchain test that is used to test a fork transition. It's execution is not parametrized for all possible forks; it targets exactly the blocks at the point of transition from one evm implementation to the next. This type of test must be parametrized using a special fork, for example, <a href="../../library/ethereum_test_forks/#ethereum_test_forks.ShanghaiToCancunAtTime15k"><code>ShanghaiToCancunAtTime15k</code></a>.</p>
+<p>There is a special type of blockchain test that is used to test a fork transition. It's not executed for all possible forks, rather it targets exactly the blocks at the point of transition from one evm implementation to the next. This type of test must be marked with the <code>valid_at_transition_to</code> marker, for example:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">valid_at_transition_to</span><span class="p">(</span><span class="s2">&quot;Cancun&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_blob_type_tx_pre_fork</span><span class="p">(</span>
+    <span class="n">blockchain_test</span><span class="p">:</span> <span class="n">BlockchainTestFiller</span><span class="p">,</span>
+    <span class="n">pre</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+    <span class="n">env</span><span class="p">:</span> <span class="n">Environment</span><span class="p">,</span>
+    <span class="n">blocks</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Block</span><span class="p">],</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reject blocks with blobs before blobs fork</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div>
 
 
 

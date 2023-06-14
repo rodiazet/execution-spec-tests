@@ -713,15 +713,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-state_test-and-blockchain_test-test-function-arguments" class="md-nav__link">
-    The state_test and blockchain_test test function arguments.
+  <a href="#specifying-which-forks-tests-are-valid-for" class="md-nav__link">
+    Specifying which Forks Tests are Valid For
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#parametrization-by-fork" class="md-nav__link">
-    Parametrization By Fork
+  <a href="#the-state_test-and-blockchain_test-test-function-arguments" class="md-nav__link">
+    The state_test and blockchain_test Test Function Arguments
   </a>
   
 </li>
@@ -1923,15 +1923,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-state_test-and-blockchain_test-test-function-arguments" class="md-nav__link">
-    The state_test and blockchain_test test function arguments.
+  <a href="#specifying-which-forks-tests-are-valid-for" class="md-nav__link">
+    Specifying which Forks Tests are Valid For
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#parametrization-by-fork" class="md-nav__link">
-    Parametrization By Fork
+  <a href="#the-state_test-and-blockchain_test-test-function-arguments" class="md-nav__link">
+    The state_test and blockchain_test Test Function Arguments
   </a>
   
 </li>
@@ -2024,56 +2024,65 @@
 
 <h1 id="writing-a-new-test">Writing a New Test<a class="headerlink" href="#writing-a-new-test" title="Permanent link">&para;</a></h1>
 <h2 id="test-functions">Test Functions<a class="headerlink" href="#test-functions" title="Permanent link">&para;</a></h2>
-<p>Every test spec is a python function that defines a single <code>StateTest</code>/<code>BlockchainTest</code> object.</p>
-<p>Every test function <em>must</em>:</p>
-<ol>
-<li>Use one of <code>state_test</code> or <code>blockchain_test</code> in its function arguments.</li>
-<li>Call the <code>state_test</code> respectively <code>blockchain_test</code> object within the test function body.</li>
-<li>Be parametrized by the forks for which it is to be tested.</li>
-</ol>
-<p>If the test module is located underneath the <code>./tests/eips/</code> directory, the test module <em>must</em> additionally:</p>
-<ol>
-<li>Add a reference version of the EIP spec under test, see <a href="../reference_specification/">Referencing an EIP Spec Version</a>.</li>
-</ol>
-<h3 id="the-state_test-and-blockchain_test-test-function-arguments">The <code>state_test</code> and <code>blockchain_test</code> test function arguments.<a class="headerlink" href="#the-state_test-and-blockchain_test-test-function-arguments" title="Permanent link">&para;</a></h3>
-<p>The test function's signature <em>must</em> contain exactly one of either a <code>state_test</code> or <code>blockchain_test</code> argument.</p>
-<p>For example, for state tests:
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_access_list</span><span class="p">(</span><span class="n">state_test</span><span class="p">:</span> <span class="n">StateTestFiller</span><span class="p">):</span>
-</code></pre></div>
-and for blockchain tests:
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_contract_creating_tx</span><span class="p">(</span>
-    <span class="n">blockchain_test</span><span class="p">:</span> <span class="n">BlockchainTestFiller</span><span class="p">,</span> <span class="n">fork</span><span class="p">:</span> <span class="n">Fork</span><span class="p">,</span> <span class="n">initcode</span><span class="p">:</span> <span class="n">Initcode</span>
-<span class="p">):</span>
-</code></pre></div></p>
-<p>The <code>state_test</code> and <code>blockchain_test</code> objects are actually wrapper classes to the <code>StateTest</code>, respectively <code>BlockchainTest</code> objects, that once called actually instantiate a new instance of these objects and fill the test case using the <code>evm</code> tool according to the pre and post states and the transactions defined within the test.</p>
-<h3 id="parametrization-by-fork">Parametrization By Fork<a class="headerlink" href="#parametrization-by-fork" title="Permanent link">&para;</a></h3>
-<p>The test function must be parametrized by the forks for which it is to be tested. This is achieved by applying the <code>pytest.mark.parametrize</code> decorator on either the test function, test class or test module level:</p>
+<p>Every test case is defined as a python function that defines a single <code>StateTest</code> or <code>BlockchainTest</code> by using one of the <code>state_test</code> or <code>blockchain_test</code> objects made available by the framework. Test cases, respectively test modules, must fulfil the following requirements:</p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Be <a href="#specifying-which-forks-tests-are-valid-for">decorated with validity markers</a></td>
+<td>If the test case is not valid for all forks</td>
+</tr>
+<tr>
+<td>Use one of <code>state_test</code> or <code>blockchain_test</code> <a href="#the-state_test-and-blockchain_test-test-function-arguments">in its function arguments</a></td>
+<td>Always</td>
+</tr>
+<tr>
+<td>Call the <code>state_test</code> or <code>blockchain_test</code> in its test body</td>
+<td>Always</td>
+</tr>
+<tr>
+<td>Add a <a href="../reference_specification/">reference version of the EIP spec</a> under test</td>
+<td>Test case located under <code>./tests/eips/</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="specifying-which-forks-tests-are-valid-for">Specifying which Forks Tests are Valid For<a class="headerlink" href="#specifying-which-forks-tests-are-valid-for" title="Permanent link">&para;</a></h3>
+<p>Test cases can (and it most cases should) be decorated with one or more "validity markers" that define which the forks the test is valid for. This is achieved by applying:</p>
+<ul>
+<li><code>pytest.mark.valid_from(FORK)</code> and/or <code>pytest.mark.valid_until(FORK)</code></li>
+</ul>
+<p>or</p>
+<ul>
+<li><code>pytest.mark.valid_at_transition_to(FORK)</code></li>
+</ul>
+<p>markers on either the test function, test class or test module level:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Function</label><label for="__tabbed_1_2">Class</label><label for="__tabbed_1_3">Module</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
 
-<span class="kn">from</span> <span class="nn">ethereum_test_forks</span> <span class="kn">import</span> <span class="n">forks_from_until</span><span class="p">,</span> <span class="n">Berlin</span><span class="p">,</span> <span class="n">London</span>
-
-<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;fork&quot;</span><span class="p">,</span> <span class="n">forks_from_until</span><span class="p">(</span><span class="n">Berlin</span><span class="p">,</span> <span class="n">London</span><span class="p">))</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">valid_from</span><span class="p">(</span><span class="s2">&quot;Berlin&quot;</span><span class="p">)</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">valid_until</span><span class="p">(</span><span class="s2">&quot;London&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">test_access_list</span><span class="p">(</span><span class="n">state_test</span><span class="p">:</span> <span class="n">StateTestFiller</span><span class="p">,</span> <span class="n">fork</span><span class="p">:</span> <span class="n">Fork</span><span class="p">):</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
 
-<span class="kn">from</span> <span class="nn">ethereum_test_forks</span> <span class="kn">import</span> <span class="n">ShanghaiToCancunAtTime15k</span>
 
-<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;fork&quot;</span><span class="p">,</span> <span class="n">ShanghaiToCancunAtTime15k</span><span class="p">)</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">valid_from</span><span class="p">(</span><span class="s2">&quot;Shanghai&quot;</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">TestMultipleWithdrawalsSameAddress</span><span class="p">:</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
 
-<span class="kn">from</span> <span class="nn">ethereum_test_forks</span> <span class="kn">import</span> <span class="n">forks_from_until</span><span class="p">,</span> <span class="n">Shanghai</span>
-
-<span class="n">pytestmark</span> <span class="o">=</span> <span class="n">pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;fork&quot;</span><span class="p">,</span> <span class="n">forks_from</span><span class="p">(</span><span class="n">Shanghai</span><span class="p">))</span>
+<span class="n">pytestmark</span> <span class="o">=</span> <span class="n">pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">valid_from</span><span class="p">(</span><span class="s2">&quot;Shanghai&quot;</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </div>
@@ -2083,6 +2092,17 @@ and for blockchain tests:
 <li><a href="../../library/ethereum_test_forks/#ethereum_test_forks.forks_from">forks_from</a></li>
 <li><a href="../../library/ethereum_test_forks/#ethereum_test_forks.forks_from_until">forks_from_until</a></li>
 </ul>
+<h3 id="the-state_test-and-blockchain_test-test-function-arguments">The <code>state_test</code> and <code>blockchain_test</code> Test Function Arguments<a class="headerlink" href="#the-state_test-and-blockchain_test-test-function-arguments" title="Permanent link">&para;</a></h3>
+<p>The test function's signature <em>must</em> contain exactly one of either a <code>state_test</code> or <code>blockchain_test</code> argument.</p>
+<p>For example, for state tests:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_access_list</span><span class="p">(</span><span class="n">state_test</span><span class="p">:</span> <span class="n">StateTestFiller</span><span class="p">):</span>
+</code></pre></div>
+<p>and for blockchain tests:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_contract_creating_tx</span><span class="p">(</span>
+    <span class="n">blockchain_test</span><span class="p">:</span> <span class="n">BlockchainTestFiller</span><span class="p">,</span> <span class="n">fork</span><span class="p">:</span> <span class="n">Fork</span><span class="p">,</span> <span class="n">initcode</span><span class="p">:</span> <span class="n">Initcode</span>
+<span class="p">):</span>
+</code></pre></div>
+<p>The <code>state_test</code> and <code>blockchain_test</code> objects are actually wrapper classes to the <code>StateTest</code>, respectively <code>BlockchainTest</code> objects, that once called actually instantiate a new instance of these objects and fill the test case using the <code>evm</code> tool according to the pre and post states and the transactions defined within the test.</p>
 <h2 id="statetest-object"><code>StateTest</code> Object<a class="headerlink" href="#statetest-object" title="Permanent link">&para;</a></h2>
 <p>The <code>StateTest</code> object represents a single test vector, and contains the
 following attributes:</p>
