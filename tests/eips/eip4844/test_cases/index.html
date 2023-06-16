@@ -19,7 +19,7 @@
         <link rel="next" href="../test_blob_txs/">
       
       <link rel="icon" href="../../../../img/ETH-logo-icon.svg">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -1455,8 +1455,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../util_blobhash/" class="md-nav__link">
-        Util Blobhash
+      <a href="../utils/" class="md-nav__link">
+        Utils
       </a>
     </li>
   
@@ -1911,12 +1911,16 @@
 <p>Predominantly verifies that <code>excess_data_gas</code> &amp; <code>data_gasprice</code> are calculated correctly ensuring both valid and invalid transactions are processed accordingly. Extra verification is added specifically for invalid blob transactions when the <code>max_fee_per_data_gas</code>, number of blobs or transaction type are erroneous. </p>
 <p><strong>1) 🔴 test_excess_data_gas_calculation():</strong></p>
 <p>Tests that the <code>excess_data_gas</code> is calculated correctly within a single block for various contexts, where the <code>parent.excess_data_gas</code> and the proposed block <code>excess_data_gas</code> have a variety of values. The excess data gas is calculated using the following formula:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">calc_excess_data_gas</span><span class="p">(</span><span class="n">parent</span><span class="p">:</span> <span class="n">Header</span><span class="p">,</span> <span class="n">new_blobs</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="n">consumed_data_gas</span> <span class="o">=</span> <span class="n">new_blobs</span> <span class="o">*</span> <span class="n">DATA_GAS_PER_BLOB</span>
-    <span class="k">if</span> <span class="n">parent</span><span class="o">.</span><span class="n">excess_data_gas</span> <span class="o">+</span> <span class="n">consumed_data_gas</span> <span class="o">&lt;</span> <span class="n">TARGET_DATA_GAS_PER_BLOCK</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">calc_excess_data_gas</span><span class="p">(</span><span class="n">parent_excess_data_gas</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">parent_blobs</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the excess data gas for a block given the parent excess data gas</span>
+<span class="sd">    and the number of blobs in the block.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">parent_consumed_data_gas</span> <span class="o">=</span> <span class="n">parent_blobs</span> <span class="o">*</span> <span class="n">DATA_GAS_PER_BLOB</span>
+    <span class="k">if</span> <span class="n">parent_excess_data_gas</span> <span class="o">+</span> <span class="n">parent_consumed_data_gas</span> <span class="o">&lt;</span> <span class="n">TARGET_DATA_GAS_PER_BLOCK</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">0</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">parent</span><span class="o">.</span><span class="n">excess_data_gas</span> <span class="o">+</span> <span class="n">consumed_data_gas</span> <span class="o">-</span> <span class="n">TARGET_DATA_GAS_PER_BLOCK</span>
+        <span class="k">return</span> <span class="n">parent_excess_data_gas</span> <span class="o">+</span> <span class="n">parent_consumed_data_gas</span> <span class="o">-</span> <span class="n">TARGET_DATA_GAS_PER_BLOCK</span>
 </code></pre></div>
 <p>For blocks to be valid in these contexts they must meet the following conditions of the EIP:
   - Each block can only have a maximum of <code>MAX_BLOBS_PER_BLOCK</code>.
