@@ -1814,8 +1814,12 @@
 </div>
 <div class="admonition example">
 <p class="admonition-title">Generate fixtures for these test cases for 'Cancun' with:</p>
+<p>Cancun only:
 <div class="highlight"><pre><span></span><code><span class="go">fill -v tests --fork=Cancun --evm-bin=/path/to/evm-tool-dev-version</span>
 </code></pre></div>
+For all forks up to and including Cancun:
+<div class="highlight"><pre><span></span><code><span class="go">fill -v tests --until=Cancun --evm-bin=/path/to/evm-tool-dev-version</span>
+</code></pre></div></p>
 </div>
 
 
