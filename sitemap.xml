@@ -131,7 +131,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://danceratopz.github.io/execution-spec-tests/tests/eips/eip4844/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/tests/eips/eip4844/README_./</loc>
          <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -171,12 +171,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://danceratopz.github.io/execution-spec-tests/tests/eips/eip4844/utils/</loc>
-         <lastmod>2023-06-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://danceratopz.github.io/execution-spec-tests/tests/eips/eip4844/point_evaluation_vectors/</loc>
+         <loc>https://danceratopz.github.io/execution-spec-tests/tests/eips/eip4844/point_evaluation_vectors/README_./</loc>
          <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
