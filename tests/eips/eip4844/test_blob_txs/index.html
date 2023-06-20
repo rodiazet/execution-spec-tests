@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://danceratopz.github.io/execution-spec-tests/tests/eips/eip4844/test_blob_txs/">
       
       
-        <link rel="prev" href="../test_cases/">
+        <link rel="prev" href="../">
       
       
         <link rel="next" href="../test_blobhash_opcode/">
@@ -1241,6 +1241,8 @@
           
         
           
+            
+          
         
           
         
@@ -1288,8 +1290,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../test_cases/" class="md-nav__link">
-        Test cases
+      <a href="../" class="md-nav__link">
+        Readme
       </a>
     </li>
   
@@ -1563,13 +1565,17 @@
       
         
           
+            
+          
         
       
       
-        <label class="md-nav__link" for="__nav_8_2_5_11" id="__nav_8_2_5_11_label" tabindex="0">
-          Point Evaluation Vectors
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../point_evaluation_vectors/">Point Evaluation Vectors</a>
+          
+        </div>
       
       <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_5_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8_2_5_11">
@@ -1578,18 +1584,6 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../point_evaluation_vectors/test_cases/" class="md-nav__link">
-        Test cases
-      </a>
-    </li>
-  
-
             
           
         </ul>
@@ -1808,8 +1802,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../vm/test_chain_id/" class="md-nav__link">
-        Test Chain Id
+      <a href="../../../vm/test_chainid/" class="md-nav__link">
+        Test CHAINID
       </a>
     </li>
   
@@ -1823,7 +1817,7 @@
   
     <li class="md-nav__item">
       <a href="../../../vm/test_dup/" class="md-nav__link">
-        Test Dup
+        Test DUP
       </a>
     </li>
   
@@ -2055,7 +2049,7 @@
 
 <h1 id="test-blob-txs">Test Blob Txs<a class="headerlink" href="#test-blob-txs" title="Permanent link">&para;</a></h1>
 <div class="admonition example">
-<p class="admonition-title">Generate fixtures for these test cases with:</p>
+<p class="admonition-title">Generate fixtures for these test cases  with:</p>
 <div class="highlight"><pre><span></span><code><span class="go">fill -v tests/eips/eip4844/test_blob_txs.py</span>
 </code></pre></div>
 </div>
@@ -2067,9 +2061,22 @@
 <a id="tests.eips.eip4844.test_blob_txs"></a>
   <div class="doc doc-contents first">
   
-      <p>Test EIP-4844: Shard Blob Transactions (Excess Data Tests)
-EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
+<details class="abstract" open>
+  <summary>Tests blob type transactions for <a href="https://eips.ethereum.org/EIPS/eip-4844">EIP-4844: Shard Blob Transactions</a></summary>
+  <p>Test blob type transactions for <a href="https://eips.ethereum.org/EIPS/eip-4844">EIP-4844: Shard Blob Transactions</a>.</p>
+</details>
+<details class="note" open>
+  <summary>Adding a new test</summary>
+  <p>Add a function that is named <code>test_&lt;test_name&gt;</code> and takes at least the following arguments:</p>
+<ul>
+<li>blockchain_test</li>
+<li>pre</li>
+<li>env</li>
+<li>blocks</li>
+</ul>
+<p>All other <code>pytest.fixture</code> fixtures can be parametrized to generate new combinations and test cases.</p>
+</details>
   
 
   <div class="doc doc-children">
@@ -2092,11 +2099,19 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
   <div class="doc doc-contents ">
   
-      <p>Test all valid blob combinations in a single block.</p>
+      <p>Test all valid blob combinations in a single block, assuming a given value of
+<code>MAX_BLOBS_PER_BLOCK</code>.</p>
+<p>This assumes a block can include from 1 and up to <code>MAX_BLOBS_PER_BLOCK</code> transactions where all
+transactions contain at least 1 blob, and the sum of all blobs in a block is at
+most <code>MAX_BLOBS_PER_BLOCK</code>.</p>
+<p>This test is parametrized with all valid blob transaction combinations for a given block, and
+therefore if value of <code>MAX_BLOBS_PER_BLOCK</code> changes, this test is automatically updated.</p>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_blob_txs.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">396</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">394</span>
+<span class="normal">395</span>
+<span class="normal">396</span>
 <span class="normal">397</span>
 <span class="normal">398</span>
 <span class="normal">399</span>
@@ -2115,7 +2130,13 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 <span class="normal">412</span>
 <span class="normal">413</span>
 <span class="normal">414</span>
-<span class="normal">415</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;blobs_per_tx&quot;</span><span class="p">,</span>
     <span class="n">all_valid_blob_combinations</span><span class="p">(),</span>
 <span class="p">)</span>
@@ -2127,7 +2148,15 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
     <span class="n">blocks</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Block</span><span class="p">],</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Test all valid blob combinations in a single block.</span>
+<span class="sd">    Test all valid blob combinations in a single block, assuming a given value of</span>
+<span class="sd">    `MAX_BLOBS_PER_BLOCK`.</span>
+
+<span class="sd">    This assumes a block can include from 1 and up to `MAX_BLOBS_PER_BLOCK` transactions where all</span>
+<span class="sd">    transactions contain at least 1 blob, and the sum of all blobs in a block is at</span>
+<span class="sd">    most `MAX_BLOBS_PER_BLOCK`.</span>
+
+<span class="sd">    This test is parametrized with all valid blob transaction combinations for a given block, and</span>
+<span class="sd">    therefore if value of `MAX_BLOBS_PER_BLOCK` changes, this test is automatically updated.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">blockchain_test</span><span class="p">(</span>
         <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>
@@ -2158,22 +2187,15 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
   <div class="doc doc-contents ">
   
+      <p>Reject blocks with invalid blob txs due to:</p>
+<ul>
+<li>tx max_fee_per_data_gas is barely not enough</li>
+<li>tx max_fee_per_data_gas is zero</li>
+</ul>
 
-<details class="reject-blocks-with-invalid-blob-txs-due-to" open>
-  <summary>Reject blocks with invalid blob txs due to</summary>
-  <p>-
-- tx max_fee_per_data_gas is not enough
-- tx max_fee_per_data_gas is zero</p>
-</details>
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_blob_txs.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">418</span>
-<span class="normal">419</span>
-<span class="normal">420</span>
-<span class="normal">421</span>
-<span class="normal">422</span>
-<span class="normal">423</span>
-<span class="normal">424</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">424</span>
 <span class="normal">425</span>
 <span class="normal">426</span>
 <span class="normal">427</span>
@@ -2205,7 +2227,13 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 <span class="normal">453</span>
 <span class="normal">454</span>
 <span class="normal">455</span>
-<span class="normal">456</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">456</span>
+<span class="normal">457</span>
+<span class="normal">458</span>
+<span class="normal">459</span>
+<span class="normal">460</span>
+<span class="normal">461</span>
+<span class="normal">462</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;parent_excess_blobs,parent_blobs,tx_max_fee_per_data_gas,tx_error&quot;</span><span class="p">,</span>
     <span class="p">[</span>
         <span class="c1"># tx max_data_gas_cost of the transaction is not enough</span>
@@ -2234,9 +2262,9 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Reject blocks with invalid blob txs due to:</span>
-<span class="sd">        -</span>
-<span class="sd">        - tx max_fee_per_data_gas is not enough</span>
-<span class="sd">        - tx max_fee_per_data_gas is zero</span>
+
+<span class="sd">    - tx max_fee_per_data_gas is barely not enough</span>
+<span class="sd">    - tx max_fee_per_data_gas is zero</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">blockchain_test</span><span class="p">(</span>
         <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>
@@ -2267,22 +2295,14 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
   <div class="doc doc-contents ">
   
-
-<details class="reject-blocks-with-invalid-blob-txs-due-to" open>
-  <summary>Reject blocks with invalid blob txs due to</summary>
-  <ul>
-<li>insufficient max fee per gas, but sufficient max fee per data gas</li>
+      <p>Reject blocks with invalid blob txs due to:</p>
+<ul>
+<li>Sufficient max fee per data gas, but insufficient max fee per gas</li>
 </ul>
-</details>
+
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_blob_txs.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">459</span>
-<span class="normal">460</span>
-<span class="normal">461</span>
-<span class="normal">462</span>
-<span class="normal">463</span>
-<span class="normal">464</span>
-<span class="normal">465</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">465</span>
 <span class="normal">466</span>
 <span class="normal">467</span>
 <span class="normal">468</span>
@@ -2303,7 +2323,14 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 <span class="normal">483</span>
 <span class="normal">484</span>
 <span class="normal">485</span>
-<span class="normal">486</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">486</span>
+<span class="normal">487</span>
+<span class="normal">488</span>
+<span class="normal">489</span>
+<span class="normal">490</span>
+<span class="normal">491</span>
+<span class="normal">492</span>
+<span class="normal">493</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;tx_max_fee_per_gas,tx_error&quot;</span><span class="p">,</span>
     <span class="p">[</span>
         <span class="c1"># max data gas is ok, but max fee per gas is less than base fee per gas</span>
@@ -2323,7 +2350,8 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Reject blocks with invalid blob txs due to:</span>
-<span class="sd">        - insufficient max fee per gas, but sufficient max fee per data gas</span>
+
+<span class="sd">    - Sufficient max fee per data gas, but insufficient max fee per gas</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">blockchain_test</span><span class="p">(</span>
         <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>
@@ -2354,18 +2382,15 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
   <div class="doc doc-contents ">
   
-      <p>Reject blocks where block blob count &gt; MAX_BLOBS_PER_BLOCK, across all txs</p>
+      <p>Test all invalid blob combinations in a single block, where the sum of all blobs in a block is
+at <code>MAX_BLOBS_PER_BLOCK + 1</code>.</p>
+<p>This test is parametrized with all blob transaction combinations exceeding
+<code>MAX_BLOBS_PER_BLOCK</code> by one for a given block, and
+therefore if value of <code>MAX_BLOBS_PER_BLOCK</code> changes, this test is automatically updated.</p>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_blob_txs.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">489</span>
-<span class="normal">490</span>
-<span class="normal">491</span>
-<span class="normal">492</span>
-<span class="normal">493</span>
-<span class="normal">494</span>
-<span class="normal">495</span>
-<span class="normal">496</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">496</span>
 <span class="normal">497</span>
 <span class="normal">498</span>
 <span class="normal">499</span>
@@ -2378,7 +2403,19 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 <span class="normal">506</span>
 <span class="normal">507</span>
 <span class="normal">508</span>
-<span class="normal">509</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">509</span>
+<span class="normal">510</span>
+<span class="normal">511</span>
+<span class="normal">512</span>
+<span class="normal">513</span>
+<span class="normal">514</span>
+<span class="normal">515</span>
+<span class="normal">516</span>
+<span class="normal">517</span>
+<span class="normal">518</span>
+<span class="normal">519</span>
+<span class="normal">520</span>
+<span class="normal">521</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;blobs_per_tx&quot;</span><span class="p">,</span>
     <span class="n">invalid_blob_combinations</span><span class="p">(),</span>
 <span class="p">)</span>
@@ -2391,7 +2428,12 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
     <span class="n">blocks</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Block</span><span class="p">],</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Reject blocks where block blob count &gt; MAX_BLOBS_PER_BLOCK, across all txs</span>
+<span class="sd">    Test all invalid blob combinations in a single block, where the sum of all blobs in a block is</span>
+<span class="sd">    at `MAX_BLOBS_PER_BLOCK + 1`.</span>
+
+<span class="sd">    This test is parametrized with all blob transaction combinations exceeding</span>
+<span class="sd">    `MAX_BLOBS_PER_BLOCK` by one for a given block, and</span>
+<span class="sd">    therefore if value of `MAX_BLOBS_PER_BLOCK` changes, this test is automatically updated.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">blockchain_test</span><span class="p">(</span>
         <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>
@@ -2423,23 +2465,17 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
   <div class="doc doc-contents ">
   
       <p>Reject blocks where user cannot afford the data gas specified (but
-max_fee_per_gas would be enough for current block)</p>
+max_fee_per_gas would be enough for current block), including:</p>
+<ul>
+<li>Transactions with and without priority fee</li>
+<li>Transactions with and without value</li>
+<li>Transactions with and without calldata</li>
+<li>Transactions with max fee per data gas lower or higher than the priority fee</li>
+</ul>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_blob_txs.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">512</span>
-<span class="normal">513</span>
-<span class="normal">514</span>
-<span class="normal">515</span>
-<span class="normal">516</span>
-<span class="normal">517</span>
-<span class="normal">518</span>
-<span class="normal">519</span>
-<span class="normal">520</span>
-<span class="normal">521</span>
-<span class="normal">522</span>
-<span class="normal">523</span>
-<span class="normal">524</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">524</span>
 <span class="normal">525</span>
 <span class="normal">526</span>
 <span class="normal">527</span>
@@ -2453,7 +2489,24 @@ max_fee_per_gas would be enough for current block)</p>
 <span class="normal">535</span>
 <span class="normal">536</span>
 <span class="normal">537</span>
-<span class="normal">538</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;tx_max_priority_fee_per_gas&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="normal">538</span>
+<span class="normal">539</span>
+<span class="normal">540</span>
+<span class="normal">541</span>
+<span class="normal">542</span>
+<span class="normal">543</span>
+<span class="normal">544</span>
+<span class="normal">545</span>
+<span class="normal">546</span>
+<span class="normal">547</span>
+<span class="normal">548</span>
+<span class="normal">549</span>
+<span class="normal">550</span>
+<span class="normal">551</span>
+<span class="normal">552</span>
+<span class="normal">553</span>
+<span class="normal">554</span>
+<span class="normal">555</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;tx_max_priority_fee_per_gas&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;tx_value&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;tx_calldata&quot;</span><span class="p">,</span>
@@ -2472,7 +2525,12 @@ max_fee_per_gas would be enough for current block)</p>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Reject blocks where user cannot afford the data gas specified (but</span>
-<span class="sd">    max_fee_per_gas would be enough for current block)</span>
+<span class="sd">    max_fee_per_gas would be enough for current block), including:</span>
+
+<span class="sd">    - Transactions with and without priority fee</span>
+<span class="sd">    - Transactions with and without value</span>
+<span class="sd">    - Transactions with and without calldata</span>
+<span class="sd">    - Transactions with max fee per data gas lower or higher than the priority fee</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">blockchain_test</span><span class="p">(</span>
         <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>
@@ -2503,40 +2561,39 @@ max_fee_per_gas would be enough for current block)</p>
 
   <div class="doc doc-contents ">
   
-
-<details class="reject-blocks-with-invalid-blob-txs-due-to" open>
-  <summary>Reject blocks with invalid blob txs due to</summary>
-  <ul>
+      <p>Reject all valid blob transaction combinations in a block, but block is invalid due to:</p>
+<ul>
 <li>The amount of blobs is correct but the user cannot afford the
-    transaction total cost</li>
+        transaction total cost</li>
 </ul>
-</details>
+
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_blob_txs.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">541</span>
-<span class="normal">542</span>
-<span class="normal">543</span>
-<span class="normal">544</span>
-<span class="normal">545</span>
-<span class="normal">546</span>
-<span class="normal">547</span>
-<span class="normal">548</span>
-<span class="normal">549</span>
-<span class="normal">550</span>
-<span class="normal">551</span>
-<span class="normal">552</span>
-<span class="normal">553</span>
-<span class="normal">554</span>
-<span class="normal">555</span>
-<span class="normal">556</span>
-<span class="normal">557</span>
-<span class="normal">558</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">558</span>
 <span class="normal">559</span>
 <span class="normal">560</span>
 <span class="normal">561</span>
 <span class="normal">562</span>
 <span class="normal">563</span>
-<span class="normal">564</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">564</span>
+<span class="normal">565</span>
+<span class="normal">566</span>
+<span class="normal">567</span>
+<span class="normal">568</span>
+<span class="normal">569</span>
+<span class="normal">570</span>
+<span class="normal">571</span>
+<span class="normal">572</span>
+<span class="normal">573</span>
+<span class="normal">574</span>
+<span class="normal">575</span>
+<span class="normal">576</span>
+<span class="normal">577</span>
+<span class="normal">578</span>
+<span class="normal">579</span>
+<span class="normal">580</span>
+<span class="normal">581</span>
+<span class="normal">582</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;blobs_per_tx&quot;</span><span class="p">,</span>
     <span class="n">all_valid_blob_combinations</span><span class="p">(),</span>
 <span class="p">)</span>
@@ -2550,8 +2607,9 @@ max_fee_per_gas would be enough for current block)</p>
     <span class="n">blocks</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Block</span><span class="p">],</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Reject blocks with invalid blob txs due to:</span>
-<span class="sd">        - The amount of blobs is correct but the user cannot afford the</span>
+<span class="sd">    Reject all valid blob transaction combinations in a block, but block is invalid due to:</span>
+
+<span class="sd">    - The amount of blobs is correct but the user cannot afford the</span>
 <span class="sd">            transaction total cost</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">blockchain_test</span><span class="p">(</span>
@@ -2583,32 +2641,15 @@ max_fee_per_gas would be enough for current block)</p>
 
   <div class="doc doc-contents ">
   
-      <p>Reject blocks that include blob transactions with invalid blob counts:
-- blob count = 0 in type 3 transaction
-- blob count &gt; MAX_BLOBS_PER_TX in type 3 transaction
-- blob count &gt; MAX_BLOBS_PER_BLOCK in type 3 transaction</p>
+      <p>Reject blocks that include blob transactions with invalid blob counts:</p>
+<ul>
+<li><code>blob count == 0</code> in type 3 transaction</li>
+<li><code>blob count &gt; MAX_BLOBS_PER_BLOCK</code> in type 3 transaction</li>
+</ul>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_blob_txs.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">567</span>
-<span class="normal">568</span>
-<span class="normal">569</span>
-<span class="normal">570</span>
-<span class="normal">571</span>
-<span class="normal">572</span>
-<span class="normal">573</span>
-<span class="normal">574</span>
-<span class="normal">575</span>
-<span class="normal">576</span>
-<span class="normal">577</span>
-<span class="normal">578</span>
-<span class="normal">579</span>
-<span class="normal">580</span>
-<span class="normal">581</span>
-<span class="normal">582</span>
-<span class="normal">583</span>
-<span class="normal">584</span>
-<span class="normal">585</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">585</span>
 <span class="normal">586</span>
 <span class="normal">587</span>
 <span class="normal">588</span>
@@ -2616,7 +2657,25 @@ max_fee_per_gas would be enough for current block)</p>
 <span class="normal">590</span>
 <span class="normal">591</span>
 <span class="normal">592</span>
-<span class="normal">593</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">593</span>
+<span class="normal">594</span>
+<span class="normal">595</span>
+<span class="normal">596</span>
+<span class="normal">597</span>
+<span class="normal">598</span>
+<span class="normal">599</span>
+<span class="normal">600</span>
+<span class="normal">601</span>
+<span class="normal">602</span>
+<span class="normal">603</span>
+<span class="normal">604</span>
+<span class="normal">605</span>
+<span class="normal">606</span>
+<span class="normal">607</span>
+<span class="normal">608</span>
+<span class="normal">609</span>
+<span class="normal">610</span>
+<span class="normal">611</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;blobs_per_tx,tx_error&quot;</span><span class="p">,</span>
     <span class="p">[</span>
         <span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;zero_blob_tx&quot;</span><span class="p">),</span>
@@ -2633,9 +2692,9 @@ max_fee_per_gas would be enough for current block)</p>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Reject blocks that include blob transactions with invalid blob counts:</span>
-<span class="sd">    - blob count = 0 in type 3 transaction</span>
-<span class="sd">    - blob count &gt; MAX_BLOBS_PER_TX in type 3 transaction</span>
-<span class="sd">    - blob count &gt; MAX_BLOBS_PER_BLOCK in type 3 transaction</span>
+
+<span class="sd">    - `blob count == 0` in type 3 transaction</span>
+<span class="sd">    - `blob count &gt; MAX_BLOBS_PER_BLOCK` in type 3 transaction</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">blockchain_test</span><span class="p">(</span>
         <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>
@@ -2667,29 +2726,19 @@ max_fee_per_gas would be enough for current block)</p>
   <div class="doc doc-contents ">
   
       <p>Reject blocks that include blob transactions with invalid blob hash
-version.</p>
+version, including:</p>
+<ul>
+<li>Single blob transaction with single blob with invalid version</li>
+<li>Single blob transaction with multiple blobs all with invalid version</li>
+<li>Single blob transaction with multiple blobs either with invalid version</li>
+<li>Multiple blob transactions with single blob all with invalid version</li>
+<li>Multiple blob transactions with multiple blobs all with invalid version</li>
+<li>Multiple blob transactions with multiple blobs only one with invalid version</li>
+</ul>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_blob_txs.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">596</span>
-<span class="normal">597</span>
-<span class="normal">598</span>
-<span class="normal">599</span>
-<span class="normal">600</span>
-<span class="normal">601</span>
-<span class="normal">602</span>
-<span class="normal">603</span>
-<span class="normal">604</span>
-<span class="normal">605</span>
-<span class="normal">606</span>
-<span class="normal">607</span>
-<span class="normal">608</span>
-<span class="normal">609</span>
-<span class="normal">610</span>
-<span class="normal">611</span>
-<span class="normal">612</span>
-<span class="normal">613</span>
-<span class="normal">614</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">614</span>
 <span class="normal">615</span>
 <span class="normal">616</span>
 <span class="normal">617</span>
@@ -2724,7 +2773,32 @@ version.</p>
 <span class="normal">646</span>
 <span class="normal">647</span>
 <span class="normal">648</span>
-<span class="normal">649</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">649</span>
+<span class="normal">650</span>
+<span class="normal">651</span>
+<span class="normal">652</span>
+<span class="normal">653</span>
+<span class="normal">654</span>
+<span class="normal">655</span>
+<span class="normal">656</span>
+<span class="normal">657</span>
+<span class="normal">658</span>
+<span class="normal">659</span>
+<span class="normal">660</span>
+<span class="normal">661</span>
+<span class="normal">662</span>
+<span class="normal">663</span>
+<span class="normal">664</span>
+<span class="normal">665</span>
+<span class="normal">666</span>
+<span class="normal">667</span>
+<span class="normal">668</span>
+<span class="normal">669</span>
+<span class="normal">670</span>
+<span class="normal">671</span>
+<span class="normal">672</span>
+<span class="normal">673</span>
+<span class="normal">674</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;blob_hashes_per_tx&quot;</span><span class="p">,</span>
     <span class="p">[</span>
         <span class="p">[[</span><span class="n">to_hash_bytes</span><span class="p">(</span><span class="mi">1</span><span class="p">)]],</span>
@@ -2770,7 +2844,14 @@ version.</p>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Reject blocks that include blob transactions with invalid blob hash</span>
-<span class="sd">    version.</span>
+<span class="sd">    version, including:</span>
+
+<span class="sd">    - Single blob transaction with single blob with invalid version</span>
+<span class="sd">    - Single blob transaction with multiple blobs all with invalid version</span>
+<span class="sd">    - Single blob transaction with multiple blobs either with invalid version</span>
+<span class="sd">    - Multiple blob transactions with single blob all with invalid version</span>
+<span class="sd">    - Multiple blob transactions with multiple blobs all with invalid version</span>
+<span class="sd">    - Multiple blob transactions with multiple blobs only one with invalid version</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">blockchain_test</span><span class="p">(</span>
         <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>
@@ -2805,25 +2886,25 @@ version.</p>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_blob_txs.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">652</span>
-<span class="normal">653</span>
-<span class="normal">654</span>
-<span class="normal">655</span>
-<span class="normal">656</span>
-<span class="normal">657</span>
-<span class="normal">658</span>
-<span class="normal">659</span>
-<span class="normal">660</span>
-<span class="normal">661</span>
-<span class="normal">662</span>
-<span class="normal">663</span>
-<span class="normal">664</span>
-<span class="normal">665</span>
-<span class="normal">666</span>
-<span class="normal">667</span>
-<span class="normal">668</span>
-<span class="normal">669</span>
-<span class="normal">670</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">677</span>
+<span class="normal">678</span>
+<span class="normal">679</span>
+<span class="normal">680</span>
+<span class="normal">681</span>
+<span class="normal">682</span>
+<span class="normal">683</span>
+<span class="normal">684</span>
+<span class="normal">685</span>
+<span class="normal">686</span>
+<span class="normal">687</span>
+<span class="normal">688</span>
+<span class="normal">689</span>
+<span class="normal">690</span>
+<span class="normal">691</span>
+<span class="normal">692</span>
+<span class="normal">693</span>
+<span class="normal">694</span>
+<span class="normal">695</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;destination_account,tx_error&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;no_contract_creating_blob_txs&quot;</span><span class="p">)],</span> <span class="n">ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">valid_from</span><span class="p">(</span><span class="s2">&quot;Cancun&quot;</span><span class="p">)</span>
@@ -2865,41 +2946,48 @@ version.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Test opcodes that read transaction attributes work properly for blob txs.</p>
+      <p>Test opcodes that read transaction attributes work properly for blob type transactions:</p>
+<ul>
+<li>ORIGIN</li>
+<li>CALLER</li>
+</ul>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_blob_txs.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">732</span>
-<span class="normal">733</span>
-<span class="normal">734</span>
-<span class="normal">735</span>
-<span class="normal">736</span>
-<span class="normal">737</span>
-<span class="normal">738</span>
-<span class="normal">739</span>
-<span class="normal">740</span>
-<span class="normal">741</span>
-<span class="normal">742</span>
-<span class="normal">743</span>
-<span class="normal">744</span>
-<span class="normal">745</span>
-<span class="normal">746</span>
-<span class="normal">747</span>
-<span class="normal">748</span>
-<span class="normal">749</span>
-<span class="normal">750</span>
-<span class="normal">751</span>
-<span class="normal">752</span>
-<span class="normal">753</span>
-<span class="normal">754</span>
-<span class="normal">755</span>
-<span class="normal">756</span>
-<span class="normal">757</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">757</span>
 <span class="normal">758</span>
 <span class="normal">759</span>
 <span class="normal">760</span>
 <span class="normal">761</span>
-<span class="normal">762</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">762</span>
+<span class="normal">763</span>
+<span class="normal">764</span>
+<span class="normal">765</span>
+<span class="normal">766</span>
+<span class="normal">767</span>
+<span class="normal">768</span>
+<span class="normal">769</span>
+<span class="normal">770</span>
+<span class="normal">771</span>
+<span class="normal">772</span>
+<span class="normal">773</span>
+<span class="normal">774</span>
+<span class="normal">775</span>
+<span class="normal">776</span>
+<span class="normal">777</span>
+<span class="normal">778</span>
+<span class="normal">779</span>
+<span class="normal">780</span>
+<span class="normal">781</span>
+<span class="normal">782</span>
+<span class="normal">783</span>
+<span class="normal">784</span>
+<span class="normal">785</span>
+<span class="normal">786</span>
+<span class="normal">787</span>
+<span class="normal">788</span>
+<span class="normal">789</span>
+<span class="normal">790</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;opcode&quot;</span><span class="p">,</span>
     <span class="p">[</span><span class="n">Op</span><span class="o">.</span><span class="n">ORIGIN</span><span class="p">,</span> <span class="n">Op</span><span class="o">.</span><span class="n">CALLER</span><span class="p">],</span>
     <span class="n">indirect</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;opcode&quot;</span><span class="p">],</span>
@@ -2915,7 +3003,10 @@ version.</p>
     <span class="n">destination_account</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Test opcodes that read transaction attributes work properly for blob txs.</span>
+<span class="sd">    Test opcodes that read transaction attributes work properly for blob type transactions:</span>
+
+<span class="sd">    - ORIGIN</span>
+<span class="sd">    - CALLER</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">code</span><span class="p">,</span> <span class="n">storage</span> <span class="o">=</span> <span class="n">opcode</span>
     <span class="n">pre</span><span class="p">[</span><span class="n">destination_account</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code</span><span class="p">)</span>
@@ -2953,40 +3044,40 @@ version.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Test the VALUE opcode with different blob tx value amounts.</p>
+      <p>Test the VALUE opcode with different blob type transaction value amounts.</p>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_blob_txs.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">765</span>
-<span class="normal">766</span>
-<span class="normal">767</span>
-<span class="normal">768</span>
-<span class="normal">769</span>
-<span class="normal">770</span>
-<span class="normal">771</span>
-<span class="normal">772</span>
-<span class="normal">773</span>
-<span class="normal">774</span>
-<span class="normal">775</span>
-<span class="normal">776</span>
-<span class="normal">777</span>
-<span class="normal">778</span>
-<span class="normal">779</span>
-<span class="normal">780</span>
-<span class="normal">781</span>
-<span class="normal">782</span>
-<span class="normal">783</span>
-<span class="normal">784</span>
-<span class="normal">785</span>
-<span class="normal">786</span>
-<span class="normal">787</span>
-<span class="normal">788</span>
-<span class="normal">789</span>
-<span class="normal">790</span>
-<span class="normal">791</span>
-<span class="normal">792</span>
-<span class="normal">793</span>
-<span class="normal">794</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;opcode&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">Op</span><span class="o">.</span><span class="n">CALLVALUE</span><span class="p">],</span> <span class="n">indirect</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;opcode&quot;</span><span class="p">])</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">793</span>
+<span class="normal">794</span>
+<span class="normal">795</span>
+<span class="normal">796</span>
+<span class="normal">797</span>
+<span class="normal">798</span>
+<span class="normal">799</span>
+<span class="normal">800</span>
+<span class="normal">801</span>
+<span class="normal">802</span>
+<span class="normal">803</span>
+<span class="normal">804</span>
+<span class="normal">805</span>
+<span class="normal">806</span>
+<span class="normal">807</span>
+<span class="normal">808</span>
+<span class="normal">809</span>
+<span class="normal">810</span>
+<span class="normal">811</span>
+<span class="normal">812</span>
+<span class="normal">813</span>
+<span class="normal">814</span>
+<span class="normal">815</span>
+<span class="normal">816</span>
+<span class="normal">817</span>
+<span class="normal">818</span>
+<span class="normal">819</span>
+<span class="normal">820</span>
+<span class="normal">821</span>
+<span class="normal">822</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;opcode&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">Op</span><span class="o">.</span><span class="n">CALLVALUE</span><span class="p">],</span> <span class="n">indirect</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;opcode&quot;</span><span class="p">])</span>
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;tx_value&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e18</span><span class="p">)])</span>
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;tx_gas&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">500_000</span><span class="p">])</span>
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">valid_from</span><span class="p">(</span><span class="s2">&quot;Cancun&quot;</span><span class="p">)</span>
@@ -3000,7 +3091,7 @@ version.</p>
     <span class="n">destination_account</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Test the VALUE opcode with different blob tx value amounts.</span>
+<span class="sd">    Test the VALUE opcode with different blob type transaction value amounts.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">code</span><span class="p">,</span> <span class="n">storage</span> <span class="o">=</span> <span class="n">opcode</span>
     <span class="n">pre</span><span class="p">[</span><span class="n">destination_account</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code</span><span class="p">)</span>
@@ -3039,39 +3130,16 @@ version.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Test calldata related opcodes to verify their behavior is not affected by blobs.</p>
+      <p>Test calldata related opcodes to verify their behavior is not affected by blobs:</p>
+<ul>
+<li>CALLDATALOAD</li>
+<li>CALLDATASIZE</li>
+<li>CALLDATACOPY</li>
+</ul>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_blob_txs.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">797</span>
-<span class="normal">798</span>
-<span class="normal">799</span>
-<span class="normal">800</span>
-<span class="normal">801</span>
-<span class="normal">802</span>
-<span class="normal">803</span>
-<span class="normal">804</span>
-<span class="normal">805</span>
-<span class="normal">806</span>
-<span class="normal">807</span>
-<span class="normal">808</span>
-<span class="normal">809</span>
-<span class="normal">810</span>
-<span class="normal">811</span>
-<span class="normal">812</span>
-<span class="normal">813</span>
-<span class="normal">814</span>
-<span class="normal">815</span>
-<span class="normal">816</span>
-<span class="normal">817</span>
-<span class="normal">818</span>
-<span class="normal">819</span>
-<span class="normal">820</span>
-<span class="normal">821</span>
-<span class="normal">822</span>
-<span class="normal">823</span>
-<span class="normal">824</span>
-<span class="normal">825</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">825</span>
 <span class="normal">826</span>
 <span class="normal">827</span>
 <span class="normal">828</span>
@@ -3086,7 +3154,39 @@ version.</p>
 <span class="normal">837</span>
 <span class="normal">838</span>
 <span class="normal">839</span>
-<span class="normal">840</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">840</span>
+<span class="normal">841</span>
+<span class="normal">842</span>
+<span class="normal">843</span>
+<span class="normal">844</span>
+<span class="normal">845</span>
+<span class="normal">846</span>
+<span class="normal">847</span>
+<span class="normal">848</span>
+<span class="normal">849</span>
+<span class="normal">850</span>
+<span class="normal">851</span>
+<span class="normal">852</span>
+<span class="normal">853</span>
+<span class="normal">854</span>
+<span class="normal">855</span>
+<span class="normal">856</span>
+<span class="normal">857</span>
+<span class="normal">858</span>
+<span class="normal">859</span>
+<span class="normal">860</span>
+<span class="normal">861</span>
+<span class="normal">862</span>
+<span class="normal">863</span>
+<span class="normal">864</span>
+<span class="normal">865</span>
+<span class="normal">866</span>
+<span class="normal">867</span>
+<span class="normal">868</span>
+<span class="normal">869</span>
+<span class="normal">870</span>
+<span class="normal">871</span>
+<span class="normal">872</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;opcode&quot;</span><span class="p">,</span>
     <span class="p">[</span>
         <span class="n">Op</span><span class="o">.</span><span class="n">CALLDATALOAD</span><span class="p">,</span>
@@ -3115,7 +3215,11 @@ version.</p>
     <span class="n">destination_account</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Test calldata related opcodes to verify their behavior is not affected by blobs.</span>
+<span class="sd">    Test calldata related opcodes to verify their behavior is not affected by blobs:</span>
+
+<span class="sd">    - CALLDATALOAD</span>
+<span class="sd">    - CALLDATASIZE</span>
+<span class="sd">    - CALLDATACOPY</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">code</span><span class="p">,</span> <span class="n">storage</span> <span class="o">=</span> <span class="n">opcode</span>
     <span class="n">pre</span><span class="p">[</span><span class="n">destination_account</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code</span><span class="p">)</span>
@@ -3154,41 +3258,50 @@ version.</p>
   <div class="doc doc-contents ">
   
       <p>Test GASPRICE opcode to sanity check that the data fee per gas does not affect
-its calculation.</p>
+its calculation:</p>
+<ul>
+<li>No priority fee</li>
+<li>Priority fee below data fee</li>
+<li>Priority fee above data fee</li>
+</ul>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_blob_txs.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">843</span>
-<span class="normal">844</span>
-<span class="normal">845</span>
-<span class="normal">846</span>
-<span class="normal">847</span>
-<span class="normal">848</span>
-<span class="normal">849</span>
-<span class="normal">850</span>
-<span class="normal">851</span>
-<span class="normal">852</span>
-<span class="normal">853</span>
-<span class="normal">854</span>
-<span class="normal">855</span>
-<span class="normal">856</span>
-<span class="normal">857</span>
-<span class="normal">858</span>
-<span class="normal">859</span>
-<span class="normal">860</span>
-<span class="normal">861</span>
-<span class="normal">862</span>
-<span class="normal">863</span>
-<span class="normal">864</span>
-<span class="normal">865</span>
-<span class="normal">866</span>
-<span class="normal">867</span>
-<span class="normal">868</span>
-<span class="normal">869</span>
-<span class="normal">870</span>
-<span class="normal">871</span>
-<span class="normal">872</span>
-<span class="normal">873</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;tx_max_priority_fee_per_gas&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># always below data fee</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">875</span>
+<span class="normal">876</span>
+<span class="normal">877</span>
+<span class="normal">878</span>
+<span class="normal">879</span>
+<span class="normal">880</span>
+<span class="normal">881</span>
+<span class="normal">882</span>
+<span class="normal">883</span>
+<span class="normal">884</span>
+<span class="normal">885</span>
+<span class="normal">886</span>
+<span class="normal">887</span>
+<span class="normal">888</span>
+<span class="normal">889</span>
+<span class="normal">890</span>
+<span class="normal">891</span>
+<span class="normal">892</span>
+<span class="normal">893</span>
+<span class="normal">894</span>
+<span class="normal">895</span>
+<span class="normal">896</span>
+<span class="normal">897</span>
+<span class="normal">898</span>
+<span class="normal">899</span>
+<span class="normal">900</span>
+<span class="normal">901</span>
+<span class="normal">902</span>
+<span class="normal">903</span>
+<span class="normal">904</span>
+<span class="normal">905</span>
+<span class="normal">906</span>
+<span class="normal">907</span>
+<span class="normal">908</span>
+<span class="normal">909</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;tx_max_priority_fee_per_gas&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># always below data fee</span>
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;tx_max_fee_per_data_gas&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  <span class="c1"># normal and above priority fee</span>
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;tx_max_fee_per_gas&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">100</span><span class="p">])</span>  <span class="c1"># always above priority fee</span>
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;opcode&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">Op</span><span class="o">.</span><span class="n">GASPRICE</span><span class="p">],</span> <span class="n">indirect</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -3204,7 +3317,11 @@ its calculation.</p>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Test GASPRICE opcode to sanity check that the data fee per gas does not affect</span>
-<span class="sd">    its calculation.</span>
+<span class="sd">    its calculation:</span>
+
+<span class="sd">    - No priority fee</span>
+<span class="sd">    - Priority fee below data fee</span>
+<span class="sd">    - Priority fee above data fee</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">code</span><span class="p">,</span> <span class="n">storage</span> <span class="o">=</span> <span class="n">opcode</span>
     <span class="n">pre</span><span class="p">[</span><span class="n">destination_account</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code</span><span class="p">)</span>
@@ -3242,38 +3359,38 @@ its calculation.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Reject blocks with blobs before blobs fork</p>
+      <p>Reject blocks with blob type transactions before Cancun fork</p>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_blob_txs.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">876</span>
-<span class="normal">877</span>
-<span class="normal">878</span>
-<span class="normal">879</span>
-<span class="normal">880</span>
-<span class="normal">881</span>
-<span class="normal">882</span>
-<span class="normal">883</span>
-<span class="normal">884</span>
-<span class="normal">885</span>
-<span class="normal">886</span>
-<span class="normal">887</span>
-<span class="normal">888</span>
-<span class="normal">889</span>
-<span class="normal">890</span>
-<span class="normal">891</span>
-<span class="normal">892</span>
-<span class="normal">893</span>
-<span class="normal">894</span>
-<span class="normal">895</span>
-<span class="normal">896</span>
-<span class="normal">897</span>
-<span class="normal">898</span>
-<span class="normal">899</span>
-<span class="normal">900</span>
-<span class="normal">901</span>
-<span class="normal">902</span>
-<span class="normal">903</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">912</span>
+<span class="normal">913</span>
+<span class="normal">914</span>
+<span class="normal">915</span>
+<span class="normal">916</span>
+<span class="normal">917</span>
+<span class="normal">918</span>
+<span class="normal">919</span>
+<span class="normal">920</span>
+<span class="normal">921</span>
+<span class="normal">922</span>
+<span class="normal">923</span>
+<span class="normal">924</span>
+<span class="normal">925</span>
+<span class="normal">926</span>
+<span class="normal">927</span>
+<span class="normal">928</span>
+<span class="normal">929</span>
+<span class="normal">930</span>
+<span class="normal">931</span>
+<span class="normal">932</span>
+<span class="normal">933</span>
+<span class="normal">934</span>
+<span class="normal">935</span>
+<span class="normal">936</span>
+<span class="normal">937</span>
+<span class="normal">938</span>
+<span class="normal">939</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="s2">&quot;blobs_per_tx&quot;</span><span class="p">,</span>
         <span class="s2">&quot;parent_excess_blobs&quot;</span><span class="p">,</span>
@@ -3293,7 +3410,7 @@ its calculation.</p>
     <span class="n">blocks</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Block</span><span class="p">],</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Reject blocks with blobs before blobs fork</span>
+<span class="sd">    Reject blocks with blob type transactions before Cancun fork</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">blockchain_test</span><span class="p">(</span>
         <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>

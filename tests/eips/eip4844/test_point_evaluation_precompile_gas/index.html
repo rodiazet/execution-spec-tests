@@ -1241,6 +1241,8 @@
           
         
           
+            
+          
         
           
         
@@ -1288,8 +1290,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../test_cases/" class="md-nav__link">
-        Test cases
+      <a href="../" class="md-nav__link">
+        Readme
       </a>
     </li>
   
@@ -1472,13 +1474,17 @@
       
         
           
+            
+          
         
       
       
-        <label class="md-nav__link" for="__nav_8_2_5_11" id="__nav_8_2_5_11_label" tabindex="0">
-          Point Evaluation Vectors
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../point_evaluation_vectors/">Point Evaluation Vectors</a>
+          
+        </div>
       
       <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_5_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8_2_5_11">
@@ -1487,18 +1493,6 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../point_evaluation_vectors/test_cases/" class="md-nav__link">
-        Test cases
-      </a>
-    </li>
-  
-
             
           
         </ul>
@@ -1717,8 +1711,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../vm/test_chain_id/" class="md-nav__link">
-        Test Chain Id
+      <a href="../../../vm/test_chainid/" class="md-nav__link">
+        Test CHAINID
       </a>
     </li>
   
@@ -1732,7 +1726,7 @@
   
     <li class="md-nav__item">
       <a href="../../../vm/test_dup/" class="md-nav__link">
-        Test Dup
+        Test DUP
       </a>
     </li>
   
@@ -1873,7 +1867,7 @@
 
 <h1 id="test-point-evaluation-precompile-gas">Test Point Evaluation Precompile Gas<a class="headerlink" href="#test-point-evaluation-precompile-gas" title="Permanent link">&para;</a></h1>
 <div class="admonition example">
-<p class="admonition-title">Generate fixtures for these test cases with:</p>
+<p class="admonition-title">Generate fixtures for these test cases  with:</p>
 <div class="highlight"><pre><span></span><code><span class="go">fill -v tests/eips/eip4844/test_point_evaluation_precompile_gas.py</span>
 </code></pre></div>
 </div>
@@ -1885,9 +1879,11 @@
 <a id="tests.eips.eip4844.test_point_evaluation_precompile_gas"></a>
   <div class="doc doc-contents first">
   
-      <p>Test EIP-4844: Shard Blob Transactions (Point Evaluation Precompile)
-EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
+<details class="abstract" open>
+  <summary>Tests gas usage on point evaluation precompile for <a href="https://eips.ethereum.org/EIPS/eip-4844">EIP-4844: Shard Blob Transactions</a></summary>
+  <p>Test gas usage on point evaluation precompile for <a href="https://eips.ethereum.org/EIPS/eip-4844">EIP-4844: Shard Blob Transactions</a>.</p>
+</details>
   
 
   <div class="doc doc-children">
@@ -1910,13 +1906,16 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
   <div class="doc doc-contents ">
   
-      <p>Test Precompile Gas Usage.</p>
+      <p>Test point evaluation precompile gas usage under different call contexts and gas limits:</p>
+<ul>
+<li>Test using all call types (CALL, DELEGATECALL, CALLCODE, STATICCALL)</li>
+<li>Test using different gas limits (exact gas, insufficient gas, extra gas)</li>
+<li>Test using correct and incorrect proofs</li>
+</ul>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_point_evaluation_precompile_gas.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">203</span>
-<span class="normal">204</span>
-<span class="normal">205</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">205</span>
 <span class="normal">206</span>
 <span class="normal">207</span>
 <span class="normal">208</span>
@@ -1942,7 +1941,13 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 <span class="normal">228</span>
 <span class="normal">229</span>
 <span class="normal">230</span>
-<span class="normal">231</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;call_type&quot;</span><span class="p">,</span>
     <span class="p">[</span><span class="n">Op</span><span class="o">.</span><span class="n">CALL</span><span class="p">,</span> <span class="n">Op</span><span class="o">.</span><span class="n">DELEGATECALL</span><span class="p">,</span> <span class="n">Op</span><span class="o">.</span><span class="n">CALLCODE</span><span class="p">,</span> <span class="n">Op</span><span class="o">.</span><span class="n">STATICCALL</span><span class="p">],</span>
 <span class="p">)</span>
@@ -1964,7 +1969,11 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
     <span class="n">post</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Test Precompile Gas Usage.</span>
+<span class="sd">    Test point evaluation precompile gas usage under different call contexts and gas limits:</span>
+
+<span class="sd">    - Test using all call types (CALL, DELEGATECALL, CALLCODE, STATICCALL)</span>
+<span class="sd">    - Test using different gas limits (exact gas, insufficient gas, extra gas)</span>
+<span class="sd">    - Test using correct and incorrect proofs</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">blockchain_test</span><span class="p">(</span>
         <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>

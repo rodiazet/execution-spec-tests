@@ -1171,6 +1171,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.get_validity_marker_args" class="md-nav__link">
+    get_validity_marker_args()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pytest_plugins.forks.forks.pytest_generate_tests" class="md-nav__link">
     pytest_generate_tests()
   </a>
@@ -1391,6 +1398,8 @@
           
         
           
+            
+          
         
           
         
@@ -1438,8 +1447,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tests/eips/eip4844/test_cases/" class="md-nav__link">
-        Test cases
+      <a href="../../../tests/eips/eip4844/" class="md-nav__link">
+        Readme
       </a>
     </li>
   
@@ -1574,13 +1583,17 @@
       
         
           
+            
+          
         
       
       
-        <label class="md-nav__link" for="__nav_8_2_5_11" id="__nav_8_2_5_11_label" tabindex="0">
-          Point Evaluation Vectors
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/eips/eip4844/point_evaluation_vectors/">Point Evaluation Vectors</a>
+          
+        </div>
       
       <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_5_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8_2_5_11">
@@ -1589,18 +1602,6 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../tests/eips/eip4844/point_evaluation_vectors/test_cases/" class="md-nav__link">
-        Test cases
-      </a>
-    </li>
-  
-
             
           
         </ul>
@@ -1819,8 +1820,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tests/vm/test_chain_id/" class="md-nav__link">
-        Test Chain Id
+      <a href="../../../tests/vm/test_chainid/" class="md-nav__link">
+        Test CHAINID
       </a>
     </li>
   
@@ -1834,7 +1835,7 @@
   
     <li class="md-nav__item">
       <a href="../../../tests/vm/test_dup/" class="md-nav__link">
-        Test Dup
+        Test DUP
       </a>
     </li>
   
@@ -2056,6 +2057,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pytest_plugins.forks.forks.get_validity_marker_args" class="md-nav__link">
+    get_validity_marker_args()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pytest_plugins.forks.forks.pytest_generate_tests" class="md-nav__link">
     pytest_generate_tests()
   </a>
@@ -2145,9 +2153,7 @@ markers.</p>
 
       <details class="quote">
         <summary>Source code in <code>src/pytest_plugins/forks/forks.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">20</span>
 <span class="normal">21</span>
 <span class="normal">22</span>
 <span class="normal">23</span>
@@ -2177,7 +2183,9 @@ markers.</p>
 <span class="normal">47</span>
 <span class="normal">48</span>
 <span class="normal">49</span>
-<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">pytest_addoption</span><span class="p">(</span><span class="n">parser</span><span class="p">):</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">pytest_addoption</span><span class="p">(</span><span class="n">parser</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Adds command-line options to pytest.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2207,7 +2215,7 @@ markers.</p>
         <span class="s2">&quot;--until&quot;</span><span class="p">,</span>
         <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">,</span>
         <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;forks_until&quot;</span><span class="p">,</span>
-        <span class="n">default</span><span class="o">=</span><span class="n">get_deployed_forks</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">(),</span>
+        <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Fill tests until and including the specified fork.&quot;</span><span class="p">,</span>
     <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -2331,9 +2339,7 @@ https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html#registering-custom-
 
       <details class="quote">
         <summary>Source code in <code>src/pytest_plugins/forks/forks.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 53</span>
-<span class="normal"> 54</span>
-<span class="normal"> 55</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 55</span>
 <span class="normal"> 56</span>
 <span class="normal"> 57</span>
 <span class="normal"> 58</span>
@@ -2454,7 +2460,11 @@ https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html#registering-custom-
 <span class="normal">173</span>
 <span class="normal">174</span>
 <span class="normal">175</span>
-<span class="normal">176</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">hookimpl</span><span class="p">(</span><span class="n">tryfirst</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">hookimpl</span><span class="p">(</span><span class="n">tryfirst</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">pytest_configure</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Register the plugin&#39;s custom markers and process command-line options.</span>
@@ -2504,9 +2514,8 @@ https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html#registering-custom-
     <span class="n">dev_forks_help</span> <span class="o">=</span> <span class="n">textwrap</span><span class="o">.</span><span class="n">dedent</span><span class="p">(</span>
         <span class="s2">&quot;To run tests for a fork under active development, it must be &quot;</span>
         <span class="s2">&quot;specified explicitly via --forks-until=FORK.</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="s2">&quot;Tests are only &quot;</span>
-        <span class="sa">f</span><span class="s2">&quot;ran for deployed mainnet forks by default, i.e., until &quot;</span>
-        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">get_deployed_forks</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;Tests are only ran for deployed mainnet forks by default, i.e., &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;until </span><span class="si">{</span><span class="n">get_deployed_forks</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span>
     <span class="p">)</span>
     <span class="k">if</span> <span class="n">show_fork_help</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">available_forks_help</span><span class="p">)</span>
@@ -2514,13 +2523,15 @@ https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html#registering-custom-
         <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;After displaying help.&quot;</span><span class="p">,</span> <span class="n">returncode</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">single_fork</span> <span class="ow">and</span> <span class="n">single_fork</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">fork_map</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: Unsupported fork provided to --fork:&quot;</span><span class="p">,</span> <span class="n">single_fork</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">available_forks_help</span><span class="p">)</span>
-        <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Invalid command-line options.&quot;</span><span class="p">,</span> <span class="n">returncode</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: Unsupported fork provided to --fork:&quot;</span><span class="p">,</span> <span class="n">single_fork</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">available_forks_help</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Invalid command-line options.&quot;</span><span class="p">,</span> <span class="n">returncode</span><span class="o">=</span><span class="n">pytest</span><span class="o">.</span><span class="n">ExitCode</span><span class="o">.</span><span class="n">USAGE_ERROR</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">single_fork</span> <span class="ow">and</span> <span class="p">(</span><span class="n">forks_from</span> <span class="ow">or</span> <span class="n">forks_until</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: --fork cannot be used in combination with --forks-from or &quot;</span> <span class="s2">&quot;--forks-until&quot;</span><span class="p">)</span>
-        <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Invalid command-line options.&quot;</span><span class="p">,</span> <span class="n">returncode</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;Error: --fork cannot be used in combination with --from or --until&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span>
+        <span class="p">)</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Invalid command-line options.&quot;</span><span class="p">,</span> <span class="n">returncode</span><span class="o">=</span><span class="n">pytest</span><span class="o">.</span><span class="n">ExitCode</span><span class="o">.</span><span class="n">USAGE_ERROR</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">single_fork</span><span class="p">:</span>
         <span class="n">forks_from</span> <span class="o">=</span> <span class="n">single_fork</span>
@@ -2528,24 +2539,18 @@ https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html#registering-custom-
     <span class="k">else</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">forks_from</span><span class="p">:</span>
             <span class="n">forks_from</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">forks_until</span><span class="p">:</span>
+            <span class="n">forks_until</span> <span class="o">=</span> <span class="n">get_deployed_forks</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>
 
     <span class="k">if</span> <span class="n">forks_from</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">fork_map</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span>
-            <span class="s2">&quot;Error: Unsupported fork provided to --forks-from:&quot;</span><span class="p">,</span>
-            <span class="n">forks_from</span><span class="p">,</span>
-            <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-        <span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">available_forks_help</span><span class="p">)</span>
-        <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Invalid command-line options.&quot;</span><span class="p">,</span> <span class="n">returncode</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: Unsupported fork provided to --from: </span><span class="si">{</span><span class="n">forks_from</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">available_forks_help</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Invalid command-line options.&quot;</span><span class="p">,</span> <span class="n">returncode</span><span class="o">=</span><span class="n">pytest</span><span class="o">.</span><span class="n">ExitCode</span><span class="o">.</span><span class="n">USAGE_ERROR</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">forks_until</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">fork_map</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span>
-            <span class="s2">&quot;Error: Unsupported fork provided to --forks-until:&quot;</span><span class="p">,</span>
-            <span class="n">forks_until</span><span class="p">,</span>
-            <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-        <span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">available_forks_help</span><span class="p">)</span>
-        <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Invalid command-line options.&quot;</span><span class="p">,</span> <span class="n">returncode</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: Unsupported fork provided to --until: </span><span class="si">{</span><span class="n">forks_until</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">available_forks_help</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Invalid command-line options.&quot;</span><span class="p">,</span> <span class="n">returncode</span><span class="o">=</span><span class="n">pytest</span><span class="o">.</span><span class="n">ExitCode</span><span class="o">.</span><span class="n">USAGE_ERROR</span><span class="p">)</span>
 
     <span class="n">config</span><span class="o">.</span><span class="n">fork_range</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">[</span>
         <span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">forks_from</span><span class="p">)</span> <span class="p">:</span> <span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">forks_until</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
@@ -2553,10 +2558,13 @@ https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html#registering-custom-
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">config</span><span class="o">.</span><span class="n">fork_range</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;Error: --forks-from </span><span class="si">{</span><span class="n">forks_from</span><span class="si">}</span><span class="s2"> --forks-until </span><span class="si">{</span><span class="n">forks_until</span><span class="si">}</span><span class="s2"> &quot;</span>
-            <span class="s2">&quot;creates an empty fork range.&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Error: --from </span><span class="si">{</span><span class="n">forks_from</span><span class="si">}</span><span class="s2"> --until </span><span class="si">{</span><span class="n">forks_until</span><span class="si">}</span><span class="s2"> creates an empty fork range.&quot;</span><span class="p">,</span>
+            <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Command-line options produce empty fork range.&quot;</span><span class="p">,</span> <span class="n">returncode</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span>
+            <span class="s2">&quot;Command-line options produce empty fork range.&quot;</span><span class="p">,</span>
+            <span class="n">returncode</span><span class="o">=</span><span class="n">pytest</span><span class="o">.</span><span class="n">ExitCode</span><span class="o">.</span><span class="n">USAGE_ERROR</span><span class="p">,</span>
+        <span class="p">)</span>
 
     <span class="c1"># with --collect-only, we don&#39;t have access to these config options</span>
     <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">option</span><span class="o">.</span><span class="n">collectonly</span><span class="p">:</span>
@@ -2571,13 +2579,17 @@ https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html#registering-custom-
     <span class="k">if</span> <span class="n">unsupported_forks</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span>
             <span class="s2">&quot;Error: The configured evm tool doesn&#39;t support the following &quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;forks: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">unsupported_forks</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;forks: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">unsupported_forks</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">,</span>
+            <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span>
             <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Please specify a version of the evm tool which supports these &quot;</span>
-            <span class="s2">&quot;forks or use --until FORK to specify a supported fork.</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;forks or use --until FORK to specify a supported fork.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Incompatible evm tool with fork range.&quot;</span><span class="p">,</span> <span class="n">returncode</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span>
+            <span class="s2">&quot;Incompatible evm tool with fork range.&quot;</span><span class="p">,</span> <span class="n">returncode</span><span class="o">=</span><span class="n">pytest</span><span class="o">.</span><span class="n">ExitCode</span><span class="o">.</span><span class="n">USAGE_ERROR</span>
+        <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -3366,11 +3378,7 @@ second specified fork</p>
 
       <details class="quote">
         <summary>Source code in <code>src/pytest_plugins/forks/forks.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">179</span>
-<span class="normal">180</span>
-<span class="normal">181</span>
-<span class="normal">182</span>
-<span class="normal">183</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">183</span>
 <span class="normal">184</span>
 <span class="normal">185</span>
 <span class="normal">186</span>
@@ -3383,7 +3391,11 @@ second specified fork</p>
 <span class="normal">193</span>
 <span class="normal">194</span>
 <span class="normal">195</span>
-<span class="normal">196</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">hookimpl</span><span class="p">(</span><span class="n">trylast</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">hookimpl</span><span class="p">(</span><span class="n">trylast</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">pytest_report_header</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">start_path</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A pytest hook called to obtain the report header.&quot;&quot;&quot;</span>
     <span class="n">bold</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1m&quot;</span>
@@ -3428,12 +3440,12 @@ second specified fork</p>
 
       <details class="quote">
         <summary>Source code in <code>src/pytest_plugins/forks/forks.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">199</span>
-<span class="normal">200</span>
-<span class="normal">201</span>
-<span class="normal">202</span>
-<span class="normal">203</span>
-<span class="normal">204</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">fork</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Parametrize test cases by fork.</span>
@@ -3454,23 +3466,107 @@ second specified fork</p>
 
 
 
-<h2 id="pytest_plugins.forks.forks.pytest_generate_tests" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">pytest_generate_tests</span><span class="p">(</span><span class="n">metafunc</span><span class="p">)</span></code>
+<h2 id="pytest_plugins.forks.forks.get_validity_marker_args" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_validity_marker_args</span><span class="p">(</span><span class="n">metafunc</span><span class="p">,</span> <span class="n">validity_marker_name</span><span class="p">,</span> <span class="n">test_name</span><span class="p">)</span></code>
 
-<a href="#pytest_plugins.forks.forks.pytest_generate_tests" class="headerlink" title="Permanent link">&para;</a></h2>
+<a href="#pytest_plugins.forks.forks.get_validity_marker_args" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
   
-      <p>Pytest hook used to dynamically generate test cases.</p>
+      <p>Check and return the arguments specified to validity markers.</p>
+<p>Check that the validity markers:</p>
+<ul>
+<li><code>pytest.mark.valid_from</code></li>
+<li><code>pytest.mark.valid_until</code></li>
+<li><code>pytest.mark.valid_at_transition_to</code></li>
+</ul>
+<p>are applied at most once and have been provided with exactly one
+argument which is a valid fork name.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>metafunc</code></td>
+          <td>
+                <code><span title="pytest.Metafunc">Metafunc</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Pytest's metafunc object.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>validity_marker_name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the validity marker to validate
+and return.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>test_name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The name of the test being parametrized by
+<code>pytest_generate_tests</code>.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>str | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The name of the fork specified to the validity marker.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
       <details class="quote">
         <summary>Source code in <code>src/pytest_plugins/forks/forks.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">207</span>
-<span class="normal">208</span>
-<span class="normal">209</span>
-<span class="normal">210</span>
-<span class="normal">211</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">211</span>
 <span class="normal">212</span>
 <span class="normal">213</span>
 <span class="normal">214</span>
@@ -3517,10 +3613,82 @@ second specified fork</p>
 <span class="normal">255</span>
 <span class="normal">256</span>
 <span class="normal">257</span>
-<span class="normal">258</span>
-<span class="normal">259</span>
-<span class="normal">260</span>
-<span class="normal">261</span>
+<span class="normal">258</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_validity_marker_args</span><span class="p">(</span>
+    <span class="n">metafunc</span><span class="p">:</span> <span class="n">Metafunc</span><span class="p">,</span>
+    <span class="n">validity_marker_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">test_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check and return the arguments specified to validity markers.</span>
+
+<span class="sd">    Check that the validity markers:</span>
+
+<span class="sd">    - `pytest.mark.valid_from`</span>
+<span class="sd">    - `pytest.mark.valid_until`</span>
+<span class="sd">    - `pytest.mark.valid_at_transition_to`</span>
+
+<span class="sd">    are applied at most once and have been provided with exactly one</span>
+<span class="sd">    argument which is a valid fork name.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        metafunc: Pytest&#39;s metafunc object.</span>
+<span class="sd">        validity_marker_name: Name of the validity marker to validate</span>
+<span class="sd">            and return.</span>
+<span class="sd">        test_name: The name of the test being parametrized by</span>
+<span class="sd">            `pytest_generate_tests`.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The name of the fork specified to the validity marker.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">validity_markers</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">marker</span> <span class="k">for</span> <span class="n">marker</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">iter_markers</span><span class="p">(</span><span class="n">validity_marker_name</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">validity_markers</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">validity_markers</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">test_name</span><span class="si">}</span><span class="s2">&#39;: Too many &#39;</span><span class="si">{</span><span class="n">validity_marker_name</span><span class="si">}</span><span class="s2">&#39; markers applied to test. &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">validity_markers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">test_name</span><span class="si">}</span><span class="s2">&#39;: Missing fork argument with &#39;</span><span class="si">{</span><span class="n">validity_marker_name</span><span class="si">}</span><span class="s2">&#39; marker. &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">validity_markers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">test_name</span><span class="si">}</span><span class="s2">&#39;: Too many arguments specified to &#39;</span><span class="si">{</span><span class="n">validity_marker_name</span><span class="si">}</span><span class="s2">&#39; marker. &quot;</span>
+        <span class="p">)</span>
+    <span class="n">fork_name</span> <span class="o">=</span> <span class="n">validity_markers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">fork_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">:</span>  <span class="c1"># type: ignore</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">test_name</span><span class="si">}</span><span class="s2">&#39; specifies an invalid fork &#39;</span><span class="si">{</span><span class="n">fork_name</span><span class="si">}</span><span class="s2">&#39; to the &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">validity_marker_name</span><span class="si">}</span><span class="s2">&#39;. &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;List of valid forks: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># type: ignore</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fork_name</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pytest_plugins.forks.forks.pytest_generate_tests" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">pytest_generate_tests</span><span class="p">(</span><span class="n">metafunc</span><span class="p">)</span></code>
+
+<a href="#pytest_plugins.forks.forks.pytest_generate_tests" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Pytest hook used to dynamically generate test cases.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>src/pytest_plugins/forks/forks.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">261</span>
 <span class="normal">262</span>
 <span class="normal">263</span>
 <span class="normal">264</span>
@@ -3546,63 +3714,85 @@ second specified fork</p>
 <span class="normal">284</span>
 <span class="normal">285</span>
 <span class="normal">286</span>
-<span class="normal">287</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">pytest_generate_tests</span><span class="p">(</span><span class="n">metafunc</span><span class="p">):</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">pytest_generate_tests</span><span class="p">(</span><span class="n">metafunc</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Pytest hook used to dynamically generate test cases.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">valid_at_transition_to</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">marker</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">for</span> <span class="n">marker</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">iter_markers</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;valid_at_transition_to&quot;</span><span class="p">)</span>
-    <span class="p">]</span>
-    <span class="n">valid_from</span> <span class="o">=</span> <span class="p">[</span><span class="n">marker</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">marker</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">iter_markers</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;valid_from&quot;</span><span class="p">)]</span>
-    <span class="n">valid_until</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">marker</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">marker</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">iter_markers</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;valid_until&quot;</span><span class="p">)</span>
-    <span class="p">]</span>
-    <span class="k">if</span> <span class="n">valid_at_transition_to</span> <span class="ow">and</span> <span class="p">(</span><span class="n">valid_from</span> <span class="ow">or</span> <span class="n">valid_until</span><span class="p">):</span>
+    <span class="n">test_name</span> <span class="o">=</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="vm">__name__</span>
+    <span class="n">valid_at_transition_to</span> <span class="o">=</span> <span class="n">get_validity_marker_args</span><span class="p">(</span>
+        <span class="n">metafunc</span><span class="p">,</span> <span class="s2">&quot;valid_at_transition_to&quot;</span><span class="p">,</span> <span class="n">test_name</span>
+    <span class="p">)</span>
+    <span class="n">valid_from</span> <span class="o">=</span> <span class="n">get_validity_marker_args</span><span class="p">(</span><span class="n">metafunc</span><span class="p">,</span> <span class="s2">&quot;valid_from&quot;</span><span class="p">,</span> <span class="n">test_name</span><span class="p">)</span>
+    <span class="n">valid_until</span> <span class="o">=</span> <span class="n">get_validity_marker_args</span><span class="p">(</span><span class="n">metafunc</span><span class="p">,</span> <span class="s2">&quot;valid_until&quot;</span><span class="p">,</span> <span class="n">test_name</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">valid_at_transition_to</span> <span class="ow">and</span> <span class="n">valid_from</span><span class="p">:</span>
         <span class="n">pytest</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span>
-            <span class="s2">&quot;The test function &quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">metafunc</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> specifies both a &quot;</span>
-            <span class="s2">&quot;pytest.mark.valid_at_transition_to and a pytest.mark.valid_from &quot;</span>
-            <span class="s2">&quot;or pytest.mark.valid_until marker. &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">test_name</span><span class="si">}</span><span class="s2">&#39;: &quot;</span>
+            <span class="s2">&quot;The markers &#39;valid_from&#39; and &#39;valid_at_transition_to&#39; can&#39;t be combined. &quot;</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">valid_at_transition_to</span> <span class="ow">and</span> <span class="n">valid_until</span><span class="p">:</span>
+        <span class="n">pytest</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">test_name</span><span class="si">}</span><span class="s2">&#39;: &quot;</span>
+            <span class="s2">&quot;The markers &#39;valid_until&#39; and &#39;valid_at_transition_to&#39; can&#39;t be combined. &quot;</span>
         <span class="p">)</span>
 
     <span class="n">intersection_range</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">if</span> <span class="n">valid_at_transition_to</span><span class="p">:</span>
-        <span class="n">fork_to</span> <span class="o">=</span> <span class="n">valid_at_transition_to</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">fork_to</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">:</span>
-            <span class="n">pytest</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span>
-                <span class="s2">&quot;The test function &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">metafunc</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> specifies an invalid fork &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">fork_to</span><span class="si">}</span><span class="s2"> to the pytest.mark.valid_at_transition_to marker. &quot;</span>
-            <span class="p">)</span>
-        <span class="k">if</span> <span class="n">fork_to</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_range</span><span class="p">:</span>
-            <span class="n">to_fork</span> <span class="o">=</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_map</span><span class="p">[</span><span class="n">fork_to</span><span class="p">]</span>
+        <span class="n">to_fork</span> <span class="o">=</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_map</span><span class="p">[</span><span class="n">valid_at_transition_to</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">to_fork</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_range</span><span class="p">:</span>
             <span class="n">intersection_range</span> <span class="o">=</span> <span class="n">transition_fork_to</span><span class="p">(</span><span class="n">to_fork</span><span class="p">)</span>
 
     <span class="k">else</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">valid_from</span><span class="p">:</span>
-            <span class="n">valid_from</span> <span class="o">=</span> <span class="p">[</span><span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+            <span class="n">valid_from</span> <span class="o">=</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-        <span class="k">if</span> <span class="n">valid_from</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">:</span>
-            <span class="n">pytest</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span>
-                <span class="s2">&quot;The test function &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">metafunc</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> specifies an invalid fork &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">valid_from</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> to the pytest.mark.valid_from marker. &quot;</span>
-            <span class="p">)</span>
-        <span class="k">if</span> <span class="n">valid_until</span> <span class="ow">and</span> <span class="n">valid_until</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">:</span>
-            <span class="n">pytest</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span>
-                <span class="s2">&quot;The test function &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">metafunc</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> specifies an invalid fork &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">valid_until</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> to the pytest.mark.valid_until marker. &quot;</span>
-            <span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">valid_until</span><span class="p">:</span>
-            <span class="n">valid_until</span> <span class="o">=</span> <span class="p">[</span><span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+            <span class="n">valid_until</span> <span class="o">=</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
         <span class="n">test_fork_range</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
             <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="p">[</span>
-                <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">valid_from</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">:</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span>
-                    <span class="n">valid_until</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">valid_from</span><span class="p">)</span> <span class="p">:</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span>
+                    <span class="n">valid_until</span>
                 <span class="p">)</span>
                 <span class="o">+</span> <span class="mi">1</span>
             <span class="p">]</span>
@@ -3611,10 +3801,10 @@ second specified fork</p>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">test_fork_range</span><span class="p">:</span>
             <span class="n">pytest</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span>
                 <span class="s2">&quot;The test function&#39;s &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">metafunc</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> fork validity markers generate &quot;</span>
-                <span class="s2">&quot;an empty fork range. Please check the arguments to it&#39;s &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;markers:  @pytest.mark.valid_from (</span><span class="si">{</span><span class="n">valid_from</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">) and &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;@pytest.mark.valid_until (</span><span class="si">{</span><span class="n">valid_until</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">).&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">test_name</span><span class="si">}</span><span class="s2">&#39; fork validity markers generate &quot;</span>
+                <span class="s2">&quot;an empty fork range. Please check the arguments to its &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;markers:  @pytest.mark.valid_from (</span><span class="si">{</span><span class="n">valid_from</span><span class="si">}</span><span class="s2">) and &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;@pytest.mark.valid_until (</span><span class="si">{</span><span class="n">valid_until</span><span class="si">}</span><span class="s2">).&quot;</span>
             <span class="p">)</span>
 
         <span class="n">intersection_range</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_range</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">test_fork_range</span><span class="p">)</span>
@@ -3622,11 +3812,13 @@ second specified fork</p>
         <span class="n">intersection_range</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_range</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
         <span class="n">intersection_range</span> <span class="o">=</span> <span class="p">[</span><span class="n">metafunc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">fork_map</span><span class="p">[</span><span class="n">fork</span><span class="p">]</span> <span class="k">for</span> <span class="n">fork</span> <span class="ow">in</span> <span class="n">intersection_range</span><span class="p">]</span>
 
-    <span class="c1"># TODO: skip: test is not valid for any forks in the configured range</span>
-    <span class="c1"># (from, until).</span>
-
     <span class="k">if</span> <span class="s2">&quot;fork&quot;</span> <span class="ow">in</span> <span class="n">metafunc</span><span class="o">.</span><span class="n">fixturenames</span><span class="p">:</span>
-        <span class="n">metafunc</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;fork&quot;</span><span class="p">,</span> <span class="n">intersection_range</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;function&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">intersection_range</span><span class="p">:</span>
+            <span class="n">pytest</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span>  <span class="c1"># this reason is not reported on the command-line</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test_name</span><span class="si">}</span><span class="s2"> is not valid for any any of forks specified on the command-line.&quot;</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">metafunc</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;fork&quot;</span><span class="p">,</span> <span class="n">intersection_range</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;function&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>

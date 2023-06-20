@@ -1241,6 +1241,8 @@
           
         
           
+            
+          
         
           
         
@@ -1288,8 +1290,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../test_cases/" class="md-nav__link">
-        Test cases
+      <a href="../" class="md-nav__link">
+        Readme
       </a>
     </li>
   
@@ -1399,15 +1401,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tests.eips.eip4844.test_excess_data_gas_fork_transition.test_invalid_pre_fork_block_with_excess_data_gas" class="md-nav__link">
-    test_invalid_pre_fork_block_with_excess_data_gas()
+  <a href="#tests.eips.eip4844.test_excess_data_gas_fork_transition.test_invalid_pre_fork_block_with_blob_fields" class="md-nav__link">
+    test_invalid_pre_fork_block_with_blob_fields()
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tests.eips.eip4844.test_excess_data_gas_fork_transition.test_invalid_post_fork_block_without_excess_data_gas" class="md-nav__link">
-    test_invalid_post_fork_block_without_excess_data_gas()
+  <a href="#tests.eips.eip4844.test_excess_data_gas_fork_transition.test_invalid_post_fork_block_without_blob_fields" class="md-nav__link">
+    test_invalid_post_fork_block_without_blob_fields()
   </a>
   
 </li>
@@ -1486,13 +1488,17 @@
       
         
           
+            
+          
         
       
       
-        <label class="md-nav__link" for="__nav_8_2_5_11" id="__nav_8_2_5_11_label" tabindex="0">
-          Point Evaluation Vectors
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../point_evaluation_vectors/">Point Evaluation Vectors</a>
+          
+        </div>
       
       <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_5_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8_2_5_11">
@@ -1501,18 +1507,6 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../point_evaluation_vectors/test_cases/" class="md-nav__link">
-        Test cases
-      </a>
-    </li>
-  
-
             
           
         </ul>
@@ -1731,8 +1725,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../vm/test_chain_id/" class="md-nav__link">
-        Test Chain Id
+      <a href="../../../vm/test_chainid/" class="md-nav__link">
+        Test CHAINID
       </a>
     </li>
   
@@ -1746,7 +1740,7 @@
   
     <li class="md-nav__item">
       <a href="../../../vm/test_dup/" class="md-nav__link">
-        Test Dup
+        Test DUP
       </a>
     </li>
   
@@ -1864,15 +1858,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tests.eips.eip4844.test_excess_data_gas_fork_transition.test_invalid_pre_fork_block_with_excess_data_gas" class="md-nav__link">
-    test_invalid_pre_fork_block_with_excess_data_gas()
+  <a href="#tests.eips.eip4844.test_excess_data_gas_fork_transition.test_invalid_pre_fork_block_with_blob_fields" class="md-nav__link">
+    test_invalid_pre_fork_block_with_blob_fields()
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tests.eips.eip4844.test_excess_data_gas_fork_transition.test_invalid_post_fork_block_without_excess_data_gas" class="md-nav__link">
-    test_invalid_post_fork_block_without_excess_data_gas()
+  <a href="#tests.eips.eip4844.test_excess_data_gas_fork_transition.test_invalid_post_fork_block_without_blob_fields" class="md-nav__link">
+    test_invalid_post_fork_block_without_blob_fields()
   </a>
   
 </li>
@@ -1901,7 +1895,7 @@
 
 <h1 id="test-excess-data-gas-fork-transition">Test Excess Data Gas Fork Transition<a class="headerlink" href="#test-excess-data-gas-fork-transition" title="Permanent link">&para;</a></h1>
 <div class="admonition example">
-<p class="admonition-title">Generate fixtures for these test cases with:</p>
+<p class="admonition-title">Generate fixtures for these test cases  with:</p>
 <div class="highlight"><pre><span></span><code><span class="go">fill -v tests/eips/eip4844/test_excess_data_gas_fork_transition.py</span>
 </code></pre></div>
 </div>
@@ -1913,9 +1907,12 @@
 <a id="tests.eips.eip4844.test_excess_data_gas_fork_transition"></a>
   <div class="doc doc-contents first">
   
-      <p>Test EIP-4844: Shard Blob Transactions (Excess Data Tests at Transition)
-EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
+<details class="abstract" open>
+  <summary>Tests <code>excessDataGas</code> and <code>dataGasUsed</code> block fields for <a href="https://eips.ethereum.org/EIPS/eip-4844">EIP-4844: Shard Blob Transactions</a> at fork transition.</summary>
+  <p>Test <code>excessDataGas</code> and <code>dataGasUsed</code> block fields for <a href="https://eips.ethereum.org/EIPS/eip-4844">EIP-4844: Shard Blob Transactions</a> at fork
+transition.</p>
+</details>
   
 
   <div class="doc doc-children">
@@ -1930,22 +1927,20 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
 
 
-<h2 id="tests.eips.eip4844.test_excess_data_gas_fork_transition.test_invalid_pre_fork_block_with_excess_data_gas" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">test_invalid_pre_fork_block_with_excess_data_gas</span><span class="p">(</span><span class="n">blockchain_test</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">pre</span><span class="p">,</span> <span class="n">pre_fork_blocks</span><span class="p">)</span></code>
+<h2 id="tests.eips.eip4844.test_excess_data_gas_fork_transition.test_invalid_pre_fork_block_with_blob_fields" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">test_invalid_pre_fork_block_with_blob_fields</span><span class="p">(</span><span class="n">blockchain_test</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">pre</span><span class="p">,</span> <span class="n">pre_fork_blocks</span><span class="p">,</span> <span class="n">excess_data_gas_present</span><span class="p">,</span> <span class="n">data_gas_used_present</span><span class="p">)</span></code>
 
-<a href="#tests.eips.eip4844.test_excess_data_gas_fork_transition.test_invalid_pre_fork_block_with_excess_data_gas" class="headerlink" title="Permanent link">&para;</a></h2>
+<a href="#tests.eips.eip4844.test_excess_data_gas_fork_transition.test_invalid_pre_fork_block_with_blob_fields" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
   
-      <p>Test block rejection when excess_data_gas field is present on a pre-fork
+      <p>Test block rejection when <code>excessDataGas</code> and/or `dataGasUsed fields are present on a pre-fork
 block.</p>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_excess_data_gas_fork_transition.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">137</span>
-<span class="normal">138</span>
-<span class="normal">139</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">139</span>
 <span class="normal">140</span>
 <span class="normal">141</span>
 <span class="normal">142</span>
@@ -1967,17 +1962,47 @@ block.</p>
 <span class="normal">158</span>
 <span class="normal">159</span>
 <span class="normal">160</span>
-<span class="normal">161</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">test_invalid_pre_fork_block_with_excess_data_gas</span><span class="p">(</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+    <span class="s2">&quot;excess_data_gas_present,data_gas_used_present&quot;</span><span class="p">,</span>
+    <span class="p">[</span>
+        <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+        <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+        <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_invalid_pre_fork_block_with_blob_fields</span><span class="p">(</span>
     <span class="n">blockchain_test</span><span class="p">:</span> <span class="n">BlockchainTestFiller</span><span class="p">,</span>
     <span class="n">env</span><span class="p">:</span> <span class="n">Environment</span><span class="p">,</span>
     <span class="n">pre</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Account</span><span class="p">],</span>
     <span class="n">pre_fork_blocks</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Block</span><span class="p">],</span>
+    <span class="n">excess_data_gas_present</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">data_gas_used_present</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Test block rejection when excess_data_gas field is present on a pre-fork</span>
+<span class="sd">    Test block rejection when `excessDataGas` and/or `dataGasUsed fields are present on a pre-fork</span>
 <span class="sd">    block.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Try to append a block on the previous fork with excess data gas field set</span>
+    <span class="n">header_modifier</span> <span class="o">=</span> <span class="n">Header</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">excess_data_gas_present</span><span class="p">:</span>
+        <span class="n">header_modifier</span><span class="o">.</span><span class="n">excess_data_gas</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">data_gas_used_present</span><span class="p">:</span>
+        <span class="n">header_modifier</span><span class="o">.</span><span class="n">data_gas_used</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">blockchain_test</span><span class="p">(</span>
         <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>
         <span class="n">post</span><span class="o">=</span><span class="p">{},</span>
@@ -1985,8 +2010,8 @@ block.</p>
         <span class="o">+</span> <span class="p">[</span>
             <span class="n">Block</span><span class="p">(</span>
                 <span class="n">timestamp</span><span class="o">=</span><span class="p">(</span><span class="n">FORK_TIMESTAMP</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
-                <span class="n">rlp_modifier</span><span class="o">=</span><span class="n">Header</span><span class="p">(</span><span class="n">excess_data_gas</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
-                <span class="n">exception</span><span class="o">=</span><span class="s2">&quot;invalid ExcessDataGas&quot;</span><span class="p">,</span>
+                <span class="n">rlp_modifier</span><span class="o">=</span><span class="n">header_modifier</span><span class="p">,</span>
+                <span class="n">exception</span><span class="o">=</span><span class="s2">&quot;invalid field&quot;</span><span class="p">,</span>
             <span class="p">)</span>
         <span class="p">],</span>
         <span class="n">genesis_environment</span><span class="o">=</span><span class="n">env</span><span class="p">,</span>
@@ -2007,36 +2032,20 @@ block.</p>
 
 
 
-<h2 id="tests.eips.eip4844.test_excess_data_gas_fork_transition.test_invalid_post_fork_block_without_excess_data_gas" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">test_invalid_post_fork_block_without_excess_data_gas</span><span class="p">(</span><span class="n">blockchain_test</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">pre</span><span class="p">,</span> <span class="n">pre_fork_blocks</span><span class="p">)</span></code>
+<h2 id="tests.eips.eip4844.test_excess_data_gas_fork_transition.test_invalid_post_fork_block_without_blob_fields" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">test_invalid_post_fork_block_without_blob_fields</span><span class="p">(</span><span class="n">blockchain_test</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">pre</span><span class="p">,</span> <span class="n">pre_fork_blocks</span><span class="p">,</span> <span class="n">excess_data_gas_missing</span><span class="p">,</span> <span class="n">data_gas_used_missing</span><span class="p">)</span></code>
 
-<a href="#tests.eips.eip4844.test_excess_data_gas_fork_transition.test_invalid_post_fork_block_without_excess_data_gas" class="headerlink" title="Permanent link">&para;</a></h2>
+<a href="#tests.eips.eip4844.test_excess_data_gas_fork_transition.test_invalid_post_fork_block_without_blob_fields" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
   
-      <p>Test block rejection when excess_data_gas field is missing on a post-fork
+      <p>Test block rejection when <code>excessDataGas</code> and/or `dataGasUsed fields are missing on a post-fork
 block.</p>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_excess_data_gas_fork_transition.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">164</span>
-<span class="normal">165</span>
-<span class="normal">166</span>
-<span class="normal">167</span>
-<span class="normal">168</span>
-<span class="normal">169</span>
-<span class="normal">170</span>
-<span class="normal">171</span>
-<span class="normal">172</span>
-<span class="normal">173</span>
-<span class="normal">174</span>
-<span class="normal">175</span>
-<span class="normal">176</span>
-<span class="normal">177</span>
-<span class="normal">178</span>
-<span class="normal">179</span>
-<span class="normal">180</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">180</span>
 <span class="normal">181</span>
 <span class="normal">182</span>
 <span class="normal">183</span>
@@ -2044,17 +2053,61 @@ block.</p>
 <span class="normal">185</span>
 <span class="normal">186</span>
 <span class="normal">187</span>
-<span class="normal">188</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">test_invalid_post_fork_block_without_excess_data_gas</span><span class="p">(</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+    <span class="s2">&quot;excess_data_gas_missing,data_gas_used_missing&quot;</span><span class="p">,</span>
+    <span class="p">[</span>
+        <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+        <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+        <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_invalid_post_fork_block_without_blob_fields</span><span class="p">(</span>
     <span class="n">blockchain_test</span><span class="p">:</span> <span class="n">BlockchainTestFiller</span><span class="p">,</span>
     <span class="n">env</span><span class="p">:</span> <span class="n">Environment</span><span class="p">,</span>
     <span class="n">pre</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Account</span><span class="p">],</span>
     <span class="n">pre_fork_blocks</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Block</span><span class="p">],</span>
+    <span class="n">excess_data_gas_missing</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">data_gas_used_missing</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Test block rejection when excess_data_gas field is missing on a post-fork</span>
+<span class="sd">    Test block rejection when `excessDataGas` and/or `dataGasUsed fields are missing on a post-fork</span>
 <span class="sd">    block.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Try to append a post-fork block with excess data gas field removed</span>
+    <span class="n">header_modifier</span> <span class="o">=</span> <span class="n">Header</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">excess_data_gas_missing</span><span class="p">:</span>
+        <span class="n">header_modifier</span><span class="o">.</span><span class="n">excess_data_gas</span> <span class="o">=</span> <span class="n">Header</span><span class="o">.</span><span class="n">REMOVE_FIELD</span>
+    <span class="k">if</span> <span class="n">data_gas_used_missing</span><span class="p">:</span>
+        <span class="n">header_modifier</span><span class="o">.</span><span class="n">data_gas_used</span> <span class="o">=</span> <span class="n">Header</span><span class="o">.</span><span class="n">REMOVE_FIELD</span>
     <span class="n">blockchain_test</span><span class="p">(</span>
         <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>
         <span class="n">post</span><span class="o">=</span><span class="p">{},</span>
@@ -2062,8 +2115,8 @@ block.</p>
         <span class="o">+</span> <span class="p">[</span>
             <span class="n">Block</span><span class="p">(</span>
                 <span class="n">timestamp</span><span class="o">=</span><span class="n">FORK_TIMESTAMP</span><span class="p">,</span>
-                <span class="n">rlp_modifier</span><span class="o">=</span><span class="n">Header</span><span class="p">(</span><span class="n">excess_data_gas</span><span class="o">=</span><span class="n">Header</span><span class="o">.</span><span class="n">REMOVE_FIELD</span><span class="p">),</span>
-                <span class="n">exception</span><span class="o">=</span><span class="s2">&quot;missing ExcessDataGas&quot;</span><span class="p">,</span>
+                <span class="n">rlp_modifier</span><span class="o">=</span><span class="n">header_modifier</span><span class="p">,</span>
+                <span class="n">exception</span><span class="o">=</span><span class="s2">&quot;missing field&quot;</span><span class="p">,</span>
             <span class="p">)</span>
         <span class="p">],</span>
         <span class="n">genesis_environment</span><span class="o">=</span><span class="n">env</span><span class="p">,</span>
@@ -2093,41 +2146,46 @@ block.</p>
   <div class="doc doc-contents ">
   
       <p>Test excess_data_gas calculation in the header when the fork is activated.</p>
+<p>Also produce enough blocks to test the data gas price increase when the block is full with
+<code>MAX_BLOBS_PER_BLOCK</code> blobs.</p>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_excess_data_gas_fork_transition.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">191</span>
-<span class="normal">192</span>
-<span class="normal">193</span>
-<span class="normal">194</span>
-<span class="normal">195</span>
-<span class="normal">196</span>
-<span class="normal">197</span>
-<span class="normal">198</span>
-<span class="normal">199</span>
-<span class="normal">200</span>
-<span class="normal">201</span>
-<span class="normal">202</span>
-<span class="normal">203</span>
-<span class="normal">204</span>
-<span class="normal">205</span>
-<span class="normal">206</span>
-<span class="normal">207</span>
-<span class="normal">208</span>
-<span class="normal">209</span>
-<span class="normal">210</span>
-<span class="normal">211</span>
-<span class="normal">212</span>
-<span class="normal">213</span>
-<span class="normal">214</span>
-<span class="normal">215</span>
-<span class="normal">216</span>
-<span class="normal">217</span>
-<span class="normal">218</span>
-<span class="normal">219</span>
-<span class="normal">220</span>
-<span class="normal">221</span>
-<span class="normal">222</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;post_fork_block_count,blob_count_per_block&quot;</span><span class="p">,</span>
     <span class="p">[</span>
         <span class="p">(</span>
@@ -2151,6 +2209,9 @@ block.</p>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Test excess_data_gas calculation in the header when the fork is activated.</span>
+
+<span class="sd">    Also produce enough blocks to test the data gas price increase when the block is full with</span>
+<span class="sd">    `MAX_BLOBS_PER_BLOCK` blobs.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">blockchain_test</span><span class="p">(</span>
         <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>

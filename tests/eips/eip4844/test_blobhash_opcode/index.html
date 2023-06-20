@@ -1241,6 +1241,8 @@
           
         
           
+            
+          
         
           
         
@@ -1288,8 +1290,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../test_cases/" class="md-nav__link">
-        Test cases
+      <a href="../" class="md-nav__link">
+        Readme
       </a>
     </li>
   
@@ -1493,13 +1495,17 @@
       
         
           
+            
+          
         
       
       
-        <label class="md-nav__link" for="__nav_8_2_5_11" id="__nav_8_2_5_11_label" tabindex="0">
-          Point Evaluation Vectors
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../point_evaluation_vectors/">Point Evaluation Vectors</a>
+          
+        </div>
       
       <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_5_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8_2_5_11">
@@ -1508,18 +1514,6 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../point_evaluation_vectors/test_cases/" class="md-nav__link">
-        Test cases
-      </a>
-    </li>
-  
-
             
           
         </ul>
@@ -1738,8 +1732,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../vm/test_chain_id/" class="md-nav__link">
-        Test Chain Id
+      <a href="../../../vm/test_chainid/" class="md-nav__link">
+        Test CHAINID
       </a>
     </li>
   
@@ -1753,7 +1747,7 @@
   
     <li class="md-nav__item">
       <a href="../../../vm/test_dup/" class="md-nav__link">
-        Test Dup
+        Test DUP
       </a>
     </li>
   
@@ -1915,7 +1909,7 @@
 
 <h1 id="test-blobhash-opcode">Test Blobhash Opcode<a class="headerlink" href="#test-blobhash-opcode" title="Permanent link">&para;</a></h1>
 <div class="admonition example">
-<p class="admonition-title">Generate fixtures for these test cases with:</p>
+<p class="admonition-title">Generate fixtures for these test cases  with:</p>
 <div class="highlight"><pre><span></span><code><span class="go">fill -v tests/eips/eip4844/test_blobhash_opcode.py</span>
 </code></pre></div>
 </div>
@@ -1927,9 +1921,24 @@
 <a id="tests.eips.eip4844.test_blobhash_opcode"></a>
   <div class="doc doc-contents first">
   
-      <p>Test EIP-4844: BLOBHASH Opcode
-EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
+<details class="abstract" open>
+  <summary>Tests <code>BLOBHASH</code> opcode in <a href="https://eips.ethereum.org/EIPS/eip-4844">EIP-4844: Shard Blob Transactions</a></summary>
+  <p>Test cases for the <code>BLOBHASH</code> opcode in
+<a href="https://eips.ethereum.org/EIPS/eip-4844">EIP-4844: Shard Blob Transactions</a>.</p>
+</details>
+<details class="note" open>
+  <summary>Adding a new test</summary>
+  <p>Add a function that is named <code>test_&lt;test_name&gt;</code> and takes at least the following arguments:</p>
+<ul>
+<li>blockchain_test</li>
+<li>pre</li>
+<li>tx</li>
+<li>post</li>
+</ul>
+<p>Additional custom <code>pytest.fixture</code> fixtures can be added and parametrized for new test cases.</p>
+<p>There is no specific structure to follow within this test module.</p>
+</details>
   
 
   <div class="doc doc-children">
@@ -1952,30 +1961,14 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
   <div class="doc doc-contents ">
   
-      <p>Test BLOBHASH opcode gas cost using a variety of indexes.</p>
-<p>Asserts the gas consumption of the BLOBHASH opcode is correct by ensuring
+      <p>Tests <code>BLOBHASH</code> opcode gas cost using a variety of indexes.</p>
+<p>Asserts that the gas consumption of the <code>BLOBHASH</code> opcode is correct by ensuring
 it matches <code>HASH_OPCODE_GAS = 3</code>. Includes both valid and invalid random
 index sizes from the range <code>[0, 2**256-1]</code>, for tx types 2 and 3.</p>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_blobhash_opcode.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 80</span>
-<span class="normal"> 81</span>
-<span class="normal"> 82</span>
-<span class="normal"> 83</span>
-<span class="normal"> 84</span>
-<span class="normal"> 85</span>
-<span class="normal"> 86</span>
-<span class="normal"> 87</span>
-<span class="normal"> 88</span>
-<span class="normal"> 89</span>
-<span class="normal"> 90</span>
-<span class="normal"> 91</span>
-<span class="normal"> 92</span>
-<span class="normal"> 93</span>
-<span class="normal"> 94</span>
-<span class="normal"> 95</span>
-<span class="normal"> 96</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 96</span>
 <span class="normal"> 97</span>
 <span class="normal"> 98</span>
 <span class="normal"> 99</span>
@@ -2008,7 +2001,23 @@ index sizes from the range <code>[0, 2**256-1]</code>, for tx types 2 and 3.</p>
 <span class="normal">126</span>
 <span class="normal">127</span>
 <span class="normal">128</span>
-<span class="normal">129</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;tx_type&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;tx_type&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">test_blobhash_gas_cost</span><span class="p">(</span>
     <span class="n">pre</span><span class="p">,</span>
     <span class="n">template_tx</span><span class="p">,</span>
@@ -2018,9 +2027,9 @@ index sizes from the range <code>[0, 2**256-1]</code>, for tx types 2 and 3.</p>
     <span class="n">blockchain_test</span><span class="p">:</span> <span class="n">BlockchainTestFiller</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Test BLOBHASH opcode gas cost using a variety of indexes.</span>
+<span class="sd">    Tests `BLOBHASH` opcode gas cost using a variety of indexes.</span>
 
-<span class="sd">    Asserts the gas consumption of the BLOBHASH opcode is correct by ensuring</span>
+<span class="sd">    Asserts that the gas consumption of the `BLOBHASH` opcode is correct by ensuring</span>
 <span class="sd">    it matches `HASH_OPCODE_GAS = 3`. Includes both valid and invalid random</span>
 <span class="sd">    index sizes from the range `[0, 2**256-1]`, for tx types 2 and 3.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2081,30 +2090,14 @@ index sizes from the range <code>[0, 2**256-1]</code>, for tx types 2 and 3.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Tests that the BLOBHASH opcode returns the correct versioned hash for
+      <p>Tests that the <code>BLOBHASH</code> opcode returns the correct versioned hash for
 various valid indexes.</p>
-<p>Covers various scenarios with random blob_versioned_hash values within
+<p>Covers various scenarios with random <code>blob_versioned_hash</code> values within
 the valid range <code>[0, 2**256-1]</code>.</p>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_blobhash_opcode.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">132</span>
-<span class="normal">133</span>
-<span class="normal">134</span>
-<span class="normal">135</span>
-<span class="normal">136</span>
-<span class="normal">137</span>
-<span class="normal">138</span>
-<span class="normal">139</span>
-<span class="normal">140</span>
-<span class="normal">141</span>
-<span class="normal">142</span>
-<span class="normal">143</span>
-<span class="normal">144</span>
-<span class="normal">145</span>
-<span class="normal">146</span>
-<span class="normal">147</span>
-<span class="normal">148</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">148</span>
 <span class="normal">149</span>
 <span class="normal">150</span>
 <span class="normal">151</span>
@@ -2139,7 +2132,23 @@ the valid range <code>[0, 2**256-1]</code>.</p>
 <span class="normal">180</span>
 <span class="normal">181</span>
 <span class="normal">182</span>
-<span class="normal">183</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;scenario&quot;</span><span class="p">,</span>
     <span class="p">[</span>
         <span class="s2">&quot;single_valid&quot;</span><span class="p">,</span>
@@ -2157,10 +2166,10 @@ the valid range <code>[0, 2**256-1]</code>.</p>
     <span class="n">blockchain_test</span><span class="p">:</span> <span class="n">BlockchainTestFiller</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Tests that the BLOBHASH opcode returns the correct versioned hash for</span>
+<span class="sd">    Tests that the `BLOBHASH` opcode returns the correct versioned hash for</span>
 <span class="sd">    various valid indexes.</span>
 
-<span class="sd">    Covers various scenarios with random blob_versioned_hash values within</span>
+<span class="sd">    Covers various scenarios with random `blob_versioned_hash` values within</span>
 <span class="sd">    the valid range `[0, 2**256-1]`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">TOTAL_BLOCKS</span> <span class="o">=</span> <span class="mi">5</span>
@@ -2214,7 +2223,7 @@ the valid range <code>[0, 2**256-1]</code>.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Tests that the BLOBHASH opcode returns a zeroed <code>bytes32</code> value for invalid
+      <p>Tests that the <code>BLOBHASH</code> opcode returns a zeroed <code>bytes32</code> value for invalid
 indexes.</p>
 <p>Includes cases where the index is negative (<code>index &lt; 0</code>) or
 exceeds the maximum number of <code>blob_versioned_hash</code> values stored:
@@ -2223,23 +2232,7 @@ exceeds the maximum number of <code>blob_versioned_hash</code> values stored:
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_blobhash_opcode.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">186</span>
-<span class="normal">187</span>
-<span class="normal">188</span>
-<span class="normal">189</span>
-<span class="normal">190</span>
-<span class="normal">191</span>
-<span class="normal">192</span>
-<span class="normal">193</span>
-<span class="normal">194</span>
-<span class="normal">195</span>
-<span class="normal">196</span>
-<span class="normal">197</span>
-<span class="normal">198</span>
-<span class="normal">199</span>
-<span class="normal">200</span>
-<span class="normal">201</span>
-<span class="normal">202</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">202</span>
 <span class="normal">203</span>
 <span class="normal">204</span>
 <span class="normal">205</span>
@@ -2281,7 +2274,23 @@ exceeds the maximum number of <code>blob_versioned_hash</code> values stored:
 <span class="normal">241</span>
 <span class="normal">242</span>
 <span class="normal">243</span>
-<span class="normal">244</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;scenario&quot;</span><span class="p">,</span>
     <span class="p">[</span>
         <span class="s2">&quot;invalid_calls&quot;</span><span class="p">,</span>
@@ -2296,7 +2305,7 @@ exceeds the maximum number of <code>blob_versioned_hash</code> values stored:
     <span class="n">scenario</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Tests that the BLOBHASH opcode returns a zeroed `bytes32` value for invalid</span>
+<span class="sd">    Tests that the `BLOBHASH` opcode returns a zeroed `bytes32` value for invalid</span>
 <span class="sd">    indexes.</span>
 
 <span class="sd">    Includes cases where the index is negative (`index &lt; 0`) or</span>
@@ -2363,30 +2372,14 @@ exceeds the maximum number of <code>blob_versioned_hash</code> values stored:
 
   <div class="doc doc-contents ">
   
-      <p>Tests that the BLOBHASH opcode returns the appropriate values when there
+      <p>Tests that the <code>BLOBHASH</code> opcode returns the appropriate values when there
 is more than 1 blob tx type within a block (for tx types 2 and 3).</p>
 <p>Scenarios involve tx type 3 followed by tx type 2 running the same code
 within a block, including the opposite.</p>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_blobhash_opcode.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">247</span>
-<span class="normal">248</span>
-<span class="normal">249</span>
-<span class="normal">250</span>
-<span class="normal">251</span>
-<span class="normal">252</span>
-<span class="normal">253</span>
-<span class="normal">254</span>
-<span class="normal">255</span>
-<span class="normal">256</span>
-<span class="normal">257</span>
-<span class="normal">258</span>
-<span class="normal">259</span>
-<span class="normal">260</span>
-<span class="normal">261</span>
-<span class="normal">262</span>
-<span class="normal">263</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">263</span>
 <span class="normal">264</span>
 <span class="normal">265</span>
 <span class="normal">266</span>
@@ -2423,14 +2416,30 @@ within a block, including the opposite.</p>
 <span class="normal">297</span>
 <span class="normal">298</span>
 <span class="normal">299</span>
-<span class="normal">300</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">test_blobhash_multiple_txs_in_block</span><span class="p">(</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">test_blobhash_multiple_txs_in_block</span><span class="p">(</span>
     <span class="n">pre</span><span class="p">,</span>
     <span class="n">blob_tx</span><span class="p">,</span>
     <span class="n">post</span><span class="p">,</span>
     <span class="n">blockchain_test</span><span class="p">:</span> <span class="n">BlockchainTestFiller</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Tests that the BLOBHASH opcode returns the appropriate values when there</span>
+<span class="sd">    Tests that the `BLOBHASH` opcode returns the appropriate values when there</span>
 <span class="sd">    is more than 1 blob tx type within a block (for tx types 2 and 3).</span>
 
 <span class="sd">    Scenarios involve tx type 3 followed by tx type 2 running the same code</span>

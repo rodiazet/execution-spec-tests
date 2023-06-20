@@ -1241,6 +1241,8 @@
           
         
           
+            
+          
         
           
         
@@ -1288,8 +1290,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../test_cases/" class="md-nav__link">
-        Test cases
+      <a href="../" class="md-nav__link">
+        Readme
       </a>
     </li>
   
@@ -1507,13 +1509,17 @@
       
         
           
+            
+          
         
       
       
-        <label class="md-nav__link" for="__nav_8_2_5_11" id="__nav_8_2_5_11_label" tabindex="0">
-          Point Evaluation Vectors
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../point_evaluation_vectors/">Point Evaluation Vectors</a>
+          
+        </div>
       
       <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_5_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8_2_5_11">
@@ -1522,18 +1528,6 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../point_evaluation_vectors/test_cases/" class="md-nav__link">
-        Test cases
-      </a>
-    </li>
-  
-
             
           
         </ul>
@@ -1752,8 +1746,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../vm/test_chain_id/" class="md-nav__link">
-        Test Chain Id
+      <a href="../../../vm/test_chainid/" class="md-nav__link">
+        Test CHAINID
       </a>
     </li>
   
@@ -1767,7 +1761,7 @@
   
     <li class="md-nav__item">
       <a href="../../../vm/test_dup/" class="md-nav__link">
-        Test Dup
+        Test DUP
       </a>
     </li>
   
@@ -1943,7 +1937,7 @@
 
 <h1 id="test-point-evaluation-precompile">Test Point Evaluation Precompile<a class="headerlink" href="#test-point-evaluation-precompile" title="Permanent link">&para;</a></h1>
 <div class="admonition example">
-<p class="admonition-title">Generate fixtures for these test cases with:</p>
+<p class="admonition-title">Generate fixtures for these test cases  with:</p>
 <div class="highlight"><pre><span></span><code><span class="go">fill -v tests/eips/eip4844/test_point_evaluation_precompile.py</span>
 </code></pre></div>
 </div>
@@ -1955,9 +1949,34 @@
 <a id="tests.eips.eip4844.test_point_evaluation_precompile"></a>
   <div class="doc doc-contents first">
   
-      <p>Test EIP-4844: Shard Blob Transactions (Point Evaluation Precompile)
-EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
+<details class="abstract" open>
+  <summary>Tests point evaluation precompile for <a href="https://eips.ethereum.org/EIPS/eip-4844">EIP-4844: Shard Blob Transactions</a></summary>
+  <p>Test point evaluation precompile for <a href="https://eips.ethereum.org/EIPS/eip-4844">EIP-4844: Shard Blob Transactions</a>.</p>
+</details>
+<details class="note" open>
+  <summary>Adding a new test</summary>
+  <p>Add a function that is named <code>test_&lt;test_name&gt;</code> and takes at least the following arguments:</p>
+<ul>
+<li>blockchain_test</li>
+<li>pre</li>
+<li>tx</li>
+<li>post</li>
+</ul>
+<p>The following arguments <em>need</em> to be parametrized or the test will not be generated:</p>
+<ul>
+<li>versioned_hash</li>
+<li>kzg_commitment</li>
+<li>z</li>
+<li>y</li>
+<li>kzg_proof</li>
+<li>success</li>
+</ul>
+<p>These values correspond to a single call of the precompile, and <code>success</code> refers to
+whether the call should succeed or fail.</p>
+<p>All other <code>pytest.fixture</code> fixtures can be parametrized to generate new combinations and test
+cases.</p>
+</details>
   
 
   <div class="doc doc-children">
@@ -1980,38 +1999,39 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
   <div class="doc doc-contents ">
   
-      <p>Test invalid precompile calls:
-- Out of bounds inputs
-- Invalid calldata length
-- Invalid versioned hashes</p>
+      <p>Test valid sanity precompile calls that are expected to succeed.</p>
+<ul>
+<li><code>kzg_commitment</code> and <code>kzg_proof</code> are set to values such that <code>p(z)==0</code> for all values of <code>z</code>,
+hence <code>y</code> is tested to be zero, and call to be succesful.</li>
+</ul>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_point_evaluation_precompile.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">226</span>
-<span class="normal">227</span>
-<span class="normal">228</span>
-<span class="normal">229</span>
-<span class="normal">230</span>
-<span class="normal">231</span>
-<span class="normal">232</span>
-<span class="normal">233</span>
-<span class="normal">234</span>
-<span class="normal">235</span>
-<span class="normal">236</span>
-<span class="normal">237</span>
-<span class="normal">238</span>
-<span class="normal">239</span>
-<span class="normal">240</span>
-<span class="normal">241</span>
-<span class="normal">242</span>
-<span class="normal">243</span>
-<span class="normal">244</span>
-<span class="normal">245</span>
-<span class="normal">246</span>
-<span class="normal">247</span>
-<span class="normal">248</span>
-<span class="normal">249</span>
-<span class="normal">250</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;z,y,kzg_commitment,kzg_proof,versioned_hash&quot;</span><span class="p">,</span>
     <span class="p">[</span>
         <span class="n">pytest</span><span class="o">.</span><span class="n">param</span><span class="p">(</span><span class="n">BLS_MODULUS</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">INF_POINT</span><span class="p">,</span> <span class="n">INF_POINT</span><span class="p">,</span> <span class="n">auto</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;in_bounds_z&quot;</span><span class="p">),</span>
@@ -2026,10 +2046,10 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
     <span class="n">post</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Test invalid precompile calls:</span>
-<span class="sd">    - Out of bounds inputs</span>
-<span class="sd">    - Invalid calldata length</span>
-<span class="sd">    - Invalid versioned hashes</span>
+<span class="sd">    Test valid sanity precompile calls that are expected to succeed.</span>
+
+<span class="sd">    - `kzg_commitment` and `kzg_proof` are set to values such that `p(z)==0` for all values of `z`,</span>
+<span class="sd">    hence `y` is tested to be zero, and call to be succesful.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">blockchain_test</span><span class="p">(</span>
         <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>
@@ -2059,40 +2079,18 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
   <div class="doc doc-contents ">
   
-      <p>Test invalid precompile calls:
-- Out of bounds inputs
-- Invalid calldata length
-- Invalid versioned hashes</p>
+      <p>Test invalid precompile calls:</p>
+<ul>
+<li>Out of bounds inputs <code>z</code> and <code>y</code></li>
+<li>Correct proof, commitment, z and y, but incorrect lengths</li>
+<li>Null inputs</li>
+<li>Zero inputs</li>
+<li>Correct proof, commitment, z and y, but incorrect version versioned hash</li>
+</ul>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_point_evaluation_precompile.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">253</span>
-<span class="normal">254</span>
-<span class="normal">255</span>
-<span class="normal">256</span>
-<span class="normal">257</span>
-<span class="normal">258</span>
-<span class="normal">259</span>
-<span class="normal">260</span>
-<span class="normal">261</span>
-<span class="normal">262</span>
-<span class="normal">263</span>
-<span class="normal">264</span>
-<span class="normal">265</span>
-<span class="normal">266</span>
-<span class="normal">267</span>
-<span class="normal">268</span>
-<span class="normal">269</span>
-<span class="normal">270</span>
-<span class="normal">271</span>
-<span class="normal">272</span>
-<span class="normal">273</span>
-<span class="normal">274</span>
-<span class="normal">275</span>
-<span class="normal">276</span>
-<span class="normal">277</span>
-<span class="normal">278</span>
-<span class="normal">279</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">279</span>
 <span class="normal">280</span>
 <span class="normal">281</span>
 <span class="normal">282</span>
@@ -2115,7 +2113,36 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 <span class="normal">299</span>
 <span class="normal">300</span>
 <span class="normal">301</span>
-<span class="normal">302</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;z,y,kzg_commitment,kzg_proof,versioned_hash&quot;</span><span class="p">,</span>
     <span class="p">[</span>
         <span class="p">(</span><span class="n">BLS_MODULUS</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">INF_POINT</span><span class="p">,</span> <span class="n">INF_POINT</span><span class="p">,</span> <span class="n">auto</span><span class="p">),</span>
@@ -2156,9 +2183,12 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Test invalid precompile calls:</span>
-<span class="sd">    - Out of bounds inputs</span>
-<span class="sd">    - Invalid calldata length</span>
-<span class="sd">    - Invalid versioned hashes</span>
+
+<span class="sd">    - Out of bounds inputs `z` and `y`</span>
+<span class="sd">    - Correct proof, commitment, z and y, but incorrect lengths</span>
+<span class="sd">    - Null inputs</span>
+<span class="sd">    - Zero inputs</span>
+<span class="sd">    - Correct proof, commitment, z and y, but incorrect version versioned hash</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">blockchain_test</span><span class="p">(</span>
         <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>
@@ -2188,36 +2218,37 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
 
   <div class="doc doc-contents ">
   
-      <p>Test invalid precompile calls:
-- Out of bounds inputs
-- Invalid calldata length
-- Invalid versioned hashes</p>
+      <p>Test precompile calls using external test vectors compiled from different sources:</p>
+<ul>
+<li><code>go_kzg_4844_verify_kzg_proof.json</code>: test vectors from the
+<a href="https://github.com/crate-crypto/go-kzg-4844">go-kzg-4844</a> repository.</li>
+</ul>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_point_evaluation_precompile.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">394</span>
-<span class="normal">395</span>
-<span class="normal">396</span>
-<span class="normal">397</span>
-<span class="normal">398</span>
-<span class="normal">399</span>
-<span class="normal">400</span>
-<span class="normal">401</span>
-<span class="normal">402</span>
-<span class="normal">403</span>
-<span class="normal">404</span>
-<span class="normal">405</span>
-<span class="normal">406</span>
-<span class="normal">407</span>
-<span class="normal">408</span>
-<span class="normal">409</span>
-<span class="normal">410</span>
-<span class="normal">411</span>
-<span class="normal">412</span>
-<span class="normal">413</span>
-<span class="normal">414</span>
-<span class="normal">415</span>
-<span class="normal">416</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">423</span>
+<span class="normal">424</span>
+<span class="normal">425</span>
+<span class="normal">426</span>
+<span class="normal">427</span>
+<span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span>
+<span class="normal">441</span>
+<span class="normal">442</span>
+<span class="normal">443</span>
+<span class="normal">444</span>
+<span class="normal">445</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;z,y,kzg_commitment,kzg_proof,success&quot;</span><span class="p">,</span>
     <span class="n">all_external_vectors</span><span class="p">(),</span>
 <span class="p">)</span>
@@ -2230,10 +2261,10 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
     <span class="n">post</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Test invalid precompile calls:</span>
-<span class="sd">    - Out of bounds inputs</span>
-<span class="sd">    - Invalid calldata length</span>
-<span class="sd">    - Invalid versioned hashes</span>
+<span class="sd">    Test precompile calls using external test vectors compiled from different sources:</span>
+
+<span class="sd">    - `go_kzg_4844_verify_kzg_proof.json`: test vectors from the</span>
+<span class="sd">    [go-kzg-4844](https://github.com/crate-crypto/go-kzg-4844) repository.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">blockchain_test</span><span class="p">(</span>
         <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>
@@ -2264,40 +2295,16 @@ EIP: https://eips.ethereum.org/EIPS/eip-4844</p>
   <div class="doc doc-contents ">
   
       <p>Test calling the Point Evaluation Precompile with different call types, gas
-and parameter configuration.</p>
+and parameter configuration:</p>
+<ul>
+<li>Using CALL, DELEGATECALL, CALLCODE and STATICCALL.</li>
+<li>Using correct and incorrect proofs</li>
+<li>Using barely insufficient gas</li>
+</ul>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_point_evaluation_precompile.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">419</span>
-<span class="normal">420</span>
-<span class="normal">421</span>
-<span class="normal">422</span>
-<span class="normal">423</span>
-<span class="normal">424</span>
-<span class="normal">425</span>
-<span class="normal">426</span>
-<span class="normal">427</span>
-<span class="normal">428</span>
-<span class="normal">429</span>
-<span class="normal">430</span>
-<span class="normal">431</span>
-<span class="normal">432</span>
-<span class="normal">433</span>
-<span class="normal">434</span>
-<span class="normal">435</span>
-<span class="normal">436</span>
-<span class="normal">437</span>
-<span class="normal">438</span>
-<span class="normal">439</span>
-<span class="normal">440</span>
-<span class="normal">441</span>
-<span class="normal">442</span>
-<span class="normal">443</span>
-<span class="normal">444</span>
-<span class="normal">445</span>
-<span class="normal">446</span>
-<span class="normal">447</span>
-<span class="normal">448</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">448</span>
 <span class="normal">449</span>
 <span class="normal">450</span>
 <span class="normal">451</span>
@@ -2306,7 +2313,40 @@ and parameter configuration.</p>
 <span class="normal">454</span>
 <span class="normal">455</span>
 <span class="normal">456</span>
-<span class="normal">457</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">457</span>
+<span class="normal">458</span>
+<span class="normal">459</span>
+<span class="normal">460</span>
+<span class="normal">461</span>
+<span class="normal">462</span>
+<span class="normal">463</span>
+<span class="normal">464</span>
+<span class="normal">465</span>
+<span class="normal">466</span>
+<span class="normal">467</span>
+<span class="normal">468</span>
+<span class="normal">469</span>
+<span class="normal">470</span>
+<span class="normal">471</span>
+<span class="normal">472</span>
+<span class="normal">473</span>
+<span class="normal">474</span>
+<span class="normal">475</span>
+<span class="normal">476</span>
+<span class="normal">477</span>
+<span class="normal">478</span>
+<span class="normal">479</span>
+<span class="normal">480</span>
+<span class="normal">481</span>
+<span class="normal">482</span>
+<span class="normal">483</span>
+<span class="normal">484</span>
+<span class="normal">485</span>
+<span class="normal">486</span>
+<span class="normal">487</span>
+<span class="normal">488</span>
+<span class="normal">489</span>
+<span class="normal">490</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;call_gas,y,success&quot;</span><span class="p">,</span>
     <span class="p">[</span>
         <span class="p">(</span><span class="n">POINT_EVALUATION_PRECOMPILE_GAS</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
@@ -2338,7 +2378,11 @@ and parameter configuration.</p>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Test calling the Point Evaluation Precompile with different call types, gas</span>
-<span class="sd">    and parameter configuration.</span>
+<span class="sd">    and parameter configuration:</span>
+
+<span class="sd">    - Using CALL, DELEGATECALL, CALLCODE and STATICCALL.</span>
+<span class="sd">    - Using correct and incorrect proofs</span>
+<span class="sd">    - Using barely insufficient gas</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">blockchain_test</span><span class="p">(</span>
         <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>
@@ -2370,43 +2414,14 @@ and parameter configuration.</p>
   
       <p>Test calling the Point Evaluation Precompile directly as
 transaction entry point, and measure the gas consumption.</p>
+<ul>
+<li>Using <code>gas_limit</code> with exact necessary gas, insufficient gas and extra gas.</li>
+<li>Using correct and incorrect proofs</li>
+</ul>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_point_evaluation_precompile.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">460</span>
-<span class="normal">461</span>
-<span class="normal">462</span>
-<span class="normal">463</span>
-<span class="normal">464</span>
-<span class="normal">465</span>
-<span class="normal">466</span>
-<span class="normal">467</span>
-<span class="normal">468</span>
-<span class="normal">469</span>
-<span class="normal">470</span>
-<span class="normal">471</span>
-<span class="normal">472</span>
-<span class="normal">473</span>
-<span class="normal">474</span>
-<span class="normal">475</span>
-<span class="normal">476</span>
-<span class="normal">477</span>
-<span class="normal">478</span>
-<span class="normal">479</span>
-<span class="normal">480</span>
-<span class="normal">481</span>
-<span class="normal">482</span>
-<span class="normal">483</span>
-<span class="normal">484</span>
-<span class="normal">485</span>
-<span class="normal">486</span>
-<span class="normal">487</span>
-<span class="normal">488</span>
-<span class="normal">489</span>
-<span class="normal">490</span>
-<span class="normal">491</span>
-<span class="normal">492</span>
-<span class="normal">493</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">493</span>
 <span class="normal">494</span>
 <span class="normal">495</span>
 <span class="normal">496</span>
@@ -2445,7 +2460,43 @@ transaction entry point, and measure the gas consumption.</p>
 <span class="normal">529</span>
 <span class="normal">530</span>
 <span class="normal">531</span>
-<span class="normal">532</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">532</span>
+<span class="normal">533</span>
+<span class="normal">534</span>
+<span class="normal">535</span>
+<span class="normal">536</span>
+<span class="normal">537</span>
+<span class="normal">538</span>
+<span class="normal">539</span>
+<span class="normal">540</span>
+<span class="normal">541</span>
+<span class="normal">542</span>
+<span class="normal">543</span>
+<span class="normal">544</span>
+<span class="normal">545</span>
+<span class="normal">546</span>
+<span class="normal">547</span>
+<span class="normal">548</span>
+<span class="normal">549</span>
+<span class="normal">550</span>
+<span class="normal">551</span>
+<span class="normal">552</span>
+<span class="normal">553</span>
+<span class="normal">554</span>
+<span class="normal">555</span>
+<span class="normal">556</span>
+<span class="normal">557</span>
+<span class="normal">558</span>
+<span class="normal">559</span>
+<span class="normal">560</span>
+<span class="normal">561</span>
+<span class="normal">562</span>
+<span class="normal">563</span>
+<span class="normal">564</span>
+<span class="normal">565</span>
+<span class="normal">566</span>
+<span class="normal">567</span>
+<span class="normal">568</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;call_gas&quot;</span><span class="p">,</span>
     <span class="p">[</span>
         <span class="p">(</span><span class="n">POINT_EVALUATION_PRECOMPILE_GAS</span><span class="p">),</span>
@@ -2472,6 +2523,9 @@ transaction entry point, and measure the gas consumption.</p>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Test calling the Point Evaluation Precompile directly as</span>
 <span class="sd">    transaction entry point, and measure the gas consumption.</span>
+
+<span class="sd">    - Using `gas_limit` with exact necessary gas, insufficient gas and extra gas.</span>
+<span class="sd">    - Using correct and incorrect proofs</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">start_balance</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">18</span>
     <span class="n">pre</span> <span class="o">=</span> <span class="p">{</span>
@@ -2545,43 +2599,7 @@ transaction entry point, and measure the gas consumption.</p>
 
       <details class="quote">
         <summary>Source code in <code>tests/eips/eip4844/test_point_evaluation_precompile.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">535</span>
-<span class="normal">536</span>
-<span class="normal">537</span>
-<span class="normal">538</span>
-<span class="normal">539</span>
-<span class="normal">540</span>
-<span class="normal">541</span>
-<span class="normal">542</span>
-<span class="normal">543</span>
-<span class="normal">544</span>
-<span class="normal">545</span>
-<span class="normal">546</span>
-<span class="normal">547</span>
-<span class="normal">548</span>
-<span class="normal">549</span>
-<span class="normal">550</span>
-<span class="normal">551</span>
-<span class="normal">552</span>
-<span class="normal">553</span>
-<span class="normal">554</span>
-<span class="normal">555</span>
-<span class="normal">556</span>
-<span class="normal">557</span>
-<span class="normal">558</span>
-<span class="normal">559</span>
-<span class="normal">560</span>
-<span class="normal">561</span>
-<span class="normal">562</span>
-<span class="normal">563</span>
-<span class="normal">564</span>
-<span class="normal">565</span>
-<span class="normal">566</span>
-<span class="normal">567</span>
-<span class="normal">568</span>
-<span class="normal">569</span>
-<span class="normal">570</span>
-<span class="normal">571</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">571</span>
 <span class="normal">572</span>
 <span class="normal">573</span>
 <span class="normal">574</span>
@@ -2616,7 +2634,43 @@ transaction entry point, and measure the gas consumption.</p>
 <span class="normal">603</span>
 <span class="normal">604</span>
 <span class="normal">605</span>
-<span class="normal">606</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+<span class="normal">606</span>
+<span class="normal">607</span>
+<span class="normal">608</span>
+<span class="normal">609</span>
+<span class="normal">610</span>
+<span class="normal">611</span>
+<span class="normal">612</span>
+<span class="normal">613</span>
+<span class="normal">614</span>
+<span class="normal">615</span>
+<span class="normal">616</span>
+<span class="normal">617</span>
+<span class="normal">618</span>
+<span class="normal">619</span>
+<span class="normal">620</span>
+<span class="normal">621</span>
+<span class="normal">622</span>
+<span class="normal">623</span>
+<span class="normal">624</span>
+<span class="normal">625</span>
+<span class="normal">626</span>
+<span class="normal">627</span>
+<span class="normal">628</span>
+<span class="normal">629</span>
+<span class="normal">630</span>
+<span class="normal">631</span>
+<span class="normal">632</span>
+<span class="normal">633</span>
+<span class="normal">634</span>
+<span class="normal">635</span>
+<span class="normal">636</span>
+<span class="normal">637</span>
+<span class="normal">638</span>
+<span class="normal">639</span>
+<span class="normal">640</span>
+<span class="normal">641</span>
+<span class="normal">642</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="s2">&quot;z,y,kzg_commitment,kzg_proof,versioned_hash&quot;</span><span class="p">,</span>
     <span class="p">[[</span><span class="n">Z</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">INF_POINT</span><span class="p">,</span> <span class="n">INF_POINT</span><span class="p">,</span> <span class="n">auto</span><span class="p">]],</span>
     <span class="n">ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;correct_proof&quot;</span><span class="p">],</span>
