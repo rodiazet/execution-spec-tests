@@ -19,7 +19,7 @@
         <link rel="next" href="../../../tests/">
       
       <link rel="icon" href="../../../img/ETH-logo-icon.svg">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.16">
     
     
       
@@ -1102,8 +1102,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.OutdatedReferenceSpec" class="md-nav__link">
-    OutdatedReferenceSpec
+  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.pytest_configure" class="md-nav__link">
+    pytest_configure()
   </a>
   
 </li>
@@ -1133,6 +1133,13 @@
           <li class="md-nav__item">
   <a href="#ethereum_test_tools.reference_spec.reference_spec.ReferenceSpec.known_version" class="md-nav__link">
     known_version()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ethereum_test_tools.reference_spec.reference_spec.ReferenceSpec.api_url" class="md-nav__link">
+    api_url()
   </a>
   
 </li>
@@ -1178,15 +1185,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.NoReferenceSpecDefined" class="md-nav__link">
-    NoReferenceSpecDefined
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.UnableToCheckReferenceSpec" class="md-nav__link">
-    UnableToCheckReferenceSpec
+  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.get_ref_spec_from_module" class="md-nav__link">
+    get_ref_spec_from_module()
   </a>
   
 </li>
@@ -1194,6 +1194,61 @@
         <li class="md-nav__item">
   <a href="#pytest_plugins.spec_version_checker.spec_version_checker.reference_spec" class="md-nav__link">
     reference_spec()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.is_test_for_an_eip" class="md-nav__link">
+    is_test_for_an_eip()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.test_eip_spec_version" class="md-nav__link">
+    test_eip_spec_version()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.EIPSpecTestItem" class="md-nav__link">
+    EIPSpecTestItem
+  </a>
+  
+    <nav class="md-nav" aria-label="EIPSpecTestItem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.EIPSpecTestItem.from_parent" class="md-nav__link">
+    from_parent()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.EIPSpecTestItem.runtest" class="md-nav__link">
+    runtest()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.EIPSpecTestItem.reportinfo" class="md-nav__link">
+    reportinfo()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.pytest_collection_modifyitems" class="md-nav__link">
+    pytest_collection_modifyitems()
   </a>
   
 </li>
@@ -1251,6 +1306,10 @@
         
           
         
+          
+        
+          
+        
       
       
         
@@ -1294,18 +1353,12 @@
         
           
         
-          
-        
-          
-        
-          
-        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../tests/eips/">EIPs</a>
+          <a href="../../../tests/cancun/">Cancun</a>
           
             <label for="__nav_8_2">
               <span class="md-nav__icon md-icon"></span>
@@ -1316,52 +1369,10 @@
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8_2">
           <span class="md-nav__icon md-icon"></span>
-          EIPs
+          Cancun
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../tests/eips/test_eip3651/" class="md-nav__link">
-        Test EIP-3651
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../tests/eips/test_eip3855/" class="md-nav__link">
-        Test EIP-3855
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../tests/eips/test_eip3860/" class="md-nav__link">
-        Test EIP-3860
-      </a>
-    </li>
-  
-
             
           
             
@@ -1375,14 +1386,12 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_2" >
       
       
         
           
             
-          
-        
           
         
           
@@ -1406,18 +1415,61 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../tests/eips/eip4844/">EIP-4844</a>
+          <a href="../../../tests/cancun/eip4844_blobs/">EIP-4844 Blobs</a>
           
-            <label for="__nav_8_2_5">
+            <label for="__nav_8_2_2">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_5_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_8_2_5">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_2_2">
           <span class="md-nav__icon md-icon"></span>
-          EIP-4844
+          EIP-4844 Blobs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_2_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/cancun/eip4844_blobs/test_blob_txs/">Test Blob Txs</a>
+          
+            <label for="__nav_8_2_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_2_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Test Blob Txs
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1429,107 +1481,16 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tests/eips/eip4844/README_./" class="md-nav__link">
-        Readme
+      <a href="../../../tests/cancun/eip4844_blobs/test_blob_txs/index/test_cases/" class="md-nav__link">
+        Test Cases
       </a>
     </li>
   
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../tests/eips/eip4844/test_blob_txs/" class="md-nav__link">
-        Test Blob Txs
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../tests/eips/eip4844/test_blobhash_opcode/" class="md-nav__link">
-        Test Blobhash Opcode
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../tests/eips/eip4844/test_blobhash_opcode_contexts/" class="md-nav__link">
-        Test Blobhash Opcode Contexts
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../tests/eips/eip4844/test_excess_data_gas/" class="md-nav__link">
-        Test Excess Data Gas
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../tests/eips/eip4844/test_excess_data_gas_fork_transition/" class="md-nav__link">
-        Test Excess Data Gas Fork Transition
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../tests/eips/eip4844/test_point_evaluation_precompile/" class="md-nav__link">
-        Test Point Evaluation Precompile
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../tests/eips/eip4844/test_point_evaluation_precompile_gas/" class="md-nav__link">
-        Test Point Evaluation Precompile Gas
-      </a>
+        </ul>
+      </nav>
     </li>
   
 
@@ -1546,7 +1507,391 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_5_10" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_2_3" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/cancun/eip4844_blobs/test_blobhash_opcode/">Test Blobhash Opcode</a>
+          
+            <label for="__nav_8_2_2_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_2_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Test Blobhash Opcode
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tests/cancun/eip4844_blobs/test_blobhash_opcode/index/test_cases/" class="md-nav__link">
+        Test Cases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_2_4" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/cancun/eip4844_blobs/test_blobhash_opcode_contexts/">Test Blobhash Opcode Contexts</a>
+          
+            <label for="__nav_8_2_2_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_2_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Test Blobhash Opcode Contexts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tests/cancun/eip4844_blobs/test_blobhash_opcode_contexts/index/test_cases/" class="md-nav__link">
+        Test Cases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_2_5" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/cancun/eip4844_blobs/test_excess_data_gas/">Test Excess Data Gas</a>
+          
+            <label for="__nav_8_2_2_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_2_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_2_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Test Excess Data Gas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tests/cancun/eip4844_blobs/test_excess_data_gas/index/test_cases/" class="md-nav__link">
+        Test Cases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_2_6" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/cancun/eip4844_blobs/test_excess_data_gas_fork_transition/">Test Excess Data Gas Fork Transition</a>
+          
+            <label for="__nav_8_2_2_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_2_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_2_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Test Excess Data Gas Fork Transition
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tests/cancun/eip4844_blobs/test_excess_data_gas_fork_transition/index/test_cases/" class="md-nav__link">
+        Test Cases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_2_7" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/cancun/eip4844_blobs/test_point_evaluation_precompile/">Test Point Evaluation Precompile</a>
+          
+            <label for="__nav_8_2_2_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_2_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_2_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Test Point Evaluation Precompile
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tests/cancun/eip4844_blobs/test_point_evaluation_precompile/index/test_cases/" class="md-nav__link">
+        Test Cases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_2_8" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/cancun/eip4844_blobs/test_point_evaluation_precompile_gas/">Test Point Evaluation Precompile Gas</a>
+          
+            <label for="__nav_8_2_2_8">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_2_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_2_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Test Point Evaluation Precompile Gas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tests/cancun/eip4844_blobs/test_point_evaluation_precompile_gas/index/test_cases/" class="md-nav__link">
+        Test Cases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_2_9" >
       
       
         
@@ -1554,13 +1899,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_8_2_5_10" id="__nav_8_2_5_10_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_8_2_2_9" id="__nav_8_2_2_9_label" tabindex="0">
           Point Evaluation Vectors
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_5_10_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_8_2_5_10">
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_2_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_2_2_9">
           <span class="md-nav__icon md-icon"></span>
           Point Evaluation Vectors
         </label>
@@ -1572,7 +1917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tests/eips/eip4844/point_evaluation_vectors/README_./" class="md-nav__link">
+      <a href="../../../tests/cancun/eip4844_blobs/point_evaluation_vectors/README_./" class="md-nav__link">
         Readme
       </a>
     </li>
@@ -1624,12 +1969,16 @@
         
           
         
+          
+        
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../tests/example/">Example</a>
+          <a href="../../../tests/shanghai/">Shanghai</a>
           
             <label for="__nav_8_3">
               <span class="md-nav__icon md-icon"></span>
@@ -1640,7 +1989,93 @@
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8_3">
           <span class="md-nav__icon md-icon"></span>
-          Example
+          Shanghai
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/shanghai/eip3651_warm_coinbase/">EIP-3651 Warm Coinbase</a>
+          
+            <label for="__nav_8_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          EIP-3651 Warm Coinbase
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_2_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/shanghai/eip3651_warm_coinbase/test_warm_coinbase/">Test Warm Coinbase</a>
+          
+            <label for="__nav_8_3_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_3_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_3_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Test Warm Coinbase
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1652,9 +2087,23 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tests/example/test_acl_example/" class="md-nav__link">
-        Test ACL Example
+      <a href="../../../tests/shanghai/eip3651_warm_coinbase/test_warm_coinbase/index/test_cases/" class="md-nav__link">
+        Test Cases
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1665,10 +2114,338 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_3" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/shanghai/eip3855_push0/">EIP-3855 Push0</a>
+          
+            <label for="__nav_8_3_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          EIP-3855 Push0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_3_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/shanghai/eip3855_push0/test_push0/">Test Push0</a>
+          
+            <label for="__nav_8_3_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_3_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_3_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Test Push0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../tests/example/test_yul_example/" class="md-nav__link">
-        Test Yul Example
+      <a href="../../../tests/shanghai/eip3855_push0/test_push0/index/test_cases/" class="md-nav__link">
+        Test Cases
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_4" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/shanghai/eip3860_initcode/">EIP-3860 Initcode</a>
+          
+            <label for="__nav_8_3_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          EIP-3860 Initcode
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_4_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/shanghai/eip3860_initcode/test_initcode/">Test Initcode</a>
+          
+            <label for="__nav_8_3_4_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_3_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_3_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Test Initcode
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tests/shanghai/eip3860_initcode/test_initcode/index/test_cases/" class="md-nav__link">
+        Test Cases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_5" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/shanghai/eip4895_withdrawals/">EIP-4895 Withdrawals</a>
+          
+            <label for="__nav_8_3_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          EIP-4895 Withdrawals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_5_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/shanghai/eip4895_withdrawals/test_withdrawals/">Test Withdrawals</a>
+          
+            <label for="__nav_8_3_5_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_3_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_3_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Test Withdrawals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tests/shanghai/eip4895_withdrawals/test_withdrawals/index/test_cases/" class="md-nav__link">
+        Test Cases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1707,7 +2484,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../tests/security/">Security</a>
+          <a href="../../../tests/merge/">Merge</a>
           
             <label for="__nav_8_4">
               <span class="md-nav__icon md-icon"></span>
@@ -1717,6 +2494,49 @@
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8_4">
+          <span class="md-nav__icon md-icon"></span>
+          Merge
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/merge/security/">Security</a>
+          
+            <label for="__nav_8_4_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_4_2">
           <span class="md-nav__icon md-icon"></span>
           Security
         </label>
@@ -1729,10 +2549,67 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_2_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/merge/security/test_selfdestruct_balance_bug/">Test Selfdestruct Balance Bug</a>
+          
+            <label for="__nav_8_4_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_4_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_4_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Test Selfdestruct Balance Bug
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../tests/security/test_selfdestruct_balance_bug/" class="md-nav__link">
-        Test Selfdestruct Balance Bug
+      <a href="../../../tests/merge/security/test_selfdestruct_balance_bug/index/test_cases/" class="md-nav__link">
+        Test Cases
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1766,14 +2643,12 @@
         
           
         
-          
-        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../tests/vm/">VM</a>
+          <a href="../../../tests/berlin/">Berlin</a>
           
             <label for="__nav_8_5">
               <span class="md-nav__icon md-icon"></span>
@@ -1784,7 +2659,93 @@
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8_5">
           <span class="md-nav__icon md-icon"></span>
-          VM
+          Berlin
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/berlin/eip2930_access_list/">EIP-2930 Access List</a>
+          
+            <label for="__nav_8_5_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          EIP-2930 Access List
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5_2_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/berlin/eip2930_access_list/test_acl/">Test ACL</a>
+          
+            <label for="__nav_8_5_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_5_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_5_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Test ACL
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1796,23 +2757,23 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tests/vm/test_chainid/" class="md-nav__link">
-        Test CHAINID
+      <a href="../../../tests/berlin/eip2930_access_list/test_acl/index/test_cases/" class="md-nav__link">
+        Test Cases
       </a>
     </li>
   
 
             
           
+        </ul>
+      </nav>
+    </li>
+  
+
             
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../tests/vm/test_dup/" class="md-nav__link">
-        Test DUP
-      </a>
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1851,7 +2812,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../tests/withdrawals/">Withdrawals</a>
+          <a href="../../../tests/istanbul/">Istanbul</a>
           
             <label for="__nav_8_6">
               <span class="md-nav__icon md-icon"></span>
@@ -1862,7 +2823,93 @@
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8_6">
           <span class="md-nav__icon md-icon"></span>
-          Withdrawals
+          Istanbul
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_6_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/istanbul/eip1344_chainid/">EIP-1344 CHAINID</a>
+          
+            <label for="__nav_8_6_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_6_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          EIP-1344 CHAINID
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_6_2_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/istanbul/eip1344_chainid/test_chainid/">Test CHAINID</a>
+          
+            <label for="__nav_8_6_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_6_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_6_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Test CHAINID
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1874,9 +2921,351 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tests/withdrawals/test_withdrawals/" class="md-nav__link">
-        Test Withdrawals
+      <a href="../../../tests/istanbul/eip1344_chainid/test_chainid/index/test_cases/" class="md-nav__link">
+        Test Cases
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_7" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/homestead/">Homestead</a>
+          
+            <label for="__nav_8_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_7">
+          <span class="md-nav__icon md-icon"></span>
+          Homestead
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_7_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/homestead/yul/">Yul</a>
+          
+            <label for="__nav_8_7_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_7_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Yul
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_7_2_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/homestead/yul/test_yul_example/">Test Yul Example</a>
+          
+            <label for="__nav_8_7_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_7_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_7_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Test Yul Example
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tests/homestead/yul/test_yul_example/index/test_cases/" class="md-nav__link">
+        Test Cases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_8" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/frontier/">Frontier</a>
+          
+            <label for="__nav_8_8">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_8">
+          <span class="md-nav__icon md-icon"></span>
+          Frontier
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_8_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/frontier/opcodes/">Opcodes</a>
+          
+            <label for="__nav_8_8_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_8_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          Opcodes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_8_2_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tests/frontier/opcodes/test_dup/">Test DUP</a>
+          
+            <label for="__nav_8_8_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_8_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_8_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Test DUP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tests/frontier/opcodes/test_dup/index/test_cases/" class="md-nav__link">
+        Test Cases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1936,8 +3325,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.OutdatedReferenceSpec" class="md-nav__link">
-    OutdatedReferenceSpec
+  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.pytest_configure" class="md-nav__link">
+    pytest_configure()
   </a>
   
 </li>
@@ -1967,6 +3356,13 @@
           <li class="md-nav__item">
   <a href="#ethereum_test_tools.reference_spec.reference_spec.ReferenceSpec.known_version" class="md-nav__link">
     known_version()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ethereum_test_tools.reference_spec.reference_spec.ReferenceSpec.api_url" class="md-nav__link">
+    api_url()
   </a>
   
 </li>
@@ -2012,15 +3408,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.NoReferenceSpecDefined" class="md-nav__link">
-    NoReferenceSpecDefined
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.UnableToCheckReferenceSpec" class="md-nav__link">
-    UnableToCheckReferenceSpec
+  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.get_ref_spec_from_module" class="md-nav__link">
+    get_ref_spec_from_module()
   </a>
   
 </li>
@@ -2028,6 +3417,61 @@
         <li class="md-nav__item">
   <a href="#pytest_plugins.spec_version_checker.spec_version_checker.reference_spec" class="md-nav__link">
     reference_spec()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.is_test_for_an_eip" class="md-nav__link">
+    is_test_for_an_eip()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.test_eip_spec_version" class="md-nav__link">
+    test_eip_spec_version()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.EIPSpecTestItem" class="md-nav__link">
+    EIPSpecTestItem
+  </a>
+  
+    <nav class="md-nav" aria-label="EIPSpecTestItem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.EIPSpecTestItem.from_parent" class="md-nav__link">
+    from_parent()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.EIPSpecTestItem.runtest" class="md-nav__link">
+    runtest()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.EIPSpecTestItem.reportinfo" class="md-nav__link">
+    reportinfo()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest_plugins.spec_version_checker.spec_version_checker.pytest_collection_modifyitems" class="md-nav__link">
+    pytest_collection_modifyitems()
   </a>
   
 </li>
@@ -2100,28 +3544,27 @@ modules matches that of https://github.com/ethereum/EIPs.</p>
 
 
 
-<div class="doc doc-object doc-class">
+<div class="doc doc-object doc-function">
 
 
 
-<h2 id="pytest_plugins.spec_version_checker.spec_version_checker.OutdatedReferenceSpec" class="doc doc-heading">
-        <code>OutdatedReferenceSpec</code>
+<h2 id="pytest_plugins.spec_version_checker.spec_version_checker.pytest_configure" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">pytest_configure</span><span class="p">(</span><span class="n">config</span><span class="p">)</span></code>
 
-
-<a href="#pytest_plugins.spec_version_checker.spec_version_checker.OutdatedReferenceSpec" class="headerlink" title="Permanent link">&para;</a></h2>
+<a href="#pytest_plugins.spec_version_checker.spec_version_checker.pytest_configure" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code>Warning</code></p>
-
   
-      <p>Warning when the spec version found in a filler module is out of date.</p>
+      <p>Register the plugin's custom markers and process command-line options.</p>
+<p>Custom marker registration:
+https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html#registering-custom-markers</p>
 
-
-        <details class="quote">
-          <summary>Source code in <code>src/pytest_plugins/spec_version_checker/spec_version_checker.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">18</span>
+      <details class="quote">
+        <summary>Source code in <code>src/pytest_plugins/spec_version_checker/spec_version_checker.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
@@ -2130,39 +3573,20 @@ modules matches that of https://github.com/ethereum/EIPs.</p>
 <span class="normal">24</span>
 <span class="normal">25</span>
 <span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">OutdatedReferenceSpec</span><span class="p">(</span><span class="ne">Warning</span><span class="p">):</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">hookimpl</span><span class="p">(</span><span class="n">tryfirst</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">pytest_configure</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Warning when the spec version found in a filler module is out of date.</span>
+<span class="sd">    Register the plugin&#39;s custom markers and process command-line options.</span>
+
+<span class="sd">    Custom marker registration:</span>
+<span class="sd">    https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html#registering-custom-markers</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filler_module</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">spec_obj</span><span class="p">:</span> <span class="n">ReferenceSpec</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-            <span class="s2">&quot;There is newer version of the spec referenced in filler &quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filler_module</span><span class="si">}</span><span class="s2">, tests might be outdated: &quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;Spec: </span><span class="si">{</span><span class="n">spec_obj</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="si">}</span><span class="s2">. &quot;</span>
-            <span class="s2">&quot;Referenced version: &quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">spec_obj</span><span class="o">.</span><span class="n">known_version</span><span class="p">()</span><span class="si">}</span><span class="s2">. &quot;</span>
-            <span class="s2">&quot;Latest version: &quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">spec_obj</span><span class="o">.</span><span class="n">latest_version</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span>
-        <span class="p">)</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">addinivalue_line</span><span class="p">(</span>
+        <span class="s2">&quot;markers&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;eip_version_check: a test that tests the reference spec defined in an EIP test module.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-        </details>
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-  </div>
-
+      </details>
   </div>
 
 </div>
@@ -2191,72 +3615,79 @@ modules matches that of https://github.com/ethereum/EIPs.</p>
 
         <details class="quote">
           <summary>Source code in <code>src/ethereum_test_tools/reference_spec/reference_spec.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span>
-<span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span>
-<span class="normal">82</span>
-<span class="normal">83</span>
-<span class="normal">84</span>
-<span class="normal">85</span>
-<span class="normal">86</span>
-<span class="normal">87</span>
-<span class="normal">88</span>
-<span class="normal">89</span>
-<span class="normal">90</span>
-<span class="normal">91</span>
-<span class="normal">92</span>
-<span class="normal">93</span>
-<span class="normal">94</span>
-<span class="normal">95</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ReferenceSpec</span><span class="p">:</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ReferenceSpec</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Reference Specification Description Abstract Class.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2280,6 +3711,13 @@ modules matches that of https://github.com/ethereum/EIPs.</p>
     <span class="k">def</span> <span class="nf">known_version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the latest known version in the reference.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">api_url</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the URL required to poll the version from an API, if needed.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">pass</span>
 
@@ -2468,6 +3906,48 @@ known version.</p>
 
 
 
+<h3 id="ethereum_test_tools.reference_spec.reference_spec.ReferenceSpec.api_url" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">api_url</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+<a href="#ethereum_test_tools.reference_spec.reference_spec.ReferenceSpec.api_url" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns the URL required to poll the version from an API, if needed.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>src/ethereum_test_tools/reference_spec/reference_spec.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
+<span class="k">def</span> <span class="nf">api_url</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the URL required to poll the version from an API, if needed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
 <h3 id="ethereum_test_tools.reference_spec.reference_spec.ReferenceSpec.latest_version" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">latest_version</span><span class="p">()</span></code>
   
@@ -2484,12 +3964,12 @@ known version.</p>
 
       <details class="quote">
         <summary>Source code in <code>src/ethereum_test_tools/reference_spec/reference_spec.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
 <span class="k">def</span> <span class="nf">latest_version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a digest that points to the latest version of the spec.</span>
@@ -2527,13 +4007,13 @@ test was last updated.</p>
 
       <details class="quote">
         <summary>Source code in <code>src/ethereum_test_tools/reference_spec/reference_spec.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
 <span class="k">def</span> <span class="nf">is_outdated</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Checks whether the reference specification has been updated since the</span>
@@ -2572,13 +4052,13 @@ fixture.</p>
 
       <details class="quote">
         <summary>Source code in <code>src/ethereum_test_tools/reference_spec/reference_spec.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span>
-<span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
 <span class="k">def</span> <span class="nf">write_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">info</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Writes info about the reference specification used into the output</span>
@@ -2618,14 +4098,14 @@ information.</p>
 
       <details class="quote">
         <summary>Source code in <code>src/ethereum_test_tools/reference_spec/reference_spec.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">80</span>
-<span class="normal">81</span>
-<span class="normal">82</span>
-<span class="normal">83</span>
-<span class="normal">84</span>
-<span class="normal">85</span>
-<span class="normal">86</span>
-<span class="normal">87</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
 <span class="nd">@abstractmethod</span>
 <span class="k">def</span> <span class="nf">parseable_from_module</span><span class="p">(</span><span class="n">module_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2665,13 +4145,13 @@ information.</p>
 
       <details class="quote">
         <summary>Source code in <code>src/ethereum_test_tools/reference_spec/reference_spec.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">89</span>
-<span class="normal">90</span>
-<span class="normal">91</span>
-<span class="normal">92</span>
-<span class="normal">93</span>
-<span class="normal">94</span>
-<span class="normal">95</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
 <span class="nd">@abstractmethod</span>
 <span class="k">def</span> <span class="nf">parse_from_module</span><span class="p">(</span><span class="n">module_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;ReferenceSpec&quot;</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2698,84 +4178,85 @@ information.</p>
 
 
 
-<div class="doc doc-object doc-class">
+<div class="doc doc-object doc-function">
 
 
 
-<h2 id="pytest_plugins.spec_version_checker.spec_version_checker.NoReferenceSpecDefined" class="doc doc-heading">
-        <code>NoReferenceSpecDefined</code>
+<h2 id="pytest_plugins.spec_version_checker.spec_version_checker.get_ref_spec_from_module" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_ref_spec_from_module</span><span class="p">(</span><span class="n">module</span><span class="p">)</span></code>
 
-
-<a href="#pytest_plugins.spec_version_checker.spec_version_checker.NoReferenceSpecDefined" class="headerlink" title="Permanent link">&para;</a></h2>
+<a href="#pytest_plugins.spec_version_checker.spec_version_checker.get_ref_spec_from_module" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code>Warning</code></p>
-
   
-      <p>Warning when no spec version was found in a filler module.</p>
+      <p>Return the reference spec object defined in a module.</p>
 
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>Exception</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>If the module path contains "eip" and the module
+does not define a reference spec.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
-        <details class="quote">
-          <summary>Source code in <code>src/pytest_plugins/spec_version_checker/spec_version_checker.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">35</span>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>spec_obj</code></td>          <td>
+                <code>None | <a class="autorefs autorefs-internal" title="ethereum_test_tools.ReferenceSpec" href="../../ethereum_test_tools/#ethereum_test_tools.ReferenceSpec">ReferenceSpec</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Return None if the module path does not contain "eip",
+i.e., the module is not required to define a reference spec,
+otherwise, return the ReferenceSpec object as defined by the
+module.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>src/pytest_plugins/spec_version_checker/spec_version_checker.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
 <span class="normal">36</span>
 <span class="normal">37</span>
 <span class="normal">38</span>
 <span class="normal">39</span>
 <span class="normal">40</span>
-<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">NoReferenceSpecDefined</span><span class="p">(</span><span class="ne">Warning</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Warning when no spec version was found in a filler module.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filler_module</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No reference spec defined in </span><span class="si">{</span><span class="n">filler_module</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-        </details>
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-  </div>
-
-  </div>
-
-</div>
-
-
-
-
-
-
-<div class="doc doc-object doc-class">
-
-
-
-<h2 id="pytest_plugins.spec_version_checker.spec_version_checker.UnableToCheckReferenceSpec" class="doc doc-heading">
-        <code>UnableToCheckReferenceSpec</code>
-
-
-<a href="#pytest_plugins.spec_version_checker.spec_version_checker.UnableToCheckReferenceSpec" class="headerlink" title="Permanent link">&para;</a></h2>
-
-
-  <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code>Warning</code></p>
-
-  
-      <p>Warnings when the current spec version can not be determined.</p>
-
-
-        <details class="quote">
-          <summary>Source code in <code>src/pytest_plugins/spec_version_checker/spec_version_checker.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">44</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
 <span class="normal">45</span>
 <span class="normal">46</span>
 <span class="normal">47</span>
@@ -2783,28 +4264,47 @@ information.</p>
 <span class="normal">49</span>
 <span class="normal">50</span>
 <span class="normal">51</span>
-<span class="normal">52</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">UnableToCheckReferenceSpec</span><span class="p">(</span><span class="ne">Warning</span><span class="p">):</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_ref_spec_from_module</span><span class="p">(</span><span class="n">module</span><span class="p">:</span> <span class="n">ModuleType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">ReferenceSpec</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Warnings when the current spec version can not be determined.</span>
+<span class="sd">    Return the reference spec object defined in a module.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        Exception: If the module path contains &quot;eip&quot; and the module</span>
+<span class="sd">            does not define a reference spec.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        spec_obj: Return None if the module path does not contain &quot;eip&quot;,</span>
+<span class="sd">            i.e., the module is not required to define a reference spec,</span>
+<span class="sd">            otherwise, return the ReferenceSpec object as defined by the</span>
+<span class="sd">            module.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filler_module</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">error</span><span class="p">:</span> <span class="ne">Exception</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;Reference spec could not be determined for &quot;</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filler_module</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">.&quot;</span>
-        <span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_test_for_an_eip</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">module_dict</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span>
+    <span class="n">parseable_ref_specs</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">ref_spec_type</span>
+        <span class="k">for</span> <span class="n">ref_spec_type</span> <span class="ow">in</span> <span class="n">ReferenceSpecTypes</span>
+        <span class="k">if</span> <span class="n">ref_spec_type</span><span class="o">.</span><span class="n">parseable_from_module</span><span class="p">(</span><span class="n">module_dict</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parseable_ref_specs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">module_dict</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">spec_obj</span> <span class="o">=</span> <span class="n">parseable_ref_specs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">parse_from_module</span><span class="p">(</span><span class="n">module_dict</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error in spec_version_checker: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2"> (this test is generated).&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Test doesn&#39;t define REFERENCE_SPEC_GIT_PATH and REFERENCE_SPEC_VERSION&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">spec_obj</span>
 </code></pre></div></td></tr></table></div>
-        </details>
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-  </div>
-
+      </details>
   </div>
 
 </div>
@@ -2826,62 +4326,418 @@ information.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Returns the reference spec used for the generated test fixtures in a
-given module.</p>
+      <p>Pytest fixture that returns the reference spec defined in a module.</p>
+<p>See <code>get_ref_spec_from_module</code>.</p>
 
       <details class="quote">
         <summary>Source code in <code>src/pytest_plugins/spec_version_checker/spec_version_checker.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">63</span>
 <span class="normal">64</span>
 <span class="normal">65</span>
 <span class="normal">66</span>
 <span class="normal">67</span>
 <span class="normal">68</span>
 <span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span>
+<span class="normal">70</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;module&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">reference_spec</span><span class="p">(</span><span class="n">request</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">ReferenceSpec</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Pytest fixture that returns the reference spec defined in a module.</span>
+
+<span class="sd">    See `get_ref_spec_from_module`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">get_ref_spec_from_module</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">module</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pytest_plugins.spec_version_checker.spec_version_checker.is_test_for_an_eip" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">is_test_for_an_eip</span><span class="p">(</span><span class="n">input_string</span><span class="p">)</span></code>
+
+<a href="#pytest_plugins.spec_version_checker.spec_version_checker.is_test_for_an_eip" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return True if <code>input_string</code> contains an EIP number, i.e., eipNNNN.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>src/pytest_plugins/spec_version_checker/spec_version_checker.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">73</span>
 <span class="normal">74</span>
 <span class="normal">75</span>
 <span class="normal">76</span>
 <span class="normal">77</span>
 <span class="normal">78</span>
 <span class="normal">79</span>
-<span class="normal">80</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;module&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">reference_spec</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="normal">80</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">is_test_for_an_eip</span><span class="p">(</span><span class="n">input_string</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Returns the reference spec used for the generated test fixtures in a</span>
-<span class="sd">    given module.</span>
+<span class="sd">    Return True if `input_string` contains an EIP number, i.e., eipNNNN.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">module_dict</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span>
-    <span class="n">parseable_ref_specs</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">ref_spec_type</span>
-        <span class="k">for</span> <span class="n">ref_spec_type</span> <span class="ow">in</span> <span class="n">ReferenceSpecTypes</span>
-        <span class="k">if</span> <span class="n">ref_spec_type</span><span class="o">.</span><span class="n">parseable_from_module</span><span class="p">(</span><span class="n">module_dict</span><span class="p">)</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;.*eip\d{1,4}&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pattern</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">input_string</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pytest_plugins.spec_version_checker.spec_version_checker.test_eip_spec_version" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">test_eip_spec_version</span><span class="p">(</span><span class="n">module</span><span class="p">)</span></code>
+
+<a href="#pytest_plugins.spec_version_checker.spec_version_checker.test_eip_spec_version" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Test that the ReferenceSpec object as defined in the test module
+is not outdated when compared to the remote hash from
+ethereum/EIPs.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>src/pytest_plugins/spec_version_checker/spec_version_checker.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">test_eip_spec_version</span><span class="p">(</span><span class="n">module</span><span class="p">:</span> <span class="n">ModuleType</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Test that the ReferenceSpec object as defined in the test module</span>
+<span class="sd">    is not outdated when compared to the remote hash from</span>
+<span class="sd">    ethereum/EIPs.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ref_spec</span> <span class="o">=</span> <span class="n">get_ref_spec_from_module</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">ref_spec</span><span class="p">,</span> <span class="s2">&quot;No reference spec object defined&quot;</span>
+
+    <span class="n">message</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;The version of the spec referenced in &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">module</span><span class="si">}</span><span class="s2"> does not match that from ethereum/EIPs, &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;tests might be outdated: Spec: </span><span class="si">{</span><span class="n">ref_spec</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="si">}</span><span class="s2">. &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;Referenced version: </span><span class="si">{</span><span class="n">ref_spec</span><span class="o">.</span><span class="n">known_version</span><span class="p">()</span><span class="si">}</span><span class="s2">. &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;Latest version: </span><span class="si">{</span><span class="n">ref_spec</span><span class="o">.</span><span class="n">latest_version</span><span class="p">()</span><span class="si">}</span><span class="s2">. The &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;version was retrieved from </span><span class="si">{</span><span class="n">ref_spec</span><span class="o">.</span><span class="n">api_url</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span>
+    <span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">is_up_to_date</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">ref_spec</span><span class="o">.</span><span class="n">is_outdated</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Error in spec_version_checker: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2"> (this test is generated). &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Reference spec URL: </span><span class="si">{</span><span class="n">ref_spec</span><span class="o">.</span><span class="n">api_url</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">assert</span> <span class="n">is_up_to_date</span><span class="p">,</span> <span class="n">message</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="pytest_plugins.spec_version_checker.spec_version_checker.EIPSpecTestItem" class="doc doc-heading">
+        <code>EIPSpecTestItem</code>
+
+
+<a href="#pytest_plugins.spec_version_checker.spec_version_checker.EIPSpecTestItem" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><span title="_pytest.nodes.Item">Item</span></code></p>
+
+  
+      <p>Custom pytest test item to test EIP spec versions.</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>src/pytest_plugins/spec_version_checker/spec_version_checker.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">EIPSpecTestItem</span><span class="p">(</span><span class="n">Item</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Custom pytest test item to test EIP spec versions.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">module</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">module</span> <span class="o">=</span> <span class="n">module</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_parent</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">module</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Public constructor to define new tests.</span>
+<span class="sd">        https://docs.pytest.org/en/latest/reference/reference.html#pytest.nodes.Node.from_parent</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">from_parent</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test_eip_spec_version&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="n">module</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">runtest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Define the test to execute for this item.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">test_eip_spec_version</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">module</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">reportinfo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get location information for this test item to use test reports.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s2">&quot;spec_version_checker&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pytest_plugins.spec_version_checker.spec_version_checker.EIPSpecTestItem.from_parent" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">from_parent</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">module</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+<a href="#pytest_plugins.spec_version_checker.spec_version_checker.EIPSpecTestItem.from_parent" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Public constructor to define new tests.
+https://docs.pytest.org/en/latest/reference/reference.html#pytest.nodes.Node.from_parent</p>
+
+      <details class="quote">
+        <summary>Source code in <code>src/pytest_plugins/spec_version_checker/spec_version_checker.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">from_parent</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Public constructor to define new tests.</span>
+<span class="sd">    https://docs.pytest.org/en/latest/reference/reference.html#pytest.nodes.Node.from_parent</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">from_parent</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test_eip_spec_version&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="n">module</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pytest_plugins.spec_version_checker.spec_version_checker.EIPSpecTestItem.runtest" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">runtest</span><span class="p">()</span></code>
+
+<a href="#pytest_plugins.spec_version_checker.spec_version_checker.EIPSpecTestItem.runtest" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Define the test to execute for this item.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>src/pytest_plugins/spec_version_checker/spec_version_checker.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">runtest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Define the test to execute for this item.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">test_eip_spec_version</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">module</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pytest_plugins.spec_version_checker.spec_version_checker.EIPSpecTestItem.reportinfo" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">reportinfo</span><span class="p">()</span></code>
+
+<a href="#pytest_plugins.spec_version_checker.spec_version_checker.EIPSpecTestItem.reportinfo" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get location information for this test item to use test reports.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>src/pytest_plugins/spec_version_checker/spec_version_checker.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">reportinfo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get location information for this test item to use test reports.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="s2">&quot;spec_version_checker&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pytest_plugins.spec_version_checker.spec_version_checker.pytest_collection_modifyitems" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">pytest_collection_modifyitems</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span></code>
+
+<a href="#pytest_plugins.spec_version_checker.spec_version_checker.pytest_collection_modifyitems" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Insert a new test EIPSpecTestItem for every test modules that
+contains 'eip' in its path.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>src/pytest_plugins/spec_version_checker/spec_version_checker.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">pytest_collection_modifyitems</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">items</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Insert a new test EIPSpecTestItem for every test modules that</span>
+<span class="sd">    contains &#39;eip&#39; in its path.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">modules</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">parent</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">Module</span><span class="p">))</span>
+    <span class="n">new_test_eip_spec_version_items</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">EIPSpecTestItem</span><span class="o">.</span><span class="n">from_parent</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">module</span><span class="o">.</span><span class="n">obj</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">modules</span>
+        <span class="k">if</span> <span class="n">is_test_for_an_eip</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">path</span><span class="p">))</span>
     <span class="p">]</span>
-    <span class="n">filler_module</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">module</span><span class="o">.</span><span class="vm">__name__</span>
-    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">filler_module</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">package</span><span class="p">)</span> <span class="k">for</span> <span class="n">package</span> <span class="ow">in</span> <span class="n">IGNORE_PACKAGES</span><span class="p">):</span>
-        <span class="k">return</span> <span class="kc">None</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parseable_ref_specs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">spec_obj</span> <span class="o">=</span> <span class="n">parseable_ref_specs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">parse_from_module</span><span class="p">(</span><span class="n">module_dict</span><span class="p">)</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">spec_obj</span><span class="o">.</span><span class="n">is_outdated</span><span class="p">():</span>
-                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">OutdatedReferenceSpec</span><span class="p">(</span><span class="n">filler_module</span><span class="p">,</span> <span class="n">spec_obj</span><span class="p">))</span>
-            <span class="k">return</span> <span class="n">spec_obj</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">UnableToCheckReferenceSpec</span><span class="p">(</span><span class="n">filler_module</span><span class="p">,</span> <span class="n">e</span><span class="p">))</span>
-            <span class="k">return</span> <span class="kc">None</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">NoReferenceSpecDefined</span><span class="p">(</span><span class="n">filler_module</span><span class="p">))</span>
-    <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">new_test_eip_spec_version_items</span><span class="p">:</span>
+        <span class="n">item</span><span class="o">.</span><span class="n">add_marker</span><span class="p">(</span><span class="s2">&quot;eip_version_check&quot;</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">items</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">new_test_eip_spec_version_items</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -2942,7 +4798,7 @@ given module.</p>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "search.suggest", "search.highlight", "content.tabs.link", "navigation.indexes", "navigation.instant", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a51614de.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
