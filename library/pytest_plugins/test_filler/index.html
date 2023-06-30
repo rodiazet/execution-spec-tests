@@ -4253,7 +4253,7 @@ writes the generated fixtures to file.</p>
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ethereum_test_tools.spec.base_test.BaseTest" href="../../ethereum_test_tools/#ethereum_test_tools.BaseTest">BaseTest</a></code></p>
+        Bases: <code><a class="autorefs autorefs-internal" title="ethereum_test_tools.spec.base_test.BaseTest" href="#pytest_plugins.test_filler.test_filler.BaseTest">BaseTest</a></code></p>
 
   
       <p>Filler type that tests transactions over the period of a single block.</p>
@@ -4943,7 +4943,7 @@ Raises exception on invalid test behavior.</p>
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="ethereum_test_tools.spec.base_test.BaseTest" href="../../ethereum_test_tools/#ethereum_test_tools.BaseTest">BaseTest</a></code></p>
+        Bases: <code><a class="autorefs autorefs-internal" title="ethereum_test_tools.spec.base_test.BaseTest" href="#pytest_plugins.test_filler.test_filler.BaseTest">BaseTest</a></code></p>
 
   
       <p>Filler type that tests multiple blocks (valid or invalid) in a chain.</p>
@@ -7304,7 +7304,7 @@ spec type as filler for the test.</p>
   
       <p>Register the plugin's custom markers and process command-line options.</p>
 <p>Custom marker registration:
-https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html#registering-custom-markers</p>
+<a href="https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html#registering-custom-markers">https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html#registering-custom-markers</a></p>
 
       <details class="quote">
         <summary>Source code in <code>src/pytest_plugins/test_filler/test_filler.py</code></summary>
@@ -7472,7 +7472,7 @@ https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html#registering-custom-
   <div class="doc doc-contents ">
   
       <p>Public constructor to define new tests.
-https://docs.pytest.org/en/latest/reference/reference.html#pytest.nodes.Node.from_parent</p>
+<a href="https://docs.pytest.org/en/latest/reference/reference.html#pytest.nodes.Node.from_parent">https://docs.pytest.org/en/latest/reference/reference.html#pytest.nodes.Node.from_parent</a></p>
 
       <details class="quote">
         <summary>Source code in <code>src/pytest_plugins/spec_version_checker/spec_version_checker.py</code></summary>
@@ -7857,7 +7857,9 @@ https://docs.pytest.org/en/latest/reference/reference.html#pytest.nodes.Node.fro
 <span class="normal">274</span>
 <span class="normal">275</span>
 <span class="normal">276</span>
-<span class="normal">277</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">EvmTransitionTool</span><span class="p">(</span><span class="n">TransitionTool</span><span class="p">):</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">EvmTransitionTool</span><span class="p">(</span><span class="n">TransitionTool</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Go-ethereum `evm` Transition tool frontend.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -7911,6 +7913,8 @@ https://docs.pytest.org/en/latest/reference/reference.html#pytest.nodes.Node.fro
 
         <span class="n">temp_dir</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">()</span>
 
+        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">env</span><span class="p">[</span><span class="s2">&quot;currentNumber&quot;</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">reward</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
         <span class="n">args</span> <span class="o">=</span> <span class="p">[</span>
             <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">binary</span><span class="p">),</span>
             <span class="s2">&quot;t8n&quot;</span><span class="p">,</span>
@@ -8099,7 +8103,9 @@ https://docs.pytest.org/en/latest/reference/reference.html#pytest.nodes.Node.fro
 <span class="normal">251</span>
 <span class="normal">252</span>
 <span class="normal">253</span>
-<span class="normal">254</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">alloc</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="n">txs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
@@ -8118,6 +8124,8 @@ https://docs.pytest.org/en/latest/reference/reference.html#pytest.nodes.Node.fro
 
     <span class="n">temp_dir</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">()</span>
 
+    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">env</span><span class="p">[</span><span class="s2">&quot;currentNumber&quot;</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">reward</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
     <span class="n">args</span> <span class="o">=</span> <span class="p">[</span>
         <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">binary</span><span class="p">),</span>
         <span class="s2">&quot;t8n&quot;</span><span class="p">,</span>
@@ -8204,9 +8212,7 @@ https://docs.pytest.org/en/latest/reference/reference.html#pytest.nodes.Node.fro
 
       <details class="quote">
         <summary>Source code in <code>src/evm_transition_tool/__init__.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">256</span>
-<span class="normal">257</span>
-<span class="normal">258</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">258</span>
 <span class="normal">259</span>
 <span class="normal">260</span>
 <span class="normal">261</span>
@@ -8219,7 +8225,9 @@ https://docs.pytest.org/en/latest/reference/reference.html#pytest.nodes.Node.fro
 <span class="normal">268</span>
 <span class="normal">269</span>
 <span class="normal">270</span>
-<span class="normal">271</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Gets `evm` binary version.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -8262,11 +8270,11 @@ https://docs.pytest.org/en/latest/reference/reference.html#pytest.nodes.Node.fro
 
       <details class="quote">
         <summary>Source code in <code>src/evm_transition_tool/__init__.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">273</span>
-<span class="normal">274</span>
-<span class="normal">275</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">275</span>
 <span class="normal">276</span>
-<span class="normal">277</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">is_fork_supported</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fork</span><span class="p">:</span> <span class="n">Fork</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">is_fork_supported</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fork</span><span class="p">:</span> <span class="n">Fork</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns True if the fork is supported by the tool</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -8950,7 +8958,7 @@ class so that upon instantiation within the test case, it provides the
 test case's current fork parameter. The forks is then available for use
 in solc's arguments for the Yul code compilation.</p>
 <p>Test cases can override the default value by specifying a fixed version
-with the @pytest.mark.compile_yul_with(FORK) marker.</p>
+with the <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/pytest" title="GitHub User: pytest">@pytest</a>.mark.compile_yul_with(FORK) marker.</p>
 
       <details class="quote">
         <summary>Source code in <code>src/pytest_plugins/test_filler/test_filler.py</code></summary>
