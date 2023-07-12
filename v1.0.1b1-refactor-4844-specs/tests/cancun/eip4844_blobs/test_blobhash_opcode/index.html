@@ -3261,7 +3261,7 @@
 
 
 <h1 id="test-blobhash-opcode">Test Blobhash Opcode<a class="headerlink" href="#test-blobhash-opcode" title="Permanent link">&para;</a></h1>
-<p>Documentation for <a href="https://github.com/ethereum/execution-spec-tests/blob/c2b0307ed98eeeacd04d2e153af67f0e77eb7b1f/tests/cancun/eip4844_blobs/test_blobhash_opcode.py"><code>tests/cancun/eip4844_blobs/test_blobhash_opcode.py</code></a>.</p>
+<p>Documentation for <a href="https://github.com/ethereum/execution-spec-tests/blob/dda0f6aee049ea55627aeffa2f6982259ff9caeb/tests/cancun/eip4844_blobs/test_blobhash_opcode.py"><code>tests/cancun/eip4844_blobs/test_blobhash_opcode.py</code></a>.</p>
 <div class="admonition example">
 <p class="admonition-title">Generate fixtures for these test cases for Cancun with:</p>
 <p>Cancun only:
@@ -3323,8 +3323,6 @@ For all forks up to and including Cancun:
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><span title="enum.IntEnum">IntEnum</span></code></p>
 
   
       <p>Parameters from the EIP-4844 specifications as defined at
@@ -3335,7 +3333,8 @@ out.</p>
 
         <details class="quote">
           <summary>Source code in <code>tests/cancun/eip4844_blobs/spec.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 34</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 33</span>
+<span class="normal"> 34</span>
 <span class="normal"> 35</span>
 <span class="normal"> 36</span>
 <span class="normal"> 37</span>
@@ -3425,9 +3424,8 @@ out.</p>
 <span class="normal">121</span>
 <span class="normal">122</span>
 <span class="normal">123</span>
-<span class="normal">124</span>
-<span class="normal">125</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">class</span> <span class="nc">Spec</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
+<span class="normal">124</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Spec</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Parameters from the EIP-4844 specifications as defined at</span>
 <span class="sd">    https://eips.ethereum.org/EIPS/eip-4844#parameters</span>
@@ -3490,8 +3488,8 @@ out.</p>
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">calc_excess_data_gas</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">parent</span><span class="p">:</span> <span class="n">BlockHeaderDataGasFields</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Calculate the excess data gas for a block given the parent excess data gas</span>
-<span class="sd">        and the number of blobs in the block.</span>
+<span class="sd">        Calculate the excess data gas for a block given the excess data gas</span>
+<span class="sd">        and data gas used from the parent block header.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">parent</span><span class="o">.</span><span class="n">excess_data_gas</span> <span class="o">+</span> <span class="n">parent</span><span class="o">.</span><span class="n">data_gas_used</span> <span class="o">&lt;</span> <span class="bp">cls</span><span class="o">.</span><span class="n">TARGET_DATA_GAS_PER_BLOCK</span><span class="p">:</span>
             <span class="k">return</span> <span class="mi">0</span>
@@ -3506,7 +3504,7 @@ out.</p>
     <span class="c1">#     &quot;&quot;&quot;</span>
     <span class="c1">#     if tx.blob_versioned_hashes is None:</span>
     <span class="c1">#         return 0</span>
-    <span class="c1">#     return cls.DATA_GAS_PER_BLOB.value * len(tx.blob_versioned_hashes)</span>
+    <span class="c1">#     return cls.DATA_GAS_PER_BLOB * len(tx.blob_versioned_hashes)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_data_gasprice</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">excess_data_gas</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -3514,9 +3512,9 @@ out.</p>
 <span class="sd">        Calculate the data gas price from the excess.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">fake_exponential</span><span class="p">(</span>
-            <span class="bp">cls</span><span class="o">.</span><span class="n">MIN_DATA_GASPRICE</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">MIN_DATA_GASPRICE</span><span class="p">,</span>
             <span class="n">excess_data_gas</span><span class="p">,</span>
-            <span class="bp">cls</span><span class="o">.</span><span class="n">DATA_GASPRICE_UPDATE_FRACTION</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">DATA_GASPRICE_UPDATE_FRACTION</span><span class="p">,</span>
         <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
         </details>
@@ -3662,7 +3660,7 @@ index sizes from the range <code>[0, 2**256-1]</code>, for tx types 2 and 3.</p>
                 <span class="p">]</span>
             <span class="p">)</span>
         <span class="p">)</span>
-        <span class="n">post</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span><span class="n">storage</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="n">Spec</span><span class="o">.</span><span class="n">HASH_GAS_COST</span><span class="o">.</span><span class="n">value</span><span class="p">})</span>
+        <span class="n">post</span><span class="p">[</span><span class="n">address</span><span class="p">]</span> <span class="o">=</span> <span class="n">Account</span><span class="p">(</span><span class="n">storage</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="n">Spec</span><span class="o">.</span><span class="n">HASH_GAS_COST</span><span class="p">})</span>
     <span class="n">blockchain_test</span><span class="p">(</span>
         <span class="n">pre</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span>
         <span class="n">blocks</span><span class="o">=</span><span class="n">blocks</span><span class="p">,</span>
@@ -3695,8 +3693,6 @@ index sizes from the range <code>[0, 2**256-1]</code>, for tx types 2 and 3.</p>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><span title="enum.Enum">Enum</span></code></p>
 
   
       <p>Define parameters and helper functions that are tightly coupled to the 4844
@@ -3705,7 +3701,8 @@ spec but not strictly part of it.</p>
 
         <details class="quote">
           <summary>Source code in <code>tests/cancun/eip4844_blobs/spec.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">128</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">127</span>
+<span class="normal">128</span>
 <span class="normal">129</span>
 <span class="normal">130</span>
 <span class="normal">131</span>
@@ -3762,9 +3759,8 @@ spec but not strictly part of it.</p>
 <span class="normal">182</span>
 <span class="normal">183</span>
 <span class="normal">184</span>
-<span class="normal">185</span>
-<span class="normal">186</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">class</span> <span class="nc">SpecHelpers</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<span class="normal">185</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">SpecHelpers</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Define parameters and helper functions that are tightly coupled to the 4844</span>
 <span class="sd">    spec but not strictly part of it.</span>
@@ -3777,14 +3773,14 @@ spec but not strictly part of it.</p>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the maximum number of blobs per block.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">Spec</span><span class="o">.</span><span class="n">MAX_DATA_GAS_PER_BLOCK</span><span class="o">.</span><span class="n">value</span> <span class="o">//</span> <span class="n">Spec</span><span class="o">.</span><span class="n">DATA_GAS_PER_BLOB</span><span class="o">.</span><span class="n">value</span>
+        <span class="k">return</span> <span class="n">Spec</span><span class="o">.</span><span class="n">MAX_DATA_GAS_PER_BLOCK</span> <span class="o">//</span> <span class="n">Spec</span><span class="o">.</span><span class="n">DATA_GAS_PER_BLOB</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">target_blobs_per_block</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the target number of blobs per block.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">Spec</span><span class="o">.</span><span class="n">TARGET_DATA_GAS_PER_BLOCK</span><span class="o">.</span><span class="n">value</span> <span class="o">//</span> <span class="n">Spec</span><span class="o">.</span><span class="n">DATA_GAS_PER_BLOB</span><span class="o">.</span><span class="n">value</span>
+        <span class="k">return</span> <span class="n">Spec</span><span class="o">.</span><span class="n">TARGET_DATA_GAS_PER_BLOCK</span> <span class="o">//</span> <span class="n">Spec</span><span class="o">.</span><span class="n">DATA_GAS_PER_BLOB</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">calc_excess_data_gas_from_blob_count</span><span class="p">(</span>
@@ -3794,7 +3790,7 @@ spec but not strictly part of it.</p>
 <span class="sd">        Calculate the excess data gas for a block given the parent excess data gas</span>
 <span class="sd">        and the number of blobs in the block.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">parent_consumed_data_gas</span> <span class="o">=</span> <span class="n">parent_blob_count</span> <span class="o">*</span> <span class="n">Spec</span><span class="o">.</span><span class="n">DATA_GAS_PER_BLOB</span><span class="o">.</span><span class="n">value</span>
+        <span class="n">parent_consumed_data_gas</span> <span class="o">=</span> <span class="n">parent_blob_count</span> <span class="o">*</span> <span class="n">Spec</span><span class="o">.</span><span class="n">DATA_GAS_PER_BLOB</span>
         <span class="k">return</span> <span class="n">Spec</span><span class="o">.</span><span class="n">calc_excess_data_gas</span><span class="p">(</span>
             <span class="n">BlockHeaderDataGasFields</span><span class="p">(</span><span class="n">parent_excess_data_gas</span><span class="p">,</span> <span class="n">parent_consumed_data_gas</span><span class="p">)</span>
         <span class="p">)</span>
@@ -3807,7 +3803,7 @@ spec but not strictly part of it.</p>
         <span class="n">current_excess_data_gas</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">current_data_gas_price</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="k">while</span> <span class="n">current_data_gas_price</span> <span class="o">&lt;</span> <span class="n">data_gas_price</span><span class="p">:</span>
-            <span class="n">current_excess_data_gas</span> <span class="o">+=</span> <span class="n">Spec</span><span class="o">.</span><span class="n">DATA_GAS_PER_BLOB</span><span class="o">.</span><span class="n">value</span>
+            <span class="n">current_excess_data_gas</span> <span class="o">+=</span> <span class="n">Spec</span><span class="o">.</span><span class="n">DATA_GAS_PER_BLOB</span>
             <span class="n">current_data_gas_price</span> <span class="o">=</span> <span class="n">Spec</span><span class="o">.</span><span class="n">get_data_gasprice</span><span class="p">(</span>
                 <span class="n">excess_data_gas</span><span class="o">=</span><span class="n">current_excess_data_gas</span>
             <span class="p">)</span>
@@ -3820,7 +3816,7 @@ spec but not strictly part of it.</p>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="bp">cls</span><span class="o">.</span><span class="n">get_min_excess_data_gas_for_data_gas_price</span><span class="p">(</span><span class="n">data_gas_price</span><span class="p">)</span>
-            <span class="o">//</span> <span class="n">Spec</span><span class="o">.</span><span class="n">DATA_GAS_PER_BLOB</span><span class="o">.</span><span class="n">value</span>
+            <span class="o">//</span> <span class="n">Spec</span><span class="o">.</span><span class="n">DATA_GAS_PER_BLOB</span>
         <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
         </details>
@@ -3951,7 +3947,7 @@ the valid range <code>[0, 2**256-1]</code>.</p>
             <span class="n">Block</span><span class="p">(</span>
                 <span class="n">txs</span><span class="o">=</span><span class="p">[</span>
                     <span class="n">template_tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span>
-                        <span class="n">ty</span><span class="o">=</span><span class="n">Spec</span><span class="o">.</span><span class="n">BLOB_TX_TYPE</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                        <span class="n">ty</span><span class="o">=</span><span class="n">Spec</span><span class="o">.</span><span class="n">BLOB_TX_TYPE</span><span class="p">,</span>
                         <span class="n">nonce</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>
                         <span class="n">to</span><span class="o">=</span><span class="n">address</span><span class="p">,</span>
                         <span class="n">access_list</span><span class="o">=</span><span class="p">[],</span>
@@ -4097,7 +4093,7 @@ exceeds the maximum number of <code>blob_versioned_hash</code> values stored:
             <span class="n">Block</span><span class="p">(</span>
                 <span class="n">txs</span><span class="o">=</span><span class="p">[</span>
                     <span class="n">template_tx</span><span class="o">.</span><span class="n">with_fields</span><span class="p">(</span>
-                        <span class="n">ty</span><span class="o">=</span><span class="n">Spec</span><span class="o">.</span><span class="n">BLOB_TX_TYPE</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                        <span class="n">ty</span><span class="o">=</span><span class="n">Spec</span><span class="o">.</span><span class="n">BLOB_TX_TYPE</span><span class="p">,</span>
                         <span class="n">nonce</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>
                         <span class="n">to</span><span class="o">=</span><span class="n">address</span><span class="p">,</span>
                         <span class="n">access_list</span><span class="o">=</span><span class="p">[],</span>
