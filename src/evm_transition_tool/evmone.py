@@ -79,8 +79,7 @@ class EvmOneTransitionTool(TransitionTool):
             write_json_file(input_contents[key], file_path)
 
         output_paths = {
-            output: os.path.join("output", f"{output}.json")
-            for output in ["alloc", "result"]
+            output: os.path.join("output", f"{output}.json") for output in ["alloc", "result"]
         }
         output_paths["body"] = os.path.join("output", "txs.rlp")
 
